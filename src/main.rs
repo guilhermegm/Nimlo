@@ -3247,13 +3247,31 @@ fn resolve_ai_file_link(
     let (path, line) = parse_ai_file_reference(target)?;
     let path = Path::new(path);
     let (root, relative) = if path.is_absolute() {
-        let root = session
+        let (root, relative) = session
             .roots()
             .into_iter()
-            .filter(|root| path.starts_with(root))
-            .max_by_key(|root| root.components().count())
+            .filter_map(|root| {
+                #[cfg(windows)]
+                let comparable_root = Path::new(
+                    root.to_str()?
+                        .strip_prefix(r"\\?\")
+                        .unwrap_or(root.to_str()?),
+                );
+                #[cfg(windows)]
+                let comparable_path = Path::new(
+                    path.to_str()?
+                        .strip_prefix(r"\\?\")
+                        .unwrap_or(path.to_str()?),
+                );
+                #[cfg(not(windows))]
+                let (comparable_root, comparable_path) = (root.as_path(), path);
+                comparable_path
+                    .strip_prefix(comparable_root)
+                    .ok()
+                    .map(|relative| (root.clone(), relative.to_owned()))
+            })
+            .max_by_key(|(root, _)| root.components().count())
             .ok_or_else(|| Error::new("path", "This file is outside the attached projects"))?;
-        let relative = path.strip_prefix(&root).unwrap().to_owned();
         (root, relative)
     } else {
         (
@@ -3263,8 +3281,9 @@ fn resolve_ai_file_link(
     };
     let relative = relative
         .to_str()
-        .ok_or_else(|| Error::new("path", "The file reference is not a valid path"))?;
-    workspace::resolve_root(&root, relative, false)?;
+        .ok_or_else(|| Error::new("path", "The file reference is not a valid path"))?
+        .replace(std::path::MAIN_SEPARATOR, "/");
+    workspace::resolve_root(&root, &relative, false)?;
     Ok(
         json!({"type":"ai_file_link","projectId":workspace::recovery_id(&root),"path":relative,"line":line}),
     )
@@ -3305,7 +3324,9 @@ fn parse_ai_file_reference(target: &str) -> protocol::Result<(&str, usize)> {
             }
         }
         path = file;
-    } else if let Some((file, suffix)) = target.rsplit_once(':') {
+    } else if let Some((file, suffix)) = target.rsplit_once(':').filter(|(_, suffix)| {
+        !suffix.is_empty() && suffix.bytes().all(|byte| byte.is_ascii_digit())
+    }) {
         line = number(suffix)?;
         // Codex references can also contain a column after the line.
         if let Some((file_without_line, possible_line)) = file.rsplit_once(':') {
@@ -3322,7 +3343,25 @@ fn parse_ai_file_reference(target: &str) -> protocol::Result<(&str, usize)> {
     if let Some(relative) = path.strip_prefix("./") {
         path = relative;
     }
-    if path.is_empty() || path.contains([':', '?', '#', '\\']) || path.starts_with("//") {
+    #[cfg(windows)]
+    let native_absolute = Path::new(path).is_absolute()
+        && matches!(
+            Path::new(path).components().next(),
+            Some(std::path::Component::Prefix(prefix))
+                if matches!(prefix.kind(), std::path::Prefix::Disk(_) | std::path::Prefix::VerbatimDisk(_))
+        );
+    #[cfg(not(windows))]
+    let native_absolute = false;
+    let checked = if native_absolute {
+        &path.strip_prefix(r"\\?\").unwrap_or(path)[2..]
+    } else {
+        path
+    };
+    if path.is_empty()
+        || checked.contains([':', '?', '#'])
+        || (!native_absolute && path.contains('\\'))
+        || path.starts_with("//")
+    {
         return Err(invalid());
     }
     Ok((path, line))
@@ -3806,6 +3845,28 @@ mod tests {
         assert!(parse_ai_file_reference(&"x".repeat(4097)).is_err());
     }
 
+    #[cfg(windows)]
+    #[test]
+    fn windows_file_references_accept_drives_but_reject_streams_and_network_paths() {
+        for (target, expected) in [
+            (r"C:\project\file.rs", (r"C:\project\file.rs", 1)),
+            ("C:/project/file.rs:12:3", ("C:/project/file.rs", 12)),
+            (r"\\?\C:\project\file.rs#L4", (r"\\?\C:\project\file.rs", 4)),
+        ] {
+            assert_eq!(parse_ai_file_reference(target).unwrap(), expected);
+        }
+        for target in [
+            r"C:relative.rs",
+            r"C:\project\file.rs:stream",
+            r"C:\project\file.rs:stream:4",
+            r"\\server\share\file.rs",
+            r"\\?\UNC\server\share\file.rs",
+            r"\\.\C:\project\file.rs",
+        ] {
+            assert!(parse_ai_file_reference(target).is_err(), "{target:?}");
+        }
+    }
+
     #[test]
     fn ai_file_links_resolve_only_attached_roots_without_changing_session() {
         let (root, _state, app, token) = test_app();
@@ -3839,6 +3900,21 @@ mod tests {
         assert_eq!(reply["projectId"], attached["projectId"]);
         assert_eq!(reply["path"], "other.md");
         assert_eq!(reply["line"], 7);
+        #[cfg(windows)]
+        {
+            let native = other_root.to_str().unwrap();
+            let ordinary = native.strip_prefix(r"\\?\").unwrap_or(native);
+            for root in [ordinary.to_owned(), ordinary.replace('\\', "/")] {
+                let reply = resolve_ai_file_link(
+                    &app.session.lock().unwrap(),
+                    before["projectId"].as_str().unwrap(),
+                    &format!("{root}/other.md:7"),
+                )
+                .unwrap();
+                assert_eq!(reply["projectId"], attached["projectId"]);
+                assert_eq!(reply["path"], "other.md");
+            }
+        }
         let relative = execute(
             &app,
             "desktop",

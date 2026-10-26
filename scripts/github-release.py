@@ -146,7 +146,7 @@ def package(tag, platform):
             if windows:
                 (stage / "Start Nimlo.cmd").write_text(
                     '@echo off\r\nset "HOME=%USERPROFILE%"\r\n"%~dp0nimlo-editor.exe" --resume-project --open-browser %*\r\n',
-                    encoding="utf-8",
+                    encoding="utf-8", newline="",
                 )
                 archive = output / f"{name}.zip"
                 with zipfile.ZipFile(archive, "w", zipfile.ZIP_DEFLATED) as bundle:

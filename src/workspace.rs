@@ -535,7 +535,12 @@ pub fn resolve_root(root: &Path, relative: &str, directory: bool) -> Result<Path
     if !canonical.starts_with(root) {
         return Err(Error::new("path", "Path is outside the workspace"));
     }
-    if canonical.strip_prefix(root).unwrap().to_string_lossy() != relative {
+    let canonical_relative = canonical
+        .strip_prefix(root)
+        .unwrap()
+        .to_string_lossy()
+        .replace(std::path::MAIN_SEPARATOR, "/");
+    if canonical_relative != relative {
         return Err(Error::new(
             "path",
             "Use the exact relative path without repeated separators",
