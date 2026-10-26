@@ -1,7 +1,7 @@
 const fs=require('node:fs'),http=require('node:http'),assert=require('node:assert/strict');
 // Isolated WebKit checks use a local mocked host and no AI inference.
 const path=require('node:path');
-const {webkit}=require(process.env.PLAYWRIGHT_PATH || path.resolve(__dirname,'../../mini_gym/node_modules/playwright'));
+const {webkit}=require(process.env.PLAYWRIGHT_PATH || 'playwright');
 const root=path.resolve(__dirname,'../web');
 const full={editFiles:true,terminal:true,ai:true};
 const projects=[{id:'p1',name:'Fixture',path:'/tmp/fixture'},{id:'p2',name:'Second',path:'/tmp/second'}];

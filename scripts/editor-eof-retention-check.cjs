@@ -3,7 +3,7 @@
 // Compare the same fixed Unicode EOF input, changing only whether a complete
 // retained line needs recentering when its viewport extends into trailing space.
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),crypto=require('node:crypto');
-const playwright=require(process.env.PLAYWRIGHT_PATH||path.resolve(__dirname,'../../mini_gym/node_modules/playwright'));
+const playwright=require(process.env.PLAYWRIGHT_PATH||'playwright');
 const repo=path.resolve(__dirname,'..'),baselinePath=path.resolve(process.env.EDITOR_EOF_BASELINE||path.join(repo,'target/final-local-performance/eof-retention-before.js'));
 const predicate='this.scrollLeft+this.clientWidth<=retainedRight';
 const fixed='(retainedEnd===lineEnd || this.scrollLeft+this.clientWidth<=retainedRight)';

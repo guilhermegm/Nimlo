@@ -11,8 +11,8 @@ const os = require('node:os');
 const assert = require('node:assert/strict');
 const crypto = require('node:crypto');
 const { spawn } = require('node:child_process');
-const { chromium } = require(process.env.PLAYWRIGHT_PATH || path.resolve(__dirname, '../../mini_gym/node_modules/playwright'));
-const WebSocket = require(process.env.NIMLO_WS_MODULE || path.resolve(__dirname, '../../mini_gym/node_modules/ws'));
+const { chromium } = require(process.env.PLAYWRIGHT_PATH || 'playwright');
+const WebSocket = require(process.env.NIMLO_WS_MODULE || 'ws');
 const repo = path.resolve(__dirname, '..');
 const binary = path.resolve(process.env.NIMLO_BINARY || path.join(repo, 'target/release/nimlo-editor'));
 let child, browser, socket, temp, token;
@@ -39,7 +39,7 @@ async function check(name, fn) {
 function redact(error) {
   let message = error instanceof Error ? error.message : String(error);
   if (token) message = message.split(token).join('[REDACTED]');
-  return message.replace(/([?#&](?:token|invite)=|nimlo_session=)[^\s;&]+/g, '$1[REDACTED]');
+  return message.replace(/([?#&](?:token|invite)=|nimlo_neovim_session=)[^\s;&]+/g, '$1[REDACTED]');
 }
 const text = lines => lines.map(line => line.runs.map(run => run.text).join('')).join('\n');
 function inputModes(snapshot) {
@@ -99,9 +99,9 @@ async function main() {
   await page.waitForFunction(() => document.getElementById('app').dataset.connected === 'yes' && !document.getElementById('new-file').disabled);
   await page.click('#mobile-terminal');
   await page.waitForFunction(() => !document.getElementById('terminal-command').disabled);
-  const cookie = (await context.cookies(origin)).find(value => value.name === 'nimlo_session');
+  const cookie = (await context.cookies(origin)).find(value => value.name === 'nimlo_neovim_session');
   assert.ok(cookie);
-  const cookieHeader = `nimlo_session=${cookie.value}`;
+  const cookieHeader = `nimlo_neovim_session=${cookie.value}`;
   socket = new WebSocket(origin.replace('http:', 'ws:') + '/ws?clientId=resize-fixture-controller', { headers: { Origin: origin, Cookie: cookieHeader } });
   const pending = new Map();
   let sequence = 0;

@@ -257,7 +257,7 @@ impl Config {
         let mut config = Self {
             workspace: std::env::current_dir().map_err(|e| e.to_string())?,
             state_dir: None,
-            listen: "127.0.0.1:7410".parse().unwrap(),
+            listen: "127.0.0.1:8875".parse().unwrap(),
             origin: None,
             connect_urls: Vec::new(),
             state_owner: None,
@@ -316,7 +316,7 @@ impl Config {
                 }
                 "--help" | "-h" => {
                     println!(
-                        "nimlo-editor [--workspace PATH] [--resume-project] [--open-browser] [--listen IP:PORT] [--state-dir PATH] [--origin https://TUNNEL-HOST] [--desktop] [--dev-assets DIR]\n\nDefaults: current workspace, loopback 127.0.0.1:7410. --resume-project opens the last project selected in Settings; explicit --workspace always takes precedence. --open-browser opens the private PC launch link in your default browser. --desktop emits a private JSON launch event and exits on stdin EOF; reserved for a parent window. --dev-assets serves editable UI files on loopback only, with internet pairing disabled. Pair a device can create an HTTPS internet link on demand with cloudflared; --origin uses an existing HTTPS tunnel. Recovery is stored in ~/.nimlo/<workspace-id>."
+                        "nimlo-editor [--workspace PATH] [--resume-project] [--open-browser] [--listen IP:PORT] [--state-dir PATH] [--origin https://TUNNEL-HOST] [--desktop] [--dev-assets DIR]\n\nDefaults: current workspace, loopback 127.0.0.1:8875. --resume-project opens the last project selected in Settings; explicit --workspace always takes precedence. --open-browser opens the private PC launch link in your default browser. --desktop emits a private JSON launch event and exits on stdin EOF; reserved for a parent window. --dev-assets serves editable UI files on loopback only, with internet pairing disabled. Pair a device can create an HTTPS internet link on demand with cloudflared; --origin uses an existing HTTPS tunnel. Recovery is stored in ~/.nimlo-neovim/<workspace-id>."
                     );
                     std::process::exit(0);
                 }
@@ -1323,9 +1323,9 @@ impl App {
         accepted_origin: &str,
     ) -> Option<String> {
         let cookie_name = if accepted_origin.starts_with("https://") {
-            "__Host-nimlo_session="
+            "__Host-nimlo_neovim_session="
         } else {
-            "nimlo_session="
+            "nimlo_neovim_session="
         };
         let token = headers
             .get(header::AUTHORIZATION)
@@ -1382,9 +1382,9 @@ impl App {
         format!(
             "{}={token}; HttpOnly; SameSite=Strict; Path=/{}",
             if secure {
-                "__Host-nimlo_session"
+                "__Host-nimlo_neovim_session"
             } else {
-                "nimlo_session"
+                "nimlo_neovim_session"
             },
             if secure { "; Secure" } else { "" }
         )
@@ -3247,31 +3247,13 @@ fn resolve_ai_file_link(
     let (path, line) = parse_ai_file_reference(target)?;
     let path = Path::new(path);
     let (root, relative) = if path.is_absolute() {
-        let (root, relative) = session
+        let root = session
             .roots()
             .into_iter()
-            .filter_map(|root| {
-                #[cfg(windows)]
-                let comparable_root = Path::new(
-                    root.to_str()?
-                        .strip_prefix(r"\\?\")
-                        .unwrap_or(root.to_str()?),
-                );
-                #[cfg(windows)]
-                let comparable_path = Path::new(
-                    path.to_str()?
-                        .strip_prefix(r"\\?\")
-                        .unwrap_or(path.to_str()?),
-                );
-                #[cfg(not(windows))]
-                let (comparable_root, comparable_path) = (root.as_path(), path);
-                comparable_path
-                    .strip_prefix(comparable_root)
-                    .ok()
-                    .map(|relative| (root.clone(), relative.to_owned()))
-            })
-            .max_by_key(|(root, _)| root.components().count())
+            .filter(|root| path.starts_with(root))
+            .max_by_key(|root| root.components().count())
             .ok_or_else(|| Error::new("path", "This file is outside the attached projects"))?;
+        let relative = path.strip_prefix(&root).unwrap().to_owned();
         (root, relative)
     } else {
         (
@@ -3281,9 +3263,8 @@ fn resolve_ai_file_link(
     };
     let relative = relative
         .to_str()
-        .ok_or_else(|| Error::new("path", "The file reference is not a valid path"))?
-        .replace(std::path::MAIN_SEPARATOR, "/");
-    workspace::resolve_root(&root, &relative, false)?;
+        .ok_or_else(|| Error::new("path", "The file reference is not a valid path"))?;
+    workspace::resolve_root(&root, relative, false)?;
     Ok(
         json!({"type":"ai_file_link","projectId":workspace::recovery_id(&root),"path":relative,"line":line}),
     )
@@ -3324,9 +3305,7 @@ fn parse_ai_file_reference(target: &str) -> protocol::Result<(&str, usize)> {
             }
         }
         path = file;
-    } else if let Some((file, suffix)) = target.rsplit_once(':').filter(|(_, suffix)| {
-        !suffix.is_empty() && suffix.bytes().all(|byte| byte.is_ascii_digit())
-    }) {
+    } else if let Some((file, suffix)) = target.rsplit_once(':') {
         line = number(suffix)?;
         // Codex references can also contain a column after the line.
         if let Some((file_without_line, possible_line)) = file.rsplit_once(':') {
@@ -3343,25 +3322,7 @@ fn parse_ai_file_reference(target: &str) -> protocol::Result<(&str, usize)> {
     if let Some(relative) = path.strip_prefix("./") {
         path = relative;
     }
-    #[cfg(windows)]
-    let native_absolute = Path::new(path).is_absolute()
-        && matches!(
-            Path::new(path).components().next(),
-            Some(std::path::Component::Prefix(prefix))
-                if matches!(prefix.kind(), std::path::Prefix::Disk(_) | std::path::Prefix::VerbatimDisk(_))
-        );
-    #[cfg(not(windows))]
-    let native_absolute = false;
-    let checked = if native_absolute {
-        &path.strip_prefix(r"\\?\").unwrap_or(path)[2..]
-    } else {
-        path
-    };
-    if path.is_empty()
-        || checked.contains([':', '?', '#'])
-        || (!native_absolute && path.contains('\\'))
-        || path.starts_with("//")
-    {
+    if path.is_empty() || path.contains([':', '?', '#', '\\']) || path.starts_with("//") {
         return Err(invalid());
     }
     Ok((path, line))
@@ -3845,28 +3806,6 @@ mod tests {
         assert!(parse_ai_file_reference(&"x".repeat(4097)).is_err());
     }
 
-    #[cfg(windows)]
-    #[test]
-    fn windows_file_references_accept_drives_but_reject_streams_and_network_paths() {
-        for (target, expected) in [
-            (r"C:\project\file.rs", (r"C:\project\file.rs", 1)),
-            ("C:/project/file.rs:12:3", ("C:/project/file.rs", 12)),
-            (r"\\?\C:\project\file.rs#L4", (r"\\?\C:\project\file.rs", 4)),
-        ] {
-            assert_eq!(parse_ai_file_reference(target).unwrap(), expected);
-        }
-        for target in [
-            r"C:relative.rs",
-            r"C:\project\file.rs:stream",
-            r"C:\project\file.rs:stream:4",
-            r"\\server\share\file.rs",
-            r"\\?\UNC\server\share\file.rs",
-            r"\\.\C:\project\file.rs",
-        ] {
-            assert!(parse_ai_file_reference(target).is_err(), "{target:?}");
-        }
-    }
-
     #[test]
     fn ai_file_links_resolve_only_attached_roots_without_changing_session() {
         let (root, _state, app, token) = test_app();
@@ -3900,21 +3839,6 @@ mod tests {
         assert_eq!(reply["projectId"], attached["projectId"]);
         assert_eq!(reply["path"], "other.md");
         assert_eq!(reply["line"], 7);
-        #[cfg(windows)]
-        {
-            let native = other_root.to_str().unwrap();
-            let ordinary = native.strip_prefix(r"\\?\").unwrap_or(native);
-            for root in [ordinary.to_owned(), ordinary.replace('\\', "/")] {
-                let reply = resolve_ai_file_link(
-                    &app.session.lock().unwrap(),
-                    before["projectId"].as_str().unwrap(),
-                    &format!("{root}/other.md:7"),
-                )
-                .unwrap();
-                assert_eq!(reply["projectId"], attached["projectId"]);
-                assert_eq!(reply["path"], "other.md");
-            }
-        }
         let relative = execute(
             &app,
             "desktop",
@@ -5788,7 +5712,7 @@ mod tests {
         .await;
         assert_eq!(response.status(), StatusCode::OK);
         let cookie = response.headers()[header::SET_COOKIE].to_str().unwrap();
-        assert!(cookie.starts_with("__Host-nimlo_session="));
+        assert!(cookie.starts_with("__Host-nimlo_neovim_session="));
         assert!(cookie.contains("; Secure"));
         assert_eq!(
             execute(
@@ -6277,12 +6201,12 @@ mod tests {
         public.remove(header::AUTHORIZATION);
         public.insert(
             header::COOKIE,
-            HeaderValue::from_str(&format!("nimlo_session={token}")).unwrap(),
+            HeaderValue::from_str(&format!("nimlo_neovim_session={token}")).unwrap(),
         );
         assert!(app.token(&public, peer, "https://nimlo.example").is_none());
         public.insert(
             header::COOKIE,
-            HeaderValue::from_str(&format!("__Host-nimlo_session={token}")).unwrap(),
+            HeaderValue::from_str(&format!("__Host-nimlo_neovim_session={token}")).unwrap(),
         );
         assert!(app.token(&public, peer, "https://nimlo.example").is_some());
         let query = serde_json::from_value::<ConnectionQuery>(json!({"token":root_token})).unwrap();

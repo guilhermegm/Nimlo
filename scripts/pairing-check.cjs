@@ -93,8 +93,8 @@ async function run() {
   const pc = await connect('pairing-desktop',rootCookie);
   await check('private PC credentials cannot authenticate the public authority', async () => {
     assert.equal((await request('/api/bootstrap',{remote:true,token:rootToken})).status,401);
-    assert.equal((await request('/api/bootstrap',{remote:true,cookie:'__Host-nimlo_session='+rootToken})).status,401);
-    await rejectedUpgrade({remote:true,cookie:'__Host-nimlo_session='+rootToken},401);
+    assert.equal((await request('/api/bootstrap',{remote:true,cookie:'__Host-nimlo_neovim_session='+rootToken})).status,401);
+    await rejectedUpgrade({remote:true,cookie:'__Host-nimlo_neovim_session='+rootToken},401);
   });
   const invitation = () => pc.command('pair_create',{origin:publicOrigin});
   const submit = (invite,code,fields={}) => request('/api/pair',{remote:true,method:'POST',body:{invite,code},requestOrigin:publicOrigin,...fields});
@@ -112,14 +112,14 @@ async function run() {
   let phoneCookie;
   await check('a valid link and code still pair after unrelated failed requests', async () => {
     const response = await submit(first.invite,first.code); assert.equal(response.status,200); phoneCookie=response.cookie;
-    const cookie=response.headers.get('set-cookie'); assert.match(cookie,/^__Host-nimlo_session=/);
+    const cookie=response.headers.get('set-cookie'); assert.match(cookie,/^__Host-nimlo_neovim_session=/);
     for(const attribute of ['Secure','HttpOnly','SameSite=Strict','Path=/']) assert(cookie.includes(attribute)); assert(!cookie.includes('Domain='));
   });
   await check('invitation and code are single use', async () => {assert.equal((await submit(first.invite,first.code)).status,401);});
   await check('paired credentials cannot be replayed through localhost', async () => {
     assert.equal((await request('/api/bootstrap',{cookie:phoneCookie})).status,401);
-    const value=phoneCookie.split('=')[1];assert.equal((await request('/api/bootstrap',{cookie:'nimlo_session='+value})).status,401);
-    await rejectedUpgrade({cookie:'nimlo_session='+value},401);
+    const value=phoneCookie.split('=')[1];assert.equal((await request('/api/bootstrap',{cookie:'nimlo_neovim_session='+value})).status,401);
+    await rejectedUpgrade({cookie:'nimlo_neovim_session='+value},401);
   });
   const phone = await connect('pairing-phone',phoneCookie,true);
   const phoneTab = await connect('pairing-phone-tab',phoneCookie,true);

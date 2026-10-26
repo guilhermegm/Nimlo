@@ -2,7 +2,7 @@
 'use strict';
 // Focused native-control fixture. The embedded host workflow is checked separately.
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),crypto=require('node:crypto');
-const playwright=require(process.env.PLAYWRIGHT_PATH||path.resolve(__dirname,'../../mini_gym/node_modules/playwright'));
+const playwright=require(process.env.PLAYWRIGHT_PATH||'playwright');
 const engine=process.env.NIMLO_BROWSER||'chromium',repo=path.resolve(__dirname,'..'),editorSource=path.resolve(process.env.EDITOR_SOURCE||path.join(repo,'web/editor.js')),checks=[],measurements={};
 let browser,page;
 async function check(name,fn){await fn();checks.push(name);console.log('PASS '+name);}

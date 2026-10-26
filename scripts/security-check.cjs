@@ -35,7 +35,7 @@ let WebSocket;
 function safe(error) {
   let text = error instanceof Error ? error.message : String(error);
   for (const secret of secrets) text = text.split(secret).join('[REDACTED]');
-  return text.replace(/([?#&](?:token|invite)=|nimlo_session=)[^\s;&]+/g, '$1[REDACTED]');
+  return text.replace(/([?#&](?:token|invite)=|nimlo_neovim_session=)[^\s;&]+/g, '$1[REDACTED]');
 }
 function delay(ms) { return new Promise(resolve => setTimeout(resolve, ms)); }
 async function until(predicate, message, timeout = 8000) {
@@ -61,7 +61,7 @@ function loadWs() {
   const candidates = [
     process.env.NIMLO_WS_MODULE,
     'ws',
-    path.join(repo, '../mini_gym/node_modules/ws'),
+    'ws',
   ].filter(Boolean);
   for (const candidate of candidates) {
     try { return require(candidate); } catch { /* Try the next supported path. */ }
@@ -257,7 +257,7 @@ async function main() {
   const rootBootstrap = await http(host, '/api/bootstrap', { token: host.token });
   assert.equal(rootBootstrap.status, 200);
   const rootCookie = rootBootstrap.cookie;
-  secrets.add(rootCookie.slice('nimlo_session='.length));
+  secrets.add(rootCookie.slice('nimlo_neovim_session='.length));
   let controller = await connect(host, 'security-controller', rootCookie);
   let generation = (await controller.initial()).generation;
   await check('cross-origin WebSocket upgrade returns 403', async () => {
@@ -295,7 +295,7 @@ async function main() {
   const pairing = await http(host, '/api/pair', { method: 'POST', origin: host.origin, body: { code: pairCode, invite: invitation.invite } });
   assert.equal(pairing.status, 200);
   const phoneCookie = pairing.cookie;
-  secrets.add(phoneCookie.slice('nimlo_session='.length));
+  secrets.add(phoneCookie.slice('nimlo_neovim_session='.length));
   await check('pairing code is single use', async () => {
     assert.equal((await http(host, '/api/pair', { method: 'POST', origin: host.origin, body: { code: pairCode, invite: invitation.invite } })).status, 401);
     return { httpStatusAfterReuse: 401 };
@@ -433,6 +433,11 @@ async function main() {
 
   let draftRevision;
   await check('acknowledged edit is unsaved and does not alter the project file', async () => {
+    // Creating the peer's replacement file selected it and unloaded this saved
+    // buffer. Reopen it before submitting an edit against its fresh revision.
+    const reopened = await controller.request({ type: 'open_file', path: 'note.txt' });
+    assert.equal(reopened.type, 'file_state');
+    revision = reopened.file.revision;
     const response = await controller.request({ type: 'edit_file', path: 'note.txt', baseRevision: revision, content: draft, generation });
     assert.equal(response.type, 'file_state');
     assert.equal(response.file.dirty, true);

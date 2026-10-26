@@ -7,7 +7,7 @@ const actions=require('./ui-actions.cjs');
 // Optional: NIMLO_BINARY, PLAYWRIGHT_PATH, CHROME_PATH, NIMLO_REMOTE_IP.
 // Providers are local fake CLIs; this script never requests paid AI inference.
 const fs=require('node:fs'),path=require('node:path'),os=require('node:os'),assert=require('node:assert/strict'),{spawn}=require('node:child_process');
-const playwright=require(process.env.PLAYWRIGHT_PATH || path.resolve(__dirname,'../../mini_gym/node_modules/playwright'));
+const playwright=require(process.env.PLAYWRIGHT_PATH || 'playwright');
 const browserEngine=process.env.NIMLO_BROWSER || 'chromium';
 if(!['chromium','webkit'].includes(browserEngine))throw new Error('NIMLO_BROWSER must be chromium or webkit');
 const reportName=browserEngine==='webkit'?'setup-webkit.json':'setup.json';

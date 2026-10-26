@@ -92,6 +92,9 @@ class NimloDraftStore {
 (() => {
   const $ = id => document.getElementById(id);
   const app = $('app'), input = $('code-input');
+  const nativeWorkspace=window.nimloNativeWorkspace===true && !!window.webkit?.messageHandlers?.nimloWorkspace;
+  let nativeSelectionReady=Promise.resolve(), nativeSelectionPending=false, nativeSelectEpoch=0, nativeSubmitWaiting=false;
+  function nativePost(value) { if (nativeWorkspace) window.webkit?.messageHandlers?.nimloWorkspace?.postMessage(value); }
   const editor=globalThis.NimloEditor ? new NimloEditor(input) : new NimloNativeEditor(input); window.nimloEditor=editor;
   const typing={doc:null,pairs:[],pending:null,syntax:null};
   // Only an open find bar retains results; dense files keep at most 10,000
@@ -99,7 +102,7 @@ class NimloDraftStore {
   const fileFind={open:false,doc:null,text:null,query:'',matchCase:false,positions:[],capped:false,active:null,anchor:0,marks:0};
   const findLimit=10000;
   const mobileQuery='(max-width:760px), (pointer:coarse) and (max-height:600px) and (max-width:1100px)';
-  const mobile = () => matchMedia(mobileQuery).matches;
+  const mobile = () => !nativeWorkspace && matchMedia(mobileQuery).matches;
   let layoutDevice=mobile() ? 'phone' : 'desktop';
   function preferredAiLayout(device=layoutDevice) {
     try { const saved=sessionStorage.getItem('relay-ai-layout:'+device); if (saved==='split' || saved==='tab') return saved; } catch {}
@@ -1530,6 +1533,7 @@ class NimloDraftStore {
     syncViewControls(); if (mode==='code') restoreCodeView(); if (aiVisible()) renderAi(true); paintCode(); paintTerminal(); scheduleResize(); updateControls();
   }
   async function openFile(path) {
+    if (nativeWorkspace) { closeMenu(); nativePost({type:'openFile',projectId:state.projectId,path,line:1}); return; }
     const projectId=state.projectId, generation=state.generation;
     closeMenu();
     if (mobile() || (aiOpen() && app.dataset.aiLayout==='tab')) setMobileView('code'); if (!mobile()) input.focus();
@@ -2356,6 +2360,7 @@ class NimloDraftStore {
     const projectId=state.projectId, generation=state.generation;
     if (canEdit()) await flushAll(); ensureProject(projectId,generation);
     const result=await command('ai_open_file',{target}); ensureProject(projectId,generation);
+    if (nativeWorkspace) { nativePost({type:'openFile',projectId:result.projectId,path:result.path,line:result.line}); return; }
     await openProjectFile(result.projectId,result.path);
     if (state.projectId!==result.projectId || current()?.path!==result.path) return;
     const text=editor.value; let start=0, line=1;
@@ -2552,7 +2557,12 @@ class NimloDraftStore {
   }
   $('messages').addEventListener('scroll',() => { if (aiVisible()) state.messageScrollTop=$('messages').scrollTop; },{passive:true});
   $('prompt-form').onsubmit=event => {
-    event.preventDefault(); if (!canRunAi()) return notice('AI actions require AI, file editing and terminal access.',true); const prompt=$('prompt').value.trim(); if (!prompt) return;
+    event.preventDefault();
+    if (nativeWorkspace && nativeSelectionPending) {
+      if (nativeSubmitWaiting) return;nativeSubmitWaiting=true;
+      nativeSelectionReady.then(()=>{nativeSubmitWaiting=false;$('prompt-form').requestSubmit();}).catch(error=>{nativeSubmitWaiting=false;notice(error.message,true);});return;
+    }
+    if (!canRunAi()) return notice('AI actions require AI, file editing and terminal access.',true); const prompt=$('prompt').value.trim(); if (!prompt) return;
     const projectId=state.projectId, generation=state.generation;
     safe(async () => {
       await flushAll(); ensureProject(projectId,generation); if ([...state.docs.values()].some(doc => doc.dirty)) throw new Error('Save your open files before asking AI, so it sees the current code on disk.');
@@ -2679,6 +2689,77 @@ class NimloDraftStore {
         }
         return {pending,work,dirty};
       } catch { return {pending:true,work:true,dirty:true}; }
+    }
+  });
+  // A single transparent tools view shares this window with the native editor.
+  // Only bounded geometry and host-validated file links cross the native bridge.
+  let nativeActive=false, nativeLayoutPending=false, nativeLastLayout='', nativeOpenEpoch=0;
+  function reportNativeLayout() {
+    if (!nativeWorkspace) return;
+    const surface=document.querySelector('.codebox');surface.inert=true;
+    surface.setAttribute('aria-hidden','true');
+    const rect=surface.getBoundingClientRect();
+    const overlays=[...document.querySelectorAll('dialog[open],.popover:not([hidden]),#notice:not([hidden])')].filter(el=>el.getClientRects().length>0).slice(0,16).map(el=>{const r=el.getBoundingClientRect();return {x:Math.max(0,r.x-12),y:Math.max(0,r.y-12),width:r.width+24,height:r.height+24};});
+    const value={type:'layout',x:Math.max(0,rect.x),y:Math.max(0,rect.y),width:rect.width,height:rect.height,overlays,
+      ai:aiOpen(),terminal:terminalOpen,modal:!!document.querySelector('dialog[open]'),
+      popover:[...document.querySelectorAll('.popover:not([hidden])')].some(el=>el.getClientRects().length>0),active:nativeActive && !nativeSelectionPending};
+    const encoded=JSON.stringify(value);if(encoded===nativeLastLayout)return;nativeLastLayout=encoded;nativePost(value);
+  }
+  function scheduleNativeLayout() {
+    if (!nativeWorkspace || nativeLayoutPending) return;
+    nativeLayoutPending=true;queueMicrotask(()=>{nativeLayoutPending=false;reportNativeLayout();});
+  }
+  if (nativeWorkspace) {
+    document.body.dataset.nativeWorkspace='yes';
+    new MutationObserver(scheduleNativeLayout).observe(app,{attributes:true,attributeFilter:['data-ai-open','data-terminal','data-ai-layout','data-view']});
+    for (const el of document.querySelectorAll('dialog,.popover,#notice')) new MutationObserver(scheduleNativeLayout).observe(el,{attributes:true,attributeFilter:['open','hidden']});
+    const observer=new ResizeObserver(scheduleNativeLayout);observer.observe(app);
+    for (const el of document.querySelectorAll('dialog,.popover,#notice')) observer.observe(el);
+    const heading=$('ai-project-toggle').parentElement;const title=document.createElement('span');title.className='surface-title';title.textContent='AI';heading.prepend(title);
+    const close=document.createElement('button');close.id='native-close-ai';close.type='button';close.className='icon';close.setAttribute('aria-label','Close AI');close.title='Close AI';close.append(symbolIcon('i-close'));close.onclick=()=>$('close-ai').click();heading.append(close);
+    addEventListener('resize',scheduleNativeLayout);
+    document.addEventListener('close',scheduleNativeLayout,true);
+  }
+  function selectNativeFile(projectId,path) {
+    const epoch=++nativeSelectEpoch;nativeSelectionPending=true;
+    nativeSelectionReady=nativeSelectionReady.catch(()=>{}).then(async()=>{
+      if (epoch!==nativeSelectEpoch) return;
+      const mode=app.dataset.view,showAi=aiOpen(),showTerminal=terminalOpen;
+      if (projectId && state.projectId!==projectId) { await selectProject(projectId);restoreWorkingSurface(mode,showTerminal,showAi); }
+      if (epoch!==nativeSelectEpoch) return;
+      if (path && current()?.path!==path) await command('open_file',{path},true);
+    }).finally(()=>{if(epoch===nativeSelectEpoch)nativeSelectionPending=false;reportNativeLayout();});
+    return nativeSelectionReady.then(()=>true);
+  }
+  window.nimloNeovimCompanion=Object.freeze({
+    select(projectId,path) { if (!state.connected || !nativeWorkspace) return false;return selectNativeFile(projectId,path); },
+    async open(view,projectId,fresh=false,path='',panels=[]) {
+      if (!state.connected || !state.isHost) return false;
+      const epoch=++nativeOpenEpoch;
+      if (nativeWorkspace) await selectNativeFile(projectId,path);
+      else if (projectId && state.projectId!==projectId) await selectProject(projectId);
+      if (epoch!==nativeOpenEpoch) return true;
+      closeMenu();
+      if (nativeWorkspace) {
+        app.dataset.aiLayout='split';
+        if (fresh) {
+          app.dataset.aiOpen='no';terminalOpen=false;app.dataset.terminal='closed';$('terminal-panel').hidden=true;
+          setMobileView('code');syncViewControls();
+          if (panels.includes('ai')) { toggleAi(true);$('prompt').focus({preventScroll:true}); }
+          if (panels.includes('terminal')) await toggleTerminal(true);
+        }
+        if (!fresh && view==='ai') { toggleAi(); if (aiOpen()) $('prompt').focus({preventScroll:true}); }
+        else if (!fresh && view==='terminal') await toggleTerminal();
+      } else {
+        if (view==='ai') { app.dataset.aiLayout='tab'; setMobileView('ai'); }
+        else if (view==='terminal') { await toggleTerminal(true); setMobileView('terminal'); }
+      }
+      if (view==='sharing') $('pair-phone').click();
+      else if (view==='settings') await openSettings();
+      else if (view==='drafts') showDeviceDrafts();
+      else if (view==='permissions') $('session-permissions').click();
+      nativeActive=true;reportNativeLayout();
+      return true;
     }
   });
   let pcOpenTimer, pcOpenEpoch=0, authEpoch=0;

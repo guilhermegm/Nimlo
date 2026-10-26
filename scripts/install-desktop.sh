@@ -33,9 +33,9 @@ if [ -e "$nimlo_target" ]; then
 fi
 # File identity also catches launches through an aliased parent directory, such
 # as /var versus /private/var, without parsing executable paths from ps output.
-nimlo_running=$(/usr/sbin/lsof -t -- "$nimlo_target/Contents/MacOS/Nimlo" "$nimlo_target/Contents/Resources/nimlo-editor" 2>/dev/null || true)
+nimlo_running=$(/usr/sbin/lsof -t -- "$nimlo_target/Contents/MacOS/Nimlo" "$nimlo_target/Contents/Resources/nimlo-host" 2>/dev/null || true)
 if [ -n "$nimlo_running" ]; then
-  echo 'Quit the installed Nimlo app before deploying. Closing its window keeps its host running.' >&2
+  echo 'Quit the installed Nimlo before replacing it.' >&2
   exit 1
 fi
 

@@ -9,7 +9,7 @@ const os = require('node:os');
 const crypto = require('node:crypto');
 const assert = require('node:assert/strict');
 const {spawn} = require('node:child_process');
-const playwright = require(process.env.PLAYWRIGHT_PATH || path.resolve(__dirname, '../../mini_gym/node_modules/playwright'));
+const playwright = require(process.env.PLAYWRIGHT_PATH || 'playwright');
 
 const engine = process.env.NIMLO_BROWSER || 'chromium';
 assert(['chromium', 'webkit'].includes(engine), 'Use Chromium or WebKit');

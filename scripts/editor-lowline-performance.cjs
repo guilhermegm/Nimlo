@@ -4,7 +4,7 @@
 // separate native macOS fixture and includes the app, host and WebKit processes.
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),crypto=require('node:crypto');
 const {performance}=require('node:perf_hooks');
-const playwright=require(process.env.PLAYWRIGHT_PATH||path.resolve(__dirname,'../../mini_gym/node_modules/playwright'));
+const playwright=require(process.env.PLAYWRIGHT_PATH||'playwright');
 const root=path.resolve(__dirname,'..'),engine=process.env.NIMLO_BROWSER||'webkit';
 const before=path.resolve(process.env.EDITOR_BASELINE||path.join(root,'target/final-local-performance/baseline/editor.js'));
 const after=path.resolve(process.env.EDITOR_CANDIDATE||path.join(root,'web/editor.js'));

@@ -1,0 +1,7 @@
+{
+  "version": "0.12.6",
+  "architecture": "arm64",
+  "url": "https://github.com/neovim/neovim/releases/download/v0.12.6/nvim-macos-arm64.tar.gz",
+  "sha256": "1dbd148222b051ba6c307c4d17a318ed083df018a4f6a5a0ce46955ffc9ab87b",
+  "release": "https://github.com/neovim/neovim/releases/tag/v0.12.6"
+}

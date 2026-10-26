@@ -14,7 +14,7 @@ const started=Date.now();
 let host, browser, publicOrigin, memory;
 const delay=ms=>new Promise(resolve=>setTimeout(resolve,ms));
 async function until(fn,label,ms=15000){const end=Date.now()+ms;while(Date.now()<end){if(await fn())return;await delay(100);}throw new Error(label);}
-function sanitize(text){return String(text).replace(/(?:token=|invite=|Bearer )[a-f0-9]{64}/g,'[private token]').replace(/nimlo_session=[a-f0-9]{64}/g,'nimlo_session=[private]');}
+function sanitize(text){return String(text).replace(/(?:token=|invite=|Bearer )[a-f0-9]{64}/g,'[private token]').replace(/nimlo_neovim_session=[a-f0-9]{64}/g,'nimlo_neovim_session=[private]');}
 async function connect(origin,cookie,id){
   const ws=new WebSocket(origin.replace(/^http/,'ws')+'/ws?clientId='+id+'&name=InternetTest',{headers:{Cookie:cookie,Origin:origin}});
   const events=[],pending=new Map();let seq=0;
@@ -35,7 +35,7 @@ async function run(){
   await until(()=>/http:\/\/127\.0\.0\.1:\d+\/#token=[a-f0-9]{64}/.test(output),'Host launch failed');
   const launch=output.match(/http:\/\/127\.0\.0\.1:\d+\/#token=[a-f0-9]{64}/)[0];output='';
   const localOrigin=new URL(launch).origin,token=new URLSearchParams(new URL(launch).hash.slice(1)).get('token');
-  const local=await connect(localOrigin,'nimlo_session='+token,'internet-live-desktop');
+  const local=await connect(localOrigin,'nimlo_neovim_session='+token,'internet-live-desktop');
   await check('internet connector starts only when requested',async()=>{
     assert.equal(local.bootstrap.internet.status,'off');
     await local.command('internet_start');

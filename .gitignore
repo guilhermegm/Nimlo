@@ -9,5 +9,6 @@ node_modules/
 *.pem
 *.key
 
-# Python release tooling cache
+# Disposable inherited browser reports and Python tooling caches.
+/tests/
 __pycache__/

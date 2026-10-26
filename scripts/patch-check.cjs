@@ -5,7 +5,7 @@
 // local fake account probes and ephemeral authenticated peers are used.
 const fs=require('node:fs'),path=require('node:path'),os=require('node:os'),crypto=require('node:crypto'),vm=require('node:vm');
 const assert=require('node:assert/strict'),{spawn}=require('node:child_process');
-const WebSocket=require(process.env.NIMLO_WS_MODULE||path.resolve(__dirname,'../../mini_gym/node_modules/ws'));
+const WebSocket=require(process.env.NIMLO_WS_MODULE||'ws');
 const repo=path.resolve(__dirname,'..'),binary=path.resolve(repo,process.env.NIMLO_BINARY||'target/release/nimlo-editor');
 const output=path.resolve(process.env.PATCH_OUTPUT||path.join(repo,'tests/patch-check.json'));
 const checks=[],peers=new Set(),secrets=new Set(),pause=ms=>new Promise(resolve=>setTimeout(resolve,ms));
@@ -201,7 +201,7 @@ async function hostProofs(){
 }
 
 async function browserDraftProofs({workspace,other}){
-  const playwright=require(process.env.PLAYWRIGHT_PATH||path.resolve(__dirname,'../../mini_gym/node_modules/playwright'));
+  const playwright=require(process.env.PLAYWRIGHT_PATH||'playwright');
   const engine=process.env.NIMLO_BROWSER||'chromium',browser=await playwright[engine].launch({headless:true,...(engine==='chromium'?{executablePath:process.env.CHROME_PATH||'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'}:{})});
   try{
     const context=await browser.newContext({viewport:{width:390,height:844},acceptDownloads:true}),text='Deleted file pending text: 日本 😀 e\u0301\n'+('recover exactly\n').repeat(200),errors=[];

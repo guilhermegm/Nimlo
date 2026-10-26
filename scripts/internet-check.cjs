@@ -25,7 +25,7 @@ function option(name, fallback) {
 const binary = option('--binary', path.join(repo, 'target/release/nimlo-editor'));
 const output = option('--out', path.join(repo, 'tests/internet.json'));
 let WebSocket;
-for (const candidate of [process.env.NIMLO_WS_MODULE, 'ws', path.resolve(repo, '../mini_gym/node_modules/ws')].filter(Boolean)) {
+for (const candidate of [process.env.NIMLO_WS_MODULE, 'ws', 'ws'].filter(Boolean)) {
   try { WebSocket = require(candidate); break; } catch { /* Try the next package. */ }
 }
 if (!WebSocket) throw new Error('Install ws or set NIMLO_WS_MODULE to its package path.');
@@ -36,7 +36,7 @@ const alive = pid => { try { process.kill(pid, 0); return true; } catch (error) 
 function safe(error) {
   let message = error instanceof Error ? error.message : String(error);
   for (const secret of secrets) message = message.split(secret).join('[REDACTED]');
-  return message.replace(/([?#&](?:token|invite)=|nimlo_session=)[^\s;&]+/g, '$1[REDACTED]');
+  return message.replace(/([?#&](?:token|invite)=|nimlo_neovim_session=)[^\s;&]+/g, '$1[REDACTED]');
 }
 async function until(predicate, label, milliseconds = 10000) {
   const deadline = Date.now() + milliseconds;
@@ -126,7 +126,7 @@ async function request(endpoint, route, { cookie, token, origin, method = 'GET',
       let text = ''; response.on('data', chunk => { text += chunk; }); response.on('end', () => {
         let value; try { value = JSON.parse(text); } catch { value = text; }
         const setCookie = response.headers['set-cookie']?.[0];
-        if (setCookie) secrets.add(setCookie.split(';')[0].slice('nimlo_session='.length));
+        if (setCookie) secrets.add(setCookie.split(';')[0].slice('nimlo_neovim_session='.length));
         resolve({ status: response.statusCode, value, setCookie, cookie: setCookie?.split(';')[0] });
       });
     });

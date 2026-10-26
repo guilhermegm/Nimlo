@@ -6,6 +6,6 @@ if [ ! -x "$nimlo_root/target/release/nimlo-editor" ]; then
 fi
 if [ "$#" -eq 0 ]; then
   cd "$nimlo_root"
-  set -- --resume-project --listen 127.0.0.1:8765
+  set -- --resume-project --listen 127.0.0.1:8875
 fi
 exec "$nimlo_root/target/release/nimlo-editor" --open-browser "$@"

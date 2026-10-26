@@ -3,7 +3,7 @@
 // Real embedded browser/host test, using disposable files and no AI inference.
 const fs=require('node:fs'),path=require('node:path'),os=require('node:os'),crypto=require('node:crypto'),assert=require('node:assert/strict');
 const {spawn}=require('node:child_process');
-const playwright=require(process.env.PLAYWRIGHT_PATH||path.resolve(__dirname,'../../mini_gym/node_modules/playwright'));
+const playwright=require(process.env.PLAYWRIGHT_PATH||'playwright');
 const engine=process.env.NIMLO_BROWSER||'chromium',repo=path.resolve(__dirname,'..'),binary=path.resolve(repo,process.env.NIMLO_BINARY||'target/release/nimlo-editor');
 const sha=crypto.createHash('sha256').update(fs.readFileSync(binary)).digest('hex');
 const tmp=fs.realpathSync(fs.mkdtempSync(path.join(os.tmpdir(),'nimlo-keyboard-'))),root=path.join(tmp,'project'),other=path.join(tmp,'other'),bin=path.join(tmp,'bin');

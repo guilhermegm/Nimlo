@@ -799,3 +799,25 @@ dialog header .icon { color: var(--muted); }
   .device-actions { flex-direction: column; }
   .device-actions button { min-height: 44px; }
 }
+
+/* In-app Neovim workspace: the source area is a transparent opening onto
+   AppKit. The existing AI, terminal and modal surfaces keep their handlers. */
+html[data-native-workspace=yes], body[data-native-workspace=yes], body[data-native-workspace=yes] .app { background: transparent; }
+body[data-native-workspace=yes] { --edge: 0px; --canvas-top: 0px; --native-ai-width: min(400px, calc(100% - 260px)); --native-terminal-height: min(260px, 42vh); }
+body[data-native-workspace=yes] .top,
+body[data-native-workspace=yes] .workspace-bar { display: none !important; }
+body[data-native-workspace=yes] .codebox { display: block !important; position: absolute; inset: 0; background: transparent; border: 0; }
+body[data-native-workspace=yes] .codebox > * { visibility: hidden !important; pointer-events: none !important; }
+body[data-native-workspace=yes] .app[data-ai-open=yes] .codebox { right: var(--native-ai-width); }
+body[data-native-workspace=yes] .app[data-terminal=open] .codebox { bottom: var(--native-terminal-height); }
+body[data-native-workspace=yes] .app .ai { left: auto; right: 0; top: 0; bottom: 0; width: var(--native-ai-width); border: 0; border-left: 1px solid var(--line); border-radius: 0; box-shadow: none; }
+body[data-native-workspace=yes] .app[data-ai-open=yes] .ai { display: flex !important; }
+body[data-native-workspace=yes] .app .terminal { display: flex; left: 0; right: 0; bottom: 0; height: var(--native-terminal-height); border: 0; border-top: 1px solid var(--line); border-radius: 0; box-shadow: none; }
+body[data-native-workspace=yes] .app[data-ai-open=yes] .terminal { right: var(--native-ai-width); }
+body[data-native-workspace=yes] .ai > .panel-heading { display: flex !important; align-items: center; justify-content: space-between; min-height: 42px; padding: 4px 10px 4px 12px; border-bottom: 1px solid var(--line); }
+body[data-native-workspace=yes] .app .terminal-heading { padding-top: 0; }
+body[data-native-workspace=yes] dialog { max-width: calc(100% - 32px); }
+
+body[data-native-workspace=yes] #ai-project-toggle,
+body[data-native-workspace=yes] #terminal-project-toggle { display: none !important; }
+body[data-native-workspace=yes] .terminal-heading > .surface-title { display: inline !important; }

@@ -5,10 +5,10 @@
 // verification searches metadata only and cancels without opening a file.
 const fs=require('node:fs'),path=require('node:path'),os=require('node:os'),assert=require('node:assert/strict');
 const {spawn}=require('node:child_process');
-const playwright=require(process.env.PLAYWRIGHT_PATH||path.resolve(__dirname,'../../mini_gym/node_modules/playwright'));
+const playwright=require(process.env.PLAYWRIGHT_PATH||'playwright');
 const engine=process.env.NIMLO_BROWSER||'chromium',repo=path.resolve(__dirname,'..');
 const out=path.join(repo,'target/file-navigation-review',engine),fixture=fs.realpathSync(fs.mkdtempSync(path.join(os.tmpdir(),'nimlo-file-navigation-')));
-const root=path.join(fixture,'project'),bin=path.join(fixture,'bin'),folder='docs/branding/novus-unbound/logo-exploration';
+const root=path.join(fixture,'project'),bin=path.join(fixture,'bin'),folder='docs/branding/sample-project/logo-exploration';
 const target=folder+'/logo-v03-master-prompt.txt',longName='logo-v03-master-prompt-with-a-long-descriptive-name-and-unique-ending.txt';
 const checks=[],layouts=[],errors=[];let browser,host,page,url;
 for(const dir of [root,bin,out,path.join(root,'bulk')])fs.mkdirSync(dir,{recursive:true});
@@ -103,7 +103,7 @@ async function expand(){
     await page.click('#menu-close');await page.setViewportSize({width:1280,height:800});
     await rpc('add_project',{path:process.env.NIMLO_NAVIGATION_REAL_ROOT});
     await picker('logo-v03-master-prompt.txt');
-    await page.waitForFunction(()=>[...document.querySelectorAll('.command-result small')].some(e=>e.textContent.endsWith('docs/branding/novus-unbound/logo-exploration/logo-v03-master-prompt.txt')),null,{timeout:120000});
+    await page.waitForFunction(()=>[...document.querySelectorAll('.command-result small')].some(e=>e.textContent.endsWith('docs/branding/sample-project/logo-exploration/logo-v03-master-prompt.txt')),null,{timeout:120000});
     await page.screenshot({path:path.join(out,'original-project-search.png')});await page.keyboard.press('Escape');
   });
   assert.deepEqual(errors,[]);

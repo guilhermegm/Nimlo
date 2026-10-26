@@ -5,7 +5,7 @@
 // The opened private URL is consumed only in memory; no credentials enter reports.
 const fs=require('node:fs'),path=require('node:path'),os=require('node:os'),assert=require('node:assert/strict'),crypto=require('node:crypto');
 const {spawn}=require('node:child_process');
-const playwright=require(process.env.PLAYWRIGHT_PATH||path.resolve(__dirname,'../../mini_gym/node_modules/playwright'));
+const playwright=require(process.env.PLAYWRIGHT_PATH||'playwright');
 const engine=process.env.NIMLO_BROWSER||'chromium';
 if(!['chromium','webkit'].includes(engine))throw new Error('Unsupported browser engine');
 const repo=path.resolve(__dirname,'..'),binary=path.join(repo,'target/release/nimlo-editor');
@@ -50,7 +50,7 @@ function writeReport(status){fs.writeFileSync(path.join(artifacts,report),JSON.s
   assert.equal(credentials.length,0);
  });
  await check('An invalid host credential leaves the welcome usable and the editor locked',async()=>{await pc.fill('#launch-link',canonicalUrl+'#token='+('0'.repeat(64)));await pc.click('#launch-submit');await pc.locator('#pc-open-error').waitFor({state:'visible'});assert((await pc.locator('#pc-open-error').textContent()).includes('no longer valid'));await welcome(pc);assert.equal(await pc.inputValue('#launch-link'),'');assert.equal(await pc.evaluate(async()=> (await fetch('/api/bootstrap')).status),401);});
- await check('Fallback signs in, clears secrets and restores a real editable connection',async()=>{await pc.fill('#launch-link',privateUrl);await pc.click('#launch-submit');await signedIn(pc);assert.equal(await pc.inputValue('#launch-link'),'');assert(await pc.locator('#pc-open-error').isHidden());const cookie=(await pcContext.cookies()).find(c=>c.name==='nimlo_session');assert(cookie&&cookie.httpOnly&&cookie.sameSite==='Strict');await pc.reload();await signedIn(pc);});
+ await check('Fallback signs in, clears secrets and restores a real editable connection',async()=>{await pc.fill('#launch-link',privateUrl);await pc.click('#launch-submit');await signedIn(pc);assert.equal(await pc.inputValue('#launch-link'),'');assert(await pc.locator('#pc-open-error').isHidden());const cookie=(await pcContext.cookies()).find(c=>c.name==='nimlo_neovim_session');assert(cookie&&cookie.httpOnly&&cookie.sameSite==='Strict');await pc.reload();await signedIn(pc);});
  await check('A signed-in PC can type plain localhost again without an entry screen or opener',async()=>{await pc.goto(localUrl);await signedIn(pc);assert.equal(new URL(pc.url()).origin,new URL(canonicalUrl).origin);});
  const hashContext=await context(),hashPage=await page(hashContext);
  await check('Private-link same-document navigation recovers the nonmodal entry page',async()=>{await hashPage.goto(canonicalUrl);await welcome(hashPage);await hashPage.evaluate(hash=>{location.hash=hash;},new URL(privateUrl).hash);await signedIn(hashPage);});

@@ -1,9 +1,0 @@
-{
-  "projectId": "nimlo-editor",
-  "projectNumber": "679300317661",
-  "displayName": "Nimlo",
-  "siteId": "nimlo-editor-updates",
-  "feedURL": "https://nimlo-editor-updates.web.app/stable/latest.json",
-  "archiveBaseURL": "https://nimlo-editor-updates.web.app/stable/",
-  "deployTarget": "nimlo-updates"
-}
