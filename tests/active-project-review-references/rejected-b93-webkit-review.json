@@ -1,0 +1,885 @@
+{
+  "status": "reject",
+  "date": "2026-10-11T05:35:59.468Z",
+  "binarySha256": "b93ce45810c22a7f3bc868a65ce920eae2cb93fce141178e3ea7b874b40d0d8d",
+  "browserEngine": "webkit",
+  "browserVersion": "26.6",
+  "realHost": true,
+  "sourceOverrides": false,
+  "disposableWorkspaces": true,
+  "fakeProviders": true,
+  "checks": [
+    "Embedded release matches frozen source and starts with no terminal or AI job",
+    "Code has an explicit persistent current-project control before opening any file",
+    "A paired phone receives full access while selecting projects independently",
+    "Attaching same-name and container projects does not move the other device or start runtimes",
+    "An expanded inactive project cannot overpower or change the explicitly current root",
+    "Same-name project picker identifies exactly one textual current project",
+    "Changing project swaps code buffers together and retains unsaved source without a disk write",
+    "Project switching from AI keeps the surface and swaps independent prompt drafts",
+    "Running AI and historical conversation remain bound to their project and real provider cwd",
+    "Two explicit host terminals keep their original cwd and partial PTY input during switching",
+    "Browser-held unsent terminal form text and selection restore separately from PTY input",
+    "A canceled old-project IME cannot block ordinary typing in the new project",
+    "A delayed old-project composition event cannot execute or clear the new project draft",
+    "Opening a file in another root switches code, AI and terminal scope together",
+    "The active project and switcher remain usable at 390 px, 320 px and short keyboard viewports",
+    "Keyboard switching names the current project and Escape returns focus without navigation",
+    "Reconnect preserves selected project and local terminal draft without moving the other device",
+    "AI and terminal headings open the same project switcher and Escape restores their invoker"
+  ],
+  "screenshots": [
+    "desktop-current-no-file.png",
+    "phone-inactive-expanded-current-root.png",
+    "phone-same-name-current-picker.png",
+    "phone-dirty-current-project.png",
+    "phone-ai-current-project.png",
+    "desktop-ai-project-scope.png",
+    "phone-terminal-current-project.png",
+    "phone-held-terminal-draft.png",
+    "phone-picker-390x844.png",
+    "phone-picker-320x600.png",
+    "phone-picker-320x300.png",
+    "failure-phone.png",
+    "failure-desktop.png"
+  ],
+  "layouts": [
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "documentWidth": 390,
+      "dom": 474,
+      "controls": [
+        {
+          "id": "projects-toggle",
+          "left": 10,
+          "right": 115.4375,
+          "top": 8,
+          "bottom": 56,
+          "width": 105.4375,
+          "height": 48
+        },
+        {
+          "id": "files-toggle",
+          "left": 123.4375,
+          "right": 366,
+          "top": 8,
+          "bottom": 56,
+          "width": 242.5625,
+          "height": 48
+        },
+        {
+          "id": "mobile-code",
+          "left": 49,
+          "right": 143.671875,
+          "top": 788,
+          "bottom": 832,
+          "width": 94.671875,
+          "height": 44
+        },
+        {
+          "id": "mobile-ai",
+          "left": 147.671875,
+          "right": 242.34375,
+          "top": 788,
+          "bottom": 832,
+          "width": 94.671875,
+          "height": 44
+        },
+        {
+          "id": "mobile-terminal",
+          "left": 246.34375,
+          "right": 341.015625,
+          "top": 788,
+          "bottom": 832,
+          "width": 94.671875,
+          "height": 44
+        },
+        {
+          "id": "menu-files-tab",
+          "left": 18,
+          "right": 76,
+          "top": 74,
+          "bottom": 118,
+          "width": 58,
+          "height": 44
+        },
+        {
+          "id": "menu-open-tab",
+          "left": 80,
+          "right": 138,
+          "top": 74,
+          "bottom": 118,
+          "width": 58,
+          "height": 44
+        },
+        {
+          "id": "menu-session-tab",
+          "left": 142,
+          "right": 210.296875,
+          "top": 74,
+          "bottom": 118,
+          "width": 68.296875,
+          "height": 44
+        },
+        {
+          "id": "menu-close",
+          "left": 328,
+          "right": 372,
+          "top": 74,
+          "bottom": 118,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "id": "open-project",
+          "left": 26,
+          "right": 119.328125,
+          "top": 126,
+          "bottom": 170,
+          "width": 93.328125,
+          "height": 44
+        },
+        {
+          "id": "new-file",
+          "left": 252.359375,
+          "right": 316,
+          "top": 126,
+          "bottom": 170,
+          "width": 63.640625,
+          "height": 44
+        },
+        {
+          "id": "refresh-files",
+          "left": 320,
+          "right": 364,
+          "top": 126,
+          "bottom": 170,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "id": "file-filter",
+          "left": 19,
+          "right": 371,
+          "top": 180,
+          "bottom": 224,
+          "width": 352,
+          "height": 44
+        },
+        {
+          "id": "Collapse app folder",
+          "left": 18,
+          "right": 62,
+          "top": 235.5,
+          "bottom": 283.5,
+          "width": 44,
+          "height": 48
+        },
+        {
+          "id": "Select project app · /private/var/folders/pr/6x_bf79x5tq91wck08xdmbjh0000gn/T/relay-active-project-critic-sfz5nn/client/app",
+          "left": 64,
+          "right": 326,
+          "top": 235,
+          "bottom": 284,
+          "width": 262,
+          "height": 49
+        },
+        {
+          "id": "Remove app from session",
+          "left": 328,
+          "right": 372,
+          "top": 237.5,
+          "bottom": 281.5,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "id": "Open folder src",
+          "left": 18,
+          "right": 372,
+          "top": 286,
+          "bottom": 332,
+          "width": 354,
+          "height": 46
+        },
+        {
+          "id": "Open file shared.js",
+          "left": 18,
+          "right": 372,
+          "top": 332,
+          "bottom": 378,
+          "width": 354,
+          "height": 46
+        },
+        {
+          "id": "Collapse long-project-name-with-clear-mobile-context folder",
+          "left": 18,
+          "right": 62,
+          "top": 380,
+          "bottom": 428,
+          "width": 44,
+          "height": 48
+        },
+        {
+          "id": "Select project long-project-name-with-clear-mobile-context · /private/var/folders/pr/6x_bf79x5tq91wck08xdmbjh0000gn/T/relay-active-project-critic-sfz5nn/long-project-name-with-clear-mobile-context",
+          "left": 64,
+          "right": 326,
+          "top": 380,
+          "bottom": 428,
+          "width": 262,
+          "height": 48
+        },
+        {
+          "id": "Remove long-project-name-with-clear-mobile-context from session",
+          "left": 328,
+          "right": 372,
+          "top": 382,
+          "bottom": 426,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "id": "Open folder components",
+          "left": 18,
+          "right": 372,
+          "top": 430,
+          "bottom": 476,
+          "width": 354,
+          "height": 46
+        },
+        {
+          "id": "Open folder nested-app",
+          "left": 18,
+          "right": 372,
+          "top": 476,
+          "bottom": 522,
+          "width": 354,
+          "height": 46
+        },
+        {
+          "id": "Open file shared.js",
+          "left": 18,
+          "right": 372,
+          "top": 522,
+          "bottom": 568,
+          "width": 354,
+          "height": 46
+        },
+        {
+          "id": "Open folder src",
+          "left": 18,
+          "right": 372,
+          "top": 568,
+          "bottom": 614,
+          "width": 354,
+          "height": 46
+        },
+        {
+          "id": "Open file shared.js",
+          "left": 18,
+          "right": 372,
+          "top": 614,
+          "bottom": 660,
+          "width": 354,
+          "height": 46
+        },
+        {
+          "id": "Collapse app folder",
+          "left": 18,
+          "right": 62,
+          "top": 662.5,
+          "bottom": 710.5,
+          "width": 44,
+          "height": 48
+        },
+        {
+          "id": "Select project app · /private/var/folders/pr/6x_bf79x5tq91wck08xdmbjh0000gn/T/relay-active-project-critic-sfz5nn/server/app",
+          "left": 64,
+          "right": 326,
+          "top": 662,
+          "bottom": 711,
+          "width": 262,
+          "height": 49
+        },
+        {
+          "id": "Remove app from session",
+          "left": 328,
+          "right": 372,
+          "top": 664.5,
+          "bottom": 708.5,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "id": "Open folder src",
+          "left": 18,
+          "right": 372,
+          "top": 713,
+          "bottom": 759,
+          "width": 354,
+          "height": 46
+        },
+        {
+          "id": "Open file shared.js",
+          "left": 18,
+          "right": 372,
+          "top": 759,
+          "bottom": 805,
+          "width": 354,
+          "height": 46
+        }
+      ],
+      "menu": {
+        "left": 10,
+        "right": 380,
+        "top": 66,
+        "bottom": 776,
+        "width": 370,
+        "height": 710
+      },
+      "name": "phone-inactive-expanded"
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "documentWidth": 390,
+      "dom": 601,
+      "controls": [
+        {
+          "id": "projects-toggle",
+          "left": 10,
+          "right": 115.4375,
+          "top": 8,
+          "bottom": 56,
+          "width": 105.4375,
+          "height": 48
+        },
+        {
+          "id": "files-toggle",
+          "left": 123.4375,
+          "right": 302.875,
+          "top": 8,
+          "bottom": 56,
+          "width": 179.4375,
+          "height": 48
+        },
+        {
+          "id": "save-button",
+          "left": 324.875,
+          "right": 380,
+          "top": 8,
+          "bottom": 56,
+          "width": 55.125,
+          "height": 48
+        },
+        {
+          "id": "ai-project-toggle",
+          "left": 18,
+          "right": 233,
+          "top": 66,
+          "bottom": 110,
+          "width": 215,
+          "height": 44
+        },
+        {
+          "id": "provider",
+          "left": 247,
+          "right": 330,
+          "top": 66,
+          "bottom": 110,
+          "width": 83,
+          "height": 44
+        },
+        {
+          "id": "ai-settings",
+          "left": 336,
+          "right": 380,
+          "top": 66,
+          "bottom": 110,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "id": "prompt",
+          "left": 22,
+          "right": 326,
+          "top": 720,
+          "bottom": 764,
+          "width": 304,
+          "height": 44
+        },
+        {
+          "id": "ai-send",
+          "left": 332,
+          "right": 376,
+          "top": 720,
+          "bottom": 764,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "id": "mobile-code",
+          "left": 49,
+          "right": 143.671875,
+          "top": 788,
+          "bottom": 832,
+          "width": 94.671875,
+          "height": 44
+        },
+        {
+          "id": "mobile-ai",
+          "left": 147.671875,
+          "right": 242.34375,
+          "top": 788,
+          "bottom": 832,
+          "width": 94.671875,
+          "height": 44
+        },
+        {
+          "id": "mobile-terminal",
+          "left": 246.34375,
+          "right": 341.015625,
+          "top": 788,
+          "bottom": 832,
+          "width": 94.671875,
+          "height": 44
+        },
+        {
+          "id": "project-menu-close",
+          "left": 328,
+          "right": 372,
+          "top": 74,
+          "bottom": 118,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "id": "Current project app · /private/var/folders/pr/6x_bf79x5tq91wck08xdmbjh0000gn/T/relay-active-project-critic-sfz5nn/client/app",
+          "left": 18,
+          "right": 372,
+          "top": 122,
+          "bottom": 171,
+          "width": 354,
+          "height": 49
+        },
+        {
+          "id": "Switch files, AI and terminal to long-project-name-with-clear-mobile-context · /private/var/folders/pr/6x_bf79x5tq91wck08xdmbjh0000gn/T/relay-active-project-critic-sfz5nn/long-project-name-with-clear-mobile-context",
+          "left": 18,
+          "right": 372,
+          "top": 171,
+          "bottom": 219,
+          "width": 354,
+          "height": 48
+        },
+        {
+          "id": "Switch files, AI and terminal to app · /private/var/folders/pr/6x_bf79x5tq91wck08xdmbjh0000gn/T/relay-active-project-critic-sfz5nn/server/app",
+          "left": 18,
+          "right": 372,
+          "top": 219,
+          "bottom": 268,
+          "width": 354,
+          "height": 49
+        },
+        {
+          "id": "quick-add-project",
+          "left": 18,
+          "right": 372,
+          "top": 274,
+          "bottom": 318,
+          "width": 354,
+          "height": 44
+        }
+      ],
+      "menu": null,
+      "name": "active-picker-390x844"
+    },
+    {
+      "name": "current-picker-target-390x844",
+      "top": 219,
+      "bottom": 268,
+      "height": 49,
+      "width": 354,
+      "hit": true
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 600
+      },
+      "documentWidth": 320,
+      "dom": 604,
+      "controls": [
+        {
+          "id": "projects-toggle",
+          "left": 10,
+          "right": 115.4375,
+          "top": 8,
+          "bottom": 56,
+          "width": 105.4375,
+          "height": 48
+        },
+        {
+          "id": "files-toggle",
+          "left": 123.4375,
+          "right": 232.875,
+          "top": 8,
+          "bottom": 56,
+          "width": 109.4375,
+          "height": 48
+        },
+        {
+          "id": "save-button",
+          "left": 254.875,
+          "right": 310,
+          "top": 8,
+          "bottom": 56,
+          "width": 55.125,
+          "height": 48
+        },
+        {
+          "id": "ai-project-toggle",
+          "left": 18,
+          "right": 163,
+          "top": 66,
+          "bottom": 110,
+          "width": 145,
+          "height": 44
+        },
+        {
+          "id": "provider",
+          "left": 177,
+          "right": 260,
+          "top": 66,
+          "bottom": 110,
+          "width": 83,
+          "height": 44
+        },
+        {
+          "id": "ai-settings",
+          "left": 266,
+          "right": 310,
+          "top": 66,
+          "bottom": 110,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "id": "prompt",
+          "left": 22,
+          "right": 256,
+          "top": 476,
+          "bottom": 520,
+          "width": 234,
+          "height": 44
+        },
+        {
+          "id": "ai-send",
+          "left": 262,
+          "right": 306,
+          "top": 476,
+          "bottom": 520,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "id": "mobile-code",
+          "left": 16,
+          "right": 109.328125,
+          "top": 544,
+          "bottom": 588,
+          "width": 93.328125,
+          "height": 44
+        },
+        {
+          "id": "mobile-ai",
+          "left": 113.328125,
+          "right": 206.65625,
+          "top": 544,
+          "bottom": 588,
+          "width": 93.328125,
+          "height": 44
+        },
+        {
+          "id": "mobile-terminal",
+          "left": 210.65625,
+          "right": 303.984375,
+          "top": 544,
+          "bottom": 588,
+          "width": 93.328125,
+          "height": 44
+        },
+        {
+          "id": "project-menu-close",
+          "left": 258,
+          "right": 302,
+          "top": 74,
+          "bottom": 118,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "id": "Current project app · /private/var/folders/pr/6x_bf79x5tq91wck08xdmbjh0000gn/T/relay-active-project-critic-sfz5nn/client/app",
+          "left": 18,
+          "right": 302,
+          "top": 122,
+          "bottom": 171,
+          "width": 284,
+          "height": 49
+        },
+        {
+          "id": "Switch files, AI and terminal to long-project-name-with-clear-mobile-context · /private/var/folders/pr/6x_bf79x5tq91wck08xdmbjh0000gn/T/relay-active-project-critic-sfz5nn/long-project-name-with-clear-mobile-context",
+          "left": 18,
+          "right": 302,
+          "top": 171,
+          "bottom": 219,
+          "width": 284,
+          "height": 48
+        },
+        {
+          "id": "Switch files, AI and terminal to app · /private/var/folders/pr/6x_bf79x5tq91wck08xdmbjh0000gn/T/relay-active-project-critic-sfz5nn/server/app",
+          "left": 18,
+          "right": 302,
+          "top": 219,
+          "bottom": 268,
+          "width": 284,
+          "height": 49
+        },
+        {
+          "id": "quick-add-project",
+          "left": 18,
+          "right": 302,
+          "top": 274,
+          "bottom": 318,
+          "width": 284,
+          "height": 44
+        }
+      ],
+      "menu": null,
+      "name": "active-picker-320x600"
+    },
+    {
+      "name": "current-picker-target-320x600",
+      "top": 219,
+      "bottom": 268,
+      "height": 49,
+      "width": 284,
+      "hit": true
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 300
+      },
+      "documentWidth": 320,
+      "dom": 604,
+      "controls": [
+        {
+          "id": "projects-toggle",
+          "left": 10,
+          "right": 115.4375,
+          "top": 8,
+          "bottom": 56,
+          "width": 105.4375,
+          "height": 48
+        },
+        {
+          "id": "files-toggle",
+          "left": 123.4375,
+          "right": 232.875,
+          "top": 8,
+          "bottom": 56,
+          "width": 109.4375,
+          "height": 48
+        },
+        {
+          "id": "save-button",
+          "left": 254.875,
+          "right": 310,
+          "top": 8,
+          "bottom": 56,
+          "width": 55.125,
+          "height": 48
+        },
+        {
+          "id": "ai-project-toggle",
+          "left": 18,
+          "right": 163,
+          "top": 60,
+          "bottom": 104,
+          "width": 145,
+          "height": 44
+        },
+        {
+          "id": "provider",
+          "left": 177,
+          "right": 260,
+          "top": 60,
+          "bottom": 104,
+          "width": 83,
+          "height": 44
+        },
+        {
+          "id": "ai-settings",
+          "left": 266,
+          "right": 310,
+          "top": 60,
+          "bottom": 104,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "id": "prompt",
+          "left": 22,
+          "right": 256,
+          "top": 186,
+          "bottom": 230,
+          "width": 234,
+          "height": 44
+        },
+        {
+          "id": "ai-send",
+          "left": 262,
+          "right": 306,
+          "top": 186,
+          "bottom": 230,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "id": "mobile-code",
+          "left": 16,
+          "right": 109.328125,
+          "top": 244,
+          "bottom": 288,
+          "width": 93.328125,
+          "height": 44
+        },
+        {
+          "id": "mobile-ai",
+          "left": 113.328125,
+          "right": 206.65625,
+          "top": 244,
+          "bottom": 288,
+          "width": 93.328125,
+          "height": 44
+        },
+        {
+          "id": "mobile-terminal",
+          "left": 210.65625,
+          "right": 303.984375,
+          "top": 244,
+          "bottom": 288,
+          "width": 93.328125,
+          "height": 44
+        },
+        {
+          "id": "project-menu-close",
+          "left": 258,
+          "right": 302,
+          "top": 74,
+          "bottom": 118,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "id": "Current project app · /private/var/folders/pr/6x_bf79x5tq91wck08xdmbjh0000gn/T/relay-active-project-critic-sfz5nn/client/app",
+          "left": 18,
+          "right": 302,
+          "top": 122,
+          "bottom": 171,
+          "width": 284,
+          "height": 49
+        },
+        {
+          "id": "Switch files, AI and terminal to long-project-name-with-clear-mobile-context · /private/var/folders/pr/6x_bf79x5tq91wck08xdmbjh0000gn/T/relay-active-project-critic-sfz5nn/long-project-name-with-clear-mobile-context",
+          "left": 18,
+          "right": 302,
+          "top": 171,
+          "bottom": 219,
+          "width": 284,
+          "height": 48
+        },
+        {
+          "id": "Switch files, AI and terminal to app · /private/var/folders/pr/6x_bf79x5tq91wck08xdmbjh0000gn/T/relay-active-project-critic-sfz5nn/server/app",
+          "left": 18,
+          "right": 302,
+          "top": 219,
+          "bottom": 268,
+          "width": 284,
+          "height": 49
+        },
+        {
+          "id": "quick-add-project",
+          "left": 18,
+          "right": 302,
+          "top": 180,
+          "bottom": 224,
+          "width": 284,
+          "height": 44
+        }
+      ],
+      "menu": null,
+      "name": "active-picker-320x300"
+    },
+    {
+      "name": "current-picker-target-320x300",
+      "top": 125,
+      "bottom": 174,
+      "height": 49,
+      "width": 284,
+      "hit": true
+    },
+    {
+      "name": "delayed-selection-wire",
+      "sent": [
+        {
+          "type": "select_project",
+          "requestId": "52",
+          "project": "B",
+          "generation": 26
+        },
+        {
+          "type": "terminal_history",
+          "requestId": "53",
+          "project": "B"
+        },
+        {
+          "type": "terminal_resize",
+          "requestId": "54",
+          "project": "A",
+          "generation": 27
+        }
+      ],
+      "errors": [
+        {
+          "code": "stale_project",
+          "requestId": "53",
+          "commandType": "terminal_history",
+          "actor": "app",
+          "project": "B"
+        }
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "stage": "Internet-like selection latency cannot resize the old terminal after selecting another project",
+      "message": "Host rejected a stale project request: [{\"code\":\"stale_project\",\"requestId\":\"53\",\"commandType\":\"terminal_history\",\"actor\":\"app\",\"project\":\"B\"}]"
+    }
+  ],
+  "unexpectedBrowserErrors": [],
+  "expectedNetworkEvents": [
+    "Browser reported deliberately disconnected fixture host/socket"
+  ],
+  "references": "tests/active-project-review-references/provenance.json",
+  "limits": [
+    "No real inference, credentials, user projects, tunnels or live Relay hosts were accessed.",
+    "Physical devices and real mobile IME keyboards remain untested; delayed composition events are injected to exercise project fencing.",
+    "Recognizable independent screenshot comparison; no true blind study claimed."
+  ]
+}

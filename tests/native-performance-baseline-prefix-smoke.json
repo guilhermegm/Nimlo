@@ -1,0 +1,2322 @@
+{
+  "schemaVersion": 1,
+  "status": "pass",
+  "startedAt": "2026-10-12T07:17:29.671Z",
+  "benchmarkSha256": "351f1fd6269ae9980e0d13ca7719429038b7a29e9913f30cc56b39d6eb08bdbb",
+  "instrumentationSha256": "4067cb787d4b9359438fcbbd35dc7f874413f176fba80a0b4f775c40c1cd72f3",
+  "metricsSourceSha256": "7cf581cc18638ea1e8f96f601bfe35cf8b34d7db34f4a45585e7545b6a854f3b",
+  "build": {
+    "sourceApp": "/Users/developer/acme/code_editor/target/performance-baseline-a811aaf/Relay.app",
+    "sourceRef": "a811aaf",
+    "diagnosticWrapper": "target/performance-baseline-a811aaf/RelayDiagnostic",
+    "sourceNativeSha256": "52edc805215ca2ee1952982bea94ad324cd1f2f3b5902335030fc9fef3e43b21",
+    "measuredNativeSha256": "b41f7166a0fda61f79e7bc006a52e32038eed92593f2c243a5592e1720973bbb",
+    "hostSha256": "ef8350849d5e56acec4a1c3e96a0c7cc589e49b0b064f11c1538c3f3a1eb5e21",
+    "embeddedAssets": {
+      "index.html": {
+        "bytes": 25316,
+        "sha256": "b9aa9dee6de08d3f538124697c4325aa2a088ac24d5afff15862e0a1996e6e91"
+      },
+      "app.js": {
+        "bytes": 154367,
+        "sha256": "3c23f383114d9e05dd0232fd2452c94af1b14f178406aede9d846a95abb2e809"
+      },
+      "style.css": {
+        "bytes": 56680,
+        "sha256": "727e2687b2d8556fe0a3ee5b48274ffff5520ca3048cfeb92a2ea80606b370d9"
+      }
+    }
+  },
+  "method": {
+    "actualNativeWindow": true,
+    "releaseRustHost": true,
+    "optimizedSwiftWrapper": true,
+    "fixtureOnly": true,
+    "realInferenceRequests": 0,
+    "network": "Owned ephemeral loopback port only; no tunnel; existing8765/8767 untouched",
+    "processAttribution": "Exact unique disposable PATH prefix inherited in launchctl WebKit XPC domain (custom run env is sanitized), corroborated by prelaunch/exit PID+start snapshots; raw environment never persisted",
+    "memory": "macOS vmmap per-task physical footprint/peak including compressed charges; chargedFootprintSumMiB is a sum of task accounting, not exact total system physical RAM. ps RSS is separate and includes shared resident mappings. Phase footprint measurements are sequential, not simultaneous.",
+    "timing": "AppKit NSWindow.sendEvent keyDown/up, trusted DOM input, keydown/input to double requestAnimationFrame; native dispatch-to-JS completion includes IPC/callback overhead. Frames are compositor submission/presentation opportunity proxies, not photons. Peer barrier waits metadata/native editor length plus two normal animation frames.",
+    "allocation": "Equal scalar-only WS/value/split/encoder/storage counters, no source retained by probes. WebKit has no exposed forced GC; all footprint retention checkpoints are natural. Chromium paired browser has separate natural and explicit-GC JS heap and DOM metrics.",
+    "instrumentation": "Identical opt-in Metrics.swift local file controller, optimized wrapper, embedded host/assets untouched",
+    "providers": "Disposable fake codex/claude; startup auth probes counted; AI fixture turn separate from core editor phases",
+    "safety": "Serial phases; stop if owned WebContent RSS exceeds2GiB or owned native task RSS sum exceeds3GiB; physical footprint guard3GiB at checkpoints. One near-limit high-line document, no eight near-limit native stress allocation."
+  },
+  "workload": {
+    "mode": "ordinary-controller-smoke",
+    "ordinaryBytes": 68000,
+    "ordinaryLines": 1000,
+    "highLineBytes": 1047552,
+    "highLineLines": 209511,
+    "highLineOpenCount": 0,
+    "ordinaryOpenCloseCycles": 0,
+    "scenarioDifferenceFromBroadHarness": "Native suite uses one high-line near-limit document plus eight ordinary documents; does not claim to reproduce eight near-limit source workload. Paired Chromium phone cost reported separately."
+  },
+  "environment": {
+    "hardware": "MacBookPro18,1",
+    "physicalMemoryBytes": 34359738368,
+    "os": "ProductName:\t\tmacOS\nProductVersion:\t\t26.2\nBuildVersion:\t\t25C56",
+    "node": "v20.17.0",
+    "systemMemoryAtStart": {
+      "pressure": "The system has 34359738368 (2097152 pages with a page size of 16384).\nSystem-wide memory free percentage: 55%",
+      "swap": "total = 29696.00M  used = 28186.25M  free = 1509.75M  (encrypted)",
+      "vmStatistics": "Mach Virtual Memory Statistics: (page size of 16384 bytes)\nPages free:                              176445.\nPages active:                            480773.\nPages inactive:                          477781.\nPages speculative:                        11170.\nPages throttled:                              0.\nPages wired down:                        349900.\nPages purgeable:                           2211.\n\"Translation faults\":              108063541844.\nPages copy-on-write:                 4984211832.\nPages zero filled:                  37012174408.\nPages reactivated:                  28502483016.\nPages purged:                        1351888275.\nFile-backed pages:                       249651.\nAnonymous pages:                         720073.\nPages stored in compressor:             4251917.\nPages occupied by compressor:            559797.\nDecompressions:                     22937357752.\nCompressions:                       26880499876.\nPageins:                             2089415663.\nPageouts:                              23627006.\nSwapins:                              151282589.\nSwapouts:                             172538606."
+    },
+    "systemMemoryAtEnd": {
+      "pressure": "The system has 34359738368 (2097152 pages with a page size of 16384).\nSystem-wide memory free percentage: 56%",
+      "swap": "total = 29696.00M  used = 28186.25M  free = 1509.75M  (encrypted)",
+      "vmStatistics": "Mach Virtual Memory Statistics: (page size of 16384 bytes)\nPages free:                              112413.\nPages active:                            523880.\nPages inactive:                          487955.\nPages speculative:                        35320.\nPages throttled:                              0.\nPages wired down:                        349714.\nPages purgeable:                           6335.\n\"Translation faults\":              108064406405.\nPages copy-on-write:                 4984267413.\nPages zero filled:                  37012544900.\nPages reactivated:                  28502483286.\nPages purged:                        1351888987.\nFile-backed pages:                       288723.\nAnonymous pages:                         758432.\nPages stored in compressor:             4215490.\nPages occupied by compressor:            546474.\nDecompressions:                     22937390902.\nCompressions:                       26880499876.\nPageins:                             2089431209.\nPageouts:                              23627006.\nSwapins:                              151282765.\nSwapouts:                             172538606."
+    }
+  },
+  "nativePhases": [
+    {
+      "label": "idle-no-documents",
+      "elapsedMilliseconds": 9250,
+      "tasks": [
+        {
+          "role": "nativeWrapper",
+          "pid": 32079,
+          "rssMiB": 107.672,
+          "physicalFootprintMiB": 31.3,
+          "physicalFootprintPeakMiB": 38.9,
+          "writableRegions": "Writable regions: Total=4.4G written=23.7M(1%) resident=27.5M(1%) swapped_out=0K(0%) unallocated=4.4G(99%)"
+        },
+        {
+          "role": "gpu",
+          "pid": 32082,
+          "rssMiB": 30.594,
+          "physicalFootprintMiB": 12,
+          "physicalFootprintPeakMiB": 29.7,
+          "writableRegions": "Writable regions: Total=4.3G written=10.1M(0%) resident=16.8M(0%) swapped_out=0K(0%) unallocated=4.3G(100%)"
+        },
+        {
+          "role": "networking",
+          "pid": 32083,
+          "rssMiB": 18.891,
+          "physicalFootprintMiB": 5.61,
+          "physicalFootprintPeakMiB": 7.47,
+          "writableRegions": "Writable regions: Total=4.3G written=4705K(0%) resident=7281K(0%) swapped_out=0K(0%) unallocated=4.2G(100%)"
+        },
+        {
+          "role": "rustHost",
+          "pid": 32085,
+          "rssMiB": 5.172,
+          "physicalFootprintMiB": 2.735,
+          "physicalFootprintPeakMiB": 2.735,
+          "writableRegions": "Writable regions: Total=117.8M written=2369K(2%) resident=2369K(2%) swapped_out=0K(0%) unallocated=115.4M(98%)"
+        },
+        {
+          "role": "webContent",
+          "pid": 32087,
+          "rssMiB": 45.766,
+          "physicalFootprintMiB": 33.2,
+          "physicalFootprintPeakMiB": 43.7,
+          "writableRegions": "Writable regions: Total=66.4G written=39.8M(0%) resident=44.4M(0%) swapped_out=0K(0%) unallocated=66.4G(100%)"
+        }
+      ],
+      "chargedFootprintSumMiB": 84.845,
+      "nativeRssSumMiB": 208.095,
+      "observedRssPeakMiB": 208.375,
+      "sampleCount": 10,
+      "counters": {
+        "draftCharacters": 0,
+        "encodedCharacters": 0,
+        "filePatches": 0,
+        "fileStates": 0,
+        "incomingBytes": 9141,
+        "nativeValueReadCharacters": 0,
+        "nativeValueReads": 4,
+        "nativeValueWriteCharacters": 0,
+        "nativeValueWrites": 0,
+        "outgoingBytes": 0,
+        "patchInsertCharacters": 0,
+        "sourceSplitCalls": 0,
+        "sourceSplitCharacters": 0
+      },
+      "excludedHostChildren": []
+    },
+    {
+      "label": "ordinary-local",
+      "elapsedMilliseconds": 20010,
+      "tasks": [
+        {
+          "role": "nativeWrapper",
+          "pid": 32079,
+          "rssMiB": 113.188,
+          "physicalFootprintMiB": 31.4,
+          "physicalFootprintPeakMiB": 38.9,
+          "writableRegions": "Writable regions: Total=4.6G written=22.6M(0%) resident=26.5M(1%) swapped_out=0K(0%) unallocated=4.6G(99%)"
+        },
+        {
+          "role": "gpu",
+          "pid": 32082,
+          "rssMiB": 40.313,
+          "physicalFootprintMiB": 13.5,
+          "physicalFootprintPeakMiB": 46.5,
+          "writableRegions": "Writable regions: Total=4.5G written=11.9M(0%) resident=20.1M(0%) swapped_out=0K(0%) unallocated=4.5G(100%)"
+        },
+        {
+          "role": "networking",
+          "pid": 32083,
+          "rssMiB": 19.375,
+          "physicalFootprintMiB": 5.517,
+          "physicalFootprintPeakMiB": 7.47,
+          "writableRegions": "Writable regions: Total=4.3G written=5009K(0%) resident=7777K(0%) swapped_out=0K(0%) unallocated=4.2G(100%)"
+        },
+        {
+          "role": "rustHost",
+          "pid": 32085,
+          "rssMiB": 7.047,
+          "physicalFootprintMiB": 4.532,
+          "physicalFootprintPeakMiB": 4.532,
+          "writableRegions": "Writable regions: Total=117.8M written=4209K(3%) resident=4209K(3%) swapped_out=0K(0%) unallocated=113.7M(97%)"
+        },
+        {
+          "role": "webContent",
+          "pid": 32087,
+          "rssMiB": 66.016,
+          "physicalFootprintMiB": 66.5,
+          "physicalFootprintPeakMiB": 201.2,
+          "writableRegions": "Writable regions: Total=66.6G written=212.0M(0%) resident=218.7M(0%) swapped_out=0K(0%) unallocated=66.4G(100%)"
+        }
+      ],
+      "chargedFootprintSumMiB": 121.449,
+      "nativeRssSumMiB": 245.939,
+      "observedRssPeakMiB": 246.297,
+      "sampleCount": 22,
+      "counters": {
+        "draftCharacters": 831033,
+        "encodedCharacters": 816078,
+        "filePatches": 0,
+        "fileStates": 26,
+        "incomingBytes": 1808961,
+        "nativeValueReadCharacters": 3400324,
+        "nativeValueReads": 55,
+        "nativeValueWriteCharacters": 68000,
+        "nativeValueWrites": 1,
+        "outgoingBytes": 830052,
+        "patchInsertCharacters": 0,
+        "sourceSplitCalls": 13,
+        "sourceSplitCharacters": 884078
+      },
+      "excludedHostChildren": []
+    },
+    {
+      "label": "ordinary-local-closed",
+      "elapsedMilliseconds": 27181,
+      "tasks": [
+        {
+          "role": "nativeWrapper",
+          "pid": 32079,
+          "rssMiB": 113.172,
+          "physicalFootprintMiB": 31.3,
+          "physicalFootprintPeakMiB": 38.9,
+          "writableRegions": "Writable regions: Total=4.5G written=22.6M(0%) resident=26.5M(1%) swapped_out=0K(0%) unallocated=4.5G(99%)"
+        },
+        {
+          "role": "gpu",
+          "pid": 32082,
+          "rssMiB": 40.25,
+          "physicalFootprintMiB": 13.3,
+          "physicalFootprintPeakMiB": 46.5,
+          "writableRegions": "Writable regions: Total=4.5G written=11.8M(0%) resident=20.0M(0%) swapped_out=0K(0%) unallocated=4.5G(100%)"
+        },
+        {
+          "role": "networking",
+          "pid": 32083,
+          "rssMiB": 19.375,
+          "physicalFootprintMiB": 5.517,
+          "physicalFootprintPeakMiB": 7.47,
+          "writableRegions": "Writable regions: Total=4.3G written=5009K(0%) resident=7777K(0%) swapped_out=0K(0%) unallocated=4.2G(100%)"
+        },
+        {
+          "role": "rustHost",
+          "pid": 32085,
+          "rssMiB": 7.047,
+          "physicalFootprintMiB": 4.532,
+          "physicalFootprintPeakMiB": 4.532,
+          "writableRegions": "Writable regions: Total=117.8M written=4209K(3%) resident=4209K(3%) swapped_out=0K(0%) unallocated=113.7M(97%)"
+        },
+        {
+          "role": "webContent",
+          "pid": 32087,
+          "rssMiB": 65.953,
+          "physicalFootprintMiB": 35.9,
+          "physicalFootprintPeakMiB": 201.2,
+          "writableRegions": "Writable regions: Total=66.6G written=211.9M(0%) resident=218.6M(0%) swapped_out=0K(0%) unallocated=66.4G(100%)"
+        }
+      ],
+      "chargedFootprintSumMiB": 90.549,
+      "nativeRssSumMiB": 245.797,
+      "observedRssPeakMiB": 245.859,
+      "sampleCount": 6,
+      "counters": {
+        "draftCharacters": 831033,
+        "encodedCharacters": 816078,
+        "filePatches": 0,
+        "fileStates": 26,
+        "incomingBytes": 1809235,
+        "nativeValueReadCharacters": 3468336,
+        "nativeValueReads": 56,
+        "nativeValueWriteCharacters": 68000,
+        "nativeValueWrites": 2,
+        "outgoingBytes": 830213,
+        "patchInsertCharacters": 0,
+        "sourceSplitCalls": 13,
+        "sourceSplitCharacters": 884078
+      },
+      "excludedHostChildren": []
+    }
+  ],
+  "nativeTrials": [
+    {
+      "label": "ordinary-local",
+      "file": "ordinary.txt",
+      "count": 12,
+      "paired": false,
+      "samples": [
+        {
+          "inputHandlerMilliseconds": 1,
+          "inputToDoubleFrameMilliseconds": 18,
+          "keyDownToDoubleFrameMilliseconds": 24,
+          "keyDownToInputMilliseconds": 6,
+          "length": 68001,
+          "trusted": true,
+          "nativeDispatchToFrameCallbackMilliseconds": 26.795582845807076,
+          "driverAckAndRenderMilliseconds": 205,
+          "peerBarrierMilliseconds": null
+        },
+        {
+          "inputHandlerMilliseconds": 0,
+          "inputToDoubleFrameMilliseconds": 24,
+          "keyDownToDoubleFrameMilliseconds": 26,
+          "keyDownToInputMilliseconds": 2,
+          "length": 68002,
+          "trusted": true,
+          "nativeDispatchToFrameCallbackMilliseconds": 26.689416728913784,
+          "driverAckAndRenderMilliseconds": 205,
+          "peerBarrierMilliseconds": null
+        },
+        {
+          "inputHandlerMilliseconds": 1,
+          "inputToDoubleFrameMilliseconds": 23,
+          "keyDownToDoubleFrameMilliseconds": 25,
+          "keyDownToInputMilliseconds": 2,
+          "length": 68003,
+          "trusted": true,
+          "nativeDispatchToFrameCallbackMilliseconds": 25.240583345294,
+          "driverAckAndRenderMilliseconds": 257,
+          "peerBarrierMilliseconds": null
+        },
+        {
+          "inputHandlerMilliseconds": 0,
+          "inputToDoubleFrameMilliseconds": 24,
+          "keyDownToDoubleFrameMilliseconds": 26,
+          "keyDownToInputMilliseconds": 2,
+          "length": 68004,
+          "trusted": true,
+          "nativeDispatchToFrameCallbackMilliseconds": 26.106958277523518,
+          "driverAckAndRenderMilliseconds": 256,
+          "peerBarrierMilliseconds": null
+        },
+        {
+          "inputHandlerMilliseconds": 1,
+          "inputToDoubleFrameMilliseconds": 24,
+          "keyDownToDoubleFrameMilliseconds": 25,
+          "keyDownToInputMilliseconds": 1,
+          "length": 68005,
+          "trusted": true,
+          "nativeDispatchToFrameCallbackMilliseconds": 25.791791267693043,
+          "driverAckAndRenderMilliseconds": 257,
+          "peerBarrierMilliseconds": null
+        },
+        {
+          "inputHandlerMilliseconds": 1,
+          "inputToDoubleFrameMilliseconds": 23.00000000000182,
+          "keyDownToDoubleFrameMilliseconds": 25.00000000000182,
+          "keyDownToInputMilliseconds": 2,
+          "length": 68006,
+          "trusted": true,
+          "nativeDispatchToFrameCallbackMilliseconds": 25.052624754607677,
+          "driverAckAndRenderMilliseconds": 256,
+          "peerBarrierMilliseconds": null
+        },
+        {
+          "inputHandlerMilliseconds": 0,
+          "inputToDoubleFrameMilliseconds": 24,
+          "keyDownToDoubleFrameMilliseconds": 26,
+          "keyDownToInputMilliseconds": 2,
+          "length": 68007,
+          "trusted": true,
+          "nativeDispatchToFrameCallbackMilliseconds": 26.0881669819355,
+          "driverAckAndRenderMilliseconds": 255,
+          "peerBarrierMilliseconds": null
+        },
+        {
+          "inputHandlerMilliseconds": 0,
+          "inputToDoubleFrameMilliseconds": 24,
+          "keyDownToDoubleFrameMilliseconds": 26,
+          "keyDownToInputMilliseconds": 2,
+          "length": 68008,
+          "trusted": true,
+          "nativeDispatchToFrameCallbackMilliseconds": 25.813333690166473,
+          "driverAckAndRenderMilliseconds": 256,
+          "peerBarrierMilliseconds": null
+        },
+        {
+          "inputHandlerMilliseconds": 1,
+          "inputToDoubleFrameMilliseconds": 22,
+          "keyDownToDoubleFrameMilliseconds": 24,
+          "keyDownToInputMilliseconds": 2,
+          "length": 68009,
+          "trusted": true,
+          "nativeDispatchToFrameCallbackMilliseconds": 24.072041735053062,
+          "driverAckAndRenderMilliseconds": 255,
+          "peerBarrierMilliseconds": null
+        },
+        {
+          "inputHandlerMilliseconds": 0,
+          "inputToDoubleFrameMilliseconds": 22,
+          "keyDownToDoubleFrameMilliseconds": 24,
+          "keyDownToInputMilliseconds": 2,
+          "length": 68010,
+          "trusted": true,
+          "nativeDispatchToFrameCallbackMilliseconds": 24.174791760742664,
+          "driverAckAndRenderMilliseconds": 203,
+          "peerBarrierMilliseconds": null
+        },
+        {
+          "inputHandlerMilliseconds": 0,
+          "inputToDoubleFrameMilliseconds": 23,
+          "keyDownToDoubleFrameMilliseconds": 25,
+          "keyDownToInputMilliseconds": 2,
+          "length": 68011,
+          "trusted": true,
+          "nativeDispatchToFrameCallbackMilliseconds": 25.2922922372818,
+          "driverAckAndRenderMilliseconds": 206,
+          "peerBarrierMilliseconds": null
+        },
+        {
+          "inputHandlerMilliseconds": 0,
+          "inputToDoubleFrameMilliseconds": 21,
+          "keyDownToDoubleFrameMilliseconds": 23,
+          "keyDownToInputMilliseconds": 2,
+          "length": 68012,
+          "trusted": true,
+          "nativeDispatchToFrameCallbackMilliseconds": 23.659000173211098,
+          "driverAckAndRenderMilliseconds": 256,
+          "peerBarrierMilliseconds": null
+        }
+      ],
+      "p95NativeDispatchToFrameCallbackMilliseconds": 26.795582845807076,
+      "p95KeyDownToDoubleFrameMilliseconds": 26,
+      "p95InputHandlerMilliseconds": 1,
+      "counterDelta": {
+        "draftCharacters": 831033,
+        "encodedCharacters": 816078,
+        "filePatches": 0,
+        "fileStates": 24,
+        "incomingBytes": 1661207,
+        "nativeValueReadCharacters": 3332324,
+        "nativeValueReads": 49,
+        "nativeValueWriteCharacters": 0,
+        "nativeValueWrites": 0,
+        "outgoingBytes": 829788,
+        "patchInsertCharacters": 0,
+        "sourceSplitCalls": 12,
+        "sourceSplitCharacters": 816078
+      }
+    },
+    {
+      "label": "ordinary-local-scroll",
+      "scrollSamples": [
+        {
+          "actual": 0,
+          "maximum": 22313,
+          "milliseconds": 11,
+          "target": 0
+        },
+        {
+          "actual": 5578,
+          "maximum": 22313,
+          "milliseconds": 34,
+          "target": 5578
+        },
+        {
+          "actual": 11157,
+          "maximum": 22313,
+          "milliseconds": 33,
+          "target": 11157
+        },
+        {
+          "actual": 16735,
+          "maximum": 22313,
+          "milliseconds": 33,
+          "target": 16735
+        },
+        {
+          "actual": 22313,
+          "maximum": 22313,
+          "milliseconds": 34,
+          "target": 22313
+        },
+        {
+          "actual": 0,
+          "maximum": 22313,
+          "milliseconds": 33,
+          "target": 0
+        },
+        {
+          "actual": 22313,
+          "maximum": 22313,
+          "milliseconds": 33.00000000000182,
+          "target": 22313
+        },
+        {
+          "actual": 11157,
+          "maximum": 22313,
+          "milliseconds": 32.99999999999818,
+          "target": 11157
+        }
+      ],
+      "p95ScrollDoubleFrameMilliseconds": 34
+    }
+  ],
+  "cycles": [],
+  "browserPhases": [],
+  "ownership": {
+    "before": [
+      {
+        "pid": 85127,
+        "ppid": 1,
+        "rssBytes": 18071552,
+        "startIdentity": "Sun Oct 11 19:56:27 2026",
+        "executable": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.GPU.xpc/Contents/MacOS/com.apple.WebKit.GPU"
+      },
+      {
+        "pid": 85128,
+        "ppid": 1,
+        "rssBytes": 11272192,
+        "startIdentity": "Sun Oct 11 19:56:27 2026",
+        "executable": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking"
+      },
+      {
+        "pid": 85138,
+        "ppid": 1,
+        "rssBytes": 26165248,
+        "startIdentity": "Sun Oct 11 19:56:28 2026",
+        "executable": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent"
+      }
+    ],
+    "owned": [
+      {
+        "pid": 32079,
+        "startIdentity": "Mon Oct 12 00:17:29 2026",
+        "role": "nativeWrapper",
+        "ppid": 32066,
+        "attribution": "direct spawned PID",
+        "markerMatched": false
+      },
+      {
+        "pid": 32082,
+        "startIdentity": "Mon Oct 12 00:17:30 2026",
+        "role": "gpu",
+        "ppid": 1,
+        "attribution": "exact inherited launchctl unique disposable PATH prefix",
+        "markerMatched": true
+      },
+      {
+        "pid": 32083,
+        "startIdentity": "Mon Oct 12 00:17:30 2026",
+        "role": "networking",
+        "ppid": 1,
+        "attribution": "exact inherited launchctl unique disposable PATH prefix",
+        "markerMatched": true
+      },
+      {
+        "pid": 32085,
+        "startIdentity": "Mon Oct 12 00:17:30 2026",
+        "role": "rustHost",
+        "ppid": 32079,
+        "attribution": "native diagnostic host PID + direct parent",
+        "markerMatched": false
+      },
+      {
+        "pid": 32087,
+        "startIdentity": "Mon Oct 12 00:17:30 2026",
+        "role": "webContent",
+        "ppid": 1,
+        "attribution": "exact inherited launchctl unique disposable PATH prefix",
+        "markerMatched": true
+      }
+    ],
+    "after": [
+      {
+        "pid": 85127,
+        "ppid": 1,
+        "rssBytes": 18071552,
+        "startIdentity": "Sun Oct 11 19:56:27 2026",
+        "executable": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.GPU.xpc/Contents/MacOS/com.apple.WebKit.GPU"
+      },
+      {
+        "pid": 85128,
+        "ppid": 1,
+        "rssBytes": 11255808,
+        "startIdentity": "Sun Oct 11 19:56:27 2026",
+        "executable": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking"
+      },
+      {
+        "pid": 85138,
+        "ppid": 1,
+        "rssBytes": 26329088,
+        "startIdentity": "Sun Oct 11 19:56:28 2026",
+        "executable": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent"
+      }
+    ],
+    "unrelatedNewWebKit": [
+      {
+        "pid": 32092,
+        "startIdentity": "Mon Oct 12 00:17:30 2026",
+        "markerMatched": false
+      },
+      {
+        "pid": 32092,
+        "startIdentity": "Mon Oct 12 00:17:30 2026",
+        "markerMatched": false
+      },
+      {
+        "pid": 32647,
+        "startIdentity": "Mon Oct 12 00:17:43 2026",
+        "markerMatched": false
+      },
+      {
+        "pid": 32647,
+        "startIdentity": "Mon Oct 12 00:17:43 2026",
+        "markerMatched": false
+      }
+    ],
+    "cleanup": [
+      {
+        "pid": 32079,
+        "role": "nativeWrapper",
+        "startIdentity": "Mon Oct 12 00:17:29 2026",
+        "exited": true
+      },
+      {
+        "pid": 32082,
+        "role": "gpu",
+        "startIdentity": "Mon Oct 12 00:17:30 2026",
+        "exited": true
+      },
+      {
+        "pid": 32083,
+        "role": "networking",
+        "startIdentity": "Mon Oct 12 00:17:30 2026",
+        "exited": true
+      },
+      {
+        "pid": 32085,
+        "role": "rustHost",
+        "startIdentity": "Mon Oct 12 00:17:30 2026",
+        "exited": true
+      },
+      {
+        "pid": 32087,
+        "role": "webContent",
+        "startIdentity": "Mon Oct 12 00:17:30 2026",
+        "exited": true
+      }
+    ],
+    "browserCleanup": [],
+    "allOwnedExited": true
+  },
+  "checks": [
+    "Copied signed app, authenticated native WKWebView, frozen embedded HTTP asset SHA matches requested source"
+  ],
+  "backgroundBuildObservations": [
+    {
+      "label": "prelaunch",
+      "processes": []
+    },
+    {
+      "label": "idle-no-documents",
+      "processes": []
+    },
+    {
+      "label": "ordinary-local",
+      "processes": []
+    },
+    {
+      "label": "ordinary-local-closed",
+      "processes": []
+    }
+  ],
+  "optionalProcessAccounting": {
+    "realProviderMemory": "Not measured; fake provider process completes before optional AI checkpoint, so no provider peak is inferred",
+    "tunnel": "Not started or measured",
+    "children": []
+  },
+  "startup": {
+    "nativeReadyMilliseconds": 1024,
+    "nativePid": 32079,
+    "hostPid": 32085
+  },
+  "startupFixtureProbeCount": 2,
+  "samples": [
+    {
+      "phase": "idle-no-documents",
+      "elapsedMilliseconds": 1485,
+      "roles": {
+        "nativeWrapper": [
+          {
+            "pid": 32079,
+            "rssMiB": 107.688
+          }
+        ],
+        "gpu": [
+          {
+            "pid": 32082,
+            "rssMiB": 30.578
+          }
+        ],
+        "networking": [
+          {
+            "pid": 32083,
+            "rssMiB": 19.078
+          }
+        ],
+        "rustHost": [
+          {
+            "pid": 32085,
+            "rssMiB": 5.156
+          }
+        ],
+        "webContent": [
+          {
+            "pid": 32087,
+            "rssMiB": 45.844
+          }
+        ]
+      },
+      "nativeRssSumMiB": 208.344,
+      "pairedBrowserRssSumMiB": 0
+    },
+    {
+      "phase": "idle-no-documents",
+      "elapsedMilliseconds": 1688,
+      "roles": {
+        "nativeWrapper": [
+          {
+            "pid": 32079,
+            "rssMiB": 107.703
+          }
+        ],
+        "gpu": [
+          {
+            "pid": 32082,
+            "rssMiB": 30.578
+          }
+        ],
+        "networking": [
+          {
+            "pid": 32083,
+            "rssMiB": 19.078
+          }
+        ],
+        "rustHost": [
+          {
+            "pid": 32085,
+            "rssMiB": 5.156
+          }
+        ],
+        "webContent": [
+          {
+            "pid": 32087,
+            "rssMiB": 45.859
+          }
+        ]
+      },
+      "nativeRssSumMiB": 208.375,
+      "pairedBrowserRssSumMiB": 0
+    },
+    {
+      "phase": "idle-no-documents",
+      "elapsedMilliseconds": 1889,
+      "roles": {
+        "nativeWrapper": [
+          {
+            "pid": 32079,
+            "rssMiB": 107.672
+          }
+        ],
+        "gpu": [
+          {
+            "pid": 32082,
+            "rssMiB": 30.578
+          }
+        ],
+        "networking": [
+          {
+            "pid": 32083,
+            "rssMiB": 19.078
+          }
+        ],
+        "rustHost": [
+          {
+            "pid": 32085,
+            "rssMiB": 5.156
+          }
+        ],
+        "webContent": [
+          {
+            "pid": 32087,
+            "rssMiB": 45.859
+          }
+        ]
+      },
+      "nativeRssSumMiB": 208.344,
+      "pairedBrowserRssSumMiB": 0
+    },
+    {
+      "phase": "idle-no-documents",
+      "elapsedMilliseconds": 2090,
+      "roles": {
+        "nativeWrapper": [
+          {
+            "pid": 32079,
+            "rssMiB": 107.672
+          }
+        ],
+        "gpu": [
+          {
+            "pid": 32082,
+            "rssMiB": 30.578
+          }
+        ],
+        "networking": [
+          {
+            "pid": 32083,
+            "rssMiB": 19.078
+          }
+        ],
+        "rustHost": [
+          {
+            "pid": 32085,
+            "rssMiB": 5.156
+          }
+        ],
+        "webContent": [
+          {
+            "pid": 32087,
+            "rssMiB": 45.859
+          }
+        ]
+      },
+      "nativeRssSumMiB": 208.344,
+      "pairedBrowserRssSumMiB": 0
+    },
+    {
+      "phase": "idle-no-documents",
+      "elapsedMilliseconds": 2292,
+      "roles": {
+        "nativeWrapper": [
+          {
+            "pid": 32079,
+            "rssMiB": 107.672
+          }
+        ],
+        "gpu": [
+          {
+            "pid": 32082,
+            "rssMiB": 30.594
+          }
+        ],
+        "networking": [
+          {
+            "pid": 32083,
+            "rssMiB": 19.078
+          }
+        ],
+        "rustHost": [
+          {
+            "pid": 32085,
+            "rssMiB": 5.156
+          }
+        ],
+        "webContent": [
+          {
+            "pid": 32087,
+            "rssMiB": 45.859
+          }
+        ]
+      },
+      "nativeRssSumMiB": 208.359,
+      "pairedBrowserRssSumMiB": 0
+    },
+    {
+      "phase": "idle-no-documents",
+      "elapsedMilliseconds": 2492,
+      "roles": {
+        "nativeWrapper": [
+          {
+            "pid": 32079,
+            "rssMiB": 107.672
+          }
+        ],
+        "gpu": [
+          {
+            "pid": 32082,
+            "rssMiB": 30.594
+          }
+        ],
+        "networking": [
+          {
+            "pid": 32083,
+            "rssMiB": 19.078
+          }
+        ],
+        "rustHost": [
+          {
+            "pid": 32085,
+            "rssMiB": 5.156
+          }
+        ],
+        "webContent": [
+          {
+            "pid": 32087,
+            "rssMiB": 45.859
+          }
+        ]
+      },
+      "nativeRssSumMiB": 208.359,
+      "pairedBrowserRssSumMiB": 0
+    },
+    {
+      "phase": "idle-no-documents",
+      "elapsedMilliseconds": 2693,
+      "roles": {
+        "nativeWrapper": [
+          {
+            "pid": 32079,
+            "rssMiB": 107.672
+          }
+        ],
+        "gpu": [
+          {
+            "pid": 32082,
+            "rssMiB": 30.594
+          }
+        ],
+        "networking": [
+          {
+            "pid": 32083,
+            "rssMiB": 19.078
+          }
+        ],
+        "rustHost": [
+          {
+            "pid": 32085,
+            "rssMiB": 5.156
+          }
+        ],
+        "webContent": [
+          {
+            "pid": 32087,
+            "rssMiB": 45.859
+          }
+        ]
+      },
+      "nativeRssSumMiB": 208.359,
+      "pairedBrowserRssSumMiB": 0
+    },
+    {
+      "phase": "idle-no-documents",
+      "elapsedMilliseconds": 2894,
+      "roles": {
+        "nativeWrapper": [
+          {
+            "pid": 32079,
+            "rssMiB": 107.672
+          }
+        ],
+        "gpu": [
+          {
+            "pid": 32082,
+            "rssMiB": 30.594
+          }
+        ],
+        "networking": [
+          {
+            "pid": 32083,
+            "rssMiB": 19.078
+          }
+        ],
+        "rustHost": [
+          {
+            "pid": 32085,
+            "rssMiB": 5.156
+          }
+        ],
+        "webContent": [
+          {
+            "pid": 32087,
+            "rssMiB": 45.859
+          }
+        ]
+      },
+      "nativeRssSumMiB": 208.359,
+      "pairedBrowserRssSumMiB": 0
+    },
+    {
+      "phase": "idle-no-documents",
+      "elapsedMilliseconds": 3094,
+      "roles": {
+        "nativeWrapper": [
+          {
+            "pid": 32079,
+            "rssMiB": 107.672
+          }
+        ],
+        "gpu": [
+          {
+            "pid": 32082,
+            "rssMiB": 30.594
+          }
+        ],
+        "networking": [
+          {
+            "pid": 32083,
+            "rssMiB": 19.078
+          }
+        ],
+        "rustHost": [
+          {
+            "pid": 32085,
+            "rssMiB": 5.156
+          }
+        ],
+        "webContent": [
+          {
+            "pid": 32087,
+            "rssMiB": 45.859
+          }
+        ]
+      },
+      "nativeRssSumMiB": 208.359,
+      "pairedBrowserRssSumMiB": 0
+    },
+    {
+      "phase": "idle-no-documents",
+      "elapsedMilliseconds": 3294,
+      "roles": {
+        "nativeWrapper": [
+          {
+            "pid": 32079,
+            "rssMiB": 107.672
+          }
+        ],
+        "gpu": [
+          {
+            "pid": 32082,
+            "rssMiB": 30.594
+          }
+        ],
+        "networking": [
+          {
+            "pid": 32083,
+            "rssMiB": 19.078
+          }
+        ],
+        "rustHost": [
+          {
+            "pid": 32085,
+            "rssMiB": 5.156
+          }
+        ],
+        "webContent": [
+          {
+            "pid": 32087,
+            "rssMiB": 45.859
+          }
+        ]
+      },
+      "nativeRssSumMiB": 208.359,
+      "pairedBrowserRssSumMiB": 0
+    },
+    {
+      "phase": "idle-no-documents",
+      "elapsedMilliseconds": 9281,
+      "roles": {
+        "nativeWrapper": [
+          {
+            "pid": 32079,
+            "rssMiB": 107.219
+          }
+        ],
+        "gpu": [
+          {
+            "pid": 32082,
+            "rssMiB": 30.469
+          }
+        ],
+        "networking": [
+          {
+            "pid": 32083,
+            "rssMiB": 18.891
+          }
+        ],
+        "rustHost": [
+          {
+            "pid": 32085,
+            "rssMiB": 5.188
+          }
+        ],
+        "webContent": [
+          {
+            "pid": 32087,
+            "rssMiB": 45.766
+          }
+        ]
+      },
+      "nativeRssSumMiB": 207.531,
+      "pairedBrowserRssSumMiB": 0
+    },
+    {
+      "phase": "idle-no-documents",
+      "elapsedMilliseconds": 9481,
+      "roles": {
+        "nativeWrapper": [
+          {
+            "pid": 32079,
+            "rssMiB": 107.234
+          }
+        ],
+        "gpu": [
+          {
+            "pid": 32082,
+            "rssMiB": 30.469
+          }
+        ],
+        "networking": [
+          {
+            "pid": 32083,
+            "rssMiB": 18.906
+          }
+        ],
+        "rustHost": [
+          {
+            "pid": 32085,
+            "rssMiB": 5.359
+          }
+        ],
+        "webContent": [
+          {
+            "pid": 32087,
+            "rssMiB": 45.766
+          }
+        ]
+      },
+      "nativeRssSumMiB": 207.734,
+      "pairedBrowserRssSumMiB": 0
+    },
+    {
+      "phase": "ordinary-local",
+      "elapsedMilliseconds": 9683,
+      "roles": {
+        "nativeWrapper": [
+          {
+            "pid": 32079,
+            "rssMiB": 107.375
+          }
+        ],
+        "gpu": [
+          {
+            "pid": 32082,
+            "rssMiB": 33.156
+          }
+        ],
+        "networking": [
+          {
+            "pid": 32083,
+            "rssMiB": 19.125
+          }
+        ],
+        "rustHost": [
+          {
+            "pid": 32085,
+            "rssMiB": 5.625
+          }
+        ],
+        "webContent": [
+          {
+            "pid": 32087,
+            "rssMiB": 50.75
+          }
+        ]
+      },
+      "nativeRssSumMiB": 216.031,
+      "pairedBrowserRssSumMiB": 0
+    },
+    {
+      "phase": "ordinary-local",
+      "elapsedMilliseconds": 9881,
+      "roles": {
+        "nativeWrapper": [
+          {
+            "pid": 32079,
+            "rssMiB": 113.078
+          }
+        ],
+        "gpu": [
+          {
+            "pid": 32082,
+            "rssMiB": 35.156
+          }
+        ],
+        "networking": [
+          {
+            "pid": 32083,
+            "rssMiB": 19.125
+          }
+        ],
+        "rustHost": [
+          {
+            "pid": 32085,
+            "rssMiB": 5.625
+          }
+        ],
+        "webContent": [
+          {
+            "pid": 32087,
+            "rssMiB": 51.984
+          }
+        ]
+      },
+      "nativeRssSumMiB": 224.969,
+      "pairedBrowserRssSumMiB": 0
+    },
+    {
+      "phase": "ordinary-local",
+      "elapsedMilliseconds": 10084,
+      "roles": {
+        "nativeWrapper": [
+          {
+            "pid": 32079,
+            "rssMiB": 113.203
+          }
+        ],
+        "gpu": [
+          {
+            "pid": 32082,
+            "rssMiB": 35.688
+          }
+        ],
+        "networking": [
+          {
+            "pid": 32083,
+            "rssMiB": 19.297
+          }
+        ],
+        "rustHost": [
+          {
+            "pid": 32085,
+            "rssMiB": 6.016
+          }
+        ],
+        "webContent": [
+          {
+            "pid": 32087,
+            "rssMiB": 54.391
+          }
+        ]
+      },
+      "nativeRssSumMiB": 228.594,
+      "pairedBrowserRssSumMiB": 0
+    },
+    {
+      "phase": "ordinary-local",
+      "elapsedMilliseconds": 10285,
+      "roles": {
+        "nativeWrapper": [
+          {
+            "pid": 32079,
+            "rssMiB": 113.203
+          }
+        ],
+        "gpu": [
+          {
+            "pid": 32082,
+            "rssMiB": 36.078
+          }
+        ],
+        "networking": [
+          {
+            "pid": 32083,
+            "rssMiB": 19.297
+          }
+        ],
+        "rustHost": [
+          {
+            "pid": 32085,
+            "rssMiB": 6.203
+          }
+        ],
+        "webContent": [
+          {
+            "pid": 32087,
+            "rssMiB": 55.656
+          }
+        ]
+      },
+      "nativeRssSumMiB": 230.438,
+      "pairedBrowserRssSumMiB": 0
+    },
+    {
+      "phase": "ordinary-local",
+      "elapsedMilliseconds": 10485,
+      "roles": {
+        "nativeWrapper": [
+          {
+            "pid": 32079,
+            "rssMiB": 113.219
+          }
+        ],
+        "gpu": [
+          {
+            "pid": 32082,
+            "rssMiB": 36.141
+          }
+        ],
+        "networking": [
+          {
+            "pid": 32083,
+            "rssMiB": 19.297
+          }
+        ],
+        "rustHost": [
+          {
+            "pid": 32085,
+            "rssMiB": 6.344
+          }
+        ],
+        "webContent": [
+          {
+            "pid": 32087,
+            "rssMiB": 56.109
+          }
+        ]
+      },
+      "nativeRssSumMiB": 231.109,
+      "pairedBrowserRssSumMiB": 0
+    },
+    {
+      "phase": "ordinary-local",
+      "elapsedMilliseconds": 10685,
+      "roles": {
+        "nativeWrapper": [
+          {
+            "pid": 32079,
+            "rssMiB": 113.234
+          }
+        ],
+        "gpu": [
+          {
+            "pid": 32082,
+            "rssMiB": 36.578
+          }
+        ],
+        "networking": [
+          {
+            "pid": 32083,
+            "rssMiB": 19.297
+          }
+        ],
+        "rustHost": [
+          {
+            "pid": 32085,
+            "rssMiB": 6.438
+          }
+        ],
+        "webContent": [
+          {
+            "pid": 32087,
+            "rssMiB": 56.609
+          }
+        ]
+      },
+      "nativeRssSumMiB": 232.156,
+      "pairedBrowserRssSumMiB": 0
+    },
+    {
+      "phase": "ordinary-local",
+      "elapsedMilliseconds": 10887,
+      "roles": {
+        "nativeWrapper": [
+          {
+            "pid": 32079,
+            "rssMiB": 113.234
+          }
+        ],
+        "gpu": [
+          {
+            "pid": 32082,
+            "rssMiB": 36.813
+          }
+        ],
+        "networking": [
+          {
+            "pid": 32083,
+            "rssMiB": 19.297
+          }
+        ],
+        "rustHost": [
+          {
+            "pid": 32085,
+            "rssMiB": 6.438
+          }
+        ],
+        "webContent": [
+          {
+            "pid": 32087,
+            "rssMiB": 57.891
+          }
+        ]
+      },
+      "nativeRssSumMiB": 233.672,
+      "pairedBrowserRssSumMiB": 0
+    },
+    {
+      "phase": "ordinary-local",
+      "elapsedMilliseconds": 11088,
+      "roles": {
+        "nativeWrapper": [
+          {
+            "pid": 32079,
+            "rssMiB": 113.234
+          }
+        ],
+        "gpu": [
+          {
+            "pid": 32082,
+            "rssMiB": 37.016
+          }
+        ],
+        "networking": [
+          {
+            "pid": 32083,
+            "rssMiB": 19.297
+          }
+        ],
+        "rustHost": [
+          {
+            "pid": 32085,
+            "rssMiB": 6.516
+          }
+        ],
+        "webContent": [
+          {
+            "pid": 32087,
+            "rssMiB": 59.344
+          }
+        ]
+      },
+      "nativeRssSumMiB": 235.406,
+      "pairedBrowserRssSumMiB": 0
+    },
+    {
+      "phase": "ordinary-local",
+      "elapsedMilliseconds": 11288,
+      "roles": {
+        "nativeWrapper": [
+          {
+            "pid": 32079,
+            "rssMiB": 113.234
+          }
+        ],
+        "gpu": [
+          {
+            "pid": 32082,
+            "rssMiB": 37.125
+          }
+        ],
+        "networking": [
+          {
+            "pid": 32083,
+            "rssMiB": 19.297
+          }
+        ],
+        "rustHost": [
+          {
+            "pid": 32085,
+            "rssMiB": 6.609
+          }
+        ],
+        "webContent": [
+          {
+            "pid": 32087,
+            "rssMiB": 61.438
+          }
+        ]
+      },
+      "nativeRssSumMiB": 237.703,
+      "pairedBrowserRssSumMiB": 0
+    },
+    {
+      "phase": "ordinary-local",
+      "elapsedMilliseconds": 11489,
+      "roles": {
+        "nativeWrapper": [
+          {
+            "pid": 32079,
+            "rssMiB": 113.203
+          }
+        ],
+        "gpu": [
+          {
+            "pid": 32082,
+            "rssMiB": 37.188
+          }
+        ],
+        "networking": [
+          {
+            "pid": 32083,
+            "rssMiB": 19.328
+          }
+        ],
+        "rustHost": [
+          {
+            "pid": 32085,
+            "rssMiB": 6.688
+          }
+        ],
+        "webContent": [
+          {
+            "pid": 32087,
+            "rssMiB": 62.016
+          }
+        ]
+      },
+      "nativeRssSumMiB": 238.422,
+      "pairedBrowserRssSumMiB": 0
+    },
+    {
+      "phase": "ordinary-local",
+      "elapsedMilliseconds": 11689,
+      "roles": {
+        "nativeWrapper": [
+          {
+            "pid": 32079,
+            "rssMiB": 113.203
+          }
+        ],
+        "gpu": [
+          {
+            "pid": 32082,
+            "rssMiB": 37.453
+          }
+        ],
+        "networking": [
+          {
+            "pid": 32083,
+            "rssMiB": 19.328
+          }
+        ],
+        "rustHost": [
+          {
+            "pid": 32085,
+            "rssMiB": 6.766
+          }
+        ],
+        "webContent": [
+          {
+            "pid": 32087,
+            "rssMiB": 62.391
+          }
+        ]
+      },
+      "nativeRssSumMiB": 239.141,
+      "pairedBrowserRssSumMiB": 0
+    },
+    {
+      "phase": "ordinary-local",
+      "elapsedMilliseconds": 11891,
+      "roles": {
+        "nativeWrapper": [
+          {
+            "pid": 32079,
+            "rssMiB": 113.203
+          }
+        ],
+        "gpu": [
+          {
+            "pid": 32082,
+            "rssMiB": 37.688
+          }
+        ],
+        "networking": [
+          {
+            "pid": 32083,
+            "rssMiB": 19.328
+          }
+        ],
+        "rustHost": [
+          {
+            "pid": 32085,
+            "rssMiB": 6.766
+          }
+        ],
+        "webContent": [
+          {
+            "pid": 32087,
+            "rssMiB": 63.625
+          }
+        ]
+      },
+      "nativeRssSumMiB": 240.609,
+      "pairedBrowserRssSumMiB": 0
+    },
+    {
+      "phase": "ordinary-local",
+      "elapsedMilliseconds": 12092,
+      "roles": {
+        "nativeWrapper": [
+          {
+            "pid": 32079,
+            "rssMiB": 113.203
+          }
+        ],
+        "gpu": [
+          {
+            "pid": 32082,
+            "rssMiB": 37.859
+          }
+        ],
+        "networking": [
+          {
+            "pid": 32083,
+            "rssMiB": 19.375
+          }
+        ],
+        "rustHost": [
+          {
+            "pid": 32085,
+            "rssMiB": 6.781
+          }
+        ],
+        "webContent": [
+          {
+            "pid": 32087,
+            "rssMiB": 64.375
+          }
+        ]
+      },
+      "nativeRssSumMiB": 241.594,
+      "pairedBrowserRssSumMiB": 0
+    },
+    {
+      "phase": "ordinary-local",
+      "elapsedMilliseconds": 12293,
+      "roles": {
+        "nativeWrapper": [
+          {
+            "pid": 32079,
+            "rssMiB": 113.219
+          }
+        ],
+        "gpu": [
+          {
+            "pid": 32082,
+            "rssMiB": 38
+          }
+        ],
+        "networking": [
+          {
+            "pid": 32083,
+            "rssMiB": 19.375
+          }
+        ],
+        "rustHost": [
+          {
+            "pid": 32085,
+            "rssMiB": 6.953
+          }
+        ],
+        "webContent": [
+          {
+            "pid": 32087,
+            "rssMiB": 65.156
+          }
+        ]
+      },
+      "nativeRssSumMiB": 242.703,
+      "pairedBrowserRssSumMiB": 0
+    },
+    {
+      "phase": "ordinary-local",
+      "elapsedMilliseconds": 12493,
+      "roles": {
+        "nativeWrapper": [
+          {
+            "pid": 32079,
+            "rssMiB": 113.219
+          }
+        ],
+        "gpu": [
+          {
+            "pid": 32082,
+            "rssMiB": 38.328
+          }
+        ],
+        "networking": [
+          {
+            "pid": 32083,
+            "rssMiB": 19.375
+          }
+        ],
+        "rustHost": [
+          {
+            "pid": 32085,
+            "rssMiB": 7.031
+          }
+        ],
+        "webContent": [
+          {
+            "pid": 32087,
+            "rssMiB": 65.297
+          }
+        ]
+      },
+      "nativeRssSumMiB": 243.25,
+      "pairedBrowserRssSumMiB": 0
+    },
+    {
+      "phase": "ordinary-local",
+      "elapsedMilliseconds": 12696,
+      "roles": {
+        "nativeWrapper": [
+          {
+            "pid": 32079,
+            "rssMiB": 113.219
+          }
+        ],
+        "gpu": [
+          {
+            "pid": 32082,
+            "rssMiB": 38.391
+          }
+        ],
+        "networking": [
+          {
+            "pid": 32083,
+            "rssMiB": 19.375
+          }
+        ],
+        "rustHost": [
+          {
+            "pid": 32085,
+            "rssMiB": 7.031
+          }
+        ],
+        "webContent": [
+          {
+            "pid": 32087,
+            "rssMiB": 65.344
+          }
+        ]
+      },
+      "nativeRssSumMiB": 243.359,
+      "pairedBrowserRssSumMiB": 0
+    },
+    {
+      "phase": "ordinary-local-scroll",
+      "elapsedMilliseconds": 12894,
+      "roles": {
+        "nativeWrapper": [
+          {
+            "pid": 32079,
+            "rssMiB": 113.438
+          }
+        ],
+        "gpu": [
+          {
+            "pid": 32082,
+            "rssMiB": 39.781
+          }
+        ],
+        "networking": [
+          {
+            "pid": 32083,
+            "rssMiB": 19.375
+          }
+        ],
+        "rustHost": [
+          {
+            "pid": 32085,
+            "rssMiB": 7.031
+          }
+        ],
+        "webContent": [
+          {
+            "pid": 32087,
+            "rssMiB": 65.594
+          }
+        ]
+      },
+      "nativeRssSumMiB": 245.219,
+      "pairedBrowserRssSumMiB": 0
+    },
+    {
+      "phase": "ordinary-local",
+      "elapsedMilliseconds": 13097,
+      "roles": {
+        "nativeWrapper": [
+          {
+            "pid": 32079,
+            "rssMiB": 113.516
+          }
+        ],
+        "gpu": [
+          {
+            "pid": 32082,
+            "rssMiB": 40.344
+          }
+        ],
+        "networking": [
+          {
+            "pid": 32083,
+            "rssMiB": 19.375
+          }
+        ],
+        "rustHost": [
+          {
+            "pid": 32085,
+            "rssMiB": 7.031
+          }
+        ],
+        "webContent": [
+          {
+            "pid": 32087,
+            "rssMiB": 66.016
+          }
+        ]
+      },
+      "nativeRssSumMiB": 246.281,
+      "pairedBrowserRssSumMiB": 0
+    },
+    {
+      "phase": "ordinary-local",
+      "elapsedMilliseconds": 13299,
+      "roles": {
+        "nativeWrapper": [
+          {
+            "pid": 32079,
+            "rssMiB": 113.516
+          }
+        ],
+        "gpu": [
+          {
+            "pid": 32082,
+            "rssMiB": 40.359
+          }
+        ],
+        "networking": [
+          {
+            "pid": 32083,
+            "rssMiB": 19.375
+          }
+        ],
+        "rustHost": [
+          {
+            "pid": 32085,
+            "rssMiB": 7.031
+          }
+        ],
+        "webContent": [
+          {
+            "pid": 32087,
+            "rssMiB": 66.016
+          }
+        ]
+      },
+      "nativeRssSumMiB": 246.297,
+      "pairedBrowserRssSumMiB": 0
+    },
+    {
+      "phase": "ordinary-local",
+      "elapsedMilliseconds": 13502,
+      "roles": {
+        "nativeWrapper": [
+          {
+            "pid": 32079,
+            "rssMiB": 113.188
+          }
+        ],
+        "gpu": [
+          {
+            "pid": 32082,
+            "rssMiB": 40.344
+          }
+        ],
+        "networking": [
+          {
+            "pid": 32083,
+            "rssMiB": 19.375
+          }
+        ],
+        "rustHost": [
+          {
+            "pid": 32085,
+            "rssMiB": 7.031
+          }
+        ],
+        "webContent": [
+          {
+            "pid": 32087,
+            "rssMiB": 66.031
+          }
+        ]
+      },
+      "nativeRssSumMiB": 245.969,
+      "pairedBrowserRssSumMiB": 0
+    },
+    {
+      "phase": "ordinary-local",
+      "elapsedMilliseconds": 13700,
+      "roles": {
+        "nativeWrapper": [
+          {
+            "pid": 32079,
+            "rssMiB": 113.172
+          }
+        ],
+        "gpu": [
+          {
+            "pid": 32082,
+            "rssMiB": 40.344
+          }
+        ],
+        "networking": [
+          {
+            "pid": 32083,
+            "rssMiB": 19.375
+          }
+        ],
+        "rustHost": [
+          {
+            "pid": 32085,
+            "rssMiB": 7.031
+          }
+        ],
+        "webContent": [
+          {
+            "pid": 32087,
+            "rssMiB": 66.031
+          }
+        ]
+      },
+      "nativeRssSumMiB": 245.953,
+      "pairedBrowserRssSumMiB": 0
+    },
+    {
+      "phase": "ordinary-local",
+      "elapsedMilliseconds": 13902,
+      "roles": {
+        "nativeWrapper": [
+          {
+            "pid": 32079,
+            "rssMiB": 113.172
+          }
+        ],
+        "gpu": [
+          {
+            "pid": 32082,
+            "rssMiB": 40.344
+          }
+        ],
+        "networking": [
+          {
+            "pid": 32083,
+            "rssMiB": 19.375
+          }
+        ],
+        "rustHost": [
+          {
+            "pid": 32085,
+            "rssMiB": 7.031
+          }
+        ],
+        "webContent": [
+          {
+            "pid": 32087,
+            "rssMiB": 66.031
+          }
+        ]
+      },
+      "nativeRssSumMiB": 245.953,
+      "pairedBrowserRssSumMiB": 0
+    },
+    {
+      "phase": "ordinary-local",
+      "elapsedMilliseconds": 14103,
+      "roles": {
+        "nativeWrapper": [
+          {
+            "pid": 32079,
+            "rssMiB": 113.188
+          }
+        ],
+        "gpu": [
+          {
+            "pid": 32082,
+            "rssMiB": 40.344
+          }
+        ],
+        "networking": [
+          {
+            "pid": 32083,
+            "rssMiB": 19.375
+          }
+        ],
+        "rustHost": [
+          {
+            "pid": 32085,
+            "rssMiB": 7.031
+          }
+        ],
+        "webContent": [
+          {
+            "pid": 32087,
+            "rssMiB": 66.031
+          }
+        ]
+      },
+      "nativeRssSumMiB": 245.969,
+      "pairedBrowserRssSumMiB": 0
+    },
+    {
+      "phase": "ordinary-local",
+      "elapsedMilliseconds": 20039,
+      "roles": {
+        "nativeWrapper": [
+          {
+            "pid": 32079,
+            "rssMiB": 113.188
+          }
+        ],
+        "gpu": [
+          {
+            "pid": 32082,
+            "rssMiB": 40.188
+          }
+        ],
+        "networking": [
+          {
+            "pid": 32083,
+            "rssMiB": 19.281
+          }
+        ],
+        "rustHost": [
+          {
+            "pid": 32085,
+            "rssMiB": 7.047
+          }
+        ],
+        "webContent": [
+          {
+            "pid": 32087,
+            "rssMiB": 65.984
+          }
+        ]
+      },
+      "nativeRssSumMiB": 245.688,
+      "pairedBrowserRssSumMiB": 0
+    },
+    {
+      "phase": "ordinary-local-closed",
+      "elapsedMilliseconds": 20242,
+      "roles": {
+        "nativeWrapper": [
+          {
+            "pid": 32079,
+            "rssMiB": 113.188
+          }
+        ],
+        "gpu": [
+          {
+            "pid": 32082,
+            "rssMiB": 40.219
+          }
+        ],
+        "networking": [
+          {
+            "pid": 32083,
+            "rssMiB": 19.375
+          }
+        ],
+        "rustHost": [
+          {
+            "pid": 32085,
+            "rssMiB": 7.047
+          }
+        ],
+        "webContent": [
+          {
+            "pid": 32087,
+            "rssMiB": 66.016
+          }
+        ]
+      },
+      "nativeRssSumMiB": 245.844,
+      "pairedBrowserRssSumMiB": 0
+    },
+    {
+      "phase": "ordinary-local-closed",
+      "elapsedMilliseconds": 20445,
+      "roles": {
+        "nativeWrapper": [
+          {
+            "pid": 32079,
+            "rssMiB": 113.172
+          }
+        ],
+        "gpu": [
+          {
+            "pid": 32082,
+            "rssMiB": 40.234
+          }
+        ],
+        "networking": [
+          {
+            "pid": 32083,
+            "rssMiB": 19.375
+          }
+        ],
+        "rustHost": [
+          {
+            "pid": 32085,
+            "rssMiB": 7.047
+          }
+        ],
+        "webContent": [
+          {
+            "pid": 32087,
+            "rssMiB": 66.016
+          }
+        ]
+      },
+      "nativeRssSumMiB": 245.844,
+      "pairedBrowserRssSumMiB": 0
+    },
+    {
+      "phase": "ordinary-local-closed",
+      "elapsedMilliseconds": 20646,
+      "roles": {
+        "nativeWrapper": [
+          {
+            "pid": 32079,
+            "rssMiB": 113.172
+          }
+        ],
+        "gpu": [
+          {
+            "pid": 32082,
+            "rssMiB": 40.25
+          }
+        ],
+        "networking": [
+          {
+            "pid": 32083,
+            "rssMiB": 19.375
+          }
+        ],
+        "rustHost": [
+          {
+            "pid": 32085,
+            "rssMiB": 7.047
+          }
+        ],
+        "webContent": [
+          {
+            "pid": 32087,
+            "rssMiB": 66.016
+          }
+        ]
+      },
+      "nativeRssSumMiB": 245.859,
+      "pairedBrowserRssSumMiB": 0
+    },
+    {
+      "phase": "ordinary-local-closed",
+      "elapsedMilliseconds": 20846,
+      "roles": {
+        "nativeWrapper": [
+          {
+            "pid": 32079,
+            "rssMiB": 113.172
+          }
+        ],
+        "gpu": [
+          {
+            "pid": 32082,
+            "rssMiB": 40.25
+          }
+        ],
+        "networking": [
+          {
+            "pid": 32083,
+            "rssMiB": 19.375
+          }
+        ],
+        "rustHost": [
+          {
+            "pid": 32085,
+            "rssMiB": 7.047
+          }
+        ],
+        "webContent": [
+          {
+            "pid": 32087,
+            "rssMiB": 66.016
+          }
+        ]
+      },
+      "nativeRssSumMiB": 245.859,
+      "pairedBrowserRssSumMiB": 0
+    },
+    {
+      "phase": "ordinary-local-closed",
+      "elapsedMilliseconds": 21047,
+      "roles": {
+        "nativeWrapper": [
+          {
+            "pid": 32079,
+            "rssMiB": 113.172
+          }
+        ],
+        "gpu": [
+          {
+            "pid": 32082,
+            "rssMiB": 40.25
+          }
+        ],
+        "networking": [
+          {
+            "pid": 32083,
+            "rssMiB": 19.375
+          }
+        ],
+        "rustHost": [
+          {
+            "pid": 32085,
+            "rssMiB": 7.047
+          }
+        ],
+        "webContent": [
+          {
+            "pid": 32087,
+            "rssMiB": 66.016
+          }
+        ]
+      },
+      "nativeRssSumMiB": 245.859,
+      "pairedBrowserRssSumMiB": 0
+    },
+    {
+      "phase": "ordinary-local-closed",
+      "elapsedMilliseconds": 21246,
+      "roles": {
+        "nativeWrapper": [
+          {
+            "pid": 32079,
+            "rssMiB": 113.172
+          }
+        ],
+        "gpu": [
+          {
+            "pid": 32082,
+            "rssMiB": 40.25
+          }
+        ],
+        "networking": [
+          {
+            "pid": 32083,
+            "rssMiB": 19.375
+          }
+        ],
+        "rustHost": [
+          {
+            "pid": 32085,
+            "rssMiB": 7.047
+          }
+        ],
+        "webContent": [
+          {
+            "pid": 32087,
+            "rssMiB": 66.016
+          }
+        ]
+      },
+      "nativeRssSumMiB": 245.859,
+      "pairedBrowserRssSumMiB": 0
+    },
+    {
+      "phase": "ordinary-local-closed",
+      "elapsedMilliseconds": 27182,
+      "roles": {
+        "nativeWrapper": [
+          {
+            "pid": 32079,
+            "rssMiB": 113.172
+          }
+        ],
+        "gpu": [
+          {
+            "pid": 32082,
+            "rssMiB": 40.25
+          }
+        ],
+        "networking": [
+          {
+            "pid": 32083,
+            "rssMiB": 19.375
+          }
+        ],
+        "rustHost": [
+          {
+            "pid": 32085,
+            "rssMiB": 7.047
+          }
+        ],
+        "webContent": [
+          {
+            "pid": 32087,
+            "rssMiB": 66.016
+          }
+        ]
+      },
+      "nativeRssSumMiB": 245.859,
+      "pairedBrowserRssSumMiB": 0
+    }
+  ],
+  "fixtureProviders": [
+    {
+      "provider": "codex",
+      "arguments": [
+        "login",
+        "status"
+      ],
+      "kind": "probe"
+    },
+    {
+      "provider": "claude",
+      "arguments": [
+        "auth",
+        "status"
+      ],
+      "kind": "probe"
+    }
+  ],
+  "fixtureProbeCount": 2,
+  "fakeProtocolProcessCount": 0,
+  "completedAt": "2026-10-12T07:18:02.132Z"
+}

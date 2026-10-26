@@ -1,0 +1,380 @@
+{
+  "status": "accept",
+  "date": "2026-10-11T05:03:29.899Z",
+  "binarySha256": "be6aba5619d919be48752b115c48fe998bd8f103b9bdcc6a09d5968290a51c4b",
+  "browserEngine": "webkit",
+  "realHost": true,
+  "sourceOverrides": false,
+  "disposableWorkspaces": true,
+  "fakeOsOpener": true,
+  "fakeProviders": true,
+  "checks": [
+    {
+      "name": "Embedded release assets match the candidate source, without CSS or JS overrides",
+      "status": "pass",
+      "milliseconds": 18
+    },
+    {
+      "name": "Local bootstrap exposes only a canonical PC address and static roots preserve fragments",
+      "status": "pass",
+      "milliseconds": 31
+    },
+    {
+      "name": "Missing, foreign or duplicate origins and form/navigation requests never open a browser",
+      "status": "pass",
+      "milliseconds": 37
+    },
+    {
+      "name": "Proxy, foreign host and Fetch Metadata variants cannot spend the opener budget",
+      "status": "pass",
+      "milliseconds": 17
+    },
+    {
+      "name": "Allowed opening uses only the generated private link and never signs in its caller",
+      "status": "pass",
+      "milliseconds": 417
+    },
+    {
+      "name": "A hung OS opener is killed within its deadline and concurrent requests stay bounded",
+      "status": "pass",
+      "milliseconds": 5037
+    },
+    {
+      "name": "A new plain localhost tab reaches a compact welcome with one usable Open editor action",
+      "status": "pass",
+      "milliseconds": 1326
+    },
+    {
+      "name": "Opener success cannot claim authentication; a different profile exposes bounded fallback",
+      "status": "pass",
+      "milliseconds": 10833
+    },
+    {
+      "name": "Another tab using the opened private link makes the original tab usable without copied secrets",
+      "status": "pass",
+      "milliseconds": 1273
+    },
+    {
+      "name": "An authenticated localhost alias remains on its original origin and reuses its host cookie",
+      "status": "pass",
+      "milliseconds": 435
+    },
+    {
+      "name": "A stored pending draft prevents fresh-entry normalization from abandoning its localhost origin",
+      "status": "pass",
+      "milliseconds": 1441
+    },
+    {
+      "name": "Loaded unacknowledged source survives lost cookies and local browser reopening without an origin hop",
+      "status": "pass",
+      "milliseconds": 2555
+    },
+    {
+      "name": "An older real unauthenticated bootstrap cannot repaint welcome after private-link authentication",
+      "status": "pass",
+      "milliseconds": 572
+    },
+    {
+      "name": "A foreign local web page cannot trigger the opener through fetch, forms or preflight",
+      "status": "pass",
+      "milliseconds": 561
+    },
+    {
+      "name": "A failed OS opener gives a visible recovery path without granting access",
+      "status": "pass",
+      "milliseconds": 861
+    },
+    {
+      "name": "A localhost invitation retains its origin and never exposes the PC opener",
+      "status": "pass",
+      "milliseconds": 381
+    },
+    {
+      "name": "No browser exceptions or credential disclosure occurred in the reviewed workflows",
+      "status": "pass",
+      "milliseconds": 3
+    }
+  ],
+  "screenshots": [
+    "plain-localhost-welcome.png",
+    "different-browser-fallback.png",
+    "original-tab-recovered.png",
+    "authenticated-alias-preserved.png",
+    "stored-draft-alias-welcome.png",
+    "loaded-draft-alias-recovered.png",
+    "stale-bootstrap-ignored.png",
+    "failed-opener-phone.png",
+    "failed-opener-narrow.png",
+    "failed-opener-narrow-scrolled.png",
+    "alias-invitation-retained.png"
+  ],
+  "network": [
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 401
+    },
+    {
+      "method": "POST",
+      "path": "/api/pc/open",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 401
+    },
+    {
+      "method": "POST",
+      "path": "/api/pc/open",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 401
+    },
+    {
+      "method": "POST",
+      "path": "/api/pc/open",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 401
+    },
+    {
+      "method": "POST",
+      "path": "/api/pc/open",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 401
+    },
+    {
+      "method": "POST",
+      "path": "/api/pc/open",
+      "status": 403
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 401
+    },
+    {
+      "method": "POST",
+      "path": "/api/pc/open",
+      "status": 503
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 401
+    }
+  ],
+  "findings": [],
+  "browserErrors": [],
+  "expectedBrowserErrors": [
+    {
+      "kind": "Deliberate foreign-origin fetch blocked by CORS",
+      "message": "/127.0.0.1:54640/api/pc/open due to access control checks."
+    },
+    {
+      "kind": "Deliberate foreign-origin fetch blocked by CORS",
+      "message": "/127.0.0.1:54640/api/pc/open due to access control checks."
+    }
+  ],
+  "references": "tests/pc-entry-review-references/provenance.json",
+  "limits": [
+    "OS default-browser integration is emulated with an actual fake opener executable and real browser private-link navigation.",
+    "Physical devices and real platform browser handlers remain untested.",
+    "Existing browser profiles, credentials, user projects and live Relay hosts are never accessed."
+  ],
+  "manualReview": {
+    "status": "accept",
+    "reviewedAt": "2026-10-11T05:05:40.159355+00:00",
+    "baselineCommit": "a84cee1",
+    "pieces": [
+      {
+        "piece": "Plain-address PC entry",
+        "verdict": "accept",
+        "evidence": "One prominent Open editor action replaces the blocking paste-only modal. The editor appears only after real cookie authentication and WebSocket connection."
+      },
+      {
+        "piece": "Secure host browser reopening",
+        "verdict": "accept",
+        "evidence": "Origin/Host/loopback/proxy/Fetch Metadata matrix denies attackers; successful opener responses disclose no credential and do not authenticate their caller. Hung children terminate within the opener deadline."
+      },
+      {
+        "piece": "Alias and draft continuity",
+        "verdict": "accept",
+        "evidence": "Authenticated aliases, stored pending drafts and loaded unacknowledged source retain their original origin. An older real 401 response cannot replace authenticated UI."
+      },
+      {
+        "piece": "Narrow fallback recovery",
+        "verdict": "accept",
+        "evidence": "Actual 320\u00d7300 native-wheel scrolling reaches a fully visible, hit-tested Continue here target at least 44 px high. The previous release had no usable scroll range."
+      },
+      {
+        "piece": "Remote invitation separation",
+        "verdict": "accept",
+        "evidence": "Origin-bound localhost invitations retain their origin, show the PIN flow and never expose the local PC opener."
+      },
+      {
+        "piece": "Visual simplicity",
+        "verdict": "accept",
+        "evidence": "Actual final welcome, expanded fallback, recovered draft and invitation screenshots compared with the retained baseline. Quiet typography and one primary action clarify the next step."
+      }
+    ],
+    "rejectedRound": {
+      "binarySha256": "ef4ae972366f0e4bc310e59f25224b82e945b48f3bbf5db160f56da578482e5d",
+      "issue": "Expanded fallback exceeded the locked 300 px viewport with zero scroll range in both engines. The final release bounds the welcome to the visual viewport and provides a real scrollport.",
+      "evidenceDirectory": "tests/pc-entry-review-references"
+    },
+    "comparisonMethod": "Independent recognizable task/security and screenshot comparison; no true blind study or ASVS certification.",
+    "biggestRemainingGap": "Real operating-system default-browser handlers and physical devices were not exercised; a fake executable models dispatch while real browser contexts exercise the generated private link, cookie and WebSocket exchange."
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "status": "baseline-captured",
+  "date": "2026-10-11T06:46:42.384Z",
+  "binarySha256": "2e8265e457215f1570ae99a1e1da011764ab7672cd7cec5ed3e73de0e1e72dea",
+  "browserEngine": "webkit",
+  "browserVersion": "26.6",
+  "realHost": true,
+  "sourceOverrides": false,
+  "disposableWorkspaces": true,
+  "fakeProviders": true,
+  "checks": [
+    "Frozen embedded build starts without a shell or inference",
+    "Real paired phone and desktop share one editable fixture",
+    "Matched task state has a real fake-provider reply and unsent draft"
+  ],
+  "screenshots": [
+    {
+      "file": "desktop-ai-matched.png",
+      "bytes": 398033,
+      "sha256": "45201c083701a475498a32303dc41dd5cebc53d0b2993ff345d0809a43a48494"
+    },
+    {
+      "file": "phone-ai-matched.png",
+      "bytes": 93691,
+      "sha256": "1a79190358e5a94ab51e4acb001c56d63a8eacf0bcdea372d47f3833c4b71767"
+    }
+  ],
+  "layouts": [],
+  "findings": [],
+  "unexpectedBrowserErrors": [],
+  "references": "tests/ai-layout-review-references/provenance.json",
+  "matchedTaskState": {
+    "file": "session-controller.js",
+    "source": "160 generated lines, same content and visible text on both releases",
+    "prompt": "Review the session state and explain what to preserve when changing views.",
+    "reply": "same deterministic fake-provider reply",
+    "unsentDraft": "Could we keep the file open while reading your reply?",
+    "viewports": [
+      {
+        "width": 1280,
+        "height": 800
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ]
+  },
+  "limits": [
+    "No real inference, credentials, user projects, tunnels or live Relay hosts were accessed.",
+    "Physical devices and native mobile keyboards remain untested.320x300 is a simulated reduced visual viewport; IME events are injected.",
+    "Independent recognizable matched-state screenshot comparison; no true blind study or broad product parity claim."
+  ]
+}

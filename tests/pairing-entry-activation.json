@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-11 09:49:00 UTC",
+  "status": "pass",
+  "implementationCommit": "af2c9f6f2f469b2b8602129d0b7a89a0d06d5966",
+  "binarySha256": "d9fab71400da1e3a60e826887d81af69c7035b771367a4b123ac61b5baca95ac",
+  "previewPort": 8767,
+  "preflight": {
+    "roots": 3,
+    "connectedClients": 2,
+    "runningShells": 0,
+    "activeAiJobs": 0,
+    "dirtyOrConflictedDocuments": 0
+  },
+  "postRestart": {
+    "roots": 3,
+    "connectedClients": 1,
+    "runningShells": 0,
+    "activeAiJobs": 0,
+    "dirtyOrConflictedDocuments": 0
+  },
+  "attachedRootSetPreserved": true,
+  "preservedStateDirectory": true,
+  "servedAssetsMatch": true,
+  "protectedPort": 8765,
+  "protectedListenerUnchanged": true,
+  "internetRestored": true,
+  "publicRoute": {
+    "status": "verified",
+    "attempts": 1,
+    "defaultTlsValidation": true,
+    "servedAssetsMatch": true,
+    "unauthenticatedApiStatus": 401
+  },
+  "credentialsRotatedOnRestart": true,
+  "publicAddressChangedOnRestart": true,
+  "phoneNeedsFreshInvitation": true,
+  "limitations": [
+    "Metadata and exact served assets only; no user source, root ID/path, private invitation, code, credential or URL is recorded.",
+    "No active host shell, AI job or dirty/conflicted host document before the previously authorized restart.",
+    "Live public check validates default TLS, embedded assets and HTTP 401; actual public-device pairing is not driven against the user's workspace."
+  ]
+}

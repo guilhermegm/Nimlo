@@ -1,0 +1,59 @@
+{
+  "status": "pass",
+  "releaseSha256": "cc68e787492d20bf2c2e39c53ddfa64e9e474475fa9f1f2f44688536293d71d3",
+  "applicationCommit": "753b031",
+  "host": "127.0.0.1:8767",
+  "metadataOnly": true,
+  "userProjectContentsRecorded": false,
+  "credentialsRecorded": false,
+  "userApprovedRestart": true,
+  "rememberedStateReused": true,
+  "localValidation": {
+    "attachedProjects": 2,
+    "attachedRootsPreserved": true,
+    "servedAssetsMatchAcceptedBuild": true,
+    "assetMatches": {
+      "index.html": true,
+      "app.js": true,
+      "style.css": true
+    },
+    "runningShells": 0,
+    "activeAiJobs": 0,
+    "dirtyBuffers": 0,
+    "internetStatus": "off"
+  },
+  "freshBrowserEntry": {
+    "status": "pass",
+    "checks": {
+      "welcomeVisible": true,
+      "openEditorVisible": true,
+      "joinModalOpen": false,
+      "privateLinkFallbackCollapsed": true,
+      "workspaceLocked": true,
+      "currentProjectControlPresent": true,
+      "aiProjectControlPresent": true,
+      "terminalProjectControlPresent": true,
+      "withinViewport": true
+    },
+    "pageErrors": 0
+  },
+  "publicHttps": {
+    "publicHttpsReachable": true,
+    "publicBootstrapRequiresAuthentication": true,
+    "publicBootstrapStatus": 401,
+    "publicUiMatchesAcceptedBuild": true,
+    "tlsCertificateVerified": true,
+    "transport": "Node HTTPS with certificate verification"
+  },
+  "otherHost8765Unchanged": true,
+  "finalLiveMetadata": {
+    "attachedProjects": 2,
+    "connectedDevices": 1,
+    "pairedSessions": 0,
+    "internetStatus": "ready"
+  },
+  "limits": [
+    "No live project files were opened, edited or saved by this verification.",
+    "Phone authentication must be renewed after host credential rotation; physical mobile keyboard behavior was not tested."
+  ]
+}

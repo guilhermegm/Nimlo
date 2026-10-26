@@ -1,0 +1,9 @@
+Nimlo 0.2.0
+
+- Signed native update checks with verified downloads for manual installation.
+- Update notifications keep your current Nimlo session running.
+- Smoother typing and cursor movement in large files with long lines.
+- Existing projects, remembered folders and acknowledged recovery data stay in place.
+- New file and quick file navigation commands in the Files and native File menus.
+
+This Mac release is not notarized. macOS may require approval when opening it.

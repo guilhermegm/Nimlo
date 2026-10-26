@@ -1,0 +1,26 @@
+{
+  "status": "pass",
+  "date": "2026-10-16T07:57:29.234Z",
+  "browserEngine": "webkit",
+  "binary": "/Users/developer/acme/code_editor/target/release/nimlo-editor",
+  "binarySha256": "cddbb20a14bffe2dc5688c84958723f41740701ff4d69a5847a92bc59eb3622f",
+  "checks": [
+    "Only host attaches projects; paired phone selects an attached project without moving the desktop",
+    "Missing paths and regular files are rejected without changing the project",
+    "Provider models and effort survive selection and defaults are shared",
+    "Invalid model flags leave canonical settings unchanged",
+    "Both official adapter protocols receive the shared configured models in the correct cwd",
+    "Project selection preserves a running AI job; settings updates stay guarded across projects",
+    "Real host shell and dirty buffers survive choosing another project",
+    "Host saves global model defaults and paired phone receives them while desktop remains writable",
+    "Refresh remembers phone selection and old project writes are fenced",
+    "AI starts in B with current shared defaults and acknowledged B drafts stay isolated",
+    "Remembered projects and isolated recovery survive restart; explicit startup folder wins",
+    "Blank model and effort restore native provider defaults while preserving Ask permissions",
+    "Account help stays compact when connected and expands when sign-in is needed",
+    "Refresh account status probes sign-in without an inference job",
+    "Custom state stays isolated and browser has no exceptions"
+  ],
+  "fixtureOnly": true,
+  "aiInferenceRequests": 0
+}

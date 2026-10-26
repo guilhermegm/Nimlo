@@ -1,0 +1,75 @@
+{
+  "status": "fail",
+  "benchmarkSha256": "50a6a8137034292098f365dd5720d87303ac5443f2b462c8d6334eacf48c95f2",
+  "date": "2026-10-11T08:26:10.942Z",
+  "build": {
+    "binary": "/tmp/relay-performance-baseline-e089dc02",
+    "binarySha256": "e089dc02d8dbc02b8d6252bb980a84a3459ec6cba013bda85dd8a01bfd605c62",
+    "binaryBytes": 2907184,
+    "sourceRef": "9af9442526cd82d6ce56dd6486da6ec32634c3a4",
+    "assetManifest": null,
+    "assets": {
+      "index.html": {
+        "bytes": 20584,
+        "sha256": "848da25b29a66f4873a9deeb3656c0687eda0c0aeb106f0714ddeac6b93e3dc7"
+      },
+      "app.js": {
+        "bytes": 113188,
+        "sha256": "3032f2cf96703dbbc5603245d7a23fd43ba4b6269b65833c93fdaa1912301726"
+      },
+      "style.css": {
+        "bytes": 44935,
+        "sha256": "e85f6fbe11d233dcb8d64fdde65247534eb9e5c92c362bfc9d7024bb1a2cf8fa"
+      }
+    }
+  },
+  "method": {
+    "fixtureOnly": true,
+    "inferenceRequests": 0,
+    "hostFootprint": "macOS vmmap -summary per phase; OS physicalfootprint task accounting, including compressed memory charges; separately from RSS, not exact total system RAM",
+    "hostRss": "macOS ps RSS approximately every100ms; phase final median of final10samples after1.2sec settle; sampled peaks can miss shorter spikes",
+    "browserRss": "isolated Chrome SystemInfo process IDs, ps RSS seven samples at80ms; browser, renderer and other categories separate; RSS includes shared pages, does not establish exact physical RAM",
+    "heap": "Memory.getDOMCounters also records renderer DOM including native textarea internals without full snapshot; Runtime.getHeapUsage before GC (natural point sample) and after explicit HeapProfiler.collectGarbage (retained JS heap); excludes native browser/GPU/process costs; prior phase GC affects following phase",
+    "instrumentation": "scalar counters only; no full source or protocol messages retained; source split/encoder/storage/DOM wrappers are equal overhead in A/B",
+    "timing": "native Playwright key input; measured trials wait for host acknowledgment after each key because baseline sustained typing fails separately; capture-to-document-bubble app handler duration; double animation frame observation for scroll; Chrome Performance.getMetrics workload deltas; single-machine timings noisy",
+    "providers": "both CLIs shadowed with disposable fixtures; no real credentials or inference",
+    "shell": "/bin/sh, generated workspace, no user startup",
+    "network": "127.0.0.1:0 only, no tunnel, existing8765/8767 untouched"
+  },
+  "environment": {
+    "hardware": "MacBookPro18,1",
+    "cpu": "Apple M1 Pro",
+    "physicalMemoryBytes": 34359738368,
+    "os": "ProductName:\t\tmacOS\nProductVersion:\t\t26.2\nBuildVersion:\t\t25C56",
+    "node": "v20.17.0",
+    "systemMemoryAtStart": {
+      "pressure": "The system has 34359738368 (2097152 pages with a page size of 16384).\nSystem-wide memory free percentage: 43%",
+      "swap": "total = 32768.00M  used = 31437.25M  free = 1330.75M  (encrypted)",
+      "vmStatistics": "Mach Virtual Memory Statistics: (page size of 16384 bytes)\nPages free:                               37670.\nPages active:                            427717.\nPages inactive:                          415995.\nPages speculative:                        10816.\nPages throttled:                              0.\nPages wired down:                        395894.\nPages purgeable:                            827.\n\"Translation faults\":              105873655554.\nPages copy-on-write:                 4829475667.\nPages zero filled:                  36180474327.\nPages reactivated:                  28180165922.\nPages purged:                        1335896036.\nFile-backed pages:                       241879.\nAnonymous pages:                         612649.\nPages stored in compressor:             5045763.\nPages occupied by compressor:            767699.\nDecompressions:                     22677456837.\nCompressions:                       26553092289.\nPageins:                             2056259516.\nPageouts:                              23172096.\nSwapins:                              149193071.\nSwapouts:                             170163273."
+    }
+  },
+  "workload": {
+    "files": 8,
+    "bytesPerFile": 1047552,
+    "nativeKeystrokes": 112,
+    "ordinaryFileLines": 1000,
+    "fileShapes": "six65character lines; one long line; one209k5character lines",
+    "fullDocumentEdits": 20,
+    "reopenCycles": 6,
+    "metadataFolders": 16,
+    "metadataEntriesPerFolder": 48
+  },
+  "phases": [],
+  "nativeTrials": [],
+  "reopenCycles": [],
+  "checks": [],
+  "browserErrors": [],
+  "error": "Error: Command failed: ps -p 71822 -o comm=\n    at genericNodeError (node:internal/errors:984:15)\n    at wrappedFn (node:internal/errors:538:14)\n    at checkExecSyncError (node:child_process:891:11)\n    at execFileSync (node:child_process:927:15)\n    at exec (/Users/developer/acme/code_editor/scripts/performance-gauntlet.cjs:20:25)\n    at scan (/Users/developer/acme/code_editor/scripts/performance-gauntlet.cjs:87:280)\n    at descendants (/Users/developer/acme/code_editor/scripts/performance-gauntlet.cjs:87:336)\n    at /Users/developer/acme/code_editor/scripts/performance-gauntlet.cjs:99:166\n    at until (/Users/developer/acme/code_editor/scripts/performance-gauntlet.cjs:23:106)\n    at async main (/Users/developer/acme/code_editor/scripts/performance-gauntlet.cjs:99:150)",
+  "hostSamples": [
+    {
+      "phase": "startup",
+      "elapsedMilliseconds": 1791707171897,
+      "rssBytes": 4177920
+    }
+  ]
+}

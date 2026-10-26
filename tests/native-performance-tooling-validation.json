@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "status": "pass",
+  "kind": "Synthetic tooling checks only; not native release performance measurements",
+  "createdAt": "2026-10-16T08:19:25.486Z",
+  "checks": [
+    {
+      "name": "Stable synthetic calibration and two passing candidate trials",
+      "status": "pass"
+    },
+    {
+      "name": "One slow candidate fails even when its median would pass",
+      "status": "pass"
+    },
+    {
+      "name": "Inflated candidate idle cannot hide retention excess",
+      "status": "pass"
+    },
+    {
+      "name": "Unstable normal calibration is rejected",
+      "status": "pass"
+    },
+    {
+      "name": "Missing owned task role fails closed",
+      "status": "pass"
+    },
+    {
+      "name": "Native binary/source association mismatch fails closed",
+      "status": "pass"
+    },
+    {
+      "name": "Natural retention uses minimum valid excess and zero additive stress allowance",
+      "status": "pass"
+    },
+    {
+      "name": "Zero baseline excess requires zero excess and labels reduction unestablished",
+      "status": "pass"
+    },
+    {
+      "name": "Changed trusted key sample count fails comparability",
+      "status": "pass"
+    },
+    {
+      "name": "Incomplete declared open/close cycles fail",
+      "status": "pass"
+    },
+    {
+      "name": "Invalid trailing baseline is rejected rather than ignored",
+      "status": "pass"
+    },
+    {
+      "name": "Trailing baseline latency drift is rejected against frozen values",
+      "status": "pass"
+    },
+    {
+      "name": "Lower valid trailing natural retention can only tighten acceptance",
+      "status": "pass"
+    },
+    {
+      "name": "Candidate capture refuses uncalibrated budgets before app launch",
+      "status": "pass"
+    },
+    {
+      "name": "Renderer reduction cannot hide larger whole-native stress charge",
+      "status": "pass"
+    },
+    {
+      "name": "Moving transient stress allocations into Rust cannot hide lifetime task charges",
+      "status": "pass"
+    },
+    {
+      "name": "Faster keys cannot hide ordinary or high-line scroll regressions",
+      "status": "pass"
+    },
+    {
+      "name": "Runner plan reports no child processes, captures or file changes",
+      "status": "pass"
+    }
+  ],
+  "sourceSha256": {
+    "scripts/native-performance-check.cjs": "589a8770911c7c2226084da382b25f974d7beb5c694ab939f2a9b325e01fad88",
+    "scripts/native-performance-gate.cjs": "5068233b1c1a65e72e6c4b9e891b1339769b24ecc9958b1b2e0d6d47b5437b2f",
+    "scripts/native-performance-freeze.cjs": "c690d4c080e94afb1cb030dee2aa9b8b8eea53fdcbd189ac951ef98d553e52a4",
+    "scripts/native-performance-prepare-baseline.cjs": "08c079d02b61bd4829d1a59ef06f77df0ab46bd99a7b1b264a1d80b7a9556849",
+    "scripts/native-performance-run.cjs": "c4c279f44221424fc17b746233b257dc1a4ddefdb93322ff82e9aaa57e65385e",
+    "scripts/native-performance-gate-selfcheck.cjs": "a7df50529225bb88012f8bb911d61697b1172750b56ce71ccc4c1276db915733"
+  }
+}

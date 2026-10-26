@@ -1,0 +1,214 @@
+{
+  "baselineCommit": "456bb75",
+  "references": [
+    {
+      "file": "baseline-phone-tree.png",
+      "source": "git:199eb2d:tests/multi-project-review-chromium/phone-simplified-combined-menu.png",
+      "purpose": "199eb2d combined tree before explicit active-project controls",
+      "bytes": 41021,
+      "sha256": "e99772dc6ce9ec4244d152dd567af592c91430bc5a77d6500d32ad3346dbe88d"
+    },
+    {
+      "file": "baseline-desktop-ai-picker.png",
+      "source": "git:199eb2d:tests/multi-project-review-chromium/desktop-quick-picker-from-ai.png",
+      "purpose": "199eb2d AI quick picker before explicit active-project controls",
+      "bytes": 38363,
+      "sha256": "fe2e9fca704eea02f171e5e4793fe31aaf2c76dfe54e943feabe7106662dbe5e"
+    },
+    {
+      "file": "baseline-phone-terminal.png",
+      "source": "git:199eb2d:tests/multi-project-review-chromium/phone-project-a-terminal.png",
+      "purpose": "199eb2d terminal before explicit active-project controls",
+      "bytes": 33363,
+      "sha256": "ab5485c95f7bba36e6fe6c1745fa4c37d832c14a8fe852d8bba4d30fe6c792e9"
+    },
+    {
+      "file": "zed-projects.webp",
+      "url": "https://images.zed.dev/blog/parallel-agents/diagram.webp",
+      "purpose": "Official Zed multi-project and AI context reference",
+      "bytes": 424018,
+      "sha256": "d382e0e1f7304ef5e36a61e5b9c3fe129a7949d5fc0531d1409dc34191365111"
+    },
+    {
+      "file": "working-copy-content.webp",
+      "url": "https://workingcopy.app/img/content-26.webp",
+      "purpose": "Official Working Copy phone editing reference",
+      "bytes": 146100,
+      "sha256": "bc89dec31c2a8f3272ae9380df9377e6c0f194a4331256b36dc80edcdd89eb74"
+    },
+    {
+      "file": "zed-file-tree.png",
+      "url": "https://images.zed.dev/docs/project-panel/panel.png",
+      "purpose": "Official Zed project-panel reference for quiet hierarchy and active-file context",
+      "bytes": 1393879,
+      "sha256": "468bcf01b484acbdd05297567078079f5b149a537bb400f4adfad226d6212c9e"
+    },
+    {
+      "file": "prior-753b-phone-combined-tree.png",
+      "source": "git:753b031:tests/active-project-review-chromium/phone-inactive-expanded-current-root.png",
+      "purpose": "Previously accepted combined Files tree before current-only request",
+      "bytes": 38850,
+      "sha256": "ceeca78bdda8ac41ed8c511c883a89bf7ef82fbd057ae5cdc6c6e114f8b5290f"
+    },
+    {
+      "file": "prior-753b-phone-picker.png",
+      "source": "git:753b031:tests/active-project-review-chromium/phone-same-name-current-picker.png",
+      "purpose": "Previously accepted shared project picker",
+      "bytes": 27104,
+      "sha256": "1eaa54cfd756bab30ce1bdb9b59467a9e1af30ca22cf7fd2d8e99a03f3bb6ea7"
+    },
+    {
+      "file": "prior-753b-phone-ai.png",
+      "source": "git:753b031:tests/active-project-review-chromium/phone-ai-current-project.png",
+      "purpose": "Previously accepted phone AI project context",
+      "bytes": 23847,
+      "sha256": "6eb3ca1bc6ef4b9de3f3b4dee6c237f6567c9ff5405aa45e03133fbc36f55f77"
+    },
+    {
+      "file": "prior-753b-phone-terminal.png",
+      "source": "git:753b031:tests/active-project-review-chromium/phone-terminal-current-project.png",
+      "purpose": "Previously accepted phone terminal project context",
+      "bytes": 38031,
+      "sha256": "dfa7220fbd00decfaa650335ef1d3686d9655989899d475ab53fdd1a0386cb4d"
+    },
+    {
+      "file": "prior-c175-phone-root-row.png",
+      "source": "git:c1751fd:tests/active-project-review-chromium/phone-current-project-files.png",
+      "candidateSha256": "9154cb383ba221600bfe89f2b67b5da57352fcf109e24192bf7c5273e245936b",
+      "purpose": "Actual selected-root row before unified neutral disclosure",
+      "bytes": 40730,
+      "sha256": "eda0cb128b4488a9959c766188344a75440e684529b63156580a5bff4c29f9cb"
+    },
+    {
+      "file": "prior-c175-phone-filter-320x300.png",
+      "source": "git:c1751fd:tests/active-project-review-chromium/phone-current-filter-320x300.png",
+      "candidateSha256": "9154cb383ba221600bfe89f2b67b5da57352fcf109e24192bf7c5273e245936b",
+      "purpose": "Actual320px filter before unified neutral disclosure",
+      "bytes": 21218,
+      "sha256": "d437cc9cc707dcee5bde01467ff5704f6ff7be7a6aa9d21004a530be0701b2e9"
+    },
+    {
+      "file": "prior-c175-phone-picker.png",
+      "source": "git:c1751fd:tests/active-project-review-chromium/phone-same-name-current-picker.png",
+      "candidateSha256": "9154cb383ba221600bfe89f2b67b5da57352fcf109e24192bf7c5273e245936b",
+      "purpose": "Persistent current context in unchanged shared project picker",
+      "bytes": 27105,
+      "sha256": "6a9a79791f00417be77718db8242174451345ff8d3005822d394ae87b1f3309c"
+    },
+    {
+      "file": "prior-456bb75-phone-files-menu.png",
+      "source": "git:456bb75:tests/active-project-review-chromium/phone-neutral-root-row.png",
+      "candidateSha256": "cc9acb0d631b1d59afef806fc655990fcda6fdbcaccc5b85d970d9393162efc0",
+      "purpose": "Matched Files menu before action-row and Open-tab removal",
+      "bytes": 25384,
+      "sha256": "464da26535ff78607ca4108c9b244766f752464d59b49c80f6eb274e2205f3a0"
+    },
+    {
+      "file": "prior-456bb75-phone-expanded-files.png",
+      "source": "git:456bb75:tests/active-project-review-chromium/phone-current-project-files.png",
+      "candidateSha256": "cc9acb0d631b1d59afef806fc655990fcda6fdbcaccc5b85d970d9393162efc0",
+      "purpose": "Expanded Files menu before action-row and Open-tab removal",
+      "bytes": 39456,
+      "sha256": "c11740f62106c51fe7b6dfc6b5942b1111454939a239c0ece35ba440e2c67581"
+    },
+    {
+      "file": "prior-456bb75-phone-filter-320x300.png",
+      "source": "git:456bb75:tests/active-project-review-chromium/phone-current-filter-320x300.png",
+      "candidateSha256": "cc9acb0d631b1d59afef806fc655990fcda6fdbcaccc5b85d970d9393162efc0",
+      "purpose": "Keyboard viewport before action-row and Open-tab removal",
+      "bytes": 20777,
+      "sha256": "9a62eb65a8b0a6f2868cac9e062cee309bb4ffb6c8fde6e6613769c7367b4b05"
+    },
+    {
+      "file": "prior-456bb75-phone-picker.png",
+      "source": "git:456bb75:tests/active-project-review-chromium/phone-same-name-current-picker.png",
+      "candidateSha256": "cc9acb0d631b1d59afef806fc655990fcda6fdbcaccc5b85d970d9393162efc0",
+      "purpose": "Project picker before New file action relocation",
+      "bytes": 27105,
+      "sha256": "6a9a79791f00417be77718db8242174451345ff8d3005822d394ae87b1f3309c"
+    }
+  ],
+  "comparisonMethod": "Independent task and recognizable screenshot comparison; no true blind study claimed.",
+  "rejections": [
+    {
+      "file": "rejected-b93-chromium-history-trace.json",
+      "candidateSha256": "b93ce45810c22a7f3bc868a65ce920eae2cb93fce141178e3ea7b874b40d0d8d",
+      "engine": "chromium",
+      "purpose": "Genuine old-project history callback rejection; disposable project fixtures only",
+      "bytes": 1243,
+      "sha256": "5999509ecd03860f9e549846043e1e7b84ae472a43cca1576580d5c0386828e7"
+    },
+    {
+      "file": "rejected-b93-chromium-review.json",
+      "candidateSha256": "b93ce45810c22a7f3bc868a65ce920eae2cb93fce141178e3ea7b874b40d0d8d",
+      "engine": "chromium",
+      "purpose": "Genuine old-project history callback rejection; disposable project fixtures only",
+      "bytes": 22950,
+      "sha256": "6d9e936f6b2629245a3a71dd4e96f597acbe44af6c6d47e4775b85ba9fc8d8bf"
+    },
+    {
+      "file": "rejected-b93-chromium-history-phone.png",
+      "candidateSha256": "b93ce45810c22a7f3bc868a65ce920eae2cb93fce141178e3ea7b874b40d0d8d",
+      "engine": "chromium",
+      "purpose": "Genuine old-project history callback rejection; disposable project fixtures only",
+      "bytes": 35399,
+      "sha256": "f6b1bb68f4d04f1e40a1e89cd9d0760f312c60e065a14216aa777b26a95dc531"
+    },
+    {
+      "file": "rejected-b93-webkit-history-trace.json",
+      "candidateSha256": "b93ce45810c22a7f3bc868a65ce920eae2cb93fce141178e3ea7b874b40d0d8d",
+      "engine": "webkit",
+      "purpose": "Genuine old-project history callback rejection; disposable project fixtures only",
+      "bytes": 1241,
+      "sha256": "e3a9255f17ecab48d0ef285aa0d6774278ed44385840f223308d31bd5b5b8794"
+    },
+    {
+      "file": "rejected-b93-webkit-review.json",
+      "candidateSha256": "b93ce45810c22a7f3bc868a65ce920eae2cb93fce141178e3ea7b874b40d0d8d",
+      "engine": "webkit",
+      "purpose": "Genuine old-project history callback rejection; disposable project fixtures only",
+      "bytes": 23039,
+      "sha256": "32b296fd90937f90b93c5503bf792dc6bd3652eb495736a201ad41486b31c4fc"
+    },
+    {
+      "file": "rejected-b93-webkit-history-phone.png",
+      "candidateSha256": "b93ce45810c22a7f3bc868a65ce920eae2cb93fce141178e3ea7b874b40d0d8d",
+      "engine": "webkit",
+      "purpose": "Genuine old-project history callback rejection; disposable project fixtures only",
+      "bytes": 48806,
+      "sha256": "7940eb688f78f79382f8a9cd50f845c379f353d31af063bad18cd3fd1da21404"
+    }
+  ],
+  "scope": "Files menu has only Files and Session tabs, no action row or Open tab. Existing project picker retains Add project and New file; bounded open buffers remain accessible in Files.",
+  "archiveNote": "Rejected b93 reports preserve original task/trace evidence. Only named history-phone captures and trace JSON are archived rejection images; other report screenshot names were temporary candidate work files subsequently regenerated and are not claimed as archived b93 visuals.",
+  "harnessCalibration": [
+    "Wait for running writable A terminal after the initial Terminal click; that click already authorizes on-demand start. Explicit Start shell remains required after selecting an idle project.",
+    "Read visible project-picker-scope element, whose exact Files \u00b7 AI \u00b7 Terminal text expresses the shared scope; do not regex-match concatenated whole-menu text.",
+    "Observe projects_changed registry snapshots as well as the first bootstrap; the UI already retained all attached projects.",
+    "Final history regression creates fresh actual output, waits250ms, and delays one real bootstrap300ms; rejected b93 runs used330ms before selection. Both place the existing500ms callback inside the delayed transition.",
+    "New320x300 nested-filter test initially tried closing via menu-close while the pre-existing focused short-filter layout intentionally hides its tab row. The helper now uses the visible Files header toggle in that case; exact same9154 production candidate reran successfully. The filtered result44px/hit assertion was never relaxed."
+  ],
+  "finalCandidateSha256": "2e8265e457215f1570ae99a1e1da011764ab7672cd7cec5ed3e73de0e1e72dea",
+  "matchedComparison": {
+    "prior": "prior-456bb75-phone-expanded-files.png",
+    "candidate": "tests/active-project-review-{chromium,webkit}/phone-current-project-files.png",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "state": "client/app selected, shared.js open, src/client expanded with same visible module fixtures, empty filter, Files menu open",
+    "note": "The new creation task leaves menu-created.txt on disk after proving buffer closure preserves the disk file. It sits outside the visible expanded src/client branch. The separate neutral-root screenshot includes that extra fixture leaf and is not used to claim a matched total-menu-height change."
+  },
+  "visualVerdict": {
+    "decision": "accept",
+    "method": "Independent recognizable matched-visible-state screenshot comparison against exact456bb75/cc9acb prior fixtures and retained official Zed/Working Copy references; no true blind study or broad product parity claim.",
+    "findings": [
+      "Files has only Files and Session tabs; the Add project/New file/refresh action row and Open tab are absent. The filter and working tree occupy the freed space.",
+      "The existing shared project picker keeps Add project and New file together in one compact footer without adding a panel; New file remains available through native keyboard activation.",
+      "Real created-file scope and retained-buffer navigation/closure work through the changed UI; the disk file remains after buffer closure and other project roots remain unaffected.",
+      "The neutral root disclosure, explicit Current project context,14px hierarchy and per-project AI/terminal state remain consistent with the preceding accepted UI.",
+      "At320x300, the picker footer stays one row and current filter result remains46px at180\u2013226 within232px menu bounds with a real successful tap.",
+      "Official Zed quiet hierarchy and Working Copy phone context remain scoped visual references. Existing bounded document state is reused; no new dependency or background job is introduced."
+    ]
+  }
+}

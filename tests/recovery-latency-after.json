@@ -1,0 +1,1577 @@
+{
+  "schemaVersion": 1,
+  "status": "pass",
+  "kind": "Direct WebSocket send-to-durable-reply diagnostic; not native gate evidence",
+  "startedAt": "2026-10-12T20:03:40.013Z",
+  "diagnosticSha256": "c79c2c25f4435889af3984ce1fba192910b734d4c4f3ad33f8c9466b388491ea",
+  "measuredSource": "/Users/developer/acme/code_editor/tests/recovery-latency-after.source.cjs",
+  "workspaceObservedSourceSha256": {
+    "src/main.rs": "60fecbfccd71c65c426e8cb0b58760b1a79972a4c718de2764eaa9f78734b3e2",
+    "src/workspace.rs": "c54e4d43480d5ace5dc4a1dfb6484cdc405ba2abe65fdcbc093fd7f18103831a",
+    "src/protocol.rs": "269fa2402afbf9c0ac799f95aca1f47fba01c0fe21f42582ddef0b9843fc9a21",
+    "Cargo.toml": "9b49551d4bbd197ee3a1de854ec214020953dea4cf47f461bbc28967a4848f1c",
+    "Cargo.lock": "f26a39b35d3c05789d578f05bb5240eaffc1604384cf771bcb801ba662b3d1da"
+  },
+  "sourceObservationLimitation": "Observed working-tree hashes are metadata, not proof that a frozen binary was built from this source.",
+  "frozenNativeBar": {
+    "scripts/native-performance-gate.cjs": "f7369e3de7d06a07d1ee625e10624e1ae741545f9bd56f715d99edfa7d19e475",
+    "scripts/native-performance-budget-model.json": "a258b8898f5de1e41de95832e69a8130c392e215f05e06bb56012b8f4a639235"
+  },
+  "workload": {
+    "ordinaryBytes": 68000,
+    "ordinaryLines": 1000,
+    "initialTextSha256": "a2daec51e776050079f4bfa1d509bca8a882df5e305467ed43e6a4fa7c844d02",
+    "serialEditsPerSeries": 32,
+    "sameLength": true,
+    "changedAsciiCharactersPerEdit": 1,
+    "utf16Start": 0,
+    "utf16DeleteCount": 1,
+    "replacementCycle": [
+      "x",
+      "y"
+    ],
+    "expectedFinalRevision": 33
+  },
+  "method": {
+    "timing": "Monotonic hrtime immediately before ws.send of pre-serialized RPC through arrival of its request-correlated durable reply; arrival stamped before JSON parsing. No browser, debounce or additional pacing.",
+    "observer": "Only scalar metadata, timing/byte counters and one pending request retained. One expected fixture string is used for correctness; no event/document history.",
+    "durability": "Reply follows host persistence; abrupt process SIGKILL/restart validates last acknowledged recovery. This does not simulate hardware power loss.",
+    "order": "Baseline edit_file, candidate edit_file, candidate patch_file, each in a fresh identical disposable fixture."
+  },
+  "browserLaunched": false,
+  "nativeAppLaunched": false,
+  "nativeGateVerdict": false,
+  "realInferenceRequests": 0,
+  "tunnelStarted": false,
+  "series": [
+    {
+      "label": "baseline-whole",
+      "mode": "edit_file",
+      "status": "pass",
+      "binary": "/Users/developer/acme/code_editor/target/performance-baseline-a811aaf/Relay.app/Contents/Resources/relay-editor",
+      "binarySha256": "ef8350849d5e56acec4a1c3e96a0c7cc589e49b0b064f11c1538c3f3a1eb5e21",
+      "binaryBytes": 3056752,
+      "sourceAssociation": {
+        "manifest": "/Users/developer/acme/code_editor/target/performance-baseline-a811aaf/manifest.json",
+        "manifestSha256": "bab183fbc798da2a160b96e56aba9f6d9fa7be1a43e8d07277c96cc264276e40",
+        "sourceRef": "a811aaf241df6e4f4d75da373e5d55d11fc8b300",
+        "workingTree": false,
+        "sourceDiffSha256": null,
+        "recordedSourceSha256": {
+          "desktop/macos/main.swift": "5a9bb71aed44ea46e20d31767d55e61980efb1e9327fef817fddbc05597d1eb4",
+          "desktop/macos/Policy.swift": "96f2e9b255778945325c75d71f12d835c00359b4fb3858d13536dca71fea2f20",
+          "Cargo.toml": "9b49551d4bbd197ee3a1de854ec214020953dea4cf47f461bbc28967a4848f1c",
+          "Cargo.lock": "f26a39b35d3c05789d578f05bb5240eaffc1604384cf771bcb801ba662b3d1da",
+          "web/index.html": "b9aa9dee6de08d3f538124697c4325aa2a088ac24d5afff15862e0a1996e6e91",
+          "web/app.js": "3c23f383114d9e05dd0232fd2452c94af1b14f178406aede9d846a95abb2e809",
+          "web/style.css": "727e2687b2d8556fe0a3ee5b48274ffff5520ca3048cfeb92a2ea80606b370d9"
+        },
+        "limitation": "Manifest association is not a reproducible-build proof.",
+        "committedRustSourceSha256": {
+          "src/main.rs": "28ef31c42231c7b73021dda5dc4680953c96db63a8dc2b486bdd312223128e03",
+          "src/workspace.rs": "1b9b0eb813d7c32c6ae0a8caee09aa6c999b55a5aad144b96112e9a0b76946b7",
+          "src/protocol.rs": "bc5e6839483aa4b55e8604a0b1f983ea2c20fb3c67c3d4eddfc2cec3b3d3fc69"
+        }
+      },
+      "serialEditCount": 32,
+      "samples": [
+        {
+          "index": 0,
+          "baseRevision": 1,
+          "revision": 2,
+          "milliseconds": 13.265334,
+          "sentBytes": 69151,
+          "receivedBytes": 69205,
+          "sendToBroadcastMilliseconds": 12.960542,
+          "broadcastToReplyMilliseconds": 0.304792,
+          "acknowledged": true
+        },
+        {
+          "index": 1,
+          "baseRevision": 2,
+          "revision": 3,
+          "milliseconds": 15.836875,
+          "sentBytes": 69151,
+          "receivedBytes": 69205,
+          "sendToBroadcastMilliseconds": 15.612375,
+          "broadcastToReplyMilliseconds": 0.2245,
+          "acknowledged": true
+        },
+        {
+          "index": 2,
+          "baseRevision": 3,
+          "revision": 4,
+          "milliseconds": 12.536542,
+          "sentBytes": 69151,
+          "receivedBytes": 69205,
+          "sendToBroadcastMilliseconds": 12.412584,
+          "broadcastToReplyMilliseconds": 0.123958,
+          "acknowledged": true
+        },
+        {
+          "index": 3,
+          "baseRevision": 4,
+          "revision": 5,
+          "milliseconds": 13.57125,
+          "sentBytes": 69151,
+          "receivedBytes": 69205,
+          "sendToBroadcastMilliseconds": 13.442666,
+          "broadcastToReplyMilliseconds": 0.128584,
+          "acknowledged": true
+        },
+        {
+          "index": 4,
+          "baseRevision": 5,
+          "revision": 6,
+          "milliseconds": 12.9195,
+          "sentBytes": 69151,
+          "receivedBytes": 69205,
+          "sendToBroadcastMilliseconds": 12.788958,
+          "broadcastToReplyMilliseconds": 0.130542,
+          "acknowledged": true
+        },
+        {
+          "index": 5,
+          "baseRevision": 6,
+          "revision": 7,
+          "milliseconds": 11.630375,
+          "sentBytes": 69151,
+          "receivedBytes": 69205,
+          "sendToBroadcastMilliseconds": 11.500583,
+          "broadcastToReplyMilliseconds": 0.129792,
+          "acknowledged": true
+        },
+        {
+          "index": 6,
+          "baseRevision": 7,
+          "revision": 8,
+          "milliseconds": 12.471708,
+          "sentBytes": 69151,
+          "receivedBytes": 69205,
+          "sendToBroadcastMilliseconds": 12.245708,
+          "broadcastToReplyMilliseconds": 0.226,
+          "acknowledged": true
+        },
+        {
+          "index": 7,
+          "baseRevision": 8,
+          "revision": 9,
+          "milliseconds": 11.987333,
+          "sentBytes": 69151,
+          "receivedBytes": 69205,
+          "sendToBroadcastMilliseconds": 11.722333,
+          "broadcastToReplyMilliseconds": 0.265,
+          "acknowledged": true
+        },
+        {
+          "index": 8,
+          "baseRevision": 9,
+          "revision": 10,
+          "milliseconds": 12.215416,
+          "sentBytes": 69152,
+          "receivedBytes": 69207,
+          "sendToBroadcastMilliseconds": 12.082125,
+          "broadcastToReplyMilliseconds": 0.133291,
+          "acknowledged": true
+        },
+        {
+          "index": 9,
+          "baseRevision": 10,
+          "revision": 11,
+          "milliseconds": 11.499708,
+          "sentBytes": 69153,
+          "receivedBytes": 69207,
+          "sendToBroadcastMilliseconds": 11.359625,
+          "broadcastToReplyMilliseconds": 0.140083,
+          "acknowledged": true
+        },
+        {
+          "index": 10,
+          "baseRevision": 11,
+          "revision": 12,
+          "milliseconds": 11.834875,
+          "sentBytes": 69153,
+          "receivedBytes": 69207,
+          "sendToBroadcastMilliseconds": 11.330583,
+          "broadcastToReplyMilliseconds": 0.504292,
+          "acknowledged": true
+        },
+        {
+          "index": 11,
+          "baseRevision": 12,
+          "revision": 13,
+          "milliseconds": 11.362833,
+          "sentBytes": 69153,
+          "receivedBytes": 69207,
+          "sendToBroadcastMilliseconds": 11.249375,
+          "broadcastToReplyMilliseconds": 0.113458,
+          "acknowledged": true
+        },
+        {
+          "index": 12,
+          "baseRevision": 13,
+          "revision": 14,
+          "milliseconds": 11.780208,
+          "sentBytes": 69153,
+          "receivedBytes": 69207,
+          "sendToBroadcastMilliseconds": 11.567833,
+          "broadcastToReplyMilliseconds": 0.212375,
+          "acknowledged": true
+        },
+        {
+          "index": 13,
+          "baseRevision": 14,
+          "revision": 15,
+          "milliseconds": 11.49575,
+          "sentBytes": 69153,
+          "receivedBytes": 69207,
+          "sendToBroadcastMilliseconds": 11.356,
+          "broadcastToReplyMilliseconds": 0.13975,
+          "acknowledged": true
+        },
+        {
+          "index": 14,
+          "baseRevision": 15,
+          "revision": 16,
+          "milliseconds": 14.848834,
+          "sentBytes": 69153,
+          "receivedBytes": 69207,
+          "sendToBroadcastMilliseconds": 14.704417,
+          "broadcastToReplyMilliseconds": 0.144417,
+          "acknowledged": true
+        },
+        {
+          "index": 15,
+          "baseRevision": 16,
+          "revision": 17,
+          "milliseconds": 11.612625,
+          "sentBytes": 69153,
+          "receivedBytes": 69207,
+          "sendToBroadcastMilliseconds": 11.479125,
+          "broadcastToReplyMilliseconds": 0.1335,
+          "acknowledged": true
+        },
+        {
+          "index": 16,
+          "baseRevision": 17,
+          "revision": 18,
+          "milliseconds": 12.90525,
+          "sentBytes": 69153,
+          "receivedBytes": 69207,
+          "sendToBroadcastMilliseconds": 12.718125,
+          "broadcastToReplyMilliseconds": 0.187125,
+          "acknowledged": true
+        },
+        {
+          "index": 17,
+          "baseRevision": 18,
+          "revision": 19,
+          "milliseconds": 14.933875,
+          "sentBytes": 69153,
+          "receivedBytes": 69207,
+          "sendToBroadcastMilliseconds": 14.807083,
+          "broadcastToReplyMilliseconds": 0.126792,
+          "acknowledged": true
+        },
+        {
+          "index": 18,
+          "baseRevision": 19,
+          "revision": 20,
+          "milliseconds": 14.041917,
+          "sentBytes": 69153,
+          "receivedBytes": 69207,
+          "sendToBroadcastMilliseconds": 13.925292,
+          "broadcastToReplyMilliseconds": 0.116625,
+          "acknowledged": true
+        },
+        {
+          "index": 19,
+          "baseRevision": 20,
+          "revision": 21,
+          "milliseconds": 12.94275,
+          "sentBytes": 69153,
+          "receivedBytes": 69207,
+          "sendToBroadcastMilliseconds": 12.774,
+          "broadcastToReplyMilliseconds": 0.16875,
+          "acknowledged": true
+        },
+        {
+          "index": 20,
+          "baseRevision": 21,
+          "revision": 22,
+          "milliseconds": 13.060542,
+          "sentBytes": 69153,
+          "receivedBytes": 69207,
+          "sendToBroadcastMilliseconds": 12.944834,
+          "broadcastToReplyMilliseconds": 0.115708,
+          "acknowledged": true
+        },
+        {
+          "index": 21,
+          "baseRevision": 22,
+          "revision": 23,
+          "milliseconds": 11.155,
+          "sentBytes": 69153,
+          "receivedBytes": 69207,
+          "sendToBroadcastMilliseconds": 10.720458,
+          "broadcastToReplyMilliseconds": 0.434542,
+          "acknowledged": true
+        },
+        {
+          "index": 22,
+          "baseRevision": 23,
+          "revision": 24,
+          "milliseconds": 12.190792,
+          "sentBytes": 69153,
+          "receivedBytes": 69207,
+          "sendToBroadcastMilliseconds": 12.045375,
+          "broadcastToReplyMilliseconds": 0.145417,
+          "acknowledged": true
+        },
+        {
+          "index": 23,
+          "baseRevision": 24,
+          "revision": 25,
+          "milliseconds": 12.8405,
+          "sentBytes": 69153,
+          "receivedBytes": 69207,
+          "sendToBroadcastMilliseconds": 12.702584,
+          "broadcastToReplyMilliseconds": 0.137916,
+          "acknowledged": true
+        },
+        {
+          "index": 24,
+          "baseRevision": 25,
+          "revision": 26,
+          "milliseconds": 12.252125,
+          "sentBytes": 69153,
+          "receivedBytes": 69207,
+          "sendToBroadcastMilliseconds": 12.126417,
+          "broadcastToReplyMilliseconds": 0.125708,
+          "acknowledged": true
+        },
+        {
+          "index": 25,
+          "baseRevision": 26,
+          "revision": 27,
+          "milliseconds": 11.658208,
+          "sentBytes": 69153,
+          "receivedBytes": 69207,
+          "sendToBroadcastMilliseconds": 11.548291,
+          "broadcastToReplyMilliseconds": 0.109917,
+          "acknowledged": true
+        },
+        {
+          "index": 26,
+          "baseRevision": 27,
+          "revision": 28,
+          "milliseconds": 11.881167,
+          "sentBytes": 69153,
+          "receivedBytes": 69207,
+          "sendToBroadcastMilliseconds": 11.655625,
+          "broadcastToReplyMilliseconds": 0.225542,
+          "acknowledged": true
+        },
+        {
+          "index": 27,
+          "baseRevision": 28,
+          "revision": 29,
+          "milliseconds": 14.830792,
+          "sentBytes": 69153,
+          "receivedBytes": 69207,
+          "sendToBroadcastMilliseconds": 14.652792,
+          "broadcastToReplyMilliseconds": 0.178,
+          "acknowledged": true
+        },
+        {
+          "index": 28,
+          "baseRevision": 29,
+          "revision": 30,
+          "milliseconds": 14.436416,
+          "sentBytes": 69153,
+          "receivedBytes": 69207,
+          "sendToBroadcastMilliseconds": 13.789291,
+          "broadcastToReplyMilliseconds": 0.647125,
+          "acknowledged": true
+        },
+        {
+          "index": 29,
+          "baseRevision": 30,
+          "revision": 31,
+          "milliseconds": 17.658083,
+          "sentBytes": 69153,
+          "receivedBytes": 69207,
+          "sendToBroadcastMilliseconds": 17.323917,
+          "broadcastToReplyMilliseconds": 0.334166,
+          "acknowledged": true
+        },
+        {
+          "index": 30,
+          "baseRevision": 31,
+          "revision": 32,
+          "milliseconds": 14.498833,
+          "sentBytes": 69153,
+          "receivedBytes": 69207,
+          "sendToBroadcastMilliseconds": 14.38375,
+          "broadcastToReplyMilliseconds": 0.115083,
+          "acknowledged": true
+        },
+        {
+          "index": 31,
+          "baseRevision": 32,
+          "revision": 33,
+          "milliseconds": 12.801084,
+          "sentBytes": 69153,
+          "receivedBytes": 69207,
+          "sendToBroadcastMilliseconds": 12.69275,
+          "broadcastToReplyMilliseconds": 0.108334,
+          "acknowledged": true
+        }
+      ],
+      "checks": [
+        "Exact identical 68,000-byte / 1,000-line disposable source opened",
+        "32 serial correlated durable replies advance revisions identically and preserve exact text/patch semantics",
+        "Owned-host abrupt exit/restart recovers the exact last acknowledged text/revision and leaves fixture disk unchanged"
+      ],
+      "ownership": {
+        "owned": [
+          {
+            "pid": 47252,
+            "ppid": 47205,
+            "startIdentity": "Mon Oct 12 13:03:40 2026",
+            "executable": "/private/var/folders/pr/6x_bf79x5tq91wck08xdmbjh0000gn/T/relay-recovery-latency-XJ6gAd/relay-editor",
+            "role": "rustHost",
+            "executableSha256": "ef8350849d5e56acec4a1c3e96a0c7cc589e49b0b064f11c1538c3f3a1eb5e21"
+          },
+          {
+            "pid": 47620,
+            "ppid": 47205,
+            "startIdentity": "Mon Oct 12 13:03:41 2026",
+            "executable": "/private/var/folders/pr/6x_bf79x5tq91wck08xdmbjh0000gn/T/relay-recovery-latency-XJ6gAd/relay-editor",
+            "role": "rustHost",
+            "executableSha256": "ef8350849d5e56acec4a1c3e96a0c7cc589e49b0b064f11c1538c3f3a1eb5e21"
+          }
+        ],
+        "cleanup": [
+          {
+            "pid": 47252,
+            "ppid": 47205,
+            "startIdentity": "Mon Oct 12 13:03:40 2026",
+            "executable": "/private/var/folders/pr/6x_bf79x5tq91wck08xdmbjh0000gn/T/relay-recovery-latency-XJ6gAd/relay-editor",
+            "signal": "SIGKILL",
+            "exited": true
+          },
+          {
+            "pid": 47620,
+            "ppid": 47205,
+            "startIdentity": "Mon Oct 12 13:03:41 2026",
+            "executable": "/private/var/folders/pr/6x_bf79x5tq91wck08xdmbjh0000gn/T/relay-recovery-latency-XJ6gAd/relay-editor",
+            "signal": "SIGTERM",
+            "exited": true
+          }
+        ],
+        "allOwnedExited": true
+      },
+      "probeCalls": [
+        {
+          "provider": "codex",
+          "args": [
+            "login",
+            "status"
+          ],
+          "pid": 47254,
+          "ppid": 47252,
+          "allowed": true
+        },
+        {
+          "provider": "claude",
+          "args": [
+            "auth",
+            "status"
+          ],
+          "pid": 47258,
+          "ppid": 47252,
+          "allowed": true
+        },
+        {
+          "provider": "codex",
+          "args": [
+            "login",
+            "status"
+          ],
+          "pid": 47622,
+          "ppid": 47620,
+          "allowed": true
+        },
+        {
+          "provider": "claude",
+          "args": [
+            "auth",
+            "status"
+          ],
+          "pid": 47623,
+          "ppid": 47620,
+          "allowed": true
+        }
+      ],
+      "observerCounters": [
+        {
+          "messages": 68,
+          "incomingBytes": 4574227,
+          "unsolicitedMessages": 35
+        },
+        {
+          "messages": 1,
+          "incomingBytes": 76522,
+          "unsolicitedMessages": 1
+        }
+      ],
+      "ports": [
+        53187,
+        53191
+      ],
+      "initialRevision": 1,
+      "latency": {
+        "count": 32,
+        "p50": 12.536542,
+        "p95": 15.836875,
+        "min": 11.155,
+        "max": 17.658083,
+        "units": "milliseconds",
+        "quantile": "nearest rank"
+      },
+      "broadcastToReplyLatency": {
+        "count": 32,
+        "p50": 0.13975,
+        "p95": 0.504292,
+        "min": 0.108334,
+        "max": 0.647125,
+        "units": "milliseconds",
+        "quantile": "nearest rank"
+      },
+      "finalRevision": 33,
+      "expectedTextSha256": "28171c88e729cdaf96e0817fecb8d37636e1ad901db9ac4d08f946d647543fd1",
+      "recovery": {
+        "exactText": true,
+        "textSha256": "28171c88e729cdaf96e0817fecb8d37636e1ad901db9ac4d08f946d647543fd1",
+        "revision": 33,
+        "dirty": true,
+        "bytes": 68000
+      }
+    },
+    {
+      "label": "candidate-whole",
+      "mode": "edit_file",
+      "status": "pass",
+      "binary": "/Users/developer/acme/code_editor/target/performance-recovery-after-link/Relay.app/Contents/Resources/relay-editor",
+      "binarySha256": "edd04955d54fe76bb5dfcb3b2714fd38bbdd6a09ad5455b895d2b17b280fad27",
+      "binaryBytes": 3204832,
+      "sourceAssociation": {
+        "manifest": "/Users/developer/acme/code_editor/target/performance-recovery-after-link/manifest.json",
+        "manifestSha256": "469a86013324a2644dd73c3122e40c016ba0b5839605f2f470e976e6ede5adeb",
+        "sourceRef": "a811aaf241df6e4f4d75da373e5d55d11fc8b300",
+        "workingTree": true,
+        "sourceDiffSha256": "a75d1a069887c3c04f81ece5c343403ace4c2700b83001b537396b6d6bcbdb0c",
+        "recordedSourceSha256": null,
+        "limitation": "Manifest association is not a reproducible-build proof."
+      },
+      "serialEditCount": 32,
+      "samples": [
+        {
+          "index": 0,
+          "baseRevision": 1,
+          "revision": 2,
+          "milliseconds": 32.139542,
+          "sentBytes": 69151,
+          "receivedBytes": 69205,
+          "sendToBroadcastMilliseconds": 31.859125,
+          "broadcastToReplyMilliseconds": 0.280417,
+          "acknowledged": true
+        },
+        {
+          "index": 1,
+          "baseRevision": 2,
+          "revision": 3,
+          "milliseconds": 29.499875,
+          "sentBytes": 69151,
+          "receivedBytes": 69205,
+          "sendToBroadcastMilliseconds": 29.3615,
+          "broadcastToReplyMilliseconds": 0.138375,
+          "acknowledged": true
+        },
+        {
+          "index": 2,
+          "baseRevision": 3,
+          "revision": 4,
+          "milliseconds": 32.544542,
+          "sentBytes": 69151,
+          "receivedBytes": 69205,
+          "sendToBroadcastMilliseconds": 32.384583,
+          "broadcastToReplyMilliseconds": 0.159959,
+          "acknowledged": true
+        },
+        {
+          "index": 3,
+          "baseRevision": 4,
+          "revision": 5,
+          "milliseconds": 28.436042,
+          "sentBytes": 69151,
+          "receivedBytes": 69205,
+          "sendToBroadcastMilliseconds": 28.288917,
+          "broadcastToReplyMilliseconds": 0.147125,
+          "acknowledged": true
+        },
+        {
+          "index": 4,
+          "baseRevision": 5,
+          "revision": 6,
+          "milliseconds": 32.578875,
+          "sentBytes": 69151,
+          "receivedBytes": 69205,
+          "sendToBroadcastMilliseconds": 32.462417,
+          "broadcastToReplyMilliseconds": 0.116458,
+          "acknowledged": true
+        },
+        {
+          "index": 5,
+          "baseRevision": 6,
+          "revision": 7,
+          "milliseconds": 27.964583,
+          "sentBytes": 69151,
+          "receivedBytes": 69205,
+          "sendToBroadcastMilliseconds": 27.851042,
+          "broadcastToReplyMilliseconds": 0.113541,
+          "acknowledged": true
+        },
+        {
+          "index": 6,
+          "baseRevision": 7,
+          "revision": 8,
+          "milliseconds": 32.693417,
+          "sentBytes": 69151,
+          "receivedBytes": 69205,
+          "sendToBroadcastMilliseconds": 32.503542,
+          "broadcastToReplyMilliseconds": 0.189875,
+          "acknowledged": true
+        },
+        {
+          "index": 7,
+          "baseRevision": 8,
+          "revision": 9,
+          "milliseconds": 29.856167,
+          "sentBytes": 69151,
+          "receivedBytes": 69205,
+          "sendToBroadcastMilliseconds": 29.737584,
+          "broadcastToReplyMilliseconds": 0.118583,
+          "acknowledged": true
+        },
+        {
+          "index": 8,
+          "baseRevision": 9,
+          "revision": 10,
+          "milliseconds": 30.658125,
+          "sentBytes": 69152,
+          "receivedBytes": 69207,
+          "sendToBroadcastMilliseconds": 30.541667,
+          "broadcastToReplyMilliseconds": 0.116458,
+          "acknowledged": true
+        },
+        {
+          "index": 9,
+          "baseRevision": 10,
+          "revision": 11,
+          "milliseconds": 28.072542,
+          "sentBytes": 69153,
+          "receivedBytes": 69207,
+          "sendToBroadcastMilliseconds": 27.902458,
+          "broadcastToReplyMilliseconds": 0.170084,
+          "acknowledged": true
+        },
+        {
+          "index": 10,
+          "baseRevision": 11,
+          "revision": 12,
+          "milliseconds": 29.389583,
+          "sentBytes": 69153,
+          "receivedBytes": 69207,
+          "sendToBroadcastMilliseconds": 29.279958,
+          "broadcastToReplyMilliseconds": 0.109625,
+          "acknowledged": true
+        },
+        {
+          "index": 11,
+          "baseRevision": 12,
+          "revision": 13,
+          "milliseconds": 28.724625,
+          "sentBytes": 69153,
+          "receivedBytes": 69207,
+          "sendToBroadcastMilliseconds": 28.606125,
+          "broadcastToReplyMilliseconds": 0.1185,
+          "acknowledged": true
+        },
+        {
+          "index": 12,
+          "baseRevision": 13,
+          "revision": 14,
+          "milliseconds": 30.652042,
+          "sentBytes": 69153,
+          "receivedBytes": 69207,
+          "sendToBroadcastMilliseconds": 30.52525,
+          "broadcastToReplyMilliseconds": 0.126792,
+          "acknowledged": true
+        },
+        {
+          "index": 13,
+          "baseRevision": 14,
+          "revision": 15,
+          "milliseconds": 32.613208,
+          "sentBytes": 69153,
+          "receivedBytes": 69207,
+          "sendToBroadcastMilliseconds": 31.708708,
+          "broadcastToReplyMilliseconds": 0.9045,
+          "acknowledged": true
+        },
+        {
+          "index": 14,
+          "baseRevision": 15,
+          "revision": 16,
+          "milliseconds": 32.46325,
+          "sentBytes": 69153,
+          "receivedBytes": 69207,
+          "sendToBroadcastMilliseconds": 32.350292,
+          "broadcastToReplyMilliseconds": 0.112958,
+          "acknowledged": true
+        },
+        {
+          "index": 15,
+          "baseRevision": 16,
+          "revision": 17,
+          "milliseconds": 24.79925,
+          "sentBytes": 69153,
+          "receivedBytes": 69207,
+          "sendToBroadcastMilliseconds": 24.681125,
+          "broadcastToReplyMilliseconds": 0.118125,
+          "acknowledged": true
+        },
+        {
+          "index": 16,
+          "baseRevision": 17,
+          "revision": 18,
+          "milliseconds": 30.72375,
+          "sentBytes": 69153,
+          "receivedBytes": 69207,
+          "sendToBroadcastMilliseconds": 30.611125,
+          "broadcastToReplyMilliseconds": 0.112625,
+          "acknowledged": true
+        },
+        {
+          "index": 17,
+          "baseRevision": 18,
+          "revision": 19,
+          "milliseconds": 31.641667,
+          "sentBytes": 69153,
+          "receivedBytes": 69207,
+          "sendToBroadcastMilliseconds": 31.533334,
+          "broadcastToReplyMilliseconds": 0.108333,
+          "acknowledged": true
+        },
+        {
+          "index": 18,
+          "baseRevision": 19,
+          "revision": 20,
+          "milliseconds": 29.830333,
+          "sentBytes": 69153,
+          "receivedBytes": 69207,
+          "sendToBroadcastMilliseconds": 29.711042,
+          "broadcastToReplyMilliseconds": 0.119291,
+          "acknowledged": true
+        },
+        {
+          "index": 19,
+          "baseRevision": 20,
+          "revision": 21,
+          "milliseconds": 30.663958,
+          "sentBytes": 69153,
+          "receivedBytes": 69207,
+          "sendToBroadcastMilliseconds": 30.478541,
+          "broadcastToReplyMilliseconds": 0.185417,
+          "acknowledged": true
+        },
+        {
+          "index": 20,
+          "baseRevision": 21,
+          "revision": 22,
+          "milliseconds": 38.321542,
+          "sentBytes": 69153,
+          "receivedBytes": 69207,
+          "sendToBroadcastMilliseconds": 38.212292,
+          "broadcastToReplyMilliseconds": 0.10925,
+          "acknowledged": true
+        },
+        {
+          "index": 21,
+          "baseRevision": 22,
+          "revision": 23,
+          "milliseconds": 29.01025,
+          "sentBytes": 69153,
+          "receivedBytes": 69207,
+          "sendToBroadcastMilliseconds": 28.899375,
+          "broadcastToReplyMilliseconds": 0.110875,
+          "acknowledged": true
+        },
+        {
+          "index": 22,
+          "baseRevision": 23,
+          "revision": 24,
+          "milliseconds": 30.725042,
+          "sentBytes": 69153,
+          "receivedBytes": 69207,
+          "sendToBroadcastMilliseconds": 30.583125,
+          "broadcastToReplyMilliseconds": 0.141917,
+          "acknowledged": true
+        },
+        {
+          "index": 23,
+          "baseRevision": 24,
+          "revision": 25,
+          "milliseconds": 30.410042,
+          "sentBytes": 69153,
+          "receivedBytes": 69207,
+          "sendToBroadcastMilliseconds": 30.294042,
+          "broadcastToReplyMilliseconds": 0.116,
+          "acknowledged": true
+        },
+        {
+          "index": 24,
+          "baseRevision": 25,
+          "revision": 26,
+          "milliseconds": 30.809583,
+          "sentBytes": 69153,
+          "receivedBytes": 69207,
+          "sendToBroadcastMilliseconds": 30.673,
+          "broadcastToReplyMilliseconds": 0.136583,
+          "acknowledged": true
+        },
+        {
+          "index": 25,
+          "baseRevision": 26,
+          "revision": 27,
+          "milliseconds": 28.724584,
+          "sentBytes": 69153,
+          "receivedBytes": 69207,
+          "sendToBroadcastMilliseconds": 28.596959,
+          "broadcastToReplyMilliseconds": 0.127625,
+          "acknowledged": true
+        },
+        {
+          "index": 26,
+          "baseRevision": 27,
+          "revision": 28,
+          "milliseconds": 33.705167,
+          "sentBytes": 69153,
+          "receivedBytes": 69207,
+          "sendToBroadcastMilliseconds": 33.583084,
+          "broadcastToReplyMilliseconds": 0.122083,
+          "acknowledged": true
+        },
+        {
+          "index": 27,
+          "baseRevision": 28,
+          "revision": 29,
+          "milliseconds": 28.781042,
+          "sentBytes": 69153,
+          "receivedBytes": 69207,
+          "sendToBroadcastMilliseconds": 28.662708,
+          "broadcastToReplyMilliseconds": 0.118334,
+          "acknowledged": true
+        },
+        {
+          "index": 28,
+          "baseRevision": 29,
+          "revision": 30,
+          "milliseconds": 30.707709,
+          "sentBytes": 69153,
+          "receivedBytes": 69207,
+          "sendToBroadcastMilliseconds": 30.571084,
+          "broadcastToReplyMilliseconds": 0.136625,
+          "acknowledged": true
+        },
+        {
+          "index": 29,
+          "baseRevision": 30,
+          "revision": 31,
+          "milliseconds": 27.510584,
+          "sentBytes": 69153,
+          "receivedBytes": 69207,
+          "sendToBroadcastMilliseconds": 27.394125,
+          "broadcastToReplyMilliseconds": 0.116459,
+          "acknowledged": true
+        },
+        {
+          "index": 30,
+          "baseRevision": 31,
+          "revision": 32,
+          "milliseconds": 29.993,
+          "sentBytes": 69153,
+          "receivedBytes": 69207,
+          "sendToBroadcastMilliseconds": 29.887125,
+          "broadcastToReplyMilliseconds": 0.105875,
+          "acknowledged": true
+        },
+        {
+          "index": 31,
+          "baseRevision": 32,
+          "revision": 33,
+          "milliseconds": 34.9835,
+          "sentBytes": 69153,
+          "receivedBytes": 69207,
+          "sendToBroadcastMilliseconds": 34.876292,
+          "broadcastToReplyMilliseconds": 0.107208,
+          "acknowledged": true
+        }
+      ],
+      "checks": [
+        "Exact identical 68,000-byte / 1,000-line disposable source opened",
+        "32 serial correlated durable replies advance revisions identically and preserve exact text/patch semantics",
+        "Owned-host abrupt exit/restart recovers the exact last acknowledged text/revision and leaves fixture disk unchanged"
+      ],
+      "ownership": {
+        "owned": [
+          {
+            "pid": 47630,
+            "ppid": 47205,
+            "startIdentity": "Mon Oct 12 13:03:42 2026",
+            "executable": "/private/var/folders/pr/6x_bf79x5tq91wck08xdmbjh0000gn/T/relay-recovery-latency-k973V7/relay-editor",
+            "role": "rustHost",
+            "executableSha256": "edd04955d54fe76bb5dfcb3b2714fd38bbdd6a09ad5455b895d2b17b280fad27"
+          },
+          {
+            "pid": 47646,
+            "ppid": 47205,
+            "startIdentity": "Mon Oct 12 13:03:44 2026",
+            "executable": "/private/var/folders/pr/6x_bf79x5tq91wck08xdmbjh0000gn/T/relay-recovery-latency-k973V7/relay-editor",
+            "role": "rustHost",
+            "executableSha256": "edd04955d54fe76bb5dfcb3b2714fd38bbdd6a09ad5455b895d2b17b280fad27"
+          }
+        ],
+        "cleanup": [
+          {
+            "pid": 47630,
+            "ppid": 47205,
+            "startIdentity": "Mon Oct 12 13:03:42 2026",
+            "executable": "/private/var/folders/pr/6x_bf79x5tq91wck08xdmbjh0000gn/T/relay-recovery-latency-k973V7/relay-editor",
+            "signal": "SIGKILL",
+            "exited": true
+          },
+          {
+            "pid": 47646,
+            "ppid": 47205,
+            "startIdentity": "Mon Oct 12 13:03:44 2026",
+            "executable": "/private/var/folders/pr/6x_bf79x5tq91wck08xdmbjh0000gn/T/relay-recovery-latency-k973V7/relay-editor",
+            "signal": "SIGTERM",
+            "exited": true
+          }
+        ],
+        "allOwnedExited": true
+      },
+      "probeCalls": [
+        {
+          "provider": "codex",
+          "args": [
+            "login",
+            "status"
+          ],
+          "pid": 47635,
+          "ppid": 47630,
+          "allowed": true
+        },
+        {
+          "provider": "claude",
+          "args": [
+            "auth",
+            "status"
+          ],
+          "pid": 47637,
+          "ppid": 47630,
+          "allowed": true
+        },
+        {
+          "provider": "codex",
+          "args": [
+            "login",
+            "status"
+          ],
+          "pid": 47648,
+          "ppid": 47646,
+          "allowed": true
+        },
+        {
+          "provider": "claude",
+          "args": [
+            "auth",
+            "status"
+          ],
+          "pid": 47649,
+          "ppid": 47646,
+          "allowed": true
+        }
+      ],
+      "observerCounters": [
+        {
+          "messages": 68,
+          "incomingBytes": 4574248,
+          "unsolicitedMessages": 35
+        },
+        {
+          "messages": 1,
+          "incomingBytes": 76543,
+          "unsolicitedMessages": 1
+        }
+      ],
+      "ports": [
+        53196,
+        53200
+      ],
+      "initialRevision": 1,
+      "latency": {
+        "count": 32,
+        "p50": 30.652042,
+        "p95": 34.9835,
+        "min": 24.79925,
+        "max": 38.321542,
+        "units": "milliseconds",
+        "quantile": "nearest rank"
+      },
+      "broadcastToReplyLatency": {
+        "count": 32,
+        "p50": 0.1185,
+        "p95": 0.280417,
+        "min": 0.105875,
+        "max": 0.9045,
+        "units": "milliseconds",
+        "quantile": "nearest rank"
+      },
+      "finalRevision": 33,
+      "expectedTextSha256": "28171c88e729cdaf96e0817fecb8d37636e1ad901db9ac4d08f946d647543fd1",
+      "recovery": {
+        "exactText": true,
+        "textSha256": "28171c88e729cdaf96e0817fecb8d37636e1ad901db9ac4d08f946d647543fd1",
+        "revision": 33,
+        "dirty": true,
+        "bytes": 68000
+      }
+    },
+    {
+      "label": "candidate-patch",
+      "mode": "patch_file",
+      "status": "pass",
+      "binary": "/Users/developer/acme/code_editor/target/performance-recovery-after-link/Relay.app/Contents/Resources/relay-editor",
+      "binarySha256": "edd04955d54fe76bb5dfcb3b2714fd38bbdd6a09ad5455b895d2b17b280fad27",
+      "binaryBytes": 3204832,
+      "sourceAssociation": {
+        "manifest": "/Users/developer/acme/code_editor/target/performance-recovery-after-link/manifest.json",
+        "manifestSha256": "469a86013324a2644dd73c3122e40c016ba0b5839605f2f470e976e6ede5adeb",
+        "sourceRef": "a811aaf241df6e4f4d75da373e5d55d11fc8b300",
+        "workingTree": true,
+        "sourceDiffSha256": "a75d1a069887c3c04f81ece5c343403ace4c2700b83001b537396b6d6bcbdb0c",
+        "recordedSourceSha256": null,
+        "limitation": "Manifest association is not a reproducible-build proof."
+      },
+      "serialEditCount": 32,
+      "samples": [
+        {
+          "index": 0,
+          "baseRevision": 1,
+          "revision": 2,
+          "milliseconds": 27.439875,
+          "sentBytes": 178,
+          "receivedBytes": 258,
+          "sendToBroadcastMilliseconds": 27.3815,
+          "broadcastToReplyMilliseconds": 0.058375,
+          "acknowledged": true
+        },
+        {
+          "index": 1,
+          "baseRevision": 2,
+          "revision": 3,
+          "milliseconds": 31.348333,
+          "sentBytes": 178,
+          "receivedBytes": 258,
+          "sendToBroadcastMilliseconds": 31.218958,
+          "broadcastToReplyMilliseconds": 0.129375,
+          "acknowledged": true
+        },
+        {
+          "index": 2,
+          "baseRevision": 3,
+          "revision": 4,
+          "milliseconds": 29.619042,
+          "sentBytes": 178,
+          "receivedBytes": 258,
+          "sendToBroadcastMilliseconds": 29.507625,
+          "broadcastToReplyMilliseconds": 0.111417,
+          "acknowledged": true
+        },
+        {
+          "index": 3,
+          "baseRevision": 4,
+          "revision": 5,
+          "milliseconds": 28.908833,
+          "sentBytes": 178,
+          "receivedBytes": 258,
+          "sendToBroadcastMilliseconds": 28.826792,
+          "broadcastToReplyMilliseconds": 0.082041,
+          "acknowledged": true
+        },
+        {
+          "index": 4,
+          "baseRevision": 5,
+          "revision": 6,
+          "milliseconds": 28.19725,
+          "sentBytes": 178,
+          "receivedBytes": 258,
+          "sendToBroadcastMilliseconds": 28.042417,
+          "broadcastToReplyMilliseconds": 0.154833,
+          "acknowledged": true
+        },
+        {
+          "index": 5,
+          "baseRevision": 6,
+          "revision": 7,
+          "milliseconds": 31.103375,
+          "sentBytes": 178,
+          "receivedBytes": 258,
+          "sendToBroadcastMilliseconds": 30.831166,
+          "broadcastToReplyMilliseconds": 0.272209,
+          "acknowledged": true
+        },
+        {
+          "index": 6,
+          "baseRevision": 7,
+          "revision": 8,
+          "milliseconds": 34.683917,
+          "sentBytes": 178,
+          "receivedBytes": 258,
+          "sendToBroadcastMilliseconds": 33.35075,
+          "broadcastToReplyMilliseconds": 1.333167,
+          "acknowledged": true
+        },
+        {
+          "index": 7,
+          "baseRevision": 8,
+          "revision": 9,
+          "milliseconds": 30.870667,
+          "sentBytes": 178,
+          "receivedBytes": 258,
+          "sendToBroadcastMilliseconds": 30.73375,
+          "broadcastToReplyMilliseconds": 0.136917,
+          "acknowledged": true
+        },
+        {
+          "index": 8,
+          "baseRevision": 9,
+          "revision": 10,
+          "milliseconds": 26.7935,
+          "sentBytes": 179,
+          "receivedBytes": 260,
+          "sendToBroadcastMilliseconds": 26.65,
+          "broadcastToReplyMilliseconds": 0.1435,
+          "acknowledged": true
+        },
+        {
+          "index": 9,
+          "baseRevision": 10,
+          "revision": 11,
+          "milliseconds": 28.7345,
+          "sentBytes": 180,
+          "receivedBytes": 261,
+          "sendToBroadcastMilliseconds": 28.65775,
+          "broadcastToReplyMilliseconds": 0.07675,
+          "acknowledged": true
+        },
+        {
+          "index": 10,
+          "baseRevision": 11,
+          "revision": 12,
+          "milliseconds": 30.912625,
+          "sentBytes": 180,
+          "receivedBytes": 261,
+          "sendToBroadcastMilliseconds": 30.797959,
+          "broadcastToReplyMilliseconds": 0.114666,
+          "acknowledged": true
+        },
+        {
+          "index": 11,
+          "baseRevision": 12,
+          "revision": 13,
+          "milliseconds": 30.673792,
+          "sentBytes": 180,
+          "receivedBytes": 261,
+          "sendToBroadcastMilliseconds": 30.497583,
+          "broadcastToReplyMilliseconds": 0.176209,
+          "acknowledged": true
+        },
+        {
+          "index": 12,
+          "baseRevision": 13,
+          "revision": 14,
+          "milliseconds": 31.274667,
+          "sentBytes": 180,
+          "receivedBytes": 261,
+          "sendToBroadcastMilliseconds": 31.202458,
+          "broadcastToReplyMilliseconds": 0.072209,
+          "acknowledged": true
+        },
+        {
+          "index": 13,
+          "baseRevision": 14,
+          "revision": 15,
+          "milliseconds": 28.900917,
+          "sentBytes": 180,
+          "receivedBytes": 261,
+          "sendToBroadcastMilliseconds": 28.800042,
+          "broadcastToReplyMilliseconds": 0.100875,
+          "acknowledged": true
+        },
+        {
+          "index": 14,
+          "baseRevision": 15,
+          "revision": 16,
+          "milliseconds": 30.688375,
+          "sentBytes": 180,
+          "receivedBytes": 261,
+          "sendToBroadcastMilliseconds": 30.6215,
+          "broadcastToReplyMilliseconds": 0.066875,
+          "acknowledged": true
+        },
+        {
+          "index": 15,
+          "baseRevision": 16,
+          "revision": 17,
+          "milliseconds": 30.290459,
+          "sentBytes": 180,
+          "receivedBytes": 261,
+          "sendToBroadcastMilliseconds": 30.058125,
+          "broadcastToReplyMilliseconds": 0.232334,
+          "acknowledged": true
+        },
+        {
+          "index": 16,
+          "baseRevision": 17,
+          "revision": 18,
+          "milliseconds": 30.286417,
+          "sentBytes": 180,
+          "receivedBytes": 261,
+          "sendToBroadcastMilliseconds": 30.159208,
+          "broadcastToReplyMilliseconds": 0.127209,
+          "acknowledged": true
+        },
+        {
+          "index": 17,
+          "baseRevision": 18,
+          "revision": 19,
+          "milliseconds": 32.285041,
+          "sentBytes": 180,
+          "receivedBytes": 261,
+          "sendToBroadcastMilliseconds": 32.201458,
+          "broadcastToReplyMilliseconds": 0.083583,
+          "acknowledged": true
+        },
+        {
+          "index": 18,
+          "baseRevision": 19,
+          "revision": 20,
+          "milliseconds": 32.014458,
+          "sentBytes": 180,
+          "receivedBytes": 261,
+          "sendToBroadcastMilliseconds": 31.898625,
+          "broadcastToReplyMilliseconds": 0.115833,
+          "acknowledged": true
+        },
+        {
+          "index": 19,
+          "baseRevision": 20,
+          "revision": 21,
+          "milliseconds": 30.837667,
+          "sentBytes": 180,
+          "receivedBytes": 261,
+          "sendToBroadcastMilliseconds": 30.768333,
+          "broadcastToReplyMilliseconds": 0.069334,
+          "acknowledged": true
+        },
+        {
+          "index": 20,
+          "baseRevision": 21,
+          "revision": 22,
+          "milliseconds": 29.867708,
+          "sentBytes": 180,
+          "receivedBytes": 261,
+          "sendToBroadcastMilliseconds": 29.788917,
+          "broadcastToReplyMilliseconds": 0.078791,
+          "acknowledged": true
+        },
+        {
+          "index": 21,
+          "baseRevision": 22,
+          "revision": 23,
+          "milliseconds": 27.818,
+          "sentBytes": 180,
+          "receivedBytes": 261,
+          "sendToBroadcastMilliseconds": 27.7515,
+          "broadcastToReplyMilliseconds": 0.0665,
+          "acknowledged": true
+        },
+        {
+          "index": 22,
+          "baseRevision": 23,
+          "revision": 24,
+          "milliseconds": 31.308667,
+          "sentBytes": 180,
+          "receivedBytes": 261,
+          "sendToBroadcastMilliseconds": 31.214792,
+          "broadcastToReplyMilliseconds": 0.093875,
+          "acknowledged": true
+        },
+        {
+          "index": 23,
+          "baseRevision": 24,
+          "revision": 25,
+          "milliseconds": 28.999208,
+          "sentBytes": 180,
+          "receivedBytes": 261,
+          "sendToBroadcastMilliseconds": 28.857375,
+          "broadcastToReplyMilliseconds": 0.141833,
+          "acknowledged": true
+        },
+        {
+          "index": 24,
+          "baseRevision": 25,
+          "revision": 26,
+          "milliseconds": 28.276625,
+          "sentBytes": 180,
+          "receivedBytes": 261,
+          "sendToBroadcastMilliseconds": 28.197416,
+          "broadcastToReplyMilliseconds": 0.079209,
+          "acknowledged": true
+        },
+        {
+          "index": 25,
+          "baseRevision": 26,
+          "revision": 27,
+          "milliseconds": 32.912875,
+          "sentBytes": 180,
+          "receivedBytes": 261,
+          "sendToBroadcastMilliseconds": 32.732417,
+          "broadcastToReplyMilliseconds": 0.180458,
+          "acknowledged": true
+        },
+        {
+          "index": 26,
+          "baseRevision": 27,
+          "revision": 28,
+          "milliseconds": 32.821167,
+          "sentBytes": 180,
+          "receivedBytes": 261,
+          "sendToBroadcastMilliseconds": 32.75025,
+          "broadcastToReplyMilliseconds": 0.070917,
+          "acknowledged": true
+        },
+        {
+          "index": 27,
+          "baseRevision": 28,
+          "revision": 29,
+          "milliseconds": 29.03225,
+          "sentBytes": 180,
+          "receivedBytes": 261,
+          "sendToBroadcastMilliseconds": 28.939125,
+          "broadcastToReplyMilliseconds": 0.093125,
+          "acknowledged": true
+        },
+        {
+          "index": 28,
+          "baseRevision": 29,
+          "revision": 30,
+          "milliseconds": 31.496042,
+          "sentBytes": 180,
+          "receivedBytes": 261,
+          "sendToBroadcastMilliseconds": 31.312625,
+          "broadcastToReplyMilliseconds": 0.183417,
+          "acknowledged": true
+        },
+        {
+          "index": 29,
+          "baseRevision": 30,
+          "revision": 31,
+          "milliseconds": 30.658542,
+          "sentBytes": 180,
+          "receivedBytes": 261,
+          "sendToBroadcastMilliseconds": 30.506917,
+          "broadcastToReplyMilliseconds": 0.151625,
+          "acknowledged": true
+        },
+        {
+          "index": 30,
+          "baseRevision": 31,
+          "revision": 32,
+          "milliseconds": 30.4235,
+          "sentBytes": 180,
+          "receivedBytes": 261,
+          "sendToBroadcastMilliseconds": 30.205667,
+          "broadcastToReplyMilliseconds": 0.217833,
+          "acknowledged": true
+        },
+        {
+          "index": 31,
+          "baseRevision": 32,
+          "revision": 33,
+          "milliseconds": 36.465041,
+          "sentBytes": 180,
+          "receivedBytes": 261,
+          "sendToBroadcastMilliseconds": 36.392958,
+          "broadcastToReplyMilliseconds": 0.072083,
+          "acknowledged": true
+        }
+      ],
+      "checks": [
+        "Exact identical 68,000-byte / 1,000-line disposable source opened",
+        "32 serial correlated durable replies advance revisions identically and preserve exact text/patch semantics",
+        "Owned-host abrupt exit/restart recovers the exact last acknowledged text/revision and leaves fixture disk unchanged"
+      ],
+      "ownership": {
+        "owned": [
+          {
+            "pid": 47660,
+            "ppid": 47205,
+            "startIdentity": "Mon Oct 12 13:03:44 2026",
+            "executable": "/private/var/folders/pr/6x_bf79x5tq91wck08xdmbjh0000gn/T/relay-recovery-latency-laRxOU/relay-editor",
+            "role": "rustHost",
+            "executableSha256": "edd04955d54fe76bb5dfcb3b2714fd38bbdd6a09ad5455b895d2b17b280fad27"
+          },
+          {
+            "pid": 47684,
+            "ppid": 47205,
+            "startIdentity": "Mon Oct 12 13:03:46 2026",
+            "executable": "/private/var/folders/pr/6x_bf79x5tq91wck08xdmbjh0000gn/T/relay-recovery-latency-laRxOU/relay-editor",
+            "role": "rustHost",
+            "executableSha256": "edd04955d54fe76bb5dfcb3b2714fd38bbdd6a09ad5455b895d2b17b280fad27"
+          }
+        ],
+        "cleanup": [
+          {
+            "pid": 47660,
+            "ppid": 47205,
+            "startIdentity": "Mon Oct 12 13:03:44 2026",
+            "executable": "/private/var/folders/pr/6x_bf79x5tq91wck08xdmbjh0000gn/T/relay-recovery-latency-laRxOU/relay-editor",
+            "signal": "SIGKILL",
+            "exited": true
+          },
+          {
+            "pid": 47684,
+            "ppid": 47205,
+            "startIdentity": "Mon Oct 12 13:03:46 2026",
+            "executable": "/private/var/folders/pr/6x_bf79x5tq91wck08xdmbjh0000gn/T/relay-recovery-latency-laRxOU/relay-editor",
+            "signal": "SIGTERM",
+            "exited": true
+          }
+        ],
+        "allOwnedExited": true
+      },
+      "probeCalls": [
+        {
+          "provider": "codex",
+          "args": [
+            "login",
+            "status"
+          ],
+          "pid": 47670,
+          "ppid": 47660,
+          "allowed": true
+        },
+        {
+          "provider": "claude",
+          "args": [
+            "auth",
+            "status"
+          ],
+          "pid": 47671,
+          "ppid": 47660,
+          "allowed": true
+        },
+        {
+          "provider": "codex",
+          "args": [
+            "login",
+            "status"
+          ],
+          "pid": 47686,
+          "ppid": 47684,
+          "allowed": true
+        },
+        {
+          "provider": "claude",
+          "args": [
+            "auth",
+            "status"
+          ],
+          "pid": 47687,
+          "ppid": 47684,
+          "allowed": true
+        }
+      ],
+      "observerCounters": [
+        {
+          "messages": 68,
+          "incomingBytes": 161686,
+          "unsolicitedMessages": 35
+        },
+        {
+          "messages": 1,
+          "incomingBytes": 76543,
+          "unsolicitedMessages": 1
+        }
+      ],
+      "ports": [
+        53213,
+        53289
+      ],
+      "initialRevision": 1,
+      "latency": {
+        "count": 32,
+        "p50": 30.658542,
+        "p95": 34.683917,
+        "min": 26.7935,
+        "max": 36.465041,
+        "units": "milliseconds",
+        "quantile": "nearest rank"
+      },
+      "broadcastToReplyLatency": {
+        "count": 32,
+        "p50": 0.111417,
+        "p95": 0.272209,
+        "min": 0.058375,
+        "max": 1.333167,
+        "units": "milliseconds",
+        "quantile": "nearest rank"
+      },
+      "finalRevision": 33,
+      "expectedTextSha256": "28171c88e729cdaf96e0817fecb8d37636e1ad901db9ac4d08f946d647543fd1",
+      "recovery": {
+        "exactText": true,
+        "textSha256": "28171c88e729cdaf96e0817fecb8d37636e1ad901db9ac4d08f946d647543fd1",
+        "revision": 33,
+        "dirty": true,
+        "bytes": 68000
+      }
+    }
+  ],
+  "comparison": {
+    "matchingRevisions": true,
+    "matchingExpectedText": true,
+    "matchingFixtureAndChecks": true,
+    "candidateWholeP50Ratio": 2.445015698906445,
+    "candidateWholeP95Ratio": 2.208990094321007,
+    "candidatePatchP50Ratio": 2.445534183190229,
+    "candidatePatchP95Ratio": 2.190073294131576
+  },
+  "completedAt": "2026-10-12T20:03:47.339Z"
+}

@@ -1,0 +1,284 @@
+{
+  "verdict": "reject first candidate as overall performance improvement",
+  "baselineBinarySha256": "e089dc02d8dbc02b8d6252bb980a84a3459ec6cba013bda85dd8a01bfd605c62",
+  "candidateBinarySha256": "74b4da5e72125bd148f65c1d95aa8b031779eb68a7bad2ebc3db67620eb5ac1b",
+  "benchmarkSha256": "50a6a8137034292098f365dd5720d87303ac5443f2b462c8d6334eacf48c95f2",
+  "schedule": [
+    "baseline-1",
+    "candidate-1",
+    "candidate-2",
+    "baseline-2"
+  ],
+  "runs": [
+    {
+      "name": "baseline-1",
+      "date": "2026-10-11T08:02:18.801Z",
+      "durationSeconds": 314.565,
+      "hostRssPeakMiB": 60.688,
+      "hostTaskFootprintPeakMiB": 77.1,
+      "sustainedNativeProbe": {
+        "attemptedKeys": 13,
+        "inputEvents": 12,
+        "readonly": true,
+        "conflict": true,
+        "length": 1047564,
+        "pass": false
+      },
+      "ordinaryTypingWallMilliseconds": [
+        3627.3201659999995,
+        3520.2847920000004
+      ],
+      "tinyLineTypingWallMilliseconds": [
+        23118.527292,
+        12347.989875,
+        14643.060375000001
+      ],
+      "singleLineTypingWallMilliseconds": [
+        5104.107957999993,
+        4991.323042000004
+      ],
+      "fullEditMilliseconds": [
+        1977.2742910000088,
+        1744.3839160000207,
+        1455.0809999999765,
+        3150.9374580000003,
+        2337.7933330000087,
+        1469.3917499999807,
+        3741.2648749999935,
+        2507.26675000001,
+        1539.297749999998,
+        1825.9344580000034,
+        4594.218124999985,
+        1947.517582999979,
+        3196.9093750000175,
+        4473.124791000009,
+        1288.8845410000067,
+        1582.8691249999974,
+        4889.177207999979,
+        1408.5684170000022,
+        2195.138332999981,
+        2222.6594589999877
+      ],
+      "environment": {
+        "start": {
+          "pressure": "The system has 34359738368 (2097152 pages with a page size of 16384).\nSystem-wide memory free percentage: 49%",
+          "swap": "total = 29696.00M  used = 28065.12M  free = 1630.88M  (encrypted)",
+          "vmStatistics": "Mach Virtual Memory Statistics: (page size of 16384 bytes)\nPages free:                                4107.\nPages active:                            512455.\nPages inactive:                          500739.\nPages speculative:                        11013.\nPages throttled:                              0.\nPages wired down:                        350922.\nPages purgeable:                           7058.\n\"Translation faults\":              105686171696.\nPages copy-on-write:                 4823321601.\nPages zero filled:                  36131653409.\nPages reactivated:                  28125325410.\nPages purged:                        1334139788.\nFile-backed pages:                       312506.\nAnonymous pages:                         711701.\nPages stored in compressor:             4501612.\nPages occupied by compressor:            676552.\nDecompressions:                     22614569191.\nCompressions:                       26480141306.\nPageins:                             2054742623.\nPageouts:                              23142704.\nSwapins:                              148653570.\nSwapouts:                             169385169."
+        },
+        "end": {
+          "pressure": "The system has 34359738368 (2097152 pages with a page size of 16384).\nSystem-wide memory free percentage: 47%",
+          "swap": "total = 30720.00M  used = 29202.69M  free = 1517.31M  (encrypted)",
+          "vmStatistics": "Mach Virtual Memory Statistics: (page size of 16384 bytes)\nPages free:                              114419.\nPages active:                            436777.\nPages inactive:                          422064.\nPages speculative:                        13004.\nPages throttled:                              0.\nPages wired down:                        367973.\nPages purgeable:                           3314.\n\"Translation faults\":              105733680856.\nPages copy-on-write:                 4824672453.\nPages zero filled:                  36142637389.\nPages reactivated:                  28139461576.\nPages purged:                        1334604311.\nFile-backed pages:                       268734.\nAnonymous pages:                         603111.\nPages stored in compressor:             4673888.\nPages occupied by compressor:            701521.\nDecompressions:                     22633165837.\nCompressions:                       26501128482.\nPageins:                             2055066645.\nPageouts:                              23148392.\nSwapins:                              148813615.\nSwapouts:                             169624231."
+        }
+      }
+    },
+    {
+      "name": "candidate-1",
+      "date": "2026-10-11T08:07:46.646Z",
+      "durationSeconds": 385.597,
+      "hostRssPeakMiB": 61.031,
+      "hostTaskFootprintPeakMiB": 69.4,
+      "sustainedNativeProbe": {
+        "attemptedKeys": 16,
+        "inputEvents": 16,
+        "readonly": false,
+        "conflict": false,
+        "length": 1047568,
+        "pass": true
+      },
+      "ordinaryTypingWallMilliseconds": [
+        3377.325582999998,
+        3544.6965420000015
+      ],
+      "tinyLineTypingWallMilliseconds": [
+        25345.216000000008,
+        51427.390916000004,
+        28371.063040999987
+      ],
+      "singleLineTypingWallMilliseconds": [
+        6955.411124999984,
+        6265.748374999996
+      ],
+      "fullEditMilliseconds": [
+        1712.1586670000106,
+        1977.3924999999872,
+        4199.594750000018,
+        2606.9763749999984,
+        2226.592208999995,
+        7277.506499999989,
+        2326.1570000000065,
+        1467.344041000004,
+        2376.551749999984,
+        2520.957208000007,
+        1967.937042000005,
+        1876.753166999988,
+        3400.279582999996,
+        1813.4401249999937,
+        3562.9128330000094,
+        2803.4497499999998,
+        1465.0554589999956,
+        4341.476666000002,
+        2596.4136250000156,
+        2758.568416999973
+      ],
+      "environment": {
+        "start": {
+          "pressure": "The system has 34359738368 (2097152 pages with a page size of 16384).\nSystem-wide memory free percentage: 50%",
+          "swap": "total = 30720.00M  used = 29122.62M  free = 1597.38M  (encrypted)",
+          "vmStatistics": "Mach Virtual Memory Statistics: (page size of 16384 bytes)\nPages free:                               71341.\nPages active:                            487638.\nPages inactive:                          466580.\nPages speculative:                        19822.\nPages throttled:                              0.\nPages wired down:                        379330.\nPages purgeable:                           4893.\n\"Translation faults\":              105735089034.\nPages copy-on-write:                 4824733627.\nPages zero filled:                  36143073140.\nPages reactivated:                  28139461598.\nPages purged:                        1334604311.\nFile-backed pages:                       272412.\nAnonymous pages:                         701628.\nPages stored in compressor:             4510340.\nPages occupied by compressor:            631059.\nDecompressions:                     22633301289.\nCompressions:                       26501128482.\nPageins:                             2055071280.\nPageouts:                              23148392.\nSwapins:                              148818535.\nSwapouts:                             169624231."
+        },
+        "end": {
+          "pressure": "The system has 34359738368 (2097152 pages with a page size of 16384).\nSystem-wide memory free percentage: 45%",
+          "swap": "total = 30720.00M  used = 29683.62M  free = 1036.38M  (encrypted)",
+          "vmStatistics": "Mach Virtual Memory Statistics: (page size of 16384 bytes)\nPages free:                                5342.\nPages active:                            466471.\nPages inactive:                          463060.\nPages speculative:                         2533.\nPages throttled:                              0.\nPages wired down:                        395011.\nPages purgeable:                              2.\n\"Translation faults\":              105791686411.\nPages copy-on-write:                 4826562130.\nPages zero filled:                  36156765803.\nPages reactivated:                  28155472598.\nPages purged:                        1335187692.\nFile-backed pages:                       216720.\nAnonymous pages:                         715344.\nPages stored in compressor:             4764253.\nPages occupied by compressor:            723310.\nDecompressions:                     22652257635.\nCompressions:                       26523144408.\nPageins:                             2055575620.\nPageouts:                              23159285.\nSwapins:                              149013344.\nSwapouts:                             169860353."
+        }
+      }
+    },
+    {
+      "name": "candidate-2",
+      "date": "2026-10-11T08:17:36.154Z",
+      "durationSeconds": 495.956,
+      "hostRssPeakMiB": 61.781,
+      "hostTaskFootprintPeakMiB": 70.8,
+      "sustainedNativeProbe": {
+        "attemptedKeys": 16,
+        "inputEvents": 16,
+        "readonly": false,
+        "conflict": false,
+        "length": 1047568,
+        "pass": true
+      },
+      "ordinaryTypingWallMilliseconds": [
+        4679.9833340000005,
+        4145.753749999996
+      ],
+      "tinyLineTypingWallMilliseconds": [
+        38163.498959000004,
+        25666.185708000005,
+        32182.92749999999
+      ],
+      "singleLineTypingWallMilliseconds": [
+        14083.452292000002,
+        15423.297500000015
+      ],
+      "fullEditMilliseconds": [
+        4412.0214999999735,
+        1949.912834000017,
+        3422.075957999972,
+        4881.978207999957,
+        1792.9526250000345,
+        3677.0946669999976,
+        3441.168082999997,
+        1817.7122499999823,
+        2522.9785000000265,
+        5081.769375000033,
+        2545.605666999996,
+        4106.416582999984,
+        3574.877458999981,
+        2145.1749999999884,
+        2256.026208000025,
+        3460.682374999975,
+        1909.9179580000346,
+        2047.29366700002,
+        2842.272082999989,
+        1596.0805830000318
+      ],
+      "environment": {
+        "start": {
+          "pressure": "The system has 34359738368 (2097152 pages with a page size of 16384).\nSystem-wide memory free percentage: 36%",
+          "swap": "total = 30720.00M  used = 29027.00M  free = 1693.00M  (encrypted)",
+          "vmStatistics": "Mach Virtual Memory Statistics: (page size of 16384 bytes)\nPages free:                                3707.\nPages active:                            372537.\nPages inactive:                          363467.\nPages speculative:                         8100.\nPages throttled:                              0.\nPages wired down:                        380031.\nPages purgeable:                              9.\n\"Translation faults\":              105811589483.\nPages copy-on-write:                 4827552542.\nPages zero filled:                  36163484212.\nPages reactivated:                  28159140089.\nPages purged:                        1335338978.\nFile-backed pages:                       234129.\nAnonymous pages:                         509975.\nPages stored in compressor:             5081130.\nPages occupied by compressor:            927981.\nDecompressions:                     22654778200.\nCompressions:                       26526844982.\nPageins:                             2055783729.\nPageouts:                              23164350.\nSwapins:                              149054582.\nSwapouts:                             169860353."
+        },
+        "end": {
+          "pressure": "The system has 34359738368 (2097152 pages with a page size of 16384).\nSystem-wide memory free percentage: 43%",
+          "swap": "total = 32768.00M  used = 31477.25M  free = 1290.75M  (encrypted)",
+          "vmStatistics": "Mach Virtual Memory Statistics: (page size of 16384 bytes)\nPages free:                                4481.\nPages active:                            448304.\nPages inactive:                          440061.\nPages speculative:                         7060.\nPages throttled:                              0.\nPages wired down:                        389711.\nPages purgeable:                           1646.\n\"Translation faults\":              105872516231.\nPages copy-on-write:                 4829420736.\nPages zero filled:                  36180090892.\nPages reactivated:                  28179908167.\nPages purged:                        1335885787.\nFile-backed pages:                       237096.\nAnonymous pages:                         658329.\nPages stored in compressor:             5058356.\nPages occupied by compressor:            766200.\nDecompressions:                     22677221102.\nCompressions:                       26552809016.\nPageins:                             2056249805.\nPageouts:                              23171960.\nSwapins:                              149191744.\nSwapouts:                             170163273."
+        }
+      }
+    },
+    {
+      "name": "baseline-2",
+      "date": "2026-10-11T08:27:22.464Z",
+      "durationSeconds": 343.368,
+      "hostRssPeakMiB": 72.969,
+      "hostTaskFootprintPeakMiB": 80.5,
+      "sustainedNativeProbe": {
+        "attemptedKeys": 16,
+        "inputEvents": 16,
+        "readonly": false,
+        "conflict": false,
+        "length": 1047568,
+        "pass": true
+      },
+      "ordinaryTypingWallMilliseconds": [
+        4326.535625,
+        4708.933959000002
+      ],
+      "tinyLineTypingWallMilliseconds": [
+        16095.817750000002,
+        10541.549333000017,
+        7168.371875000012
+      ],
+      "singleLineTypingWallMilliseconds": [
+        6402.792165999999,
+        5012.094708000019
+      ],
+      "fullEditMilliseconds": [
+        1351.930250000005,
+        1709.0559169999906,
+        1434.2724580000213,
+        1738.4402910000063,
+        1351.169917000021,
+        1363.6747500000056,
+        1398.4711249999818,
+        4199.826957999991,
+        1401.2190830000036,
+        2170.6824590000033,
+        6012.215333,
+        2680.8083329999936,
+        1213.3979169999948,
+        4224.701457999996,
+        1529.5896249999932,
+        1396.042207999999,
+        4476.866584000003,
+        1566.8059169999906,
+        1557.7736659999937,
+        4778.270916000009
+      ],
+      "environment": {
+        "start": {
+          "pressure": "The system has 34359738368 (2097152 pages with a page size of 16384).\nSystem-wide memory free percentage: 49%",
+          "swap": "total = 32768.00M  used = 31285.19M  free = 1482.81M  (encrypted)",
+          "vmStatistics": "Mach Virtual Memory Statistics: (page size of 16384 bytes)\nPages free:                               33177.\nPages active:                            489485.\nPages inactive:                          482758.\nPages speculative:                         5432.\nPages throttled:                              0.\nPages wired down:                        383505.\nPages purgeable:                           5806.\n\"Translation faults\":              105879044466.\nPages copy-on-write:                 4829698283.\nPages zero filled:                  36182502979.\nPages reactivated:                  28180683902.\nPages purged:                        1335907937.\nFile-backed pages:                       215698.\nAnonymous pages:                         761977.\nPages stored in compressor:             4852386.\nPages occupied by compressor:            661497.\nDecompressions:                     22677919725.\nCompressions:                       26553522448.\nPageins:                             2056317937.\nPageouts:                              23173142.\nSwapins:                              149203296.\nSwapouts:                             170163273."
+        },
+        "end": {
+          "pressure": "The system has 34359738368 (2097152 pages with a page size of 16384).\nSystem-wide memory free percentage: 49%",
+          "swap": "total = 32768.00M  used = 31593.44M  free = 1174.56M  (encrypted)",
+          "vmStatistics": "Mach Virtual Memory Statistics: (page size of 16384 bytes)\nPages free:                              114337.\nPages active:                            448350.\nPages inactive:                          441495.\nPages speculative:                         5701.\nPages throttled:                              0.\nPages wired down:                        383756.\nPages purgeable:                           6112.\n\"Translation faults\":              105919859208.\nPages copy-on-write:                 4830983464.\nPages zero filled:                  36194964960.\nPages reactivated:                  28194008335.\nPages purged:                        1336186115.\nFile-backed pages:                       212054.\nAnonymous pages:                         683492.\nPages stored in compressor:             4854640.\nPages occupied by compressor:            662088.\nDecompressions:                     22690209788.\nCompressions:                       26568588063.\nPageins:                             2056566596.\nPageouts:                              23175693.\nSwapins:                              149251553.\nSwapouts:                             170230617."
+        }
+      }
+    }
+  ],
+  "limits": [
+    "macOS compressed memory and concurrent unrelated system processes affect RSS and timing; system memory scalar snapshots retained",
+    "natural heap samples precede phase-forced GC; this instrumentation changes subsequent GC cadence equally in A/B",
+    "combined renderer RSS includes shared pages and is not exact physical RAM",
+    "209k tiny lines repeat identical x=1 source; highlight-write reduction does not imply general varied-code scrolling win",
+    "typing trial waits desktop shared-state observer, not phone actual native display; pending paired native work and host fsync/serialization are unattributed",
+    "short-lived fixture descendant observer had a ps exit race, rejected startup attempts retained; accepted runs use exact same unchanged harness",
+    "all files closed native DOM sample is before forced GC and includes detached subtrees; no leak claim",
+    "baseline sustained typing fails genuinely but timing-dependently; candidate probes pass"
+  ],
+  "stableWins": [
+    "retained JS heap at8docs drops16.54 to10.45MiB per browser",
+    "full source split and UTF8 encoded allocations eliminated in measured large native inputs",
+    "host task physical-footprint peak77.1/80.5 to69.4/70.8MiB",
+    "baseline duplicate-flush conflict reproduced; first candidate both sustained probes pass"
+  ],
+  "rejections": [
+    "candidate tiny-line key-to-shared-state wall trials remain much slower in both runs versus both baseline runs",
+    "full20replacement command median slower in both candidate runs",
+    "isolated combined renderer RSS has no stable reduction",
+    "baseline2 scrolling overlaps candidate, removing apparent2x timing gain from baseline1 alone"
+  ]
+}

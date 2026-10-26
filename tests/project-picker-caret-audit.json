@@ -1,0 +1,598 @@
+{
+  "binarySha256": "cc0efe354f3f28015bc3e96b090caaf1645a0fd8da2810ac5e0dc0b9e598ebcd",
+  "browserEngine": "webkit",
+  "cycles": [
+    {
+      "cycle": 0,
+      "immediate": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      },
+      "settled": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      }
+    },
+    {
+      "cycle": 1,
+      "immediate": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      },
+      "settled": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      }
+    },
+    {
+      "cycle": 2,
+      "immediate": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      },
+      "settled": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      }
+    },
+    {
+      "cycle": 3,
+      "immediate": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      },
+      "settled": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      }
+    },
+    {
+      "cycle": 4,
+      "immediate": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      },
+      "settled": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      }
+    },
+    {
+      "cycle": 5,
+      "immediate": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      },
+      "settled": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      }
+    },
+    {
+      "cycle": 6,
+      "immediate": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      },
+      "settled": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      }
+    },
+    {
+      "cycle": 7,
+      "immediate": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      },
+      "settled": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      }
+    },
+    {
+      "cycle": 8,
+      "immediate": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      },
+      "settled": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      }
+    },
+    {
+      "cycle": 9,
+      "immediate": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      },
+      "settled": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      }
+    },
+    {
+      "cycle": 10,
+      "immediate": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      },
+      "settled": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      }
+    },
+    {
+      "cycle": 11,
+      "immediate": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      },
+      "settled": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      }
+    },
+    {
+      "cycle": 12,
+      "immediate": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      },
+      "settled": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      }
+    },
+    {
+      "cycle": 13,
+      "immediate": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      },
+      "settled": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      }
+    },
+    {
+      "cycle": 14,
+      "immediate": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      },
+      "settled": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      }
+    },
+    {
+      "cycle": 15,
+      "immediate": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      },
+      "settled": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      }
+    },
+    {
+      "cycle": 16,
+      "immediate": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      },
+      "settled": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      }
+    },
+    {
+      "cycle": 17,
+      "immediate": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      },
+      "settled": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      }
+    },
+    {
+      "cycle": 18,
+      "immediate": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      },
+      "settled": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      }
+    },
+    {
+      "cycle": 19,
+      "immediate": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      },
+      "settled": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      }
+    },
+    {
+      "cycle": 20,
+      "immediate": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      },
+      "settled": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      }
+    },
+    {
+      "cycle": 21,
+      "immediate": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      },
+      "settled": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      }
+    },
+    {
+      "cycle": 22,
+      "immediate": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      },
+      "settled": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      }
+    },
+    {
+      "cycle": 23,
+      "immediate": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      },
+      "settled": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      }
+    },
+    {
+      "cycle": 24,
+      "immediate": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      },
+      "settled": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      }
+    },
+    {
+      "cycle": 25,
+      "immediate": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      },
+      "settled": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      }
+    },
+    {
+      "cycle": 26,
+      "immediate": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      },
+      "settled": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      }
+    },
+    {
+      "cycle": 27,
+      "immediate": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      },
+      "settled": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      }
+    },
+    {
+      "cycle": 28,
+      "immediate": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      },
+      "settled": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      }
+    },
+    {
+      "cycle": 29,
+      "immediate": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      },
+      "settled": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      }
+    },
+    {
+      "cycle": 30,
+      "immediate": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      },
+      "settled": {
+        "end": true,
+        "remaining": 0,
+        "caretBottom": 692,
+        "inputBottom": 724,
+        "scrollTop": 946,
+        "clientHeight": 658
+      }
+    }
+  ],
+  "status": "pass",
+  "sourceOverrides": false,
+  "method": "Final embedded release, disposable UI fixture,31 native Home/End navigation cycles at390x844 in WebKit. Immediate and two-animation-frame settled metrics are captured. Every cycle reachesEOF, passes original32pxremainder limit and full-linebounds. This focused audit does not describe its copied fullUI continuation as passed; that continuation encountered the pre-submit invitation timing capture documented separately."
+}

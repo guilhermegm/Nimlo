@@ -1,0 +1,410 @@
+{
+  "baselineCommit": "fc77043e3d3b28ded7b9f98ebf8ced0c99a65ec6",
+  "baselineReleaseSha256": "2e8265e457215f1570ae99a1e1da011764ab7672cd7cec5ed3e73de0e1e72dea",
+  "references": [
+    {
+      "file": "prior-fc77043-floating-desktop-ai.png",
+      "source": "git:fc77043e3d3b28ded7b9f98ebf8ced0c99a65ec6:tests/floating-desktop-ai.png",
+      "bytes": 139518,
+      "sha256": "f4541c8a79fc580e1205d2c8d13cd414609fac2db73ad89c6337f0b6c3f0581d",
+      "purpose": "Exact committed Relay AI screenshot archived before general UI suites can overwrite it"
+    },
+    {
+      "file": "prior-fc77043-floating-phone-ai-context.png",
+      "source": "git:fc77043e3d3b28ded7b9f98ebf8ced0c99a65ec6:tests/floating-phone-ai-context.png",
+      "bytes": 51041,
+      "sha256": "312aa83e0aa6930a4e3d4f05515f00c7fa8594b3f7d031e3483871ecae8eb474",
+      "purpose": "Exact committed Relay AI screenshot archived before general UI suites can overwrite it"
+    },
+    {
+      "file": "prior-fc77043-phone-ai-current-project.png",
+      "source": "git:fc77043e3d3b28ded7b9f98ebf8ced0c99a65ec6:tests/active-project-review-chromium/phone-ai-current-project.png",
+      "bytes": 23847,
+      "sha256": "6eb3ca1bc6ef4b9de3f3b4dee6c237f6567c9ff5405aa45e03133fbc36f55f77",
+      "purpose": "Exact committed Relay AI screenshot archived before general UI suites can overwrite it"
+    },
+    {
+      "file": "zed-explore.webp",
+      "source": "git:fc77043e3d3b28ded7b9f98ebf8ced0c99a65ec6:mockup/review/zed-explore.webp",
+      "bytes": 189806,
+      "sha256": "59533ca903c05d3cb11420ec68d0c70424559ff7376956db85d8635466d4195a",
+      "url": "https://zed.dev/img/agentic/posters/explore-poster.webp",
+      "provenance": "Retained tests/multi-project-review-references/provenance.json URL and SHA256 agree exactly",
+      "purpose": "Quiet dark editor with file and AI visible; scoped desktop visual bar"
+    },
+    {
+      "file": "retained-unattributed-reference.webp",
+      "source": "git:fc77043e3d3b28ded7b9f98ebf8ced0c99a65ec6:mockup/review/reference.webp",
+      "bytes": 49862,
+      "sha256": "32623d9345be2b21030118df0257022a91b51856104298debc6227d46feb3914",
+      "purpose": "Archived for traceability only; origin not established and excluded as an official quality bar"
+    }
+  ],
+  "scope": "AI layout review only",
+  "limits": [
+    "Recognizable independent comparison, not a blind study.",
+    "Official Zed image is a scoped visual reference, not a feature-parity or matched device-state claim."
+  ],
+  "matchedBaselines": [
+    {
+      "browserEngine": "chromium",
+      "binarySha256": "2e8265e457215f1570ae99a1e1da011764ab7672cd7cec5ed3e73de0e1e72dea",
+      "report": "tests/ai-layout-review-baseline-chromium/review.json",
+      "reportSha256": "b87750ffea407c3cff9eee0aeb9edc2e36dda94e323f6796a244713b1195c46b",
+      "screenshots": [
+        {
+          "file": "desktop-ai-matched.png",
+          "bytes": 326346,
+          "sha256": "d9a0d634ee1d5db472ff77f0c0c873d6c84ba90012129f257f79a7784a90234b"
+        },
+        {
+          "file": "phone-ai-matched.png",
+          "bytes": 72166,
+          "sha256": "28b2be5a035bc47fcede0cb0358d4b228f12c65cb1c8b786da6e37d471afc91a"
+        }
+      ],
+      "taskState": {
+        "file": "session-controller.js",
+        "source": "160 generated lines, same content and visible text on both releases",
+        "prompt": "Review the session state and explain what to preserve when changing views.",
+        "reply": "same deterministic fake-provider reply",
+        "unsentDraft": "Could we keep the file open while reading your reply?",
+        "viewports": [
+          {
+            "width": 1280,
+            "height": 800
+          },
+          {
+            "width": 390,
+            "height": 844
+          }
+        ]
+      }
+    },
+    {
+      "browserEngine": "webkit",
+      "binarySha256": "2e8265e457215f1570ae99a1e1da011764ab7672cd7cec5ed3e73de0e1e72dea",
+      "report": "tests/ai-layout-review-baseline-webkit/review.json",
+      "reportSha256": "d7091f6876f9aa6c80d2e41055009e984689c0f81dee6c0f32a5a3093d12721e",
+      "screenshots": [
+        {
+          "file": "desktop-ai-matched.png",
+          "bytes": 398033,
+          "sha256": "45201c083701a475498a32303dc41dd5cebc53d0b2993ff345d0809a43a48494"
+        },
+        {
+          "file": "phone-ai-matched.png",
+          "bytes": 93691,
+          "sha256": "1a79190358e5a94ab51e4acb001c56d63a8eacf0bcdea372d47f3833c4b71767"
+        }
+      ],
+      "taskState": {
+        "file": "session-controller.js",
+        "source": "160 generated lines, same content and visible text on both releases",
+        "prompt": "Review the session state and explain what to preserve when changing views.",
+        "reply": "same deterministic fake-provider reply",
+        "unsentDraft": "Could we keep the file open while reading your reply?",
+        "viewports": [
+          {
+            "width": 1280,
+            "height": 800
+          },
+          {
+            "width": 390,
+            "height": 844
+          }
+        ]
+      }
+    }
+  ],
+  "comparisonMethod": "Compare exact prior2e8265 embedded release and candidate on the same generated file/question/deterministic fake-provider reply/unsent draft at1280x800 and390x844. Original committed screenshots remain an additional named visual bar. Recognizable independent comparison; no true blind study.",
+  "referenceValidation": "Retained Zed explore URL provenance and189806-byte SHA256 agree with committed file. Retained reference.webp has no established official provenance and is not used as the quality bar.",
+  "rejectedRounds": [
+    {
+      "binarySha256": "f67717cce9ab4719940f46067af9ab1e74ad94cc41482c8b6d9a115d9716c37d",
+      "browserEngine": "chromium",
+      "finding": "Small4px horizontal scroll clamp (110→106) after wider File Tab; text/selection/vertical410 retained exactly.",
+      "artifacts": [
+        {
+          "file": "rejected-f67717-chromium-review.json",
+          "source": "tests/ai-layout-review-chromium/review.json",
+          "bytes": 14828,
+          "sha256": "928d2c5dec686cd3bb11d158b443135df4ddc55c6c954f794714cae763bdf564"
+        },
+        {
+          "file": "rejected-f67717-chromium-failure-desktop.png",
+          "source": "tests/ai-layout-review-chromium/failure-desktop.png",
+          "bytes": 286018,
+          "sha256": "b999ec89dfd93e0858688903e99495eb0742b03c90df7dac379e3e5c2d1b118b"
+        }
+      ],
+      "numericTrace": {
+        "file": "rejected-f67717-chromium-numeric-review.json",
+        "bytes": 15196,
+        "sha256": "ed2c0dd5cc48fe6c33459104a6563d3d85462bbe00e284f9c4592e3ef00e4463",
+        "expected": {
+          "start": 360,
+          "end": 382,
+          "direction": "backward",
+          "top": 410,
+          "left": 110
+        },
+        "actual": {
+          "start": 360,
+          "end": 382,
+          "direction": "backward",
+          "top": 410,
+          "left": 106
+        },
+        "sameText": true
+      }
+    }
+  ],
+  "harnessCalibration": [
+    "Allow100ms for browser resize events to settle between viewport-class preference transitions; no synchronous resize parity claim.",
+    "Explicitly save only the disposable deliberately dirty fixture before asking the HOLD provider, matching existing required Save-before-AI behavior.",
+    "Terminal coordination uses established desktop combined editor/terminal behavior; phone retains its dedicated Terminal view.",
+    "Responsive preference probe runs in a separate browser context, after native gesture checks, to avoid the confirmed Chromium resized-sibling target emulation/input leak. Native wheel remains trusted and the user override assertion is unchanged."
+  ],
+  "harnessDiagnostics": [
+    {
+      "file": "chromium-resized-sibling-wheel-diagnostic.json",
+      "sha256": "efccba868fff12c8094d1061f93778be23a17b7d17509ac3e408a7471d9bd206",
+      "binarySha256": "2dd15ad88a81476f2b803945a788486f4ad2cbe51226d0d0e850858bae1d3363",
+      "observed": "Both trustedwheel events target code-input, defaultPreventedfalse, no scroll or later restore,106 unchanged. Source-only same fixture scrolls106→20.",
+      "hypothesis": "Extra preferencepage resize/close in shared Chromium desktop context disturbs sibling native input hit testing. Isolating preference test in separate context and placing it after native gesture checks; production unchanged.",
+      "resolution": "Confirmed driver isolation: the extra preferencepage resize/close in the same Chromium desktop context prevented sibling nativewheel default scrolling. A separate preference context, with the probe after native interactions, preserves all16 checks and makes actual nativewheel106→20 succeed; production assets unchanged. Builder independently reproduced full16 acceptance with isolated preferencecontext at the earlier order."
+    }
+  ],
+  "finalCandidateSha256": "2dd15ad88a81476f2b803945a788486f4ad2cbe51226d0d0e850858bae1d3363",
+  "harness": {
+    "file": "scripts/ai-layout-review.cjs",
+    "sha256": "5344f577c856e42f97df838505b50ac47d8767844640d65dee1decf51cac467d",
+    "checksPerEngine": 16
+  },
+  "visualVerdict": {
+    "decision": "accept",
+    "method": "Independent recognizable comparison of exact prior2e8265 embedded release and final2dd15ad at matched1280x800/390x844 generated-file/question/reply/unsent-draft states; retained exact fc77043 Relay screenshots and hash-validated official Zed explore reference support the scoped bar. No true blind study or feature-parity claim.",
+    "findings": [
+      "The final desktop Split keeps the prior quiet code-plus-AI appearance and sidebar width, while explicit Split/Tab choices and a named file/AI navigation row make both requested modes discoverable. The desktop navigation row costs40px of vertical source space; that tradeoff is visible and accepted for the new tab choice.",
+      "Desktop Tab displays one wide AI surface or the editable file surface, with genuine tab roles, selected state, keyboard activation and arrow/Home navigation. The editor, chat, prompt and AI panel retain their original DOM identities through layout and project changes.",
+      "Phone Tab keeps the prior full-width AI reading area and folds file/AI plus Split/Tab into the existing44px dock row. Phone Split is truly side-by-side; native typing, backward selection and both source scroll axes work at390x844,320x300 and844x390.",
+      "At320x300, Split code content is119px wide and long source requires horizontal scrolling; a real tap changes to full-width File Tab. The shortest completed conversation region remains44px and running AI remains48px, with Stop, settings, composer and mode controls at least44px and hit-test reachable.",
+      "The genuine prior Chromium4px clamp (110→106) is resolved: six cycles retain110 exactly, while a real native wheel in File Tab sets20 and AI→Split preserves20. WebKit retains110 and honors its native wheel result24.",
+      "Project-local unsent prompts, source and conversation remain scoped while the device layout preference and working surface stay consistent. Existing desktop terminal state coordinates with both modes without a new shell, terminal input or AI turn during layout switches.",
+      "Repeated switches retain the same bounded DOM; final15-cycle counts are465→465 in both browsers. Existing source/state bounds are reused, and the review adds no runtime dependency or product background job."
+    ]
+  },
+  "finalReviews": [
+    {
+      "browserEngine": "chromium",
+      "binarySha256": "2dd15ad88a81476f2b803945a788486f4ad2cbe51226d0d0e850858bae1d3363",
+      "report": "tests/ai-layout-review-chromium/review.json",
+      "reportSha256": "4522e62c9fe0769194ad566215f1244b56d3de7b51c5cb3f7ae790ef2f28e42b",
+      "checks": 16,
+      "nativeUserScroll": {
+        "name": "native-user-horizontal-scroll",
+        "before": 106,
+        "afterWheel": 20,
+        "restored": 20
+      },
+      "screenshots": [
+        {
+          "file": "desktop-ai-matched.png",
+          "bytes": 314611,
+          "sha256": "dbe2700278042c7940a50b4670ffda43e5b0e97dd4d5caffc77b1dc03908f96b"
+        },
+        {
+          "file": "phone-ai-matched.png",
+          "bytes": 72765,
+          "sha256": "7d861326ec42931775f742939f9a58f93e65bd7986ec7c6ec70b278c5e36c350"
+        },
+        {
+          "file": "desktop-split.png",
+          "bytes": 314301,
+          "sha256": "b73a4f1e38492d2a0232f90872fde18fa4bc324f74b6c4dc1ac210e747e35707"
+        },
+        {
+          "file": "desktop-ai-tab.png",
+          "bytes": 99320,
+          "sha256": "52466ab9db7c0f30eb321a81b7db5dd54c2bf3e1b8066bfedd053fb437f4fd50"
+        },
+        {
+          "file": "desktop-file-tab.png",
+          "bytes": 233845,
+          "sha256": "df230385099222edde80914b07bda01402892441ba15d575557168a27f91cd3e"
+        },
+        {
+          "file": "desktop-retained-edit.png",
+          "bytes": 284137,
+          "sha256": "e7e6a183fdf2b368ec48023558f4cd853a95df2bd867f7896324465ffc73c353"
+        },
+        {
+          "file": "phone-split-390x844.png",
+          "bytes": 94977,
+          "sha256": "5875d23bf854858a3d660388a0dc904d5a563f31f4feb600f5955d750d21dc2e"
+        },
+        {
+          "file": "phone-ai-tab-390x844.png",
+          "bytes": 73461,
+          "sha256": "f059445495dbcb075ac38c437ff8051aa0159ae13a3c3a781d683809d360865b"
+        },
+        {
+          "file": "phone-file-tab-390x844.png",
+          "bytes": 59399,
+          "sha256": "7101aecde921b13ec1c2d59efbebb9cf6dd58bd0177ae1d943470d5a3d966c83"
+        },
+        {
+          "file": "phone-split-320x300.png",
+          "bytes": 32010,
+          "sha256": "b2b083e058fdbbafc1ad8d46dc875a1e1694f2e85e1cf70079ca8323227403b5"
+        },
+        {
+          "file": "phone-ai-tab-320x300.png",
+          "bytes": 27687,
+          "sha256": "2d03dd343466233a4d64fb8c4bb37ac01643a93a83947a304d77c1a11a659e9e"
+        },
+        {
+          "file": "phone-file-tab-320x300.png",
+          "bytes": 24406,
+          "sha256": "1fbd3fdcf22fcf5bcf785285db4485e90f8489bff0e332791e79c4ebc1ef8466"
+        },
+        {
+          "file": "phone-split-844x390.png",
+          "bytes": 85442,
+          "sha256": "cdc5c1defbc29aee44ba80c9d9a95ad4f008351313318fa34185baad0c27ccd8"
+        },
+        {
+          "file": "phone-ai-tab-844x390.png",
+          "bytes": 38322,
+          "sha256": "c226855f6f86017684918e8651089ced1631ecb80a66e160f70147ef7bb224df"
+        },
+        {
+          "file": "phone-file-tab-844x390.png",
+          "bytes": 90332,
+          "sha256": "b3375e78c057171f1511bd18de9d61abeddd2a648fa4b618e658cef5f8475df4"
+        },
+        {
+          "file": "phone-running-split-320x300.png",
+          "bytes": 27723,
+          "sha256": "8c6d6c60d54a478f94160ab54dc9d42123deceb85232b2a045cbb881a90bbe97"
+        },
+        {
+          "file": "desktop-project-restoration.png",
+          "bytes": 315288,
+          "sha256": "597d4e2ff9155906de00e34423d8e9a47bdf91d833b81dd5430bc97e2d914ecd"
+        },
+        {
+          "file": "desktop-terminal-ai-coordination.png",
+          "bytes": 248139,
+          "sha256": "d8b27c52b71c9a5142438303edac4984fa96bbcc003b422e9287d512e70b2f72"
+        }
+      ]
+    },
+    {
+      "browserEngine": "webkit",
+      "binarySha256": "2dd15ad88a81476f2b803945a788486f4ad2cbe51226d0d0e850858bae1d3363",
+      "report": "tests/ai-layout-review-webkit/review.json",
+      "reportSha256": "46f430886b9f3aa2e35597b78c7ae98db1393352bce6b355a4144349e99d50ae",
+      "checks": 16,
+      "nativeUserScroll": {
+        "name": "native-user-horizontal-scroll",
+        "before": 110,
+        "afterWheel": 24,
+        "restored": 24
+      },
+      "screenshots": [
+        {
+          "file": "desktop-ai-matched.png",
+          "bytes": 382507,
+          "sha256": "0528030dbee4641656065e824a2e37f8a6ce6bab021ca1319f56399e842ec41d"
+        },
+        {
+          "file": "phone-ai-matched.png",
+          "bytes": 94452,
+          "sha256": "43c56db3fa7a40ae1a3214e0afa931db1023b675da4b69d22d9a5375363b34a0"
+        },
+        {
+          "file": "desktop-split.png",
+          "bytes": 382183,
+          "sha256": "03b49dd0706f42a61c28508839c2fa802729dc29b63b798441994bf25f8da281"
+        },
+        {
+          "file": "desktop-ai-tab.png",
+          "bytes": 133464,
+          "sha256": "7d6c6300ea3531e0f4ebac50ec60607d5fae4d377f0c486f606ca0d92aebefda"
+        },
+        {
+          "file": "desktop-file-tab.png",
+          "bytes": 294711,
+          "sha256": "19f1c35882fceee517a40911844a2033c5a1e70c56c15f4463b3b1c7597a62f6"
+        },
+        {
+          "file": "desktop-retained-edit.png",
+          "bytes": 350348,
+          "sha256": "fa05f1a84296ade1fdab7d6a0c75b9193af4081c91240406f23c8ac3fdb60e28"
+        },
+        {
+          "file": "phone-split-390x844.png",
+          "bytes": 163492,
+          "sha256": "6f856b36df6a3a92012f7de04421b01b235db7b94b96a0fd80874a85ad408785"
+        },
+        {
+          "file": "phone-ai-tab-390x844.png",
+          "bytes": 95110,
+          "sha256": "388ae52914e0a5df86a3ddfd98abefb8bc2c6d531f2f25bb033367d27b2dd707"
+        },
+        {
+          "file": "phone-file-tab-390x844.png",
+          "bytes": 173474,
+          "sha256": "63cc9b24dfe3282364c484fe960b2f975722c714ffd8bf41134b9a8657a11059"
+        },
+        {
+          "file": "phone-split-320x300.png",
+          "bytes": 42855,
+          "sha256": "4c3a165d47d6fc6d71d1f41a7c8a0378f8d64da5155fdf10bacaa8f475854d2a"
+        },
+        {
+          "file": "phone-ai-tab-320x300.png",
+          "bytes": 33848,
+          "sha256": "b33f874b7b7c741445fdfdbacf95ea311954f69b39a4f0618f8a0c201c16cbb6"
+        },
+        {
+          "file": "phone-file-tab-320x300.png",
+          "bytes": 41083,
+          "sha256": "196e196c4d2428ab1646a2979304d21e5497cb98276e9bfc038b8c60c1eb515d"
+        },
+        {
+          "file": "phone-split-844x390.png",
+          "bytes": 107387,
+          "sha256": "091807b2817b8bac0d22087b944b77c3a863472f69fb4556ec870dd24a0ebdc3"
+        },
+        {
+          "file": "phone-ai-tab-844x390.png",
+          "bytes": 51051,
+          "sha256": "10f6cb78ec23434e6e130b6b6b45a3cb9294fae92f29c9fe9a1715b20a3de312"
+        },
+        {
+          "file": "phone-file-tab-844x390.png",
+          "bytes": 116879,
+          "sha256": "e050aea1c1e4a647419631aa4bdeff764e288f7dc1641854c691301f4f97619f"
+        },
+        {
+          "file": "phone-running-split-320x300.png",
+          "bytes": 44261,
+          "sha256": "37a9d691bea67d888f707f9ad3252eb44a8010549199d5bc1c790a2784299a11"
+        },
+        {
+          "file": "desktop-project-restoration.png",
+          "bytes": 380908,
+          "sha256": "7a876b85eaec30d5875ffc60bffda003ea532b89b2bc2b46d0260180c50aaa0c"
+        },
+        {
+          "file": "desktop-terminal-ai-coordination.png",
+          "bytes": 300975,
+          "sha256": "b88106d60129fc86a91558fa6e333c2e7ab74f53ae9d4a182200cf1d663e2a0d"
+        }
+      ]
+    }
+  ]
+}

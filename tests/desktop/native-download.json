@@ -1,0 +1,16 @@
+{
+  "status": "pass",
+  "checks": [
+    "Actual release native window authenticated and all four embedded assets match source",
+    "Device drafts saves exact Unicode bytes through WKDownload, retains its pending copy and leaves host files untouched",
+    "Existing destination is preserved and a cancelled export releases its single transfer slot",
+    "Only the owned fixture window and host stop after testing"
+  ],
+  "binarySha256": "cddbb20a14bffe2dc5688c84958723f41740701ff4d69a5847a92bc59eb3622f",
+  "nativeExecutableSha256": "16b5f459059140ba36e334faec9b35b419d7ef83b9d39e12d1ed8462c1e3e374",
+  "fixtureOnly": true,
+  "realInferenceRequests": 0,
+  "limits": [
+    "Save-panel interaction requires an unlocked Mac and was replaced with a private fixture destination. The actual WebKit Blob transfer and application download policy were exercised."
+  ]
+}

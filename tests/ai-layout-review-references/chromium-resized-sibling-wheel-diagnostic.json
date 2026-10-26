@@ -1,0 +1,748 @@
+{
+  "status": "reject",
+  "date": "2026-10-11T07:02:18.178Z",
+  "binarySha256": "2dd15ad88a81476f2b803945a788486f4ad2cbe51226d0d0e850858bae1d3363",
+  "browserEngine": "chromium",
+  "browserVersion": "155.0.8059.39",
+  "realHost": true,
+  "sourceOverrides": false,
+  "disposableWorkspaces": true,
+  "fakeProviders": true,
+  "checks": [
+    "Frozen embedded build starts without a shell or inference",
+    "Real paired phone and desktop share one editable fixture",
+    "Matched task state has a real fake-provider reply and unsent draft",
+    "Desktop Split keeps editable source beside the same AI conversation",
+    "Desktop file and AI tabs are distinct and work through native keyboard activation",
+    "Layout preference survives reload and stays separate between desktop and phone viewport classes",
+    "Split and Tab retain unsaved text, selection, both source scroll axes, prompt and conversation scroll"
+  ],
+  "screenshots": [
+    {
+      "file": "desktop-ai-matched.png",
+      "bytes": 314601,
+      "sha256": "0a7e5e13e23afd76f37f9dbc879d2078d3e020bb844f25dbe9e7be8a26ba1751"
+    },
+    {
+      "file": "phone-ai-matched.png",
+      "bytes": 72765,
+      "sha256": "7d861326ec42931775f742939f9a58f93e65bd7986ec7c6ec70b278c5e36c350"
+    },
+    {
+      "file": "desktop-split.png",
+      "bytes": 314301,
+      "sha256": "b73a4f1e38492d2a0232f90872fde18fa4bc324f74b6c4dc1ac210e747e35707"
+    },
+    {
+      "file": "desktop-ai-tab.png",
+      "bytes": 99320,
+      "sha256": "52466ab9db7c0f30eb321a81b7db5dd54c2bf3e1b8066bfedd053fb437f4fd50"
+    },
+    {
+      "file": "desktop-file-tab.png",
+      "bytes": 233845,
+      "sha256": "df230385099222edde80914b07bda01402892441ba15d575557168a27f91cd3e"
+    },
+    {
+      "file": "desktop-retained-edit.png",
+      "bytes": 284187,
+      "sha256": "c17df95b42ae582610c73ca2cf0ab8041d846d6c33431018211a7c4be4ff4a9b"
+    },
+    {
+      "file": "failure-phone.png",
+      "bytes": 73747,
+      "sha256": "155ed6d65a2563a8143c8b8da1b232eed6b13190769831f7f8f43f6022888b9c"
+    },
+    {
+      "file": "failure-desktop.png",
+      "bytes": 213885,
+      "sha256": "48ccf1f367a36a57bc2e9bf0c53a4aee3e3fa818a708b601e5d189191a067246"
+    }
+  ],
+  "layouts": [
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "documentWidth": 1280,
+      "code": {
+        "visible": true,
+        "left": 48,
+        "right": 919.203125,
+        "top": 92,
+        "bottom": 800,
+        "width": 871.203125,
+        "height": 708
+      },
+      "ai": {
+        "visible": true,
+        "left": 933.203125,
+        "right": 1266,
+        "top": 92,
+        "bottom": 786,
+        "width": 332.796875,
+        "height": 694
+      },
+      "messages": {
+        "visible": true,
+        "left": 933.203125,
+        "right": 1266,
+        "top": 155,
+        "bottom": 693,
+        "width": 332.796875,
+        "height": 538
+      },
+      "controls": [
+        {
+          "id": "mobile-code",
+          "visible": true,
+          "left": 14,
+          "right": 173.5,
+          "top": 52,
+          "bottom": 84,
+          "width": 159.5,
+          "height": 32,
+          "hit": true
+        },
+        {
+          "id": "mobile-ai",
+          "visible": true,
+          "left": 177.5,
+          "right": 233.796875,
+          "top": 52,
+          "bottom": 84,
+          "width": 56.296875,
+          "height": 32,
+          "hit": true
+        },
+        {
+          "id": "ai-layout-split",
+          "visible": true,
+          "left": 1174,
+          "right": 1218,
+          "top": 54,
+          "bottom": 82,
+          "width": 44,
+          "height": 28,
+          "hit": true
+        },
+        {
+          "id": "ai-layout-tab",
+          "visible": true,
+          "left": 1220,
+          "right": 1264,
+          "top": 54,
+          "bottom": 82,
+          "width": 44,
+          "height": 28,
+          "hit": true
+        },
+        {
+          "id": "provider",
+          "visible": true,
+          "left": 1133,
+          "right": 1194,
+          "top": 102.5,
+          "bottom": 129.5,
+          "width": 61,
+          "height": 27,
+          "hit": true
+        },
+        {
+          "id": "ai-settings",
+          "visible": true,
+          "left": 1197,
+          "right": 1225,
+          "top": 102,
+          "bottom": 130,
+          "width": 28,
+          "height": 28,
+          "hit": true
+        },
+        {
+          "id": "ai-cancel",
+          "visible": false,
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "hit": false
+        },
+        {
+          "id": "prompt",
+          "visible": true,
+          "left": 954.203125,
+          "right": 1216,
+          "top": 718,
+          "bottom": 770,
+          "width": 261.796875,
+          "height": 52,
+          "hit": true
+        },
+        {
+          "id": "ai-send",
+          "visible": true,
+          "left": 1222,
+          "right": 1250,
+          "top": 742,
+          "bottom": 770,
+          "width": 28,
+          "height": 28,
+          "hit": true
+        }
+      ],
+      "dom": 584,
+      "name": "desktop-split"
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "documentWidth": 1280,
+      "code": {
+        "visible": false,
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0,
+        "width": 0,
+        "height": 0
+      },
+      "ai": {
+        "visible": true,
+        "left": 14,
+        "right": 1266,
+        "top": 92,
+        "bottom": 786,
+        "width": 1252,
+        "height": 694
+      },
+      "messages": {
+        "visible": true,
+        "left": 14,
+        "right": 1266,
+        "top": 155,
+        "bottom": 687,
+        "width": 1252,
+        "height": 532
+      },
+      "controls": [
+        {
+          "id": "mobile-code",
+          "visible": true,
+          "left": 14,
+          "right": 173.5,
+          "top": 52,
+          "bottom": 84,
+          "width": 159.5,
+          "height": 32,
+          "hit": true
+        },
+        {
+          "id": "mobile-ai",
+          "visible": true,
+          "left": 177.5,
+          "right": 233.796875,
+          "top": 52,
+          "bottom": 84,
+          "width": 56.296875,
+          "height": 32,
+          "hit": true
+        },
+        {
+          "id": "ai-layout-split",
+          "visible": true,
+          "left": 1174,
+          "right": 1218,
+          "top": 54,
+          "bottom": 82,
+          "width": 44,
+          "height": 28,
+          "hit": true
+        },
+        {
+          "id": "ai-layout-tab",
+          "visible": true,
+          "left": 1220,
+          "right": 1264,
+          "top": 54,
+          "bottom": 82,
+          "width": 44,
+          "height": 28,
+          "hit": true
+        },
+        {
+          "id": "provider",
+          "visible": true,
+          "left": 1133,
+          "right": 1194,
+          "top": 102.5,
+          "bottom": 129.5,
+          "width": 61,
+          "height": 27,
+          "hit": true
+        },
+        {
+          "id": "ai-settings",
+          "visible": true,
+          "left": 1197,
+          "right": 1225,
+          "top": 102,
+          "bottom": 130,
+          "width": 28,
+          "height": 28,
+          "hit": true
+        },
+        {
+          "id": "ai-cancel",
+          "visible": false,
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "hit": false
+        },
+        {
+          "id": "prompt",
+          "visible": true,
+          "left": 251,
+          "right": 1000,
+          "top": 712,
+          "bottom": 764,
+          "width": 749,
+          "height": 52,
+          "hit": true
+        },
+        {
+          "id": "ai-send",
+          "visible": true,
+          "left": 1006,
+          "right": 1034,
+          "top": 736,
+          "bottom": 764,
+          "width": 28,
+          "height": 28,
+          "hit": true
+        }
+      ],
+      "dom": 584,
+      "name": "desktop-ai-tab"
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "documentWidth": 1280,
+      "code": {
+        "visible": true,
+        "left": 48,
+        "right": 1280,
+        "top": 92,
+        "bottom": 800,
+        "width": 1232,
+        "height": 708
+      },
+      "ai": {
+        "visible": false,
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0,
+        "width": 0,
+        "height": 0
+      },
+      "messages": {
+        "visible": false,
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0,
+        "width": 0,
+        "height": 0
+      },
+      "controls": [
+        {
+          "id": "mobile-code",
+          "visible": true,
+          "left": 14,
+          "right": 173.5,
+          "top": 52,
+          "bottom": 84,
+          "width": 159.5,
+          "height": 32,
+          "hit": true
+        },
+        {
+          "id": "mobile-ai",
+          "visible": true,
+          "left": 177.5,
+          "right": 233.796875,
+          "top": 52,
+          "bottom": 84,
+          "width": 56.296875,
+          "height": 32,
+          "hit": true
+        },
+        {
+          "id": "ai-layout-split",
+          "visible": true,
+          "left": 1174,
+          "right": 1218,
+          "top": 54,
+          "bottom": 82,
+          "width": 44,
+          "height": 28,
+          "hit": true
+        },
+        {
+          "id": "ai-layout-tab",
+          "visible": true,
+          "left": 1220,
+          "right": 1264,
+          "top": 54,
+          "bottom": 82,
+          "width": 44,
+          "height": 28,
+          "hit": true
+        },
+        {
+          "id": "provider",
+          "visible": false,
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "hit": false
+        },
+        {
+          "id": "ai-settings",
+          "visible": false,
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "hit": false
+        },
+        {
+          "id": "ai-cancel",
+          "visible": false,
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "hit": false
+        },
+        {
+          "id": "prompt",
+          "visible": false,
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "hit": false
+        },
+        {
+          "id": "ai-send",
+          "visible": false,
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "hit": false
+        }
+      ],
+      "dom": 427,
+      "name": "desktop-file-tab"
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "documentWidth": 1280,
+      "code": {
+        "visible": false,
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0,
+        "width": 0,
+        "height": 0
+      },
+      "ai": {
+        "visible": true,
+        "left": 14,
+        "right": 1266,
+        "top": 92,
+        "bottom": 786,
+        "width": 1252,
+        "height": 694
+      },
+      "messages": {
+        "visible": true,
+        "left": 14,
+        "right": 1266,
+        "top": 155,
+        "bottom": 687,
+        "width": 1252,
+        "height": 532
+      },
+      "controls": [
+        {
+          "id": "mobile-code",
+          "visible": true,
+          "left": 14,
+          "right": 173.5,
+          "top": 52,
+          "bottom": 84,
+          "width": 159.5,
+          "height": 32,
+          "hit": true
+        },
+        {
+          "id": "mobile-ai",
+          "visible": true,
+          "left": 177.5,
+          "right": 233.796875,
+          "top": 52,
+          "bottom": 84,
+          "width": 56.296875,
+          "height": 32,
+          "hit": true
+        },
+        {
+          "id": "ai-layout-split",
+          "visible": true,
+          "left": 1174,
+          "right": 1218,
+          "top": 54,
+          "bottom": 82,
+          "width": 44,
+          "height": 28,
+          "hit": true
+        },
+        {
+          "id": "ai-layout-tab",
+          "visible": true,
+          "left": 1220,
+          "right": 1264,
+          "top": 54,
+          "bottom": 82,
+          "width": 44,
+          "height": 28,
+          "hit": true
+        },
+        {
+          "id": "provider",
+          "visible": true,
+          "left": 1133,
+          "right": 1194,
+          "top": 102.5,
+          "bottom": 129.5,
+          "width": 61,
+          "height": 27,
+          "hit": true
+        },
+        {
+          "id": "ai-settings",
+          "visible": true,
+          "left": 1197,
+          "right": 1225,
+          "top": 102,
+          "bottom": 130,
+          "width": 28,
+          "height": 28,
+          "hit": true
+        },
+        {
+          "id": "ai-cancel",
+          "visible": false,
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "hit": false
+        },
+        {
+          "id": "prompt",
+          "visible": true,
+          "left": 251,
+          "right": 1000,
+          "top": 712,
+          "bottom": 764,
+          "width": 749,
+          "height": 52,
+          "hit": true
+        },
+        {
+          "id": "ai-send",
+          "visible": true,
+          "left": 1006,
+          "right": 1034,
+          "top": 736,
+          "bottom": 764,
+          "width": 28,
+          "height": 28,
+          "hit": true
+        }
+      ],
+      "dom": 584,
+      "name": "desktop-ai-tab-keyboard"
+    },
+    {
+      "name": "editor-retention",
+      "expected": {
+        "start": 360,
+        "end": 382,
+        "direction": "backward",
+        "top": 410,
+        "left": 110
+      },
+      "actual": {
+        "start": 360,
+        "end": 382,
+        "direction": "backward",
+        "top": 410,
+        "left": 110
+      },
+      "sameText": true
+    },
+    {
+      "name": "layout-command-audit",
+      "sentTypes": [],
+      "providerTurns": 1
+    },
+    {
+      "name": "native-wheel-input",
+      "before": 106,
+      "after": 106,
+      "geometry": {
+        "scrollWidth": 1338,
+        "clientWidth": 1232,
+        "scrollHeight": 3612,
+        "clientHeight": 708,
+        "editorInert": false,
+        "hidden": false,
+        "rect": {
+          "x": 48,
+          "y": 92,
+          "width": 1232,
+          "height": 708,
+          "top": 92,
+          "right": 1280,
+          "bottom": 800,
+          "left": 48
+        }
+      },
+      "events": [
+        {
+          "target": "code-input",
+          "deltaX": -86,
+          "deltaY": 0,
+          "trusted": true
+        },
+        {
+          "target": "code-input",
+          "deltaX": -86,
+          "deltaY": 1,
+          "trusted": true
+        }
+      ],
+      "trace": [
+        {
+          "type": "wheel",
+          "target": "code-input",
+          "trusted": true,
+          "defaultPrevented": false,
+          "left": 106,
+          "top": 410,
+          "at": 4024,
+          "active": "code-input",
+          "view": "code"
+        },
+        {
+          "type": "wheel-after-bubble",
+          "target": "code-input",
+          "trusted": true,
+          "defaultPrevented": false,
+          "left": 106,
+          "top": 410,
+          "at": 4024,
+          "active": "code-input",
+          "view": "code"
+        },
+        {
+          "type": "wheel",
+          "target": "code-input",
+          "trusted": true,
+          "defaultPrevented": false,
+          "left": 106,
+          "top": 410,
+          "at": 5039,
+          "active": "code-input",
+          "view": "code"
+        },
+        {
+          "type": "wheel-after-bubble",
+          "target": "code-input",
+          "trusted": true,
+          "defaultPrevented": false,
+          "left": 106,
+          "top": 410,
+          "at": 5039,
+          "active": "code-input",
+          "view": "code"
+        }
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "stage": "A real horizontal wheel gesture in the wider File tab overrides the earlier Split scroll position",
+      "message": "Native horizontal wheel gesture did not change source scroll: {\"before\":106,\"after\":106,\"wheel\":{\"events\":[{\"target\":\"code-input\",\"deltaX\":-86,\"deltaY\":0,\"trusted\":true},{\"target\":\"code-input\",\"deltaX\":-86,\"deltaY\":1,\"trusted\":true}],\"trace\":[{\"type\":\"wheel\",\"target\":\"code-input\",\"trusted\":true,\"defaultPrevented\":false,\"left\":106,\"top\":410,\"at\":4024,\"active\":\"code-input\",\"view\":\"code\"},{\"type\":\"wheel-after-bubble\",\"target\":\"code-input\",\"trusted\":true,\"defaultPrevented\":false,\"left\":106,\"top\":410,\"at\":4024,\"active\":\"code-input\",\"view\":\"code\"},{\"type\":\"wheel\",\"target\":\"code-input\",\"trusted\":true,\"defaultPrevented\":false,\"left\":106,\"top\":410,\"at\":5039,\"active\":\"code-input\",\"view\":\"code\"},{\"type\":\"wheel-after-bubble\",\"target\":\"code-input\",\"trusted\":true,\"defaultPrevented\":false,\"left\":106,\"top\":410,\"at\":5039,\"active\":\"code-input\",\"view\":\"code\"}]}}"
+    }
+  ],
+  "unexpectedBrowserErrors": [],
+  "references": "tests/ai-layout-review-references/provenance.json",
+  "matchedTaskState": {
+    "file": "session-controller.js",
+    "source": "160 generated lines, same content and visible text on both releases",
+    "prompt": "Review the session state and explain what to preserve when changing views.",
+    "reply": "same deterministic fake-provider reply",
+    "unsentDraft": "Could we keep the file open while reading your reply?",
+    "viewports": [
+      {
+        "width": 1280,
+        "height": 800
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ]
+  },
+  "limits": [
+    "No real inference, credentials, user projects, tunnels or live Relay hosts were accessed.",
+    "Physical devices and native mobile keyboards remain untested.320x300 is a simulated reduced visual viewport; IME events are injected.",
+    "Independent recognizable matched-state screenshot comparison; no true blind study or broad product parity claim."
+  ]
+}

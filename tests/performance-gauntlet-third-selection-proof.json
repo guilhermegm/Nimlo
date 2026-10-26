@@ -1,0 +1,239 @@
+{
+  "method": "Actual disposable host and native textarea; delayed next frames only in correctness cases; exact frozen embedded assets; source remains in normal app model only",
+  "variants": [
+    {
+      "label": "baseline",
+      "binarySha256": "e089dc02d8dbc02b8d6252bb980a84a3459ec6cba013bda85dd8a01bfd605c62",
+      "cases": [
+        {
+          "mode": "frame",
+          "before": {
+            "length": 492000,
+            "start": 350,
+            "end": 950,
+            "direction": "backward",
+            "top": 800,
+            "left": 150
+          },
+          "held": {
+            "length": 492000,
+            "start": 3,
+            "end": 3,
+            "direction": "none",
+            "top": 0,
+            "left": 0
+          },
+          "after": {
+            "length": 492000,
+            "start": 3,
+            "end": 3,
+            "direction": "none",
+            "top": 0,
+            "left": 0
+          }
+        },
+        {
+          "mode": "focus",
+          "before": {
+            "length": 492000,
+            "start": 350,
+            "end": 950,
+            "direction": "backward",
+            "top": 800,
+            "left": 150
+          },
+          "held": {
+            "length": 492000,
+            "start": 3,
+            "end": 3,
+            "direction": "none",
+            "top": 0,
+            "left": 0
+          },
+          "after": {
+            "length": 492000,
+            "start": 3,
+            "end": 3,
+            "direction": "none",
+            "top": 0,
+            "left": 0
+          }
+        },
+        {
+          "mode": "hide-reveal",
+          "before": {
+            "length": 492000,
+            "start": 350,
+            "end": 950,
+            "direction": "backward",
+            "top": 800,
+            "left": 150
+          },
+          "held": {
+            "length": 492000,
+            "start": 3,
+            "end": 3,
+            "direction": "none",
+            "top": 0,
+            "left": 0
+          },
+          "after": {
+            "length": 492000,
+            "start": 3,
+            "end": 3,
+            "direction": "none",
+            "top": 0,
+            "left": 0
+          }
+        },
+        {
+          "mode": "switch-away-back",
+          "before": {
+            "length": 492000,
+            "start": 350,
+            "end": 950,
+            "direction": "backward",
+            "top": 800,
+            "left": 150
+          },
+          "held": {
+            "length": 492000,
+            "start": 3,
+            "end": 3,
+            "direction": "none",
+            "top": 0,
+            "left": 0
+          },
+          "after": {
+            "length": 492000,
+            "start": 3,
+            "end": 3,
+            "direction": "none",
+            "top": 800,
+            "left": 150
+          }
+        }
+      ]
+    },
+    {
+      "label": "third active-only full-split cache",
+      "binarySha256": "82cd887065a0422bc0e898f0e42c52d69951dd27361d38033ffe171168c6372e",
+      "cases": [
+        {
+          "mode": "frame",
+          "before": {
+            "length": 492000,
+            "start": 350,
+            "end": 950,
+            "direction": "backward",
+            "top": 800,
+            "left": 150
+          },
+          "held": {
+            "length": 492000,
+            "start": 3,
+            "end": 3,
+            "direction": "none",
+            "top": 0,
+            "left": 0
+          },
+          "after": {
+            "length": 492000,
+            "start": 3,
+            "end": 3,
+            "direction": "none",
+            "top": 0,
+            "left": 0
+          }
+        },
+        {
+          "mode": "focus",
+          "before": {
+            "length": 492000,
+            "start": 350,
+            "end": 950,
+            "direction": "backward",
+            "top": 800,
+            "left": 150
+          },
+          "held": {
+            "length": 492000,
+            "start": 3,
+            "end": 3,
+            "direction": "none",
+            "top": 0,
+            "left": 0
+          },
+          "after": {
+            "length": 492000,
+            "start": 3,
+            "end": 3,
+            "direction": "none",
+            "top": 0,
+            "left": 0
+          }
+        },
+        {
+          "mode": "hide-reveal",
+          "before": {
+            "length": 492000,
+            "start": 350,
+            "end": 950,
+            "direction": "backward",
+            "top": 800,
+            "left": 150
+          },
+          "held": {
+            "length": 492000,
+            "start": 3,
+            "end": 3,
+            "direction": "none",
+            "top": 0,
+            "left": 0
+          },
+          "after": {
+            "length": 492000,
+            "start": 3,
+            "end": 3,
+            "direction": "none",
+            "top": 0,
+            "left": 0
+          }
+        },
+        {
+          "mode": "switch-away-back",
+          "before": {
+            "length": 492000,
+            "start": 350,
+            "end": 950,
+            "direction": "backward",
+            "top": 800,
+            "left": 150
+          },
+          "held": {
+            "length": 492000,
+            "start": 3,
+            "end": 3,
+            "direction": "none",
+            "top": 0,
+            "left": 0
+          },
+          "after": {
+            "length": 492000,
+            "start": 3,
+            "end": 3,
+            "direction": "none",
+            "top": 800,
+            "left": 150
+          }
+        }
+      ],
+      "originalRunnerLabel": "coalescer"
+    }
+  ],
+  "pass": true,
+  "metadataCorrection": {
+    "description": "Historical runner label coalescer changed to actual third82cd variant; original label retained, native vectors and binary/assets/runtime evidence unchanged",
+    "date": "2026-10-11T08:59:33.426Z"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "status": "accept",
+  "reviewer": "independent fresh toolbar_blind_visual agent",
+  "method": "Anonymous A/B screenshot choices; qualitative visual review, not a controlled user study.",
+  "firstComparison": {
+    "desktop": "candidate",
+    "phoneFiles": "candidate",
+    "dirty320": "candidate preferred but rejected: extension hidden"
+  },
+  "finalComparison": {
+    "winner": "candidate",
+    "accept": true,
+    "reason": "Filename stem and .js extension remain visible, full filename is available inside Files, device/count and AI chips are distinct, and Save fits beside the dock."
+  },
+  "remainingLimit": "Long project names still truncate at320px; the project icon and its dropdown identify the workspace.",
+  "artifacts": [
+    "tests/floating-phone-320-dirty.png",
+    "tests/workspace-ui-review-toolbar-final-labels-chromium/toolbar-phone-320-files.png"
+  ],
+  "binarySha256": "2d76da7cf2777d5a0333e7c25920aa9a6e7eb5acb36c7017143d47bde48da9e9"
+}

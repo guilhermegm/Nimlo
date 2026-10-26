@@ -1,0 +1,333 @@
+{
+  "timestamp": "2026-10-10T06:37:30.737Z",
+  "method": {
+    "rss": "macOS ps RSS, sampled every100ms, KiB converted to MiB",
+    "browserHeap": "Chrome CDP Runtime.getHeapUsage before and after HeapProfiler.collectGarbage; excludes browser native/GPU memory",
+    "phaseSettlingMilliseconds": 1500
+  },
+  "hardware": {
+    "model": "MacBookPro18,1",
+    "cpu": "Apple M1 Pro",
+    "physicalMemoryBytes": 34359738368,
+    "os": "ProductName:\t\tmacOS\nProductVersion:\t\t26.2\nBuildVersion:\t\t25C56",
+    "kernel": "25.2.0",
+    "rust": "rustc 1.99.0 (b940084d7 2026-09-28)",
+    "node": "v20.17.0",
+    "chrome": "155.0.8059.39"
+  },
+  "build": {
+    "profile": "release; strip=true; lto=thin; codegen-units=1",
+    "binaryBytes": 2559680,
+    "binarySha256": "df20fca9c22197eddaed8d39f46510f2b03a803b374c2432a33cb17d50cea9ef",
+    "assets": {
+      "index.html": {
+        "bytes": 14321,
+        "gzipBytes": 3967,
+        "sha256": "928bb01921260c2e7ddbcd660e3091c7fb2b3a37cb2e2f6fa1329edd53f9112b"
+      },
+      "app.js": {
+        "bytes": 53689,
+        "gzipBytes": 13839,
+        "sha256": "2a41a090ce8e5718bda95be6a69681c3269f6027d94d4bfc9ff3a04d8b51645b"
+      },
+      "style.css": {
+        "bytes": 21793,
+        "gzipBytes": 5104,
+        "sha256": "57b332fefeb9ecce1c0fb45c82858a877c1dbf864dac41e04ea7230e6ee2ac4c"
+      }
+    }
+  },
+  "workload": {
+    "files": 8,
+    "bytesPerFile": 1047552,
+    "totalFileBytes": 8380416,
+    "edits": 20,
+    "openCloseCycles": 10,
+    "terminalLines": 5000,
+    "terminalDelayMilliseconds": 1,
+    "handoffObservedMilliseconds": 26.768125,
+    "retainedTerminalHistoryRows": 200
+  },
+  "phases": [
+    {
+      "name": "idle host, no browser or terminal",
+      "hostSettledMedianMiB": 3.56,
+      "hostObservedPeakMiB": 3.56,
+      "samples": 96,
+      "browserHeap": {},
+      "children": []
+    },
+    {
+      "name": "one desktop, no loaded files",
+      "hostSettledMedianMiB": 3.77,
+      "hostObservedPeakMiB": 4.14,
+      "samples": 33,
+      "browserHeap": {
+        "desktop": {
+          "usedBeforeGCMiB": 1.88,
+          "usedAfterGCMiB": 1.28,
+          "totalAfterGCMiB": 2.06,
+          "domNodes": 305
+        }
+      },
+      "children": []
+    },
+    {
+      "name": "desktop plus phone, no loaded files",
+      "hostSettledMedianMiB": 4.25,
+      "hostObservedPeakMiB": 4.25,
+      "samples": 30,
+      "browserHeap": {
+        "desktop": {
+          "usedBeforeGCMiB": 2.45,
+          "usedAfterGCMiB": 2.04,
+          "totalAfterGCMiB": 2.88,
+          "domNodes": 310
+        },
+        "phone": {
+          "usedBeforeGCMiB": 3,
+          "usedAfterGCMiB": 2.11,
+          "totalAfterGCMiB": 2.88,
+          "domNodes": 308
+        }
+      },
+      "children": []
+    },
+    {
+      "name": "eight near-limit files, desktop plus phone",
+      "hostSettledMedianMiB": 25.03,
+      "hostObservedPeakMiB": 25.03,
+      "samples": 43,
+      "browserHeap": {
+        "desktop": {
+          "usedBeforeGCMiB": 15.97,
+          "usedAfterGCMiB": 12.73,
+          "totalAfterGCMiB": 13.38,
+          "domNodes": 373
+        },
+        "phone": {
+          "usedBeforeGCMiB": 12.17,
+          "usedAfterGCMiB": 10.14,
+          "totalAfterGCMiB": 10.88,
+          "domNodes": 332
+        }
+      },
+      "children": []
+    },
+    {
+      "name": "twenty full-document edits, shared unsaved buffer",
+      "hostSettledMedianMiB": 39.39,
+      "hostObservedPeakMiB": 39.39,
+      "samples": 72,
+      "browserHeap": {
+        "desktop": {
+          "usedBeforeGCMiB": 59.43,
+          "usedAfterGCMiB": 13.74,
+          "totalAfterGCMiB": 14.38,
+          "domNodes": 373
+        },
+        "phone": {
+          "usedBeforeGCMiB": 10.14,
+          "usedAfterGCMiB": 10.14,
+          "totalAfterGCMiB": 10.88,
+          "domNodes": 332
+        }
+      },
+      "children": []
+    },
+    {
+      "name": "handoff to phone, same unsaved buffer",
+      "hostSettledMedianMiB": 39.39,
+      "hostObservedPeakMiB": 39.39,
+      "samples": 19,
+      "browserHeap": {
+        "desktop": {
+          "usedBeforeGCMiB": 13.77,
+          "usedAfterGCMiB": 13.74,
+          "totalAfterGCMiB": 14.38,
+          "domNodes": 372
+        },
+        "phone": {
+          "usedBeforeGCMiB": 10.17,
+          "usedAfterGCMiB": 10.14,
+          "totalAfterGCMiB": 10.88,
+          "domNodes": 333
+        }
+      },
+      "children": []
+    },
+    {
+      "name": "persistent terminal idle, 80 columns by24 rows",
+      "hostSettledMedianMiB": 40.03,
+      "hostObservedPeakMiB": 40.03,
+      "samples": 25,
+      "browserHeap": {
+        "desktop": {
+          "usedBeforeGCMiB": 13.81,
+          "usedAfterGCMiB": 13.74,
+          "totalAfterGCMiB": 14.38,
+          "domNodes": 372
+        },
+        "phone": {
+          "usedBeforeGCMiB": 10.62,
+          "usedAfterGCMiB": 10.26,
+          "totalAfterGCMiB": 10.88,
+          "domNodes": 385
+        }
+      },
+      "children": [
+        {
+          "pid": 41616,
+          "parent": 35174,
+          "rssMiB": 7.3,
+          "executable": "/bin/zsh"
+        }
+      ]
+    },
+    {
+      "name": "five thousand terminal lines; phone renders retained history",
+      "hostSettledMedianMiB": 41.72,
+      "hostObservedPeakMiB": 41.72,
+      "samples": 68,
+      "browserHeap": {
+        "desktop": {
+          "usedBeforeGCMiB": 15.33,
+          "usedAfterGCMiB": 13.79,
+          "totalAfterGCMiB": 14.13,
+          "domNodes": 372
+        },
+        "phone": {
+          "usedBeforeGCMiB": 11.86,
+          "usedAfterGCMiB": 10.42,
+          "totalAfterGCMiB": 10.88,
+          "domNodes": 397
+        }
+      },
+      "children": [
+        {
+          "pid": 41616,
+          "parent": 35174,
+          "rssMiB": 7.45,
+          "executable": "/bin/zsh"
+        }
+      ]
+    },
+    {
+      "name": "ten close/open cycles of eight near-limit files",
+      "hostSettledMedianMiB": 40,
+      "hostObservedPeakMiB": 41.75,
+      "samples": 266,
+      "browserHeap": {
+        "desktop": {
+          "usedBeforeGCMiB": 13.89,
+          "usedAfterGCMiB": 12.8,
+          "totalAfterGCMiB": 13.38,
+          "domNodes": 372
+        },
+        "phone": {
+          "usedBeforeGCMiB": 10.46,
+          "usedAfterGCMiB": 10.43,
+          "totalAfterGCMiB": 10.88,
+          "domNodes": 333
+        }
+      },
+      "children": [
+        {
+          "pid": 41616,
+          "parent": 35174,
+          "rssMiB": 7.45,
+          "executable": "/bin/zsh"
+        }
+      ]
+    },
+    {
+      "name": "all files closed, terminal explicitly stopped",
+      "hostSettledMedianMiB": 39.98,
+      "hostObservedPeakMiB": 40,
+      "samples": 22,
+      "browserHeap": {
+        "desktop": {
+          "usedBeforeGCMiB": 13.04,
+          "usedAfterGCMiB": 3.19,
+          "totalAfterGCMiB": 4.13,
+          "domNodes": 309
+        },
+        "phone": {
+          "usedBeforeGCMiB": 10.58,
+          "usedAfterGCMiB": 2.4,
+          "totalAfterGCMiB": 2.88,
+          "domNodes": 309
+        }
+      },
+      "children": []
+    },
+    {
+      "name": "browsers closed, host remains idle",
+      "hostSettledMedianMiB": 40,
+      "hostObservedPeakMiB": 40,
+      "samples": 37,
+      "browserHeap": {},
+      "children": []
+    }
+  ],
+  "cycles": [
+    {
+      "cycle": 1,
+      "hostRSSMiB": 41.72
+    },
+    {
+      "cycle": 2,
+      "hostRSSMiB": 41.73
+    },
+    {
+      "cycle": 3,
+      "hostRSSMiB": 41.73
+    },
+    {
+      "cycle": 4,
+      "hostRSSMiB": 41.75
+    },
+    {
+      "cycle": 5,
+      "hostRSSMiB": 40.48
+    },
+    {
+      "cycle": 6,
+      "hostRSSMiB": 40.22
+    },
+    {
+      "cycle": 7,
+      "hostRSSMiB": 40.22
+    },
+    {
+      "cycle": 8,
+      "hostRSSMiB": 40.23
+    },
+    {
+      "cycle": 9,
+      "hostRSSMiB": 40.23
+    },
+    {
+      "cycle": 10,
+      "hostRSSMiB": 40
+    }
+  ],
+  "browserErrors": [],
+  "terminalProducerObserved": [
+    {
+      "pid": 41616,
+      "parent": 35174,
+      "rssMiB": 7.45,
+      "executable": "/bin/zsh"
+    },
+    {
+      "pid": 42684,
+      "parent": 41616,
+      "rssMiB": 14.86,
+      "executable": "/Library/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python"
+    }
+  ],
+  "hostObservedPeakMiB": 41.75,
+  "durationSeconds": 77.71,
+  "recoverySnapshotBytes": 153
+}

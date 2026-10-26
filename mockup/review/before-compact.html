@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="dark"><meta name="description" content="A compact, local interface mock for a shared-session AI code editor.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2320272e'/%3E%3Cpath d='m13 9-7 7 7 7m6-14 7 7-7 7' stroke='%23acd6c2' fill='none' stroke-width='2'/%3E%3C/svg%3E">
+<title>Relay — editor interface mock</title>
+<style>
+:root{color-scheme:dark;--bg:#191e24;--panel:#1e242b;--line:#303841;--text:#d7dce1;--muted:#96a2ae;--accent:#afd9c3;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font:13px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text)}
+*{box-sizing:border-box}body{margin:0}button,input,textarea,select{font:inherit;color:inherit}button,select{cursor:pointer}button{background:none;border:0;border-radius:4px;padding:6px 9px;white-space:nowrap}button:hover{background:#2a333c}button:disabled{opacity:.45;cursor:default}button:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;vertical-align:middle;flex:none}.icon{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;padding:0}.muted{color:var(--muted)}.spacer{flex:1}.dot{height:6px;width:6px;border-radius:50%;background:var(--accent);display:inline-block}.app{height:100dvh;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:40px minmax(0,1fr)}
+.top{min-width:0;display:flex;align-items:center;gap:9px;padding:0 13px;border-bottom:1px solid var(--line);background:var(--panel)}.file-trigger{font-size:12px;display:flex;align-items:center;gap:9px;padding:6px 8px}.file-trigger svg{width:13px;height:13px;color:var(--muted)}.chevron{color:var(--muted);font-size:11px}.dirty{font-size:8px;color:var(--accent)}.mock-label{font-size:10px;color:var(--muted)}.ask-ai{font-size:12px;color:var(--accent);display:flex;align-items:center;gap:6px}.ask-ai svg{width:13px;height:13px}.session-trigger{display:flex;align-items:center;justify-content:center;gap:5px;padding:5px 7px;height:30px;color:var(--muted)}.session-trigger{font-size:11px;gap:7px}.session-trigger,.ask-ai,.mock-label,.save{flex-shrink:0}.save{font-size:11px;color:var(--accent)}.view-only{font-size:10px;color:#d9bb8e}.workspace{min-height:0;display:grid;grid-template-columns:minmax(0,1fr)}.editor{min-width:0;min-height:0;display:flex;flex-direction:column}.codebox{min-height:0;position:relative;flex:1;overflow:hidden;font:13px/23px var(--mono);tab-size:4}.gutter{position:absolute;inset:0 auto 0 0;width:54px;overflow:hidden;color:#697582;text-align:right;padding-right:16px;user-select:none}.gutter pre{margin:0;padding-top:19px;font:inherit}.code-surface{position:absolute;inset:0 0 0 54px;overflow:hidden}.highlight,.code-input{position:absolute;margin:0;border:0;inset:0;width:100%;height:100%;padding:19px 22px 45px 0;font:inherit;letter-spacing:0;tab-size:4;white-space:pre;overflow:auto}.highlight{pointer-events:none;overflow:visible}.code-input{resize:none;color:transparent;caret-color:var(--text);background:transparent;-webkit-text-fill-color:transparent;outline:none}.code-input::selection{background:#41617980}.code-input:read-only{caret-color:transparent}.keyword{color:#b1afd8}.type{color:#a0cbd0}.string{color:#bdc994}.comment{color:#84939f}.number{color:#d8b28c}.code-scroll{display:none}
+.ai{display:none;min-height:0;min-width:0;border-left:1px solid var(--line);background:var(--panel);flex-direction:column}.app[data-view=ai] .workspace{grid-template-columns:minmax(0,1fr) 300px}.app[data-view=ai] .ai{display:flex}.panel-heading{height:40px;padding:0 14px;display:flex;align-items:center;border-bottom:1px solid var(--line);font-size:12px}.provider{margin-left:auto;background:transparent;border:0;font-size:11px;padding:5px;max-width:100px}.messages{padding:19px 15px;overflow:auto;flex:1;min-height:0;font-size:12px;line-height:1.75}.message{margin-bottom:24px}.byline{font-size:10px;color:var(--muted);margin-bottom:7px}.message p{margin:0}.proposal{border-top:1px solid var(--line);padding-top:9px;margin-top:16px;display:flex;gap:7px;align-items:center;font-size:11px}.proposal span{color:var(--muted);font-family:var(--mono);font-size:10px}.proposal button{margin-left:auto;color:var(--accent);font-size:11px}.compose{border-top:1px solid var(--line);padding:12px}.composer{display:flex;align-items:flex-end;gap:7px;border:1px solid #43505b;background:var(--bg);border-radius:5px;padding:6px 7px 6px 10px}.composer:focus-within{border-color:#789486}.composer textarea{display:block;flex:1;min-width:0;resize:none;background:none;border:0;outline:0;font-size:12px;line-height:24px;min-height:28px;max-height:110px;padding:2px 0}.composer textarea::placeholder{color:#8995a1}.send{width:28px;height:28px;display:grid;place-items:center;color:var(--accent);padding:0}.simulation{font-size:10px;color:var(--muted);text-align:center;margin:8px 0 0}
+.popover{position:fixed;right:12px;top:45px;width:280px;background:#252d35;border:1px solid #4c5863;border-radius:6px;z-index:20;box-shadow:0 12px 30px #0005;padding:14px}.popover h2{font-size:12px;margin:0 0 6px}.popover p{font-size:11px;color:var(--muted);line-height:1.6;margin:0 0 12px}.files{left:13px;right:auto;width:218px;padding:8px}.files .panel-heading{height:30px;border:0;color:var(--muted);font-size:11px;padding:0 9px}.tree button{width:100%;display:flex;align-items:center;text-align:left;height:34px;padding:0 9px;gap:10px;font-size:12px}.tree button.active{background:#303941}.file-kind{color:var(--muted);font:10px var(--mono);width:17px}.device{display:flex;align-items:center;gap:10px;border-top:1px solid var(--line);padding:12px 0;font-size:12px}.device small{font-size:10px;color:var(--muted);display:block;margin-top:4px}.device svg{width:20px;height:20px;color:var(--muted)}.device button{margin-left:auto;font-size:11px;border:1px solid #536057;color:var(--accent)}.pill{margin-left:auto;color:var(--accent);font-size:10px}[hidden],dialog:not([open]){display:none!important}.notice{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:30;background:#29323b;border:1px solid #48555f;border-radius:5px;padding:8px 12px;color:var(--text);font-size:11px;max-width:calc(100vw - 24px);text-align:center;pointer-events:none}
+dialog{background:var(--panel);color:var(--text);border:1px solid #4b5a65;border-radius:7px;padding:0;width:min(650px,calc(100vw - 28px));max-height:85dvh}dialog::backdrop{background:#080c11b8}dialog header{height:44px;border-bottom:1px solid var(--line);padding:0 15px;display:flex;align-items:center;font-size:12px}.review-description{padding:12px 15px;margin:0;color:var(--muted);font-size:11px;line-height:1.6}.diff{font:12px/24px var(--mono);overflow:auto;margin:0;padding:12px 15px;background:var(--bg);white-space:pre}.diff .add{color:#b6dcc5;background:#263c304d;display:block}.review-actions{padding:12px 15px;display:flex;gap:8px;border-top:1px solid var(--line)}.primary{background:var(--accent);color:#1e3628}.primary:hover{background:#c3e8d4}.review-error{color:#e3b6a0;padding:0 15px 14px;font-size:12px;line-height:1.5;margin:0}
+@media(max-width:760px){.app{grid-template-rows:48px minmax(0,1fr)}.top{padding:0 8px;gap:4px}.file-trigger,.ask-ai,.session-trigger,.save{height:44px}.file-trigger{min-width:0;max-width:48%;gap:6px}.file-trigger #file-label{overflow:hidden;text-overflow:ellipsis}.file-trigger>svg{display:none}.session-trigger{min-width:38px}.ask-ai{font-size:12px;padding:0 8px}.mock-label{font-size:9px;margin-right:2px}.app[data-view=ai] .workspace{display:block}.app[data-view=ai] .editor{display:none}.ai{height:100%;border-left:0}.editor{height:100%}.codebox{font-size:16px;line-height:26px}.gutter{width:42px;padding-right:12px}.gutter pre{font-size:11px;line-height:26px;padding-top:15px}.code-surface{left:42px}.highlight,.code-input{padding-top:15px}.code-scroll{display:flex;align-items:center;gap:10px;flex:none;height:44px;padding:0 12px calc(env(safe-area-inset-bottom));border-top:1px solid var(--line);font-size:10px;color:var(--muted)}.code-scroll input{height:40px;margin:0;min-width:0;flex:1;accent-color:var(--accent)}.code-scroll span{font-family:var(--mono);font-size:10px}.panel-heading{height:44px}.provider{height:44px;font-size:12px}.messages{font-size:13px;padding:17px}.composer textarea{font-size:16px;line-height:24px;padding:10px 0}.send{height:44px;width:36px}.compose{padding-bottom:calc(12px + env(safe-area-inset-bottom))}.proposal button{height:44px}.popover{top:53px;right:9px;width:min(290px,calc(100vw - 18px))}.files{left:9px;right:auto;width:218px}.tree button,.device button,.review-actions button{min-height:44px}.diff{white-space:pre-wrap;overflow-wrap:anywhere}dialog header .icon{width:44px;height:44px}.notice{bottom:57px}.view-only{font-size:9px}}
+</style>
+</head>
+<body>
+<svg style="display:none" aria-hidden="true"><defs>
+<symbol id="i-ai" viewBox="0 0 20 20"><path d="m10 2 2.5 5.5L18 10l-5.5 2.5L10 18l-2.5-5.5L2 10l5.5-2.5Z"/></symbol>
+<symbol id="i-pc" viewBox="0 0 20 20"><rect x="2" y="3" width="16" height="11" rx="2"/><path d="M7 18h6m-3-4v4"/></symbol>
+<symbol id="i-phone" viewBox="0 0 20 20"><rect x="5" y="1.5" width="10" height="17" rx="2"/><path d="M9 15.5h2"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 20 20"><path d="M10 16V4m-5 5 5-5 5 5"/></symbol>
+<symbol id="i-close" viewBox="0 0 20 20"><path d="m5 5 10 10M15 5 5 15"/></symbol>
+<symbol id="i-file" viewBox="0 0 20 20"><path d="M11 2H4v16h12V7Zm0 0v5h5"/></symbol>
+</defs></svg>
+<div class="app" id="app" data-view="code">
+<header class="top">
+ <button class="file-trigger" id="files-toggle" aria-label="Choose file" aria-expanded="false" aria-controls="files-menu"><svg><use href="#i-file"/></svg><span id="file-label">session.rs</span><small class="dirty" id="dirty-dot"></small><span class="chevron">⌄</span></button><span class="view-only" id="view-only" hidden>View only</span>
+ <span class="spacer"></span><button class="save" id="save-button" hidden>Save</button><span class="mock-label">Mock</span><button class="session-trigger" id="session-toggle" aria-label="Session and devices (demo)" title="Session and devices · demo" aria-expanded="false" aria-controls="session-popover"><span class="dot" id="session-dot"></span><span>2 devices</span></button><button class="ask-ai" id="ai-toggle" aria-expanded="false" aria-controls="ai-panel"><svg><use href="#i-ai"/></svg><span id="ai-toggle-label">Ask AI</span></button>
+</header>
+<main class="workspace">
+<section class="editor" aria-label="Code editor">
+ <div class="codebox"><div class="gutter" aria-hidden="true"><pre id="line-numbers"></pre></div><div class="code-surface"><pre class="highlight" id="highlight" aria-hidden="true"></pre><textarea id="code-input" class="code-input" aria-label="Edit session.rs" spellcheck="false" autocomplete="off" autocapitalize="off" wrap="off"></textarea></div></div>
+ <div class="code-scroll" id="code-scroll"><label for="code-x">Scroll code ↔</label><input id="code-x" type="range" min="0" max="0" value="0" aria-label="Horizontal code position"><span id="scroll-position">Start</span></div>
+</section>
+<aside class="ai" id="ai-panel" aria-label="AI assistant">
+ <div class="panel-heading"><span>AI</span><select id="provider" class="provider" aria-label="AI provider"><option>Codex</option><option>Claude</option></select></div>
+ <div class="messages" id="messages" aria-live="polite"><div class="message"><div class="byline">You</div><p>Keep my edits when I reconnect.</p></div><div class="message"><div class="byline" id="agent-name">Codex</div><p>Add a revision check before accepting changes.</p><div class="proposal"><span>session.rs · +4</span><button id="review-button">Review change →</button></div></div></div>
+ <form class="compose" id="prompt-form"><div class="composer"><textarea id="prompt" aria-label="Message the AI assistant" placeholder="Ask about your code…" rows="1" maxlength="1200"></textarea><button class="send" type="submit" aria-label="Send demo prompt"><svg><use href="#i-arrow"/></svg></button></div><p class="simulation">Simulated AI</p></form>
+</aside>
+</main>
+</div>
+<aside class="files popover" id="files-menu" aria-label="Project files" hidden><div class="panel-heading">Files</div><div class="tree"><button class="active" data-file="session.rs"><span class="file-kind">rs</span>session.rs</button><button data-file="main.rs"><span class="file-kind">rs</span>main.rs</button><button data-file="README.md"><span class="file-kind">md</span>README.md</button></div></aside>
+<div class="notice" id="notice" role="status" hidden></div>
+<section class="popover" id="session-popover" aria-label="Demo session devices" hidden><h2>PC session · 2 devices</h2><p>Simulated devices</p><div class="device"><svg><use href="#i-pc"/></svg><div>This device<small id="edit-state">Editing on this device</small></div><span class="pill" id="pc-state">Editing</span></div><div class="device"><svg><use href="#i-phone"/></svg><div>Phone<small id="phone-state">Watching this session</small></div><button id="handoff">Hand off</button></div><p class="control-note" id="handoff-note">Unsaved work stays in this demo.</p></section>
+<dialog id="review-dialog" aria-labelledby="review-title"><header><strong id="review-title">Review change</strong><span class="spacer"></span><button class="icon" id="close-review" aria-label="Close review"><svg><use href="#i-close"/></svg></button></header><p class="review-description">session.rs · +4 lines</p><pre class="diff"><span> pub fn apply(&amp;mut self, edit: Edit) -&gt; Result&lt;()&gt; {</span>
+<span class="add">+    if edit.revision != self.revision {</span><span class="add">+        return Err(Error::StaleRevision);</span><span class="add">+    }</span><span class="add">+</span><span>     self.buffer.apply(edit.changes)?;</span>
+<span>     self.revision += 1;</span>
+<span>     Ok(())</span>
+<span> }</span></pre><div class="review-actions"><button id="cancel-review">Keep original</button><span class="spacer"></span><button class="primary" id="apply-change">Apply change</button></div><p class="review-error" id="review-error" hidden></p></dialog>
+<script>
+'use strict';
+const $=id=>document.getElementById(id), app=$('app'), input=$('code-input');
+const original=`use crate::{Buffer, Edit, Error, Result};
+
+/// A workspace that stays with you.
+pub struct Session {
+    id: SessionId,
+    buffer: Buffer,
+    revision: u64,
+}
+
+impl Session {
+    pub fn new(id: SessionId) -> Self {
+        Self {
+            id,
+            buffer: Buffer::new(),
+            revision: 0,
+        }
+    }
+
+    pub fn apply(&mut self, edit: Edit) -> Result<()> {
+        self.buffer.apply(edit.changes)?;
+        self.revision += 1;
+        Ok(())
+    }
+
+    pub fn snapshot(&self) -> Snapshot {
+        Snapshot {
+            session_id: self.id,
+            revision: self.revision,
+            text: self.buffer.text(),
+        }
+    }
+}
+`;
+const defaults={'session.rs':original,'main.rs':`mod session;
+
+use relay::{Config, Host, Result};
+
+fn main() -> Result<()> {
+    let config = Config::local();
+    let host = Host::new(config)?;
+
+    // The workspace outlives its screens.
+    host.serve("127.0.0.1:8080")
+}
+`,'README.md':`# Relay
+
+One workspace. Every screen.
+
+This is an interface mock for a lightweight editor.
+
+- Your PC hosts files and AI work.
+- Your phone continues the same session.
+- Your edits are preserved before control transfers.
+
+In this prototype, AI replies and devices are simulated.
+Save stores sample text in this browser only.
+
+The custom editor engine and real host are planned work.
+`};
+let docs={...defaults}, saved={...defaults}, current='session.rs', controlled=true, applied=false;
+try{const s=JSON.parse(localStorage.getItem('relay-mock-files')||'null');if(s)for(const k of Object.keys(docs))if(typeof s[k]==='string'&&s[k].length<100000)docs[k]=saved[k]=s[k]}catch{}
+const escape=s=>s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+function colorize(s){if(current==='README.md')return escape(s);const re=/(\/\/[^\n]*|"(?:\\.|[^"\\])*"|\b(?:use|pub|struct|impl|fn|let|mut|self|Self|return|if|mod)\b|\b(?:Session|SessionId|Buffer|Edit|Error|Result|Snapshot|Host|Config)\b|\b\d+\b)/g;let out='',last=0;for(const m of s.matchAll(re)){out+=escape(s.slice(last,m.index));const v=m[0],cls=v.startsWith('//')?'comment':v.startsWith('"')?'string':/^\d/.test(v)?'number':/^[A-Z]/.test(v)&&v!=='Self'?'type':'keyword';out+='<span class="'+cls+'">'+escape(v)+'</span>';last=m.index+v.length}return out+escape(s.slice(last))}
+let noticeTimer;function setNotice(s){clearTimeout(noticeTimer);$('notice').textContent=s;$('notice').hidden=false;noticeTimer=setTimeout(()=>{$('notice').hidden=true},2600)}
+function paint(){const text=input.value;$('highlight').innerHTML=colorize(text)+'\n';$('line-numbers').textContent=Array.from({length:text.split('\n').length},(_,i)=>i+1).join('\n');updateHorizontal();const dirty=docs[current]!==saved[current];$('dirty-dot').textContent=dirty?'●':'';$('save-button').hidden=!dirty;syncScroll()}
+function syncScroll(){$('code-x').value=input.scrollLeft;$('scroll-position').textContent=input.scrollLeft<2?'Start':input.scrollLeft>=Number($('code-x').max)-2?'End':'↔';$('highlight').style.transform=`translate(${-input.scrollLeft}px,${-input.scrollTop}px)`;$('line-numbers').style.transform=`translateY(${-input.scrollTop}px)`}
+function updateHorizontal(){const max=Math.max(0,input.scrollWidth-input.clientWidth);$('code-scroll').hidden=max<1;$('code-x').max=max;$('code-x').disabled=max<1;$('code-x').value=input.scrollLeft;$('scroll-position').textContent=max<1?'Fits':input.scrollLeft<2?'Start':input.scrollLeft>=max-2?'End':'↔'}
+$('code-x').addEventListener('input',()=>{input.scrollLeft=Number($('code-x').value);syncScroll()});window.addEventListener('resize',updateHorizontal);
+function showView(v){app.dataset.view=v;$('ai-toggle').setAttribute('aria-expanded',String(v==='ai'));$('ai-toggle-label').textContent=v==='ai'?'Close AI':'Ask AI';updateHorizontal()}
+function closeFiles(){$('files-menu').hidden=true;$('files-toggle').setAttribute('aria-expanded','false')}
+function openFile(name){current=name;input.value=docs[name];input.setAttribute('aria-label','Edit '+name);$('file-label').textContent=name;document.querySelectorAll('[data-file]').forEach(b=>b.classList.toggle('active',b.dataset.file===name));input.scrollTop=input.scrollLeft=0;closeFiles();showView('code');paint()}
+function save(){if(!controlled){setNotice('Take control before saving');return}try{localStorage.setItem('relay-mock-files',JSON.stringify(docs));saved={...docs};paint();setNotice('Saved in this browser')}catch{setNotice('Browser storage unavailable; text remains open')}}
+input.addEventListener('input',()=>{if(input.value.length>100000){input.value=docs[current];setNotice('Mock file limit reached');return}docs[current]=input.value;paint()});input.addEventListener('scroll',syncScroll);document.querySelectorAll('[data-file]').forEach(b=>b.addEventListener('click',()=>openFile(b.dataset.file)));$('save-button').addEventListener('click',save);
+$('files-toggle').addEventListener('click',()=>{const open=$('files-menu').hidden;closeSession();$('files-menu').hidden=!open;$('files-toggle').setAttribute('aria-expanded',String(open))});
+$('ai-toggle').addEventListener('click',()=>{closeFiles();closeSession();showView(app.dataset.view==='ai'?'code':'ai')});
+$('prompt').addEventListener('input',()=>{$('prompt').style.height='auto';$('prompt').style.height=Math.min(110,$('prompt').scrollHeight)+'px'});
+function closeSession(){$('session-popover').hidden=true;$('session-toggle').setAttribute('aria-expanded','false')}
+$('session-toggle').addEventListener('click',()=>{const open=$('session-popover').hidden;closeFiles();$('session-popover').hidden=!open;$('session-toggle').setAttribute('aria-expanded',String(open))});document.addEventListener('click',e=>{if(!$('session-popover').contains(e.target)&&!$('session-toggle').contains(e.target))closeSession();if(!$('files-menu').contains(e.target)&&!$('files-toggle').contains(e.target))closeFiles()});
+$('handoff').addEventListener('click',()=>{controlled=!controlled;input.readOnly=!controlled;$('view-only').hidden=controlled;$('session-dot').style.background=controlled?'var(--accent)':'#d9bb8e';$('pc-state').textContent=controlled?'Editing':'Watching';$('phone-state').textContent=controlled?'Watching this session':'Editing · simulated';$('handoff').textContent=controlled?'Hand off':'Take control';$('edit-state').textContent=controlled?'Editing on this device':'Phone has control · view only';$('handoff-note').textContent=controlled?'Control returned. Your text is intact.':'Demo handoff complete. Your text is intact.';setNotice(controlled?'Control returned to this device':'Demo: phone has control')});
+$('provider').addEventListener('change',()=>{$('agent-name').textContent=$('provider').value;setNotice($('provider').value+' selected · simulated provider')});
+$('prompt-form').addEventListener('submit',e=>{e.preventDefault();const text=$('prompt').value.trim();if(!text)return;const wrapper=document.createElement('div');wrapper.className='message';const who=document.createElement('div');who.className='byline';who.textContent='You';const question=document.createElement('p');question.textContent=text;const response=document.createElement('p');response.style.marginTop='10px';response.style.color='var(--muted)';response.textContent=`${$('provider').value} · Demo response: I would use ${current} as context. Connect the host to run this request.`;wrapper.append(who,question,response);wrapper.dataset.demo='true';$('messages').append(wrapper);while($('messages').querySelectorAll('[data-demo]').length>6)$('messages').querySelector('[data-demo]').remove();$('prompt').value='';$('prompt').style.height='auto';$('messages').scrollTop=$('messages').scrollHeight;setNotice('Demo reply · no AI request sent')});
+$('review-button').addEventListener('click',()=>{$('review-error').hidden=true;$('apply-change').disabled=applied;$('review-dialog').showModal()});for(const id of ['close-review','cancel-review'])$(id).addEventListener('click',()=>$('review-dialog').close());$('review-dialog').addEventListener('click',e=>{if(e.target===$('review-dialog')){const r=e.target.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)e.target.close()}});
+$('apply-change').addEventListener('click',()=>{let error='';if(!controlled)error='This device is viewing. Take control before applying a change.';else if(docs['session.rs']!==original)error='Your file has changed since this proposal. Your edits are preserved; this demo cannot merge the change.';if(error){$('review-error').textContent=error;$('review-error').hidden=false;return}docs['session.rs']=original.replace('        self.buffer.apply(edit.changes)?;','        if edit.revision != self.revision {\n            return Err(Error::StaleRevision);\n        }\n\n        self.buffer.apply(edit.changes)?;');applied=true;$('review-button').textContent='Change applied ✓';$('apply-change').disabled=true;$('review-dialog').close();openFile('session.rs');setNotice('Change applied · unsaved')});
+document.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='s'){e.preventDefault();save()}if(e.key==='Escape'){closeSession();closeFiles()}});
+openFile(current);
+</script>
+</body>
+</html>

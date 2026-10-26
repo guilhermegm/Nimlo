@@ -1,0 +1,160 @@
+{
+  "status": "pass",
+  "date": "2026-10-15T05:53:38.304Z",
+  "binary": "/Users/developer/acme/code_editor/target/release/nimlo-editor",
+  "binarySha256": "fe0ec1c7c40956fd2f7c4848da9a7ee6fd5690ebe9d7f5cceabe39f485cef7c4",
+  "transport": "Real loopback HTTP and WebSocket reverse proxy with fake cloudflared lifecycle; no public tunnel or Internet reachability claim.",
+  "aiInferenceRequests": 0,
+  "checks": [
+    {
+      "name": "Internet access starts off with no tunnel child",
+      "status": "pass",
+      "milliseconds": 2,
+      "evidence": {
+        "processCount": 0,
+        "localCookieSecure": false
+      }
+    },
+    {
+      "name": "stale project generation cannot start a tunnel",
+      "status": "pass",
+      "milliseconds": 1,
+      "evidence": {
+        "rejectedBeforeSpawn": true
+      }
+    },
+    {
+      "name": "starting twice creates one managed loopback proxy and strips unsafe tunnel overrides",
+      "status": "pass",
+      "milliseconds": 541,
+      "evidence": {
+        "processCount": 1,
+        "publicAuthority": "fixture-1.trycloudflare.com",
+        "proxy": "disposable loopback HTTP/WebSocket fixture",
+        "inheritedTunnelOverrides": 0
+      }
+    },
+    {
+      "name": "local and HTTPS public origins stay distinct with per-request cookie security",
+      "status": "pass",
+      "milliseconds": 26,
+      "evidence": {
+        "unauthenticatedBootstrap": 401,
+        "unauthenticatedWebSocket": 401,
+        "crossedOrigins": 403,
+        "privateLaunchPublicDenied": true,
+        "localCookieSecure": false
+      }
+    },
+    {
+      "name": "public pairing is same-origin and single-use, with proxy clients classified remote",
+      "status": "pass",
+      "milliseconds": 58,
+      "evidence": {
+        "codeReuse": 401,
+        "missingOrWrongOrigin": 403,
+        "cookieSecure": true,
+        "nativePickerAvailable": false,
+        "access": "shared"
+      }
+    },
+    {
+      "name": "paired remote and local PC both edit and save without handing off control",
+      "status": "pass",
+      "milliseconds": 185,
+      "evidence": {
+        "remoteEditSave": true,
+        "localEditSave": true,
+        "controlRequested": false
+      }
+    },
+    {
+      "name": "remote phone uses the host shell while shared settings and project attachment require the PC",
+      "status": "pass",
+      "milliseconds": 84,
+      "evidence": {
+        "hostShellCommand": true,
+        "settingsShared": true,
+        "settingsHostOnly": true,
+        "projectSwitch": true,
+        "projectAttachmentHostOnly": true,
+        "pairingRetainedAcrossProjects": true,
+        "aiInferenceRequests": 0
+      }
+    },
+    {
+      "name": "stop reaps the tunnel, disconnects its phone, and keeps the local PC working",
+      "status": "pass",
+      "milliseconds": 5,
+      "evidence": {
+        "childReaped": true,
+        "remoteDisconnected": true,
+        "directPublicSocketFenced": true,
+        "oldAuthority": 403,
+        "desktopConnected": true
+      }
+    },
+    {
+      "name": "restart gets a fresh authority and unexpected child exit clears remote access",
+      "status": "pass",
+      "milliseconds": 85,
+      "evidence": {
+        "newAuthority": true,
+        "unexpectedExitReported": true,
+        "staleAuthority": 403,
+        "desktopConnected": true
+      }
+    },
+    {
+      "name": "startup failure remains recoverable and does not leave a process",
+      "status": "pass",
+      "milliseconds": 112,
+      "evidence": {
+        "failureReported": true,
+        "failedProcessReaped": true,
+        "retrySucceeded": true
+      }
+    },
+    {
+      "name": "host shutdown reaps an active tunnel and closes clients",
+      "status": "pass",
+      "milliseconds": 26,
+      "evidence": {
+        "activeTunnelReaped": true,
+        "clientsClosed": true
+      }
+    },
+    {
+      "name": "configured stable HTTPS origin preserves local access without spawning a tunnel",
+      "status": "pass",
+      "milliseconds": 84,
+      "evidence": {
+        "localAccess": true,
+        "securePublicCookie": true,
+        "spawnedTunnelProcesses": 0
+      }
+    },
+    {
+      "name": "SIGTERM closes the host and reaps its active tunnel",
+      "status": "pass",
+      "milliseconds": 137,
+      "evidence": {
+        "signal": "SIGTERM",
+        "childReaped": true,
+        "clientClosed": true,
+        "hostExitCode": 0
+      }
+    },
+    {
+      "name": "SIGHUP closes the host and reaps its active tunnel",
+      "status": "pass",
+      "milliseconds": 138,
+      "evidence": {
+        "signal": "SIGHUP",
+        "childReaped": true,
+        "clientClosed": true,
+        "hostExitCode": 0
+      }
+    }
+  ]
+}

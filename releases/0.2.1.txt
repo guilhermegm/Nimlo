@@ -1,0 +1,7 @@
+Nimlo 0.2.1
+
+- Avoids an unnecessary editor-buffer reset when typing near the end of long Unicode lines.
+- Keeps the update checks, file navigation and other features from Nimlo 0.2.0.
+- Existing projects, remembered folders and acknowledged recovery data stay in place.
+
+This Mac release is not notarized and uses verified downloads for manual installation. macOS may require approval when opening it.

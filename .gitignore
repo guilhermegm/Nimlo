@@ -1,0 +1,10 @@
+/target/
+# The saved website maintains its own Git repository.
+/website/
+node_modules/
+.DS_Store
+.env
+.env.*
+!.env.example
+*.pem
+*.key

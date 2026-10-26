@@ -1,0 +1,41 @@
+{
+  "status": "pass",
+  "date": "2026-10-16T17:11:22.349Z",
+  "binarySha256": "a56eae89fa3e6e44b3cf8abf7d379626e2500c54257edbed76a31c80a0150fc4",
+  "checks": [
+    "Initial session exposes one selected project and no automatic shell",
+    "Host attaches a same-named folder; phone selects it without ending PC dirty work",
+    "Shared filenames, edits and saves stay inside the device-selected project",
+    "Combined-tree metadata can browse another root without changing code, shell or selection",
+    "Stale or foreign project envelopes cannot write or type into the selected project",
+    "Choosing A restores its exact unsaved document and same live shell",
+    "Running AI and its cwd remain tied to A while the phone selects B",
+    "Phone reconnect restores B while the PC remains in A",
+    "Canonical aliases deduplicate; invalid paths and traversal stay rejected",
+    "Detach refuses active work, then cleanly removes a folder without deleting it",
+    "Open document limit is global across projects",
+    "32 attached empty projects stay bounded and start no shells or providers",
+    "Host restart remembers all roots with lazy state and independently recovered A work"
+  ],
+  "measurements": [
+    {
+      "phase": "one idle project",
+      "hostRssBytes": 4866048,
+      "hostChildProcesses": 0
+    },
+    {
+      "phase": "32 attached empty or small visited projects, no running work",
+      "hostRssBytes": 6651904,
+      "hostChildProcesses": 0,
+      "projectCount": 32
+    },
+    {
+      "phase": "restart with 32 remembered projects",
+      "hostRssBytes": 4980736,
+      "hostChildProcesses": 0,
+      "projectCount": 32
+    }
+  ],
+  "fixtureOnly": true,
+  "aiInferenceRequests": 0
+}

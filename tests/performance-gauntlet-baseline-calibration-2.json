@@ -1,0 +1,1860 @@
+{
+  "status": "fail",
+  "date": "2026-10-11T07:51:34.197Z",
+  "build": {
+    "binary": "/tmp/relay-performance-baseline-e089dc02",
+    "binarySha256": "e089dc02d8dbc02b8d6252bb980a84a3459ec6cba013bda85dd8a01bfd605c62",
+    "binaryBytes": 2907184,
+    "sourceRef": "9af9442526cd82d6ce56dd6486da6ec32634c3a4",
+    "assets": {
+      "index.html": {
+        "bytes": 20584,
+        "sha256": "848da25b29a66f4873a9deeb3656c0687eda0c0aeb106f0714ddeac6b93e3dc7"
+      },
+      "app.js": {
+        "bytes": 113188,
+        "sha256": "3032f2cf96703dbbc5603245d7a23fd43ba4b6269b65833c93fdaa1912301726"
+      },
+      "style.css": {
+        "bytes": 44935,
+        "sha256": "e85f6fbe11d233dcb8d64fdde65247534eb9e5c92c362bfc9d7024bb1a2cf8fa"
+      }
+    }
+  },
+  "method": {
+    "fixtureOnly": true,
+    "inferenceRequests": 0,
+    "hostRss": "macOS ps RSS at100ms; phase final median of final10samples after1.2sec settle; sampled peaks can miss shorter spikes",
+    "browserRss": "isolated Chrome SystemInfo process IDs, ps RSS seven samples at80ms; browser, renderer and other categories separate; RSS includes shared pages, does not establish exact physical RAM",
+    "heap": "Runtime.getHeapUsage before GC (natural point sample) and after explicit HeapProfiler.collectGarbage (retained JS heap); excludes native browser/GPU/process costs; prior phase GC affects following phase",
+    "instrumentation": "scalar counters only; no full source or protocol messages retained; source split/encoder/storage/DOM wrappers are equal overhead in A/B",
+    "timing": "native Playwright key input, capture-to-document-bubble app handler duration; double animation frame observation for scroll; Chrome Performance.getMetrics workload deltas; single-machine timings noisy",
+    "providers": "both CLIs shadowed with disposable fixtures; no real credentials or inference",
+    "shell": "/bin/sh, generated workspace, no user startup",
+    "network": "127.0.0.1:0 only, no tunnel, existing8765/8767 untouched"
+  },
+  "environment": {
+    "hardware": "MacBookPro18,1",
+    "cpu": "Apple M1 Pro",
+    "physicalMemoryBytes": 34359738368,
+    "os": "ProductName:\t\tmacOS\nProductVersion:\t\t26.2\nBuildVersion:\t\t25C56",
+    "node": "v20.17.0",
+    "chrome": "155.0.8059.39"
+  },
+  "workload": {
+    "files": 8,
+    "bytesPerFile": 1047552,
+    "nativeKeystrokes": 48,
+    "fileShapes": "six65character lines; one long line; one209k5character lines",
+    "fullDocumentEdits": 20,
+    "reopenCycles": 6,
+    "metadataFolders": 16,
+    "metadataEntriesPerFolder": 48
+  },
+  "phases": [
+    {
+      "name": "idle host, no browsers or shell",
+      "hostSettledMedianMiB": 4.031,
+      "hostObservedPeakMiB": 4.031,
+      "samples": 14,
+      "chromeRss": null,
+      "browserHeap": {},
+      "hostChildren": []
+    },
+    {
+      "name": "desktop, no files",
+      "hostSettledMedianMiB": 4.906,
+      "hostObservedPeakMiB": 4.906,
+      "samples": 29,
+      "chromeRss": {
+        "browserMedianMiB": 222.797,
+        "rendererMedianMiB": 723.547,
+        "otherMedianMiB": 327.016,
+        "lastProcesses": [
+          {
+            "pid": 86477,
+            "type": "browser",
+            "rssMiB": 226.922
+          },
+          {
+            "pid": 87930,
+            "type": "renderer",
+            "rssMiB": 94.359
+          },
+          {
+            "pid": 86674,
+            "type": "renderer",
+            "rssMiB": 117.203
+          },
+          {
+            "pid": 86610,
+            "type": "renderer",
+            "rssMiB": 177.031
+          },
+          {
+            "pid": 86586,
+            "type": "renderer",
+            "rssMiB": 158.203
+          },
+          {
+            "pid": 86568,
+            "type": "renderer",
+            "rssMiB": 176.672
+          },
+          {
+            "pid": 86531,
+            "type": "GPU",
+            "rssMiB": 150.938
+          },
+          {
+            "pid": 86532,
+            "type": "network.mojom.NetworkService",
+            "rssMiB": 100.969
+          },
+          {
+            "pid": 86533,
+            "type": "storage.mojom.StorageService",
+            "rssMiB": 75.906
+          }
+        ]
+      },
+      "browserHeap": {
+        "desktop": {
+          "naturalUsedMiB": 2.126,
+          "retainedUsedMiB": 1.433,
+          "retainedTotalMiB": 2.313,
+          "domNodes": 537,
+          "counters": {
+            "sourceSplitCalls": 0,
+            "sourceSplitCharacters": 0,
+            "encodedCharacters": 0,
+            "encodeCalls": 0,
+            "draftWrites": 0,
+            "draftCharacters": 0,
+            "highlightWrites": 0,
+            "replacements": 17,
+            "incomingBytes": 9216,
+            "outgoingBytes": 0,
+            "fileStates": 0
+          },
+          "fileTreeRows": 28,
+          "highlightNodes": 0,
+          "gutterLines": 1
+        }
+      },
+      "hostChildren": []
+    }
+  ],
+  "nativeTrials": [],
+  "reopenCycles": [],
+  "checks": [],
+  "browserErrors": [],
+  "error": "page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#pair-phone')\u001b[22m\n\u001b[2m    - locator resolved to <button id=\"pair-phone\">Pair a device</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    58 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\n    at main (/Users/developer/acme/code_editor/scripts/performance-gauntlet.cjs:97:87)",
+  "hostSamples": [
+    {
+      "phase": "startup",
+      "elapsedMilliseconds": 1791705094473,
+      "rssBytes": 4177920
+    },
+    {
+      "phase": "startup",
+      "elapsedMilliseconds": 1791705094575,
+      "rssBytes": 4177920
+    },
+    {
+      "phase": "startup",
+      "elapsedMilliseconds": 1791705094675,
+      "rssBytes": 4227072
+    },
+    {
+      "phase": "startup",
+      "elapsedMilliseconds": 1791705094776,
+      "rssBytes": 4227072
+    },
+    {
+      "phase": "startup",
+      "elapsedMilliseconds": 1791705094877,
+      "rssBytes": 4227072
+    },
+    {
+      "phase": "startup",
+      "elapsedMilliseconds": 1791705094978,
+      "rssBytes": 4227072
+    },
+    {
+      "phase": "startup",
+      "elapsedMilliseconds": 1791705095079,
+      "rssBytes": 4227072
+    },
+    {
+      "phase": "startup",
+      "elapsedMilliseconds": 1791705095180,
+      "rssBytes": 4227072
+    },
+    {
+      "phase": "startup",
+      "elapsedMilliseconds": 1791705095281,
+      "rssBytes": 4227072
+    },
+    {
+      "phase": "startup",
+      "elapsedMilliseconds": 1791705095383,
+      "rssBytes": 4227072
+    },
+    {
+      "phase": "startup",
+      "elapsedMilliseconds": 1791705095483,
+      "rssBytes": 4227072
+    },
+    {
+      "phase": "startup",
+      "elapsedMilliseconds": 1791705095584,
+      "rssBytes": 4227072
+    },
+    {
+      "phase": "startup",
+      "elapsedMilliseconds": 1791705095686,
+      "rssBytes": 4227072
+    },
+    {
+      "phase": "startup",
+      "elapsedMilliseconds": 1791705095787,
+      "rssBytes": 4227072
+    },
+    {
+      "phase": "idle host, no browsers or shell",
+      "elapsedMilliseconds": 1791705095888,
+      "rssBytes": 4227072
+    },
+    {
+      "phase": "idle host, no browsers or shell",
+      "elapsedMilliseconds": 1791705095988,
+      "rssBytes": 4227072
+    },
+    {
+      "phase": "idle host, no browsers or shell",
+      "elapsedMilliseconds": 1791705096090,
+      "rssBytes": 4227072
+    },
+    {
+      "phase": "idle host, no browsers or shell",
+      "elapsedMilliseconds": 1791705096191,
+      "rssBytes": 4227072
+    },
+    {
+      "phase": "idle host, no browsers or shell",
+      "elapsedMilliseconds": 1791705096291,
+      "rssBytes": 4227072
+    },
+    {
+      "phase": "idle host, no browsers or shell",
+      "elapsedMilliseconds": 1791705096392,
+      "rssBytes": 4227072
+    },
+    {
+      "phase": "idle host, no browsers or shell",
+      "elapsedMilliseconds": 1791705096494,
+      "rssBytes": 4227072
+    },
+    {
+      "phase": "idle host, no browsers or shell",
+      "elapsedMilliseconds": 1791705096595,
+      "rssBytes": 4227072
+    },
+    {
+      "phase": "idle host, no browsers or shell",
+      "elapsedMilliseconds": 1791705096697,
+      "rssBytes": 4227072
+    },
+    {
+      "phase": "idle host, no browsers or shell",
+      "elapsedMilliseconds": 1791705096797,
+      "rssBytes": 5144576
+    },
+    {
+      "phase": "idle host, no browsers or shell",
+      "elapsedMilliseconds": 1791705096898,
+      "rssBytes": 5144576
+    },
+    {
+      "phase": "idle host, no browsers or shell",
+      "elapsedMilliseconds": 1791705096999,
+      "rssBytes": 5144576
+    },
+    {
+      "phase": "idle host, no browsers or shell",
+      "elapsedMilliseconds": 1791705097100,
+      "rssBytes": 5144576
+    },
+    {
+      "phase": "idle host, no browsers or shell",
+      "elapsedMilliseconds": 1791705097201,
+      "rssBytes": 5144576
+    },
+    {
+      "phase": "idle host, no browsers or shell",
+      "elapsedMilliseconds": 1791705097302,
+      "rssBytes": 5144576
+    },
+    {
+      "phase": "idle host, no browsers or shell",
+      "elapsedMilliseconds": 1791705097403,
+      "rssBytes": 5144576
+    },
+    {
+      "phase": "idle host, no browsers or shell",
+      "elapsedMilliseconds": 1791705097504,
+      "rssBytes": 5144576
+    },
+    {
+      "phase": "idle host, no browsers or shell",
+      "elapsedMilliseconds": 1791705097605,
+      "rssBytes": 5144576
+    },
+    {
+      "phase": "idle host, no browsers or shell",
+      "elapsedMilliseconds": 1791705097706,
+      "rssBytes": 5144576
+    },
+    {
+      "phase": "idle host, no browsers or shell",
+      "elapsedMilliseconds": 1791705097806,
+      "rssBytes": 5144576
+    },
+    {
+      "phase": "idle host, no browsers or shell",
+      "elapsedMilliseconds": 1791705097906,
+      "rssBytes": 5144576
+    },
+    {
+      "phase": "idle host, no browsers or shell",
+      "elapsedMilliseconds": 1791705098006,
+      "rssBytes": 5144576
+    },
+    {
+      "phase": "idle host, no browsers or shell",
+      "elapsedMilliseconds": 1791705098107,
+      "rssBytes": 5144576
+    },
+    {
+      "phase": "idle host, no browsers or shell",
+      "elapsedMilliseconds": 1791705098208,
+      "rssBytes": 5144576
+    },
+    {
+      "phase": "idle host, no browsers or shell",
+      "elapsedMilliseconds": 1791705098308,
+      "rssBytes": 5144576
+    },
+    {
+      "phase": "idle host, no browsers or shell",
+      "elapsedMilliseconds": 1791705098408,
+      "rssBytes": 5144576
+    },
+    {
+      "phase": "idle host, no browsers or shell",
+      "elapsedMilliseconds": 1791705098536,
+      "rssBytes": 5144576
+    },
+    {
+      "phase": "idle host, no browsers or shell",
+      "elapsedMilliseconds": 1791705098654,
+      "rssBytes": 5144576
+    },
+    {
+      "phase": "idle host, no browsers or shell",
+      "elapsedMilliseconds": 1791705098767,
+      "rssBytes": 5144576
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705098888,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705098989,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705099090,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705099191,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705099293,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705099394,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705099495,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705099594,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705099695,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705099796,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705099897,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705099997,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705100098,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705100200,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705100299,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705100399,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705100501,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705100601,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705100701,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705100802,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705100903,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705101004,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705101105,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705101206,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705101307,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705101408,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705101509,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705101611,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705101711,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705101812,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705101913,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705102014,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705102116,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705102216,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705102317,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705102417,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705102518,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705102619,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705102720,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705102821,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705102923,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705103023,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705103124,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705103226,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705103326,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705103427,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705103528,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705103629,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705103730,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705103831,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705103931,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705104031,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705104132,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705104233,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705104334,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705104435,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705104535,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705104636,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705104737,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705104839,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705104939,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705105040,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705105141,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705105241,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705105343,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705105443,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705105544,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705105645,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705105746,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705105847,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705105948,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705106049,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705106150,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705106251,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705106352,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705106453,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705106554,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705106655,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705106756,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705106858,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705106959,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705107059,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705107160,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705107261,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705107362,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705107463,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705107564,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705107665,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705107766,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705107867,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705107968,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705108069,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705108170,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705108271,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705108372,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705108472,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705108573,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705108674,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705108776,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705108877,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705108978,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705109079,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705109181,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705109280,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705109381,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705109482,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705109583,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705109685,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705109785,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705109886,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705109988,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705110088,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705110189,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705110290,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705110391,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705110491,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705110592,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705110692,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705110793,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705110894,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705110996,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705111096,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705111197,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705111298,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705111399,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705111501,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705111601,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705111701,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705111803,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705111904,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705112005,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705112105,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705112207,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705112308,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705112408,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705112509,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705112610,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705112711,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705112812,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705112913,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705113014,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705113115,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705113218,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705113319,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705113419,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705113520,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705113621,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705113722,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705113822,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705113923,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705114024,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705114125,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705114226,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705114327,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705114428,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705114529,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705114630,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705114731,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705114832,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705114933,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705115034,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705115135,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705115236,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705115337,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705115438,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705115538,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705115639,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705115740,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705115841,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705115942,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705116042,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705116143,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705116244,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705116345,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705116447,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705116547,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705116647,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705116749,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705116851,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705116951,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705117052,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705117153,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705117254,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705117355,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705117456,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705117558,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705117660,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705117762,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705117861,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705117962,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705118063,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705118164,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705118266,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705118366,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705118468,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705118568,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705118668,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705118768,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705118869,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705118970,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705119071,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705119172,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705119273,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705119375,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705119475,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705119577,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705119677,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705119779,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705119878,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705119980,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705120079,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705120180,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705120280,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705120381,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705120482,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705120583,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705120685,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705120785,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705120885,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705120985,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705121086,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705121187,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705121288,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705121389,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705121490,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705121592,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705121692,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705121793,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705121893,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705121993,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705122094,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705122195,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705122296,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705122397,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705122497,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705122598,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705122699,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705122801,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705122901,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705123002,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705123104,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705123204,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705123305,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705123405,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705123506,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705123607,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705123707,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705123807,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705123908,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705124009,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705124110,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705124211,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705124313,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705124412,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705124514,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705124615,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705124716,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705124817,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705124918,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705125019,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705125120,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705125221,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705125322,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705125423,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705125525,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705125625,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705125726,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705125826,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705125927,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705126028,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705126128,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705126229,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705126329,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705126430,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705126530,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705126630,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705126732,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705126833,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705126933,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705127038,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705127138,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705127239,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705127340,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705127440,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705127542,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705127642,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705127744,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705127844,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705127945,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705128046,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705128147,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705128247,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705128349,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705128450,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705128551,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705128653,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705128753,
+      "rssBytes": 5160960
+    },
+    {
+      "phase": "desktop, no files",
+      "elapsedMilliseconds": 1791705128854,
+      "rssBytes": 5160960
+    }
+  ]
+}

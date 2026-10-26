@@ -1,0 +1,405 @@
+{
+  "status": "pass",
+  "editorSha256": "0ca4617cd2acbadfa78a62eaadc17ebe2136df5abfdcde7942aa53c35304e1a5",
+  "results": [
+    {
+      "engine": "chromium",
+      "bidiShiftClick": [
+        {
+          "anchor": 0,
+          "column": 4.5,
+          "reference": [
+            0,
+            7
+          ],
+          "candidate": [
+            0,
+            7
+          ]
+        },
+        {
+          "anchor": 0,
+          "column": 5.25,
+          "reference": [
+            0,
+            7
+          ],
+          "candidate": [
+            0,
+            7
+          ]
+        },
+        {
+          "anchor": 0,
+          "column": 7.25,
+          "reference": [
+            0,
+            5
+          ],
+          "candidate": [
+            0,
+            5
+          ]
+        },
+        {
+          "anchor": 0,
+          "column": 8.5,
+          "reference": [
+            0,
+            9
+          ],
+          "candidate": [
+            0,
+            9
+          ]
+        },
+        {
+          "anchor": 4,
+          "column": 4.5,
+          "reference": [
+            4,
+            7
+          ],
+          "candidate": [
+            4,
+            7
+          ]
+        },
+        {
+          "anchor": 4,
+          "column": 5.25,
+          "reference": [
+            4,
+            7
+          ],
+          "candidate": [
+            4,
+            7
+          ]
+        },
+        {
+          "anchor": 4,
+          "column": 7.25,
+          "reference": [
+            4,
+            5
+          ],
+          "candidate": [
+            4,
+            5
+          ]
+        },
+        {
+          "anchor": 4,
+          "column": 8.5,
+          "reference": [
+            4,
+            9
+          ],
+          "candidate": [
+            4,
+            9
+          ]
+        },
+        {
+          "anchor": 10,
+          "column": 4.5,
+          "reference": [
+            7,
+            10
+          ],
+          "candidate": [
+            7,
+            10
+          ]
+        },
+        {
+          "anchor": 10,
+          "column": 5.25,
+          "reference": [
+            7,
+            10
+          ],
+          "candidate": [
+            7,
+            10
+          ]
+        },
+        {
+          "anchor": 10,
+          "column": 7.25,
+          "reference": [
+            5,
+            10
+          ],
+          "candidate": [
+            5,
+            10
+          ]
+        },
+        {
+          "anchor": 10,
+          "column": 8.5,
+          "reference": [
+            9,
+            10
+          ],
+          "candidate": [
+            9,
+            10
+          ]
+        }
+      ],
+      "modeledPan": [
+        {
+          "prior": [
+            0,
+            22000,
+            "forward"
+          ],
+          "actual": [
+            0,
+            22000,
+            "forward"
+          ]
+        },
+        {
+          "prior": [
+            1000,
+            20000,
+            "backward"
+          ],
+          "actual": [
+            1000,
+            20000,
+            "backward"
+          ]
+        }
+      ],
+      "modeledSelection": [
+        {
+          "initial": "pending",
+          "actual": [
+            0,
+            3
+          ]
+        },
+        {
+          "initial": "explicit",
+          "actual": [
+            1000,
+            2000
+          ]
+        },
+        {
+          "initial": "changed",
+          "actual": [
+            0,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "engine": "webkit",
+      "bidiShiftClick": [
+        {
+          "anchor": 0,
+          "column": 4.5,
+          "reference": [
+            0,
+            4
+          ],
+          "candidate": [
+            0,
+            4
+          ]
+        },
+        {
+          "anchor": 0,
+          "column": 5.25,
+          "reference": [
+            0,
+            7
+          ],
+          "candidate": [
+            0,
+            7
+          ]
+        },
+        {
+          "anchor": 0,
+          "column": 7.25,
+          "reference": [
+            0,
+            5
+          ],
+          "candidate": [
+            0,
+            5
+          ]
+        },
+        {
+          "anchor": 0,
+          "column": 8.5,
+          "reference": [
+            0,
+            9
+          ],
+          "candidate": [
+            0,
+            9
+          ]
+        },
+        {
+          "anchor": 4,
+          "column": 4.5,
+          "reference": [
+            4,
+            4
+          ],
+          "candidate": [
+            4,
+            4
+          ]
+        },
+        {
+          "anchor": 4,
+          "column": 5.25,
+          "reference": [
+            4,
+            7
+          ],
+          "candidate": [
+            4,
+            7
+          ]
+        },
+        {
+          "anchor": 4,
+          "column": 7.25,
+          "reference": [
+            4,
+            5
+          ],
+          "candidate": [
+            4,
+            5
+          ]
+        },
+        {
+          "anchor": 4,
+          "column": 8.5,
+          "reference": [
+            4,
+            9
+          ],
+          "candidate": [
+            4,
+            9
+          ]
+        },
+        {
+          "anchor": 10,
+          "column": 4.5,
+          "reference": [
+            4,
+            10
+          ],
+          "candidate": [
+            4,
+            10
+          ]
+        },
+        {
+          "anchor": 10,
+          "column": 5.25,
+          "reference": [
+            7,
+            10
+          ],
+          "candidate": [
+            7,
+            10
+          ]
+        },
+        {
+          "anchor": 10,
+          "column": 7.25,
+          "reference": [
+            5,
+            10
+          ],
+          "candidate": [
+            5,
+            10
+          ]
+        },
+        {
+          "anchor": 10,
+          "column": 8.5,
+          "reference": [
+            9,
+            10
+          ],
+          "candidate": [
+            9,
+            10
+          ]
+        }
+      ],
+      "modeledPan": [
+        {
+          "prior": [
+            0,
+            22000,
+            "forward"
+          ],
+          "actual": [
+            0,
+            22000,
+            "forward"
+          ]
+        },
+        {
+          "prior": [
+            1000,
+            20000,
+            "backward"
+          ],
+          "actual": [
+            1000,
+            20000,
+            "backward"
+          ]
+        }
+      ],
+      "modeledSelection": [
+        {
+          "initial": "pending",
+          "actual": [
+            0,
+            3
+          ]
+        },
+        {
+          "initial": "explicit",
+          "actual": [
+            1000,
+            2000
+          ]
+        },
+        {
+          "initial": "changed",
+          "actual": [
+            0,
+            3
+          ]
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Headless real native text controls; modeled touch does not prove physical touch gestures."
+  ]
+}

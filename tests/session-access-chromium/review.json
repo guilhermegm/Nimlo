@@ -1,0 +1,32 @@
+{
+  "status": "pass",
+  "date": "2026-10-16T07:53:28.288Z",
+  "binarySha256": "cddbb20a14bffe2dc5688c84958723f41740701ff4d69a5847a92bc59eb3622f",
+  "harnessSha256": "6be7418c3f502b5ffe561fddf30e409d710e71501277cceb78491e77c86e2d54",
+  "engine": "chromium",
+  "stage": "No real AI inference or uncaught browser error occurs",
+  "checks": [
+    "Host session exposes editable permission controls and full host access",
+    "Default pairing needs no password and paired files and shell work",
+    "Saving session limits updates all existing device tabs and preserves host access",
+    "Restricted peers cannot mutate files, run a shell, use AI or elevate permissions",
+    "HTTP snapshots without a client identifier honor token restrictions",
+    "Restricted sockets do not receive later host terminal or AI state",
+    "Pairing password remains an extra factor alongside invitation and code",
+    "Repeated wrong passwords exhaust the invitation attempt budget",
+    "Session limits cap per-device grants and restoring limits preserves device choices",
+    "Device dialog changes every tab sharing its credential and live phone controls",
+    "Session permission dialog fits a narrow phone viewport with usable save controls",
+    "Changing or removing the password cancels invitations and updates pairing",
+    "Disallowing devices revokes existing credentials while the PC host keeps working",
+    "Access settings and password survive a host restart without plaintext storage",
+    "No real AI inference or uncaught browser error occurs"
+  ],
+  "errors": [],
+  "fixtureOnly": true,
+  "inferenceRequests": 0,
+  "limitations": [
+    "Browser viewport emulation; no physical phone is used.",
+    "Local real sockets and pairing; no public tunnel is started."
+  ]
+}

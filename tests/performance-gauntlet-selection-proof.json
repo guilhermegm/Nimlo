@@ -1,0 +1,235 @@
+{
+  "method": "Actual disposable host and native textarea; delayed next frames only in correctness cases; exact frozen embedded assets; source remains in normal app model only",
+  "variants": [
+    {
+      "label": "baseline",
+      "binarySha256": "e089dc02d8dbc02b8d6252bb980a84a3459ec6cba013bda85dd8a01bfd605c62",
+      "cases": [
+        {
+          "mode": "frame",
+          "before": {
+            "length": 492000,
+            "start": 350,
+            "end": 950,
+            "direction": "backward",
+            "top": 800,
+            "left": 150
+          },
+          "held": {
+            "length": 492000,
+            "start": 3,
+            "end": 3,
+            "direction": "none",
+            "top": 0,
+            "left": 0
+          },
+          "after": {
+            "length": 492000,
+            "start": 3,
+            "end": 3,
+            "direction": "none",
+            "top": 0,
+            "left": 0
+          }
+        },
+        {
+          "mode": "focus",
+          "before": {
+            "length": 492000,
+            "start": 350,
+            "end": 950,
+            "direction": "backward",
+            "top": 800,
+            "left": 150
+          },
+          "held": {
+            "length": 492000,
+            "start": 3,
+            "end": 3,
+            "direction": "none",
+            "top": 0,
+            "left": 0
+          },
+          "after": {
+            "length": 492000,
+            "start": 3,
+            "end": 3,
+            "direction": "none",
+            "top": 0,
+            "left": 0
+          }
+        },
+        {
+          "mode": "hide-reveal",
+          "before": {
+            "length": 492000,
+            "start": 350,
+            "end": 950,
+            "direction": "backward",
+            "top": 800,
+            "left": 150
+          },
+          "held": {
+            "length": 492000,
+            "start": 3,
+            "end": 3,
+            "direction": "none",
+            "top": 0,
+            "left": 0
+          },
+          "after": {
+            "length": 492000,
+            "start": 3,
+            "end": 3,
+            "direction": "none",
+            "top": 0,
+            "left": 0
+          }
+        },
+        {
+          "mode": "switch-away-back",
+          "before": {
+            "length": 492000,
+            "start": 350,
+            "end": 950,
+            "direction": "backward",
+            "top": 800,
+            "left": 150
+          },
+          "held": {
+            "length": 492000,
+            "start": 3,
+            "end": 3,
+            "direction": "none",
+            "top": 0,
+            "left": 0
+          },
+          "after": {
+            "length": 492000,
+            "start": 3,
+            "end": 3,
+            "direction": "none",
+            "top": 800,
+            "left": 150
+          }
+        }
+      ]
+    },
+    {
+      "label": "coalescer",
+      "binarySha256": "821426c89c350e4d864e7be12a1db00c5fdf543d51e1ac08e47d3aab063bbb35",
+      "cases": [
+        {
+          "mode": "frame",
+          "before": {
+            "length": 492000,
+            "start": 350,
+            "end": 950,
+            "direction": "backward",
+            "top": 800,
+            "left": 150
+          },
+          "held": {
+            "length": 492000,
+            "start": 350,
+            "end": 950,
+            "direction": "backward",
+            "top": 800,
+            "left": 150
+          },
+          "after": {
+            "length": 492000,
+            "start": 350,
+            "end": 950,
+            "direction": "none",
+            "top": 800,
+            "left": 150
+          }
+        },
+        {
+          "mode": "focus",
+          "before": {
+            "length": 492000,
+            "start": 350,
+            "end": 950,
+            "direction": "backward",
+            "top": 800,
+            "left": 150
+          },
+          "held": {
+            "length": 492000,
+            "start": 350,
+            "end": 950,
+            "direction": "backward",
+            "top": 800,
+            "left": 150
+          },
+          "after": {
+            "length": 492000,
+            "start": 350,
+            "end": 950,
+            "direction": "none",
+            "top": 800,
+            "left": 150
+          }
+        },
+        {
+          "mode": "hide-reveal",
+          "before": {
+            "length": 492000,
+            "start": 350,
+            "end": 950,
+            "direction": "backward",
+            "top": 800,
+            "left": 150
+          },
+          "held": {
+            "length": 492000,
+            "start": 350,
+            "end": 950,
+            "direction": "backward",
+            "top": 800,
+            "left": 150
+          },
+          "after": {
+            "length": 492000,
+            "start": 350,
+            "end": 950,
+            "direction": "none",
+            "top": 800,
+            "left": 150
+          }
+        },
+        {
+          "mode": "switch-away-back",
+          "before": {
+            "length": 492000,
+            "start": 350,
+            "end": 950,
+            "direction": "backward",
+            "top": 800,
+            "left": 150
+          },
+          "held": {
+            "length": 492000,
+            "start": 350,
+            "end": 950,
+            "direction": "backward",
+            "top": 800,
+            "left": 150
+          },
+          "after": {
+            "length": 492000,
+            "start": 350,
+            "end": 950,
+            "direction": "none",
+            "top": 800,
+            "left": 150
+          }
+        }
+      ]
+    }
+  ],
+  "pass": false,
+  "error": "AssertionError [ERR_ASSERTION]: Native view differs after shrink→regrow: frame\n    at /Users/developer/acme/code_editor/tests/performance-gauntlet-selection-proof.cjs:37:122"
+}

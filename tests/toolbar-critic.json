@@ -1,0 +1,143 @@
+{
+  "status": "accept",
+  "date": "2026-10-12T02:26:31.405Z",
+  "reviewer": "independent toolbar_critic agent",
+  "binary": "target/toolbar-review/final",
+  "binarySha256": "2d76da7cf2777d5a0333e7c25920aa9a6e7eb5acb36c7017143d47bde48da9e9",
+  "comparison": {
+    "method": "Recognizable matched-state screenshot comparison against the frozen pre-change UI, with independent source and verification review. This is not a true blind study.",
+    "winner": "candidate",
+    "reason": "Four primary controls and separate command scopes remove the baseline toolbar duplication. At 320px the dirty filename retains its stem and .js extension, full filename is visible inside Files, and Code/AI/Terminal labels remain legible while Save remains separately reachable."
+  },
+  "fixedRejections": [
+    {
+      "gap": "Projects did not advance focus after opening with ArrowDown.",
+      "evidence": "Independent original-build probe stayed on first of two projects. Independent 885ce4e0 probe advanced first to second. The same handler remains in this final build and final popup-navigation checks pass."
+    },
+    {
+      "gap": "Session replaced device action buttons during live updates and could discard focus.",
+      "evidence": "Final real-host count lifecycle check preserves focused client ID through third-browser join, disconnect, reconnect and close. Source restores matching action or close control."
+    },
+    {
+      "gap": "320px dirty file chip showed one filename character while Projects consumed 87px.",
+      "evidence": "Final dirty320 screenshots preserve filename prefix and extension. Label checks require file >=50px and project >=20px; Save aligns beside the dock and the three dock labels do not clip."
+    }
+  ],
+  "verified": {
+    "menus": "Projects, Files, Session, AI order; distinct glyphs and names; one popup/expanded primary trigger; opening, arrow/Home/End navigation, exact-opener Escape and dismissal; menu Escape leaves AI open.",
+    "session": "Live connected browser count; separate devices/pairing popup without file browsing or AI settings; focused device action survives count changes.",
+    "desktop": "Closed/Split modes hide File/AI navigation; Tab mode exposes File/AI tabs above an inset content region.",
+    "phone": "44px primary targets; reachable popovers and Code/AI/Terminal navigation at 320x300; dirty Save retains filename space and clear dock labels.",
+    "state": "23-check fixture suite verifies unsaved source, backward selection, both editor scroll axes, prompt/chat scroll, same DOM, real PTY PID and no unintended provider/shell/file work."
+  },
+  "reports": [
+    {
+      "file": "tests/workspace-ui-review-toolbar-final-labels-chromium/review.json",
+      "status": "functional-accept-pending-visual-review",
+      "checks": 23,
+      "binarySha256": "2d76da7cf2777d5a0333e7c25920aa9a6e7eb5acb36c7017143d47bde48da9e9"
+    },
+    {
+      "file": "tests/ui.json",
+      "status": "pass",
+      "checks": 33,
+      "binarySha256": "2d76da7cf2777d5a0333e7c25920aa9a6e7eb5acb36c7017143d47bde48da9e9"
+    },
+    {
+      "file": "tests/ui-webkit.json",
+      "status": "pass",
+      "checks": 33,
+      "binarySha256": "2d76da7cf2777d5a0333e7c25920aa9a6e7eb5acb36c7017143d47bde48da9e9"
+    },
+    {
+      "file": "tests/keyboard-chromium/review.json",
+      "status": "pass",
+      "checks": 16,
+      "binarySha256": "2d76da7cf2777d5a0333e7c25920aa9a6e7eb5acb36c7017143d47bde48da9e9"
+    },
+    {
+      "file": "tests/keyboard-webkit/review.json",
+      "status": "pass",
+      "checks": 16,
+      "binarySha256": "2d76da7cf2777d5a0333e7c25920aa9a6e7eb5acb36c7017143d47bde48da9e9"
+    }
+  ],
+  "artifacts": [
+    {
+      "file": "tests/workspace-ui-review-toolbar-final-labels-chromium/toolbar-desktop-files.png",
+      "sha256": "68730e2da24838ee469ccd9f4bb5fa0c119845a63654b5db4f063c836cf53c67"
+    },
+    {
+      "file": "tests/workspace-ui-review-toolbar-final-labels-chromium/toolbar-desktop-session.png",
+      "sha256": "b18143ea82ff20a481cd60c6f8bf532084e7874c2d15e63e57206e3f1d667cba"
+    },
+    {
+      "file": "tests/workspace-ui-review-toolbar-final-labels-chromium/toolbar-desktop-ai.png",
+      "sha256": "0fcf0976225b95e4b888cfe0b35ab49f6569f53821478317c93f8a4a5707851a"
+    },
+    {
+      "file": "tests/workspace-ui-review-toolbar-final-labels-chromium/desktop-1280x800-empty-ai-tab.png",
+      "sha256": "b62e64f981a537079dd9862a01f762573939892edf168e6e9f82729023dae027"
+    },
+    {
+      "file": "tests/workspace-ui-review-toolbar-final-labels-chromium/phone-320x300-terminal.png",
+      "sha256": "e07523158dca719c876a7bd6567ae491deb2c9164db99f40e784adf58b2b7a56"
+    },
+    {
+      "file": "tests/workspace-ui-review-toolbar-final-labels-chromium/toolbar-phone-320-files.png",
+      "sha256": "26c07790e433b3c041cd2eb5656b0465c34b7046f3c9064acd1d711c98517029"
+    },
+    {
+      "file": "tests/workspace-ui-review-toolbar-final-labels-chromium/toolbar-phone-320-session.png",
+      "sha256": "ef07187db62367118e8e289c4bf74bf7199423d09c4067991ecaf87d1c793dff"
+    },
+    {
+      "file": "tests/workspace-ui-review-toolbar-final-labels-chromium/toolbar-phone-320-ai.png",
+      "sha256": "fb06ca82cc9ac1cf7e9824df3a6d60be68cf82e8bebc6803cf34a0680eb0e692"
+    },
+    {
+      "file": "tests/floating-phone-320-dirty.png",
+      "sha256": "ce36f5237b78ae7ef0ba6c73fd757d644f1473fe6702eea9d657271b9db19b29"
+    },
+    {
+      "file": "tests/floating-phone-320-dirty-short.png",
+      "sha256": "dde8a5bbd870a59129c752a5209225fc819e4b7309e4c992aea72c41e5ba9fc3"
+    },
+    {
+      "file": "tests/floating-phone-320-dirty-ai-split.png",
+      "sha256": "b8a423227c8720fcddfeaed2808e62b0861b0e8aa9ba910af38e5e969268b491"
+    },
+    {
+      "file": "tests/workspace-ui-review-toolbar-before-chromium/desktop-1280x800-empty-files-menu.png",
+      "sha256": "ea990d6d990cb73f47153530ec58510cc8d4dfb4df678be997357a821ec322c3"
+    },
+    {
+      "file": "tests/workspace-ui-review-toolbar-before-chromium/phone-320x300-empty-ai-tab.png",
+      "sha256": "e42ea50bacf271fe36006de7093ef948f66d1524235c95d878ecd9da95d7ecb3"
+    }
+  ],
+  "sourceHashes": [
+    {
+      "file": "web/index.html",
+      "sha256": "e1672f8b1b267268093d30de97575309e5ac9c4fcad60d5bb85b59ac9c82fca7"
+    },
+    {
+      "file": "web/app.js",
+      "sha256": "968c2c83d49907de07e497b90483cbec750b1638dfb04dfdc90e6ecb37d98a18"
+    },
+    {
+      "file": "web/style.css",
+      "sha256": "51223cd20d970ba813a08021bb5cb3ec1154f8118828396090e45322211cb713"
+    }
+  ],
+  "independentExploratoryProbe": {
+    "projectArrowNavigation": "pass on prior 885ce4e0 build with unchanged final handler; current final suite corroborates.",
+    "sessionFocusProbe": "inconclusive: altered invitation hostname did not complete disposable fixture join; Session acceptance uses inspected final real-host lifecycle checks."
+  },
+  "remainingBlockingFindings": [],
+  "limits": [
+    "Phone header Session and AI use icons with accessible names to fit 320px; their popovers identify their scope.",
+    "320x300 represents simulated keyboard space; physical keyboards and devices were not inspected.",
+    "Provider work uses disposable fake CLIs; no real inference or user project files were touched."
+  ]
+}

@@ -1,0 +1,2645 @@
+{
+  "status": "reject",
+  "date": "2026-10-11T10:08:42.287Z",
+  "binarySha256": "31d948bbd41194219e83399c49e300dac3b60be3c6024f364f0f0d6be7196e5c",
+  "browserEngine": "chromium",
+  "browserVersion": "155.0.8059.39",
+  "realHost": true,
+  "sourceOverrides": false,
+  "disposableProject": true,
+  "fakeProviders": true,
+  "checks": [
+    "Embedded fixture starts with no shell or real inference",
+    "Markdown renders bold, lists, code and broken-newline local file links safely",
+    "Local file link resolution rejects escape paths and opens the current project at its line",
+    "An attached project file link opens only the clicking device and preserves the chat origin",
+    "Giant protocol metadata retains a readable valid one-time approval",
+    "Provider decision restrictions remain exact and unsupported approvals fail closed",
+    "Busy permission settings explain the restriction and reject changing a running policy",
+    "Structured grants cannot bypass the unsaved-file guard",
+    "Pending approval disclosure and keyboard focus survive continuing provider messages",
+    "Complete file preview is approvable and missing or oversized action is clearly blocked",
+    "Additional Codex permissions and Claude tool input return exact one-time responses",
+    "Phone approval stays scrollable with 44px controls at 390 and reduced 320×300 viewport",
+    "Ask is the default and each provider uses the actual chosen permission policy",
+    "Permission settings remain usable with 44px controls at 320×300",
+    "Host restart retains permissions without executing work",
+    "Hostile large Markdown keeps rendering bounded and controls usable",
+    "Browser reports no execution or rendering errors"
+  ],
+  "findings": [
+    {
+      "stage": "Missing, null or empty permission scope cannot be granted",
+      "message": "Unreviewable permission scope is approvable: permissions-missing"
+    }
+  ],
+  "screenshots": [
+    {
+      "file": "desktop-markdown-matched.png",
+      "bytes": 122873,
+      "sha256": "85e42d6023155d6f9019ba90ac4cf3cad85e7adbb189c6c01be0c7ad11657abd"
+    },
+    {
+      "file": "phone-markdown-matched.png",
+      "bytes": 79071,
+      "sha256": "23f2aec7e7d6894f2bb6763c03a17c7b9957b1c51e0f7006c07f993157e29da5"
+    },
+    {
+      "file": "desktop-linked-project-restoration.png",
+      "bytes": 132061,
+      "sha256": "6b042a70b2c1a7b37d674b807675dba7f11e98e0feaf7acb1c3ee48f035c6beb"
+    },
+    {
+      "file": "desktop-command-matched.png",
+      "bytes": 85656,
+      "sha256": "8b9bfed5b75d8ee1241f8519b0f909f0381b3f40ae45e74393d20e239404e290"
+    },
+    {
+      "file": "phone-command-matched.png",
+      "bytes": 62839,
+      "sha256": "8de4a3313617ac2356ef6a0d32fe157b620416dc0adf311c39a22d74d3051adc"
+    },
+    {
+      "file": "desktop-busy-permission-settings.png",
+      "bytes": 104126,
+      "sha256": "36512e6f87d1d83554901cdf09e289727f990db721659a694d3c5c5d09dd1528"
+    },
+    {
+      "file": "desktop-approval-streaming.png",
+      "bytes": 72482,
+      "sha256": "e405ebb9ac76acd3c9ad44fe98c592434dd41e84f1115c27ce56645db6ed49a4"
+    },
+    {
+      "file": "desktop-file-preview-matched.png",
+      "bytes": 62920,
+      "sha256": "4907fe67a3f927f65038437297edb95b3356aa82794c2b2a563e9c4bc235b9f1"
+    },
+    {
+      "file": "desktop-blocked-codex-missing-preview.png",
+      "bytes": 65445,
+      "sha256": "0f1bca7a2c07657a176bdbcf392c5ce947b4300c2d1c90d5360fe307a38825e4"
+    },
+    {
+      "file": "desktop-blocked-codex-file-preview-large.png",
+      "bytes": 66580,
+      "sha256": "97cb4b4702e0b31a4c4ca8eea037b13ba19cef75fa7abec9b0a09e78034a09ad"
+    },
+    {
+      "file": "desktop-blocked-codex-giant-action.png",
+      "bytes": 59569,
+      "sha256": "2ae259b09c91095c51ca04ce37b179f81a96df4d13452adc0ac726f3e9e2a1d3"
+    },
+    {
+      "file": "desktop-blocked-claude-giant-action.png",
+      "bytes": 56143,
+      "sha256": "b886f299d73e452fbb7f03c9914a8feb9a85c475e77f282a0fb1247f3be86a3f"
+    },
+    {
+      "file": "desktop-claude-write.png",
+      "bytes": 53245,
+      "sha256": "d166e667161551a2c733c4b921f3f2d34e67bb0b768b3fcc75686bdcde15050f"
+    },
+    {
+      "file": "failure-1-desktop.png",
+      "bytes": 39622,
+      "sha256": "a3144660a048d1fc94ca5643325ec9ef21c93f1fcce9ef062b917eb2fef58148"
+    },
+    {
+      "file": "failure-1-phone.png",
+      "bytes": 33052,
+      "sha256": "39531d950dff53d1b537e1882d0317123b6436f79003229c2ccd3c8ca39544f8"
+    },
+    {
+      "file": "phone-approval-390x844.png",
+      "bytes": 58213,
+      "sha256": "f7a606b952f9f253cf20ec91fb5c33f91ca062fd1fac3e60cc8ce79321f77c11"
+    },
+    {
+      "file": "phone-approval-320x300.png",
+      "bytes": 19829,
+      "sha256": "a07a8509564aad2225acc6768c1c9770c6dfd233a9f62d2802a5bbe13711fe57"
+    },
+    {
+      "file": "desktop-permission-settings-ask.png",
+      "bytes": 85490,
+      "sha256": "84733d4c0e0a027776a5ec12c9a6f52fb474df703731907c9fca0af1d641a070"
+    },
+    {
+      "file": "desktop-permission-settings-fullAccess.png",
+      "bytes": 78110,
+      "sha256": "91bdca00647bda5615f83c1e3a5a604258082b40897bff0a8c4ff91e7c0e5269"
+    },
+    {
+      "file": "desktop-permission-settings.png",
+      "bytes": 37364,
+      "sha256": "645791e93547d22314c07d8b906f78a489d93845bc70293d306395b2e3d6caf7"
+    },
+    {
+      "file": "phone-settings-320x300.png",
+      "bytes": 21212,
+      "sha256": "3c9efc8b08d4436cafb596cf63f2ab02b2653ddc1d311dba55df2239ddadc907"
+    },
+    {
+      "file": "desktop-markdown-budget.png",
+      "bytes": 131987,
+      "sha256": "603c3eaf1172be48630acbc810e7ab90d560a2c3cb95221ad68230e29dc12e56"
+    }
+  ],
+  "measurements": [
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "documentWidth": 390,
+      "messages": {
+        "height": 594,
+        "top": 62,
+        "bottom": 656,
+        "scrollHeight": 610,
+        "scrollTop": 16
+      },
+      "controls": [
+        {
+          "id": "mobile-ai",
+          "width": 44,
+          "height": 44,
+          "left": 152,
+          "right": 196,
+          "top": 790,
+          "bottom": 834,
+          "hit": true
+        },
+        {
+          "id": "ai-layout-split",
+          "width": 44,
+          "height": 44,
+          "left": 242,
+          "right": 286,
+          "top": 790,
+          "bottom": 834,
+          "hit": true
+        },
+        {
+          "id": "ai-layout-tab",
+          "width": 44,
+          "height": 44,
+          "left": 286,
+          "right": 330,
+          "top": 790,
+          "bottom": 834,
+          "hit": true
+        },
+        {
+          "id": "Approve once",
+          "width": 104.15625,
+          "height": 44,
+          "left": 16,
+          "right": 120.15625,
+          "top": 525.921875,
+          "bottom": 569.921875,
+          "hit": true
+        },
+        {
+          "id": "Stop turn",
+          "width": 78.765625,
+          "height": 44,
+          "left": 126.15625,
+          "right": 204.921875,
+          "top": 525.921875,
+          "bottom": 569.921875,
+          "hit": true
+        },
+        {
+          "id": "More approval options",
+          "width": 358,
+          "height": 44,
+          "left": 16,
+          "right": 374,
+          "top": 573.921875,
+          "bottom": 617.921875,
+          "hit": true
+        },
+        {
+          "id": "Approve and remember command rule",
+          "width": 242.546875,
+          "height": 44,
+          "left": 16,
+          "right": 258.546875,
+          "top": 617.921875,
+          "bottom": 661.921875,
+          "hit": false
+        },
+        {
+          "id": "prompt",
+          "width": 300,
+          "height": 44,
+          "left": 25,
+          "right": 325,
+          "top": 681,
+          "bottom": 725,
+          "hit": true
+        },
+        {
+          "id": "ai-send",
+          "width": 44,
+          "height": 44,
+          "left": 329,
+          "right": 373,
+          "top": 681,
+          "bottom": 725,
+          "hit": true
+        },
+        {
+          "id": "provider",
+          "width": 72,
+          "height": 44,
+          "left": 12,
+          "right": 84,
+          "top": 730,
+          "bottom": 774,
+          "hit": true
+        },
+        {
+          "id": "ai-permission-mode",
+          "width": 53.203125,
+          "height": 44,
+          "left": 86,
+          "right": 139.203125,
+          "top": 730,
+          "bottom": 774,
+          "hit": true
+        },
+        {
+          "id": "ai-settings",
+          "width": 44,
+          "height": 44,
+          "left": 141.203125,
+          "right": 185.203125,
+          "top": 730,
+          "bottom": 774,
+          "hit": true
+        },
+        {
+          "id": "ai-cancel",
+          "width": 44.34375,
+          "height": 44,
+          "left": 333.65625,
+          "right": 378,
+          "top": 730,
+          "bottom": 774,
+          "hit": true
+        }
+      ],
+      "name": "approval-390x844"
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 300
+      },
+      "documentWidth": 320,
+      "messages": {
+        "height": 64,
+        "top": 62,
+        "bottom": 126,
+        "scrollHeight": 578,
+        "scrollTop": 514
+      },
+      "controls": [
+        {
+          "id": "mobile-ai",
+          "width": 44,
+          "height": 44,
+          "left": 82,
+          "right": 126,
+          "top": 246,
+          "bottom": 290,
+          "hit": true
+        },
+        {
+          "id": "ai-layout-split",
+          "width": 44,
+          "height": 44,
+          "left": 172,
+          "right": 216,
+          "top": 246,
+          "bottom": 290,
+          "hit": true
+        },
+        {
+          "id": "ai-layout-tab",
+          "width": 44,
+          "height": 44,
+          "left": 216,
+          "right": 260,
+          "top": 246,
+          "bottom": 290,
+          "hit": true
+        },
+        {
+          "id": "Approve once",
+          "width": 104.15625,
+          "height": 44,
+          "left": 12,
+          "right": 116.15625,
+          "top": 6,
+          "bottom": 50,
+          "hit": false
+        },
+        {
+          "id": "Stop turn",
+          "width": 78.765625,
+          "height": 44,
+          "left": 122.15625,
+          "right": 200.921875,
+          "top": 6,
+          "bottom": 50,
+          "hit": false
+        },
+        {
+          "id": "More approval options",
+          "width": 296,
+          "height": 44,
+          "left": 12,
+          "right": 308,
+          "top": 54,
+          "bottom": 98,
+          "hit": true
+        },
+        {
+          "id": "Approve and remember command rule",
+          "width": 242.546875,
+          "height": 44,
+          "left": 12,
+          "right": 254.546875,
+          "top": 98,
+          "bottom": 142,
+          "hit": false
+        },
+        {
+          "id": "prompt",
+          "width": 234,
+          "height": 44,
+          "left": 23,
+          "right": 257,
+          "top": 143,
+          "bottom": 187,
+          "hit": true
+        },
+        {
+          "id": "ai-send",
+          "width": 44,
+          "height": 44,
+          "left": 261,
+          "right": 305,
+          "top": 143,
+          "bottom": 187,
+          "hit": true
+        },
+        {
+          "id": "provider",
+          "width": 72,
+          "height": 44,
+          "left": 12,
+          "right": 84,
+          "top": 188,
+          "bottom": 232,
+          "hit": true
+        },
+        {
+          "id": "ai-permission-mode",
+          "width": 53.203125,
+          "height": 44,
+          "left": 86,
+          "right": 139.203125,
+          "top": 188,
+          "bottom": 232,
+          "hit": true
+        },
+        {
+          "id": "ai-settings",
+          "width": 44,
+          "height": 44,
+          "left": 141.203125,
+          "right": 185.203125,
+          "top": 188,
+          "bottom": 232,
+          "hit": true
+        },
+        {
+          "id": "ai-cancel",
+          "width": 44.34375,
+          "height": 44,
+          "left": 263.65625,
+          "right": 308,
+          "top": 188,
+          "bottom": 232,
+          "hit": true
+        }
+      ],
+      "name": "approval-320x300"
+    }
+  ],
+  "unexpectedBrowserErrors": [],
+  "referenceScreenshots": [
+    "codex-clipboard-tbtcuQ.png",
+    "codex-clipboard-6d8s2c.png",
+    "codex-clipboard-XYHsDl.png"
+  ],
+  "limits": [
+    "No live Relay hosts, inference, real credentials or unrelated projects were accessed.",
+    "Physical phone, native keyboard and true blinded human comparison remain untested."
+  ],
+  "providerCalls": [
+    {
+      "provider": "codex",
+      "event": "spawn",
+      "args": [
+        "login",
+        "status"
+      ]
+    },
+    {
+      "provider": "claude",
+      "event": "spawn",
+      "args": [
+        "auth",
+        "status"
+      ]
+    },
+    {
+      "provider": "codex",
+      "event": "spawn",
+      "args": [
+        "app-server",
+        "--listen",
+        "stdio://"
+      ]
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 1,
+        "method": "initialize",
+        "params": {
+          "clientInfo": {
+            "name": "acme_code_editor",
+            "title": "Code Editor",
+            "version": "0.1.0"
+          }
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "method": "initialized",
+        "params": {}
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 2,
+        "method": "thread/start",
+        "params": {
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "user",
+          "cwd": "/private/var/folders/pr/6x_bf79x5tq91wck08xdmbjh0000gn/T/relay-ai-chat-critic-usDSnG/project",
+          "developerInstructions": "You are assisting in a shared code editor. For a requested change to the selected file, prefer returning the COMPLETE updated file in one fenced code block so the user can review and apply it through the editor. Do not claim changes were saved unless a tool actually saved them. Unsaved editor text can differ from disk. Ask for approval before changing files or running commands that mutate the workspace.",
+          "sandbox": "read-only"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 3,
+        "method": "turn/start",
+        "params": {
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "user",
+          "input": [
+            {
+              "text": "SCENARIO:markdown",
+              "type": "text"
+            }
+          ],
+          "sandboxPolicy": {
+            "networkAccess": false,
+            "type": "readOnly"
+          },
+          "threadId": "critic-thread"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "spawn",
+      "args": [
+        "app-server",
+        "--listen",
+        "stdio://"
+      ]
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 1,
+        "method": "initialize",
+        "params": {
+          "clientInfo": {
+            "name": "acme_code_editor",
+            "title": "Code Editor",
+            "version": "0.1.0"
+          }
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "method": "initialized",
+        "params": {}
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 2,
+        "method": "thread/resume",
+        "params": {
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "user",
+          "cwd": "/private/var/folders/pr/6x_bf79x5tq91wck08xdmbjh0000gn/T/relay-ai-chat-critic-usDSnG/project",
+          "developerInstructions": "You are assisting in a shared code editor. For a requested change to the selected file, prefer returning the COMPLETE updated file in one fenced code block so the user can review and apply it through the editor. Do not claim changes were saved unless a tool actually saved them. Unsaved editor text can differ from disk. Ask for approval before changing files or running commands that mutate the workspace.",
+          "sandbox": "read-only",
+          "threadId": "critic-thread"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 3,
+        "method": "turn/start",
+        "params": {
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "user",
+          "input": [
+            {
+              "text": "SCENARIO:giant-command\n\nThe user is viewing this workspace file: ECONOMY.md. Read the saved workspace file when needed. Unsaved editor text may differ; changes are reconciled by the editor.",
+              "type": "text"
+            }
+          ],
+          "sandboxPolicy": {
+            "networkAccess": false,
+            "type": "readOnly"
+          },
+          "threadId": "critic-thread"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 81,
+        "result": {
+          "decision": "accept"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "approval-result",
+      "scenario": "giant-command",
+      "response": {
+        "id": 81,
+        "result": {
+          "decision": "accept"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "spawn",
+      "args": [
+        "app-server",
+        "--listen",
+        "stdio://"
+      ]
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 1,
+        "method": "initialize",
+        "params": {
+          "clientInfo": {
+            "name": "acme_code_editor",
+            "title": "Code Editor",
+            "version": "0.1.0"
+          }
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "method": "initialized",
+        "params": {}
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 2,
+        "method": "thread/resume",
+        "params": {
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "user",
+          "cwd": "/private/var/folders/pr/6x_bf79x5tq91wck08xdmbjh0000gn/T/relay-ai-chat-critic-usDSnG/project",
+          "developerInstructions": "You are assisting in a shared code editor. For a requested change to the selected file, prefer returning the COMPLETE updated file in one fenced code block so the user can review and apply it through the editor. Do not claim changes were saved unless a tool actually saved them. Unsaved editor text can differ from disk. Ask for approval before changing files or running commands that mutate the workspace.",
+          "sandbox": "read-only",
+          "threadId": "critic-thread"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 3,
+        "method": "turn/start",
+        "params": {
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "user",
+          "input": [
+            {
+              "text": "SCENARIO:decline-only\n\nThe user is viewing this workspace file: ECONOMY.md. Read the saved workspace file when needed. Unsaved editor text may differ; changes are reconciled by the editor.",
+              "type": "text"
+            }
+          ],
+          "sandboxPolicy": {
+            "networkAccess": false,
+            "type": "readOnly"
+          },
+          "threadId": "critic-thread"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 81,
+        "result": {
+          "decision": "cancel"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "approval-result",
+      "scenario": "decline-only",
+      "response": {
+        "id": 81,
+        "result": {
+          "decision": "cancel"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "spawn",
+      "args": [
+        "app-server",
+        "--listen",
+        "stdio://"
+      ]
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 1,
+        "method": "initialize",
+        "params": {
+          "clientInfo": {
+            "name": "acme_code_editor",
+            "title": "Code Editor",
+            "version": "0.1.0"
+          }
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "method": "initialized",
+        "params": {}
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 2,
+        "method": "thread/resume",
+        "params": {
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "user",
+          "cwd": "/private/var/folders/pr/6x_bf79x5tq91wck08xdmbjh0000gn/T/relay-ai-chat-critic-usDSnG/project",
+          "developerInstructions": "You are assisting in a shared code editor. For a requested change to the selected file, prefer returning the COMPLETE updated file in one fenced code block so the user can review and apply it through the editor. Do not claim changes were saved unless a tool actually saved them. Unsaved editor text can differ from disk. Ask for approval before changing files or running commands that mutate the workspace.",
+          "sandbox": "read-only",
+          "threadId": "critic-thread"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 3,
+        "method": "turn/start",
+        "params": {
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "user",
+          "input": [
+            {
+              "text": "SCENARIO:unsupported-decisions\n\nThe user is viewing this workspace file: ECONOMY.md. Read the saved workspace file when needed. Unsaved editor text may differ; changes are reconciled by the editor.",
+              "type": "text"
+            }
+          ],
+          "sandboxPolicy": {
+            "networkAccess": false,
+            "type": "readOnly"
+          },
+          "threadId": "critic-thread"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 81,
+        "result": {
+          "decision": "cancel"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "approval-result",
+      "scenario": "unsupported-decisions",
+      "response": {
+        "id": 81,
+        "result": {
+          "decision": "cancel"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "spawn",
+      "args": [
+        "app-server",
+        "--listen",
+        "stdio://"
+      ]
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 1,
+        "method": "initialize",
+        "params": {
+          "clientInfo": {
+            "name": "acme_code_editor",
+            "title": "Code Editor",
+            "version": "0.1.0"
+          }
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "method": "initialized",
+        "params": {}
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 2,
+        "method": "thread/resume",
+        "params": {
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "user",
+          "cwd": "/private/var/folders/pr/6x_bf79x5tq91wck08xdmbjh0000gn/T/relay-ai-chat-critic-usDSnG/project",
+          "developerInstructions": "You are assisting in a shared code editor. For a requested change to the selected file, prefer returning the COMPLETE updated file in one fenced code block so the user can review and apply it through the editor. Do not claim changes were saved unless a tool actually saved them. Unsaved editor text can differ from disk. Ask for approval before changing files or running commands that mutate the workspace.",
+          "sandbox": "read-only",
+          "threadId": "critic-thread"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 3,
+        "method": "turn/start",
+        "params": {
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "user",
+          "input": [
+            {
+              "text": "SCENARIO:remember-command\n\nThe user is viewing this workspace file: ECONOMY.md. Read the saved workspace file when needed. Unsaved editor text may differ; changes are reconciled by the editor.",
+              "type": "text"
+            }
+          ],
+          "sandboxPolicy": {
+            "networkAccess": false,
+            "type": "readOnly"
+          },
+          "threadId": "critic-thread"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 81,
+        "result": {
+          "decision": {
+            "acceptWithExecpolicyAmendment": {
+              "execpolicy_amendment": [
+                "sed"
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "approval-result",
+      "scenario": "remember-command",
+      "response": {
+        "id": 81,
+        "result": {
+          "decision": {
+            "acceptWithExecpolicyAmendment": {
+              "execpolicy_amendment": [
+                "sed"
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "spawn",
+      "args": [
+        "app-server",
+        "--listen",
+        "stdio://"
+      ]
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 1,
+        "method": "initialize",
+        "params": {
+          "clientInfo": {
+            "name": "acme_code_editor",
+            "title": "Code Editor",
+            "version": "0.1.0"
+          }
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "method": "initialized",
+        "params": {}
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 2,
+        "method": "thread/resume",
+        "params": {
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "user",
+          "cwd": "/private/var/folders/pr/6x_bf79x5tq91wck08xdmbjh0000gn/T/relay-ai-chat-critic-usDSnG/project",
+          "developerInstructions": "You are assisting in a shared code editor. For a requested change to the selected file, prefer returning the COMPLETE updated file in one fenced code block so the user can review and apply it through the editor. Do not claim changes were saved unless a tool actually saved them. Unsaved editor text can differ from disk. Ask for approval before changing files or running commands that mutate the workspace.",
+          "sandbox": "read-only",
+          "threadId": "critic-thread"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 3,
+        "method": "turn/start",
+        "params": {
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "user",
+          "input": [
+            {
+              "text": "SCENARIO:session-command\n\nThe user is viewing this workspace file: ECONOMY.md. Read the saved workspace file when needed. Unsaved editor text may differ; changes are reconciled by the editor.",
+              "type": "text"
+            }
+          ],
+          "sandboxPolicy": {
+            "networkAccess": false,
+            "type": "readOnly"
+          },
+          "threadId": "critic-thread"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 81,
+        "result": {
+          "decision": "acceptForSession"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "approval-result",
+      "scenario": "session-command",
+      "response": {
+        "id": 81,
+        "result": {
+          "decision": "acceptForSession"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "spawn",
+      "args": [
+        "app-server",
+        "--listen",
+        "stdio://"
+      ]
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 1,
+        "method": "initialize",
+        "params": {
+          "clientInfo": {
+            "name": "acme_code_editor",
+            "title": "Code Editor",
+            "version": "0.1.0"
+          }
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "method": "initialized",
+        "params": {}
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 2,
+        "method": "thread/resume",
+        "params": {
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "user",
+          "cwd": "/private/var/folders/pr/6x_bf79x5tq91wck08xdmbjh0000gn/T/relay-ai-chat-critic-usDSnG/project",
+          "developerInstructions": "You are assisting in a shared code editor. For a requested change to the selected file, prefer returning the COMPLETE updated file in one fenced code block so the user can review and apply it through the editor. Do not claim changes were saved unless a tool actually saved them. Unsaved editor text can differ from disk. Ask for approval before changing files or running commands that mutate the workspace.",
+          "sandbox": "read-only",
+          "threadId": "critic-thread"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 3,
+        "method": "turn/start",
+        "params": {
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "user",
+          "input": [
+            {
+              "text": "SCENARIO:network-host\n\nThe user is viewing this workspace file: ECONOMY.md. Read the saved workspace file when needed. Unsaved editor text may differ; changes are reconciled by the editor.",
+              "type": "text"
+            }
+          ],
+          "sandboxPolicy": {
+            "networkAccess": false,
+            "type": "readOnly"
+          },
+          "threadId": "critic-thread"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 81,
+        "result": {
+          "decision": {
+            "applyNetworkPolicyAmendment": {
+              "network_policy_amendment": {
+                "action": "allow",
+                "host": "example.test"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "approval-result",
+      "scenario": "network-host",
+      "response": {
+        "id": 81,
+        "result": {
+          "decision": {
+            "applyNetworkPolicyAmendment": {
+              "network_policy_amendment": {
+                "action": "allow",
+                "host": "example.test"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "spawn",
+      "args": [
+        "app-server",
+        "--listen",
+        "stdio://"
+      ]
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 1,
+        "method": "initialize",
+        "params": {
+          "clientInfo": {
+            "name": "acme_code_editor",
+            "title": "Code Editor",
+            "version": "0.1.0"
+          }
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "method": "initialized",
+        "params": {}
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 2,
+        "method": "thread/resume",
+        "params": {
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "user",
+          "cwd": "/private/var/folders/pr/6x_bf79x5tq91wck08xdmbjh0000gn/T/relay-ai-chat-critic-usDSnG/project",
+          "developerInstructions": "You are assisting in a shared code editor. For a requested change to the selected file, prefer returning the COMPLETE updated file in one fenced code block so the user can review and apply it through the editor. Do not claim changes were saved unless a tool actually saved them. Unsaved editor text can differ from disk. Ask for approval before changing files or running commands that mutate the workspace.",
+          "sandbox": "read-only",
+          "threadId": "critic-thread"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 3,
+        "method": "turn/start",
+        "params": {
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "user",
+          "input": [
+            {
+              "text": "SCENARIO:giant-command\n\nThe user is viewing this workspace file: ECONOMY.md. Read the saved workspace file when needed. Unsaved editor text may differ; changes are reconciled by the editor.",
+              "type": "text"
+            }
+          ],
+          "sandboxPolicy": {
+            "networkAccess": false,
+            "type": "readOnly"
+          },
+          "threadId": "critic-thread"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 81,
+        "result": {
+          "decision": "cancel"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "approval-result",
+      "scenario": "giant-command",
+      "response": {
+        "id": 81,
+        "result": {
+          "decision": "cancel"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "spawn",
+      "args": [
+        "app-server",
+        "--listen",
+        "stdio://"
+      ]
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 1,
+        "method": "initialize",
+        "params": {
+          "clientInfo": {
+            "name": "acme_code_editor",
+            "title": "Code Editor",
+            "version": "0.1.0"
+          }
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "method": "initialized",
+        "params": {}
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 2,
+        "method": "thread/resume",
+        "params": {
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "user",
+          "cwd": "/private/var/folders/pr/6x_bf79x5tq91wck08xdmbjh0000gn/T/relay-ai-chat-critic-usDSnG/project",
+          "developerInstructions": "You are assisting in a shared code editor. For a requested change to the selected file, prefer returning the COMPLETE updated file in one fenced code block so the user can review and apply it through the editor. Do not claim changes were saved unless a tool actually saved them. Unsaved editor text can differ from disk. Ask for approval before changing files or running commands that mutate the workspace.",
+          "sandbox": "read-only",
+          "threadId": "critic-thread"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 3,
+        "method": "turn/start",
+        "params": {
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "user",
+          "input": [
+            {
+              "text": "SCENARIO:remember-command\n\nThe user is viewing this workspace file: ECONOMY.md. Read the saved workspace file when needed. Unsaved editor text may differ; changes are reconciled by the editor.",
+              "type": "text"
+            }
+          ],
+          "sandboxPolicy": {
+            "networkAccess": false,
+            "type": "readOnly"
+          },
+          "threadId": "critic-thread"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 81,
+        "result": {
+          "decision": "cancel"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "approval-result",
+      "scenario": "remember-command",
+      "response": {
+        "id": 81,
+        "result": {
+          "decision": "cancel"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "spawn",
+      "args": [
+        "app-server",
+        "--listen",
+        "stdio://"
+      ]
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 1,
+        "method": "initialize",
+        "params": {
+          "clientInfo": {
+            "name": "acme_code_editor",
+            "title": "Code Editor",
+            "version": "0.1.0"
+          }
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "method": "initialized",
+        "params": {}
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 2,
+        "method": "thread/resume",
+        "params": {
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "user",
+          "cwd": "/private/var/folders/pr/6x_bf79x5tq91wck08xdmbjh0000gn/T/relay-ai-chat-critic-usDSnG/project",
+          "developerInstructions": "You are assisting in a shared code editor. For a requested change to the selected file, prefer returning the COMPLETE updated file in one fenced code block so the user can review and apply it through the editor. Do not claim changes were saved unless a tool actually saved them. Unsaved editor text can differ from disk. Ask for approval before changing files or running commands that mutate the workspace.",
+          "sandbox": "read-only",
+          "threadId": "critic-thread"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 3,
+        "method": "turn/start",
+        "params": {
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "user",
+          "input": [
+            {
+              "text": "SCENARIO:network-host\n\nThe user is viewing this workspace file: ECONOMY.md. Read the saved workspace file when needed. Unsaved editor text may differ; changes are reconciled by the editor.",
+              "type": "text"
+            }
+          ],
+          "sandboxPolicy": {
+            "networkAccess": false,
+            "type": "readOnly"
+          },
+          "threadId": "critic-thread"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 81,
+        "result": {
+          "decision": "cancel"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "approval-result",
+      "scenario": "network-host",
+      "response": {
+        "id": 81,
+        "result": {
+          "decision": "cancel"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "spawn",
+      "args": [
+        "app-server",
+        "--listen",
+        "stdio://"
+      ]
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 1,
+        "method": "initialize",
+        "params": {
+          "clientInfo": {
+            "name": "acme_code_editor",
+            "title": "Code Editor",
+            "version": "0.1.0"
+          }
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "method": "initialized",
+        "params": {}
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 2,
+        "method": "thread/resume",
+        "params": {
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "user",
+          "cwd": "/private/var/folders/pr/6x_bf79x5tq91wck08xdmbjh0000gn/T/relay-ai-chat-critic-usDSnG/project",
+          "developerInstructions": "You are assisting in a shared code editor. For a requested change to the selected file, prefer returning the COMPLETE updated file in one fenced code block so the user can review and apply it through the editor. Do not claim changes were saved unless a tool actually saved them. Unsaved editor text can differ from disk. Ask for approval before changing files or running commands that mutate the workspace.",
+          "sandbox": "read-only",
+          "threadId": "critic-thread"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 3,
+        "method": "turn/start",
+        "params": {
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "user",
+          "input": [
+            {
+              "text": "SCENARIO:streaming-command\n\nThe user is viewing this workspace file: ECONOMY.md. Read the saved workspace file when needed. Unsaved editor text may differ; changes are reconciled by the editor.",
+              "type": "text"
+            }
+          ],
+          "sandboxPolicy": {
+            "networkAccess": false,
+            "type": "readOnly"
+          },
+          "threadId": "critic-thread"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 81,
+        "result": {
+          "decision": {
+            "acceptWithExecpolicyAmendment": {
+              "execpolicy_amendment": [
+                "sed",
+                "-n",
+                "1,40p",
+                "ECONOMY.md"
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "approval-result",
+      "scenario": "streaming-command",
+      "response": {
+        "id": 81,
+        "result": {
+          "decision": {
+            "acceptWithExecpolicyAmendment": {
+              "execpolicy_amendment": [
+                "sed",
+                "-n",
+                "1,40p",
+                "ECONOMY.md"
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "spawn",
+      "args": [
+        "app-server",
+        "--listen",
+        "stdio://"
+      ]
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 1,
+        "method": "initialize",
+        "params": {
+          "clientInfo": {
+            "name": "acme_code_editor",
+            "title": "Code Editor",
+            "version": "0.1.0"
+          }
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "method": "initialized",
+        "params": {}
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 2,
+        "method": "thread/resume",
+        "params": {
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "user",
+          "cwd": "/private/var/folders/pr/6x_bf79x5tq91wck08xdmbjh0000gn/T/relay-ai-chat-critic-usDSnG/project",
+          "developerInstructions": "You are assisting in a shared code editor. For a requested change to the selected file, prefer returning the COMPLETE updated file in one fenced code block so the user can review and apply it through the editor. Do not claim changes were saved unless a tool actually saved them. Unsaved editor text can differ from disk. Ask for approval before changing files or running commands that mutate the workspace.",
+          "sandbox": "read-only",
+          "threadId": "critic-thread"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 3,
+        "method": "turn/start",
+        "params": {
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "user",
+          "input": [
+            {
+              "text": "SCENARIO:file-preview\n\nThe user is viewing this workspace file: ECONOMY.md. Read the saved workspace file when needed. Unsaved editor text may differ; changes are reconciled by the editor.",
+              "type": "text"
+            }
+          ],
+          "sandboxPolicy": {
+            "networkAccess": false,
+            "type": "readOnly"
+          },
+          "threadId": "critic-thread"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 81,
+        "result": {
+          "decision": "accept"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "approval-result",
+      "scenario": "file-preview",
+      "response": {
+        "id": 81,
+        "result": {
+          "decision": "accept"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "spawn",
+      "args": [
+        "app-server",
+        "--listen",
+        "stdio://"
+      ]
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 1,
+        "method": "initialize",
+        "params": {
+          "clientInfo": {
+            "name": "acme_code_editor",
+            "title": "Code Editor",
+            "version": "0.1.0"
+          }
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "method": "initialized",
+        "params": {}
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 2,
+        "method": "thread/resume",
+        "params": {
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "user",
+          "cwd": "/private/var/folders/pr/6x_bf79x5tq91wck08xdmbjh0000gn/T/relay-ai-chat-critic-usDSnG/project",
+          "developerInstructions": "You are assisting in a shared code editor. For a requested change to the selected file, prefer returning the COMPLETE updated file in one fenced code block so the user can review and apply it through the editor. Do not claim changes were saved unless a tool actually saved them. Unsaved editor text can differ from disk. Ask for approval before changing files or running commands that mutate the workspace.",
+          "sandbox": "read-only",
+          "threadId": "critic-thread"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 3,
+        "method": "turn/start",
+        "params": {
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "user",
+          "input": [
+            {
+              "text": "SCENARIO:missing-preview\n\nThe user is viewing this workspace file: ECONOMY.md. Read the saved workspace file when needed. Unsaved editor text may differ; changes are reconciled by the editor.",
+              "type": "text"
+            }
+          ],
+          "sandboxPolicy": {
+            "networkAccess": false,
+            "type": "readOnly"
+          },
+          "threadId": "critic-thread"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 81,
+        "result": {
+          "decision": "cancel"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "approval-result",
+      "scenario": "missing-preview",
+      "response": {
+        "id": 81,
+        "result": {
+          "decision": "cancel"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "spawn",
+      "args": [
+        "app-server",
+        "--listen",
+        "stdio://"
+      ]
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 1,
+        "method": "initialize",
+        "params": {
+          "clientInfo": {
+            "name": "acme_code_editor",
+            "title": "Code Editor",
+            "version": "0.1.0"
+          }
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "method": "initialized",
+        "params": {}
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 2,
+        "method": "thread/resume",
+        "params": {
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "user",
+          "cwd": "/private/var/folders/pr/6x_bf79x5tq91wck08xdmbjh0000gn/T/relay-ai-chat-critic-usDSnG/project",
+          "developerInstructions": "You are assisting in a shared code editor. For a requested change to the selected file, prefer returning the COMPLETE updated file in one fenced code block so the user can review and apply it through the editor. Do not claim changes were saved unless a tool actually saved them. Unsaved editor text can differ from disk. Ask for approval before changing files or running commands that mutate the workspace.",
+          "sandbox": "read-only",
+          "threadId": "critic-thread"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 3,
+        "method": "turn/start",
+        "params": {
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "user",
+          "input": [
+            {
+              "text": "SCENARIO:file-preview-large\n\nThe user is viewing this workspace file: ECONOMY.md. Read the saved workspace file when needed. Unsaved editor text may differ; changes are reconciled by the editor.",
+              "type": "text"
+            }
+          ],
+          "sandboxPolicy": {
+            "networkAccess": false,
+            "type": "readOnly"
+          },
+          "threadId": "critic-thread"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 81,
+        "result": {
+          "decision": "cancel"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "approval-result",
+      "scenario": "file-preview-large",
+      "response": {
+        "id": 81,
+        "result": {
+          "decision": "cancel"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "spawn",
+      "args": [
+        "app-server",
+        "--listen",
+        "stdio://"
+      ]
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 1,
+        "method": "initialize",
+        "params": {
+          "clientInfo": {
+            "name": "acme_code_editor",
+            "title": "Code Editor",
+            "version": "0.1.0"
+          }
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "method": "initialized",
+        "params": {}
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 2,
+        "method": "thread/resume",
+        "params": {
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "user",
+          "cwd": "/private/var/folders/pr/6x_bf79x5tq91wck08xdmbjh0000gn/T/relay-ai-chat-critic-usDSnG/project",
+          "developerInstructions": "You are assisting in a shared code editor. For a requested change to the selected file, prefer returning the COMPLETE updated file in one fenced code block so the user can review and apply it through the editor. Do not claim changes were saved unless a tool actually saved them. Unsaved editor text can differ from disk. Ask for approval before changing files or running commands that mutate the workspace.",
+          "sandbox": "read-only",
+          "threadId": "critic-thread"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 3,
+        "method": "turn/start",
+        "params": {
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "user",
+          "input": [
+            {
+              "text": "SCENARIO:giant-action\n\nThe user is viewing this workspace file: ECONOMY.md. Read the saved workspace file when needed. Unsaved editor text may differ; changes are reconciled by the editor.",
+              "type": "text"
+            }
+          ],
+          "sandboxPolicy": {
+            "networkAccess": false,
+            "type": "readOnly"
+          },
+          "threadId": "critic-thread"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 81,
+        "result": {
+          "decision": "cancel"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "approval-result",
+      "scenario": "giant-action",
+      "response": {
+        "id": 81,
+        "result": {
+          "decision": "cancel"
+        }
+      }
+    },
+    {
+      "provider": "claude",
+      "event": "spawn",
+      "args": [
+        "-p",
+        "--input-format",
+        "stream-json",
+        "--output-format",
+        "stream-json",
+        "--verbose",
+        "--include-partial-messages",
+        "--safe-mode",
+        "--strict-mcp-config",
+        "--setting-sources",
+        "",
+        "--tools",
+        "Read,Glob,Grep,Edit,Write,Bash",
+        "--permission-mode",
+        "manual",
+        "--permission-prompt-tool",
+        "stdio",
+        "--restricted",
+        "--append-system-prompt",
+        "You are assisting in a shared code editor. For a requested change to the selected file, prefer returning the COMPLETE updated file in one fenced code block so the user can review and apply it through the editor. Do not claim changes were saved unless a tool actually saved them. Unsaved editor text can differ from disk. Ask for approval before changing files or running commands that mutate the workspace."
+      ]
+    },
+    {
+      "provider": "claude",
+      "event": "frame",
+      "frame": {
+        "request": {
+          "hooks": null,
+          "subtype": "initialize"
+        },
+        "request_id": "editor-init",
+        "type": "control_request"
+      }
+    },
+    {
+      "provider": "claude",
+      "event": "frame",
+      "frame": {
+        "message": {
+          "content": "SCENARIO:giant-action\n\nThe user is viewing this workspace file: ECONOMY.md. Read the saved workspace file when needed. Unsaved editor text may differ; changes are reconciled by the editor.",
+          "role": "user"
+        },
+        "parent_tool_use_id": null,
+        "session_id": "",
+        "type": "user"
+      }
+    },
+    {
+      "provider": "claude",
+      "event": "frame",
+      "frame": {
+        "response": {
+          "request_id": "critic-permission",
+          "response": {
+            "behavior": "deny",
+            "interrupt": true,
+            "message": "The user declined this action."
+          },
+          "subtype": "success"
+        },
+        "type": "control_response"
+      }
+    },
+    {
+      "provider": "claude",
+      "event": "approval-result",
+      "scenario": "giant-action",
+      "response": {
+        "response": {
+          "request_id": "critic-permission",
+          "response": {
+            "behavior": "deny",
+            "interrupt": true,
+            "message": "The user declined this action."
+          },
+          "subtype": "success"
+        },
+        "type": "control_response"
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "spawn",
+      "args": [
+        "app-server",
+        "--listen",
+        "stdio://"
+      ]
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 1,
+        "method": "initialize",
+        "params": {
+          "clientInfo": {
+            "name": "acme_code_editor",
+            "title": "Code Editor",
+            "version": "0.1.0"
+          }
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "method": "initialized",
+        "params": {}
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 2,
+        "method": "thread/start",
+        "params": {
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "user",
+          "cwd": "/private/var/folders/pr/6x_bf79x5tq91wck08xdmbjh0000gn/T/relay-ai-chat-critic-usDSnG/project",
+          "developerInstructions": "You are assisting in a shared code editor. For a requested change to the selected file, prefer returning the COMPLETE updated file in one fenced code block so the user can review and apply it through the editor. Do not claim changes were saved unless a tool actually saved them. Unsaved editor text can differ from disk. Ask for approval before changing files or running commands that mutate the workspace.",
+          "sandbox": "read-only"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 3,
+        "method": "turn/start",
+        "params": {
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "user",
+          "input": [
+            {
+              "text": "SCENARIO:permissions\n\nThe user is viewing this workspace file: ECONOMY.md. Read the saved workspace file when needed. Unsaved editor text may differ; changes are reconciled by the editor.",
+              "type": "text"
+            }
+          ],
+          "sandboxPolicy": {
+            "networkAccess": false,
+            "type": "readOnly"
+          },
+          "threadId": "critic-thread"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 81,
+        "result": {
+          "permissions": {
+            "fileSystem": {
+              "write": [
+                "/private/var/folders/pr/6x_bf79x5tq91wck08xdmbjh0000gn/T/relay-ai-chat-critic-usDSnG/project/ECONOMY.md"
+              ]
+            },
+            "network": {
+              "enabled": true
+            }
+          },
+          "scope": "turn"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "approval-result",
+      "scenario": "permissions",
+      "response": {
+        "id": 81,
+        "result": {
+          "permissions": {
+            "fileSystem": {
+              "write": [
+                "/private/var/folders/pr/6x_bf79x5tq91wck08xdmbjh0000gn/T/relay-ai-chat-critic-usDSnG/project/ECONOMY.md"
+              ]
+            },
+            "network": {
+              "enabled": true
+            }
+          },
+          "scope": "turn"
+        }
+      }
+    },
+    {
+      "provider": "claude",
+      "event": "spawn",
+      "args": [
+        "-p",
+        "--input-format",
+        "stream-json",
+        "--output-format",
+        "stream-json",
+        "--verbose",
+        "--include-partial-messages",
+        "--safe-mode",
+        "--strict-mcp-config",
+        "--setting-sources",
+        "",
+        "--tools",
+        "Read,Glob,Grep,Edit,Write,Bash",
+        "--permission-mode",
+        "manual",
+        "--permission-prompt-tool",
+        "stdio",
+        "--restricted",
+        "--append-system-prompt",
+        "You are assisting in a shared code editor. For a requested change to the selected file, prefer returning the COMPLETE updated file in one fenced code block so the user can review and apply it through the editor. Do not claim changes were saved unless a tool actually saved them. Unsaved editor text can differ from disk. Ask for approval before changing files or running commands that mutate the workspace."
+      ]
+    },
+    {
+      "provider": "claude",
+      "event": "frame",
+      "frame": {
+        "request": {
+          "hooks": null,
+          "subtype": "initialize"
+        },
+        "request_id": "editor-init",
+        "type": "control_request"
+      }
+    },
+    {
+      "provider": "claude",
+      "event": "frame",
+      "frame": {
+        "message": {
+          "content": "SCENARIO:claude-write\n\nThe user is viewing this workspace file: ECONOMY.md. Read the saved workspace file when needed. Unsaved editor text may differ; changes are reconciled by the editor.",
+          "role": "user"
+        },
+        "parent_tool_use_id": null,
+        "session_id": "",
+        "type": "user"
+      }
+    },
+    {
+      "provider": "claude",
+      "event": "frame",
+      "frame": {
+        "response": {
+          "request_id": "critic-permission",
+          "response": {
+            "behavior": "allow",
+            "updatedInput": {
+              "content": "Reviewed fixture notes\n",
+              "file_path": "/private/var/folders/pr/6x_bf79x5tq91wck08xdmbjh0000gn/T/relay-ai-chat-critic-usDSnG/project/ECONOMY.md"
+            }
+          },
+          "subtype": "success"
+        },
+        "type": "control_response"
+      }
+    },
+    {
+      "provider": "claude",
+      "event": "approval-result",
+      "scenario": "claude-write",
+      "response": {
+        "response": {
+          "request_id": "critic-permission",
+          "response": {
+            "behavior": "allow",
+            "updatedInput": {
+              "content": "Reviewed fixture notes\n",
+              "file_path": "/private/var/folders/pr/6x_bf79x5tq91wck08xdmbjh0000gn/T/relay-ai-chat-critic-usDSnG/project/ECONOMY.md"
+            }
+          },
+          "subtype": "success"
+        },
+        "type": "control_response"
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "spawn",
+      "args": [
+        "app-server",
+        "--listen",
+        "stdio://"
+      ]
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 1,
+        "method": "initialize",
+        "params": {
+          "clientInfo": {
+            "name": "acme_code_editor",
+            "title": "Code Editor",
+            "version": "0.1.0"
+          }
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "method": "initialized",
+        "params": {}
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 2,
+        "method": "thread/start",
+        "params": {
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "user",
+          "cwd": "/private/var/folders/pr/6x_bf79x5tq91wck08xdmbjh0000gn/T/relay-ai-chat-critic-usDSnG/project",
+          "developerInstructions": "You are assisting in a shared code editor. For a requested change to the selected file, prefer returning the COMPLETE updated file in one fenced code block so the user can review and apply it through the editor. Do not claim changes were saved unless a tool actually saved them. Unsaved editor text can differ from disk. Ask for approval before changing files or running commands that mutate the workspace.",
+          "sandbox": "read-only"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 3,
+        "method": "turn/start",
+        "params": {
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "user",
+          "input": [
+            {
+              "text": "SCENARIO:permissions-missing\n\nThe user is viewing this workspace file: ECONOMY.md. Read the saved workspace file when needed. Unsaved editor text may differ; changes are reconciled by the editor.",
+              "type": "text"
+            }
+          ],
+          "sandboxPolicy": {
+            "networkAccess": false,
+            "type": "readOnly"
+          },
+          "threadId": "critic-thread"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "spawn",
+      "args": [
+        "app-server",
+        "--listen",
+        "stdio://"
+      ]
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 1,
+        "method": "initialize",
+        "params": {
+          "clientInfo": {
+            "name": "acme_code_editor",
+            "title": "Code Editor",
+            "version": "0.1.0"
+          }
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "method": "initialized",
+        "params": {}
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 2,
+        "method": "thread/resume",
+        "params": {
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "user",
+          "cwd": "/private/var/folders/pr/6x_bf79x5tq91wck08xdmbjh0000gn/T/relay-ai-chat-critic-usDSnG/project",
+          "developerInstructions": "You are assisting in a shared code editor. For a requested change to the selected file, prefer returning the COMPLETE updated file in one fenced code block so the user can review and apply it through the editor. Do not claim changes were saved unless a tool actually saved them. Unsaved editor text can differ from disk. Ask for approval before changing files or running commands that mutate the workspace.",
+          "sandbox": "read-only",
+          "threadId": "critic-thread"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 3,
+        "method": "turn/start",
+        "params": {
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "user",
+          "input": [
+            {
+              "text": "SCENARIO:giant-command\n\nThe user is viewing this workspace file: ECONOMY.md. Read the saved workspace file when needed. Unsaved editor text may differ; changes are reconciled by the editor.",
+              "type": "text"
+            }
+          ],
+          "sandboxPolicy": {
+            "networkAccess": false,
+            "type": "readOnly"
+          },
+          "threadId": "critic-thread"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 81,
+        "result": {
+          "decision": "accept"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "approval-result",
+      "scenario": "giant-command",
+      "response": {
+        "id": 81,
+        "result": {
+          "decision": "accept"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "spawn",
+      "args": [
+        "app-server",
+        "--listen",
+        "stdio://"
+      ]
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 1,
+        "method": "initialize",
+        "params": {
+          "clientInfo": {
+            "name": "acme_code_editor",
+            "title": "Code Editor",
+            "version": "0.1.0"
+          }
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "method": "initialized",
+        "params": {}
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 2,
+        "method": "thread/resume",
+        "params": {
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "user",
+          "cwd": "/private/var/folders/pr/6x_bf79x5tq91wck08xdmbjh0000gn/T/relay-ai-chat-critic-usDSnG/project",
+          "developerInstructions": "You are assisting in a shared code editor. For a requested change to the selected file, prefer returning the COMPLETE updated file in one fenced code block so the user can review and apply it through the editor. Do not claim changes were saved unless a tool actually saved them. Unsaved editor text can differ from disk. Ask for approval before changing files or running commands that mutate the workspace.",
+          "sandbox": "read-only",
+          "threadId": "critic-thread"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 3,
+        "method": "turn/start",
+        "params": {
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "user",
+          "input": [
+            {
+              "text": "SCENARIO:policy\n\nThe user is viewing this workspace file: ECONOMY.md. Read the saved workspace file when needed. Unsaved editor text may differ; changes are reconciled by the editor.",
+              "type": "text"
+            }
+          ],
+          "sandboxPolicy": {
+            "networkAccess": false,
+            "type": "readOnly"
+          },
+          "threadId": "critic-thread"
+        }
+      }
+    },
+    {
+      "provider": "claude",
+      "event": "spawn",
+      "args": [
+        "-p",
+        "--input-format",
+        "stream-json",
+        "--output-format",
+        "stream-json",
+        "--verbose",
+        "--include-partial-messages",
+        "--safe-mode",
+        "--strict-mcp-config",
+        "--setting-sources",
+        "",
+        "--tools",
+        "Read,Glob,Grep,Edit,Write,Bash",
+        "--permission-mode",
+        "manual",
+        "--permission-prompt-tool",
+        "stdio",
+        "--restricted",
+        "--append-system-prompt",
+        "You are assisting in a shared code editor. For a requested change to the selected file, prefer returning the COMPLETE updated file in one fenced code block so the user can review and apply it through the editor. Do not claim changes were saved unless a tool actually saved them. Unsaved editor text can differ from disk. Ask for approval before changing files or running commands that mutate the workspace."
+      ]
+    },
+    {
+      "provider": "claude",
+      "event": "frame",
+      "frame": {
+        "request": {
+          "hooks": null,
+          "subtype": "initialize"
+        },
+        "request_id": "editor-init",
+        "type": "control_request"
+      }
+    },
+    {
+      "provider": "claude",
+      "event": "frame",
+      "frame": {
+        "message": {
+          "content": "SCENARIO:policy\n\nThe user is viewing this workspace file: ECONOMY.md. Read the saved workspace file when needed. Unsaved editor text may differ; changes are reconciled by the editor.",
+          "role": "user"
+        },
+        "parent_tool_use_id": null,
+        "session_id": "",
+        "type": "user"
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "spawn",
+      "args": [
+        "app-server",
+        "--listen",
+        "stdio://"
+      ]
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 1,
+        "method": "initialize",
+        "params": {
+          "clientInfo": {
+            "name": "acme_code_editor",
+            "title": "Code Editor",
+            "version": "0.1.0"
+          }
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "method": "initialized",
+        "params": {}
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 2,
+        "method": "thread/start",
+        "params": {
+          "approvalPolicy": "never",
+          "approvalsReviewer": "user",
+          "cwd": "/private/var/folders/pr/6x_bf79x5tq91wck08xdmbjh0000gn/T/relay-ai-chat-critic-usDSnG/project",
+          "developerInstructions": "You are assisting in a shared code editor. For a requested change to the selected file, prefer returning the COMPLETE updated file in one fenced code block so the user can review and apply it through the editor. Do not claim changes were saved unless a tool actually saved them. Unsaved editor text can differ from disk. The user has explicitly enabled full access for this AI turn. You may change files and run commands without asking for permission. Explain meaningful changes and their results.",
+          "sandbox": "danger-full-access"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 3,
+        "method": "turn/start",
+        "params": {
+          "approvalPolicy": "never",
+          "approvalsReviewer": "user",
+          "input": [
+            {
+              "text": "SCENARIO:policy\n\nThe user is viewing this workspace file: ECONOMY.md. Read the saved workspace file when needed. Unsaved editor text may differ; changes are reconciled by the editor.",
+              "type": "text"
+            }
+          ],
+          "sandboxPolicy": {
+            "type": "dangerFullAccess"
+          },
+          "threadId": "critic-thread"
+        }
+      }
+    },
+    {
+      "provider": "claude",
+      "event": "spawn",
+      "args": [
+        "-p",
+        "--input-format",
+        "stream-json",
+        "--output-format",
+        "stream-json",
+        "--verbose",
+        "--include-partial-messages",
+        "--safe-mode",
+        "--strict-mcp-config",
+        "--setting-sources",
+        "",
+        "--tools",
+        "Read,Glob,Grep,Edit,Write,Bash",
+        "--permission-mode",
+        "bypassPermissions",
+        "--dangerously-skip-permissions",
+        "--append-system-prompt",
+        "You are assisting in a shared code editor. For a requested change to the selected file, prefer returning the COMPLETE updated file in one fenced code block so the user can review and apply it through the editor. Do not claim changes were saved unless a tool actually saved them. Unsaved editor text can differ from disk. The user has explicitly enabled full access for this AI turn. You may change files and run commands without asking for permission. Explain meaningful changes and their results."
+      ]
+    },
+    {
+      "provider": "claude",
+      "event": "frame",
+      "frame": {
+        "request": {
+          "hooks": null,
+          "subtype": "initialize"
+        },
+        "request_id": "editor-init",
+        "type": "control_request"
+      }
+    },
+    {
+      "provider": "claude",
+      "event": "frame",
+      "frame": {
+        "message": {
+          "content": "SCENARIO:policy\n\nThe user is viewing this workspace file: ECONOMY.md. Read the saved workspace file when needed. Unsaved editor text may differ; changes are reconciled by the editor.",
+          "role": "user"
+        },
+        "parent_tool_use_id": null,
+        "session_id": "",
+        "type": "user"
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "spawn",
+      "args": [
+        "login",
+        "status"
+      ]
+    },
+    {
+      "provider": "claude",
+      "event": "spawn",
+      "args": [
+        "auth",
+        "status"
+      ]
+    },
+    {
+      "provider": "codex",
+      "event": "spawn",
+      "args": [
+        "app-server",
+        "--listen",
+        "stdio://"
+      ]
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 1,
+        "method": "initialize",
+        "params": {
+          "clientInfo": {
+            "name": "acme_code_editor",
+            "title": "Code Editor",
+            "version": "0.1.0"
+          }
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "method": "initialized",
+        "params": {}
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 2,
+        "method": "thread/start",
+        "params": {
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "user",
+          "cwd": "/private/var/folders/pr/6x_bf79x5tq91wck08xdmbjh0000gn/T/relay-ai-chat-critic-usDSnG/project",
+          "developerInstructions": "You are assisting in a shared code editor. For a requested change to the selected file, prefer returning the COMPLETE updated file in one fenced code block so the user can review and apply it through the editor. Do not claim changes were saved unless a tool actually saved them. Unsaved editor text can differ from disk. Ask for approval before changing files or running commands that mutate the workspace.",
+          "sandbox": "read-only"
+        }
+      }
+    },
+    {
+      "provider": "codex",
+      "event": "frame",
+      "frame": {
+        "id": 3,
+        "method": "turn/start",
+        "params": {
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "user",
+          "input": [
+            {
+              "text": "SCENARIO:markdown-budget\n\nThe user is viewing this workspace file: ECONOMY.md. Read the saved workspace file when needed. Unsaved editor text may differ; changes are reconciled by the editor.",
+              "type": "text"
+            }
+          ],
+          "sandboxPolicy": {
+            "networkAccess": false,
+            "type": "readOnly"
+          },
+          "threadId": "critic-thread"
+        }
+      }
+    }
+  ]
+}

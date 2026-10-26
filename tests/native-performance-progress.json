@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "status": "native-validation-pending-visible-session-unlock",
+  "createdAt": "2026-10-12T16:52:38.794Z",
+  "referenceCommit": "a811aaf241df6e4f4d75da373e5d55d11fc8b300",
+  "frozenOriginalApp": "target/performance-baseline-a811aaf/Relay.app",
+  "originalUninstrumentedIdle": {
+    "report": "tests/native-performance-baseline-original-idle.json",
+    "chargedFootprintMiB": 84.899,
+    "allOwnedExited": true
+  },
+  "previousHelperQuietObservation": {
+    "report": "tests/native-performance-baseline-2.json",
+    "calibrationForLatestHelper": false,
+    "phases": {
+      "idle-no-documents": 85.242,
+      "ordinary-local": 128.733,
+      "ordinary-local-closed": 95.708,
+      "eight-ordinary-open": 128.539,
+      "eight-ordinary-closed": 97.436,
+      "paired-no-documents": 97.305,
+      "ordinary-paired": 123.733,
+      "high-line-open": 239.176,
+      "high-line-after-input": 263.567,
+      "high-line-closed-natural-2s": 139.029,
+      "high-line-closed-natural-8s": 138.982,
+      "phone-disconnected": 133.651,
+      "ten-ordinary-cycles-closed": 104.252,
+      "recovery-closed": 103.346,
+      "optional-fake-ai-complete": 102.214,
+      "optional-empty-pty": 102.264,
+      "optional-pty-stopped": 100.711
+    },
+    "nativeTrustedInputObservedMaximumMilliseconds": 1391.6744161397219,
+    "allOwnedExited": true
+  },
+  "candidateMeasured": false,
+  "numericBudgetsCalibrated": false,
+  "toolingValidation": "tests/native-performance-tooling-validation.json",
+  "preflightCommand": "node scripts/native-performance-gate.cjs --preflight 1",
+  "requiredNextSteps": [
+    "Finish candidate correctness checks, enable the production bounded editor default and build the release app",
+    "Run the release runner; it validates quiet/visible-session preflight and preserves a unique artifact directory",
+    "Capture two valid quiet baseline trials with the latest identical native helper; freeze numeric budgets before any candidate trial",
+    "Capture serial baseline drift, candidate, candidate, baseline drift with unchanged frozen budgets",
+    "Validate every reference and candidate, including conservative natural retention and unchanged latency/memory stability rails"
+  ],
+  "memoryMeaning": "Sum of per-task macOS footprint charges, including native wrapper, Rust host and three attributed WebKit roles; not exact aggregate physical system RAM. RSS and owned paired Chromium cost are reported separately.",
+  "updatedAt": "2026-10-12T20:13:20.203Z",
+  "runner": "node scripts/native-performance-run.cjs --baseline-ref a811aaf --app target/desktop/Relay.app",
+  "latestPreflight": {
+    "status": "rejected-before-native-launch",
+    "checkedAt": "2026-10-12T20:13:20.201Z",
+    "reason": "Explicit CGSSessionScreenIsLocked=Yes; rejected before native launch",
+    "explicitSessionLockDetected": true,
+    "nativeAppLaunched": false,
+    "caffeinateStarted": false
+  },
+  "supplementalBrowserDiagnostic": {
+    "status": "candidate-retry-complete-reference-guard-limited",
+    "tool": "scripts/native-performance-browser-diagnostic.cjs",
+    "nativeAppLaunched": false,
+    "nativeGateVerdict": false,
+    "sourceSha256": "a1bc0b9b60bede25491b282d7228b208a3436d01f0149202a2020d1e179bd6d6",
+    "method": "Two headless Chromium contexts and an isolated copied embedded release Rust host; ordinary24 trusted keys, high-line3 attempted trusted keys, scalar observers, natural heap checkpoints and final separately forced GC, exact owned task footprint/RSS, no real providers or shell/tunnel.",
+    "safety": "3GiB Chrome RSS guard may preserve an incomplete baseline. Compare only matching completed phases/sample counts; this cannot replace native release measurements.",
+    "nativeQualityBarFrozenBeforeSupplementalData": "target/performance-baseline-a811aaf/harness-manifest-v3.json",
+    "candidateApp": "/Users/developer/acme/code_editor/target/performance-browser-diagnostics/2026-10-12T18-59-39-628Z-ce10c993/candidate/Relay.app",
+    "candidateManifest": "/Users/developer/acme/code_editor/target/performance-browser-diagnostics/2026-10-12T18-59-39-628Z-ce10c993/candidate/manifest.json",
+    "candidateSignedHostSHA256": "3a80a4a3d586f2854bd0dfde4e786e81c5cc126c694eda6d8667746fb8989e43",
+    "candidateNativeWrapperSHA256": "d5df972ee6eb9eae2c6d3ea04e3b3574d5df16c1725a652276662de18e36959b",
+    "outputPrefix": "/Users/developer/acme/code_editor/tests/native-performance-browser-diagnostic-2026-10-12T18-59-39-628Z-ce10c993",
+    "rawBaseline": "/Users/developer/acme/code_editor/tests/native-performance-browser-diagnostic-2026-10-12T18-59-39-628Z-ce10c993-baseline.json",
+    "provenance": "target/performance-browser-diagnostics/2026-10-12T18-59-39-628Z-ce10c993/cleanup-resume-provenance.json",
+    "candidateReport": "tests/native-performance-browser-diagnostic-2026-10-12T18-59-39-628Z-ce10c993-candidate-retry-1-candidate.json",
+    "comparisonReport": "tests/native-performance-browser-diagnostic-2026-10-12T18-59-39-628Z-ce10c993-candidate-retry-1-comparison.json",
+    "ordinaryPeerLatencyConcern": true
+  },
+  "nativeCalibration": {
+    "directory": "/Users/developer/acme/code_editor/target/performance-runs/2026-10-12T19-27-10-289Z-baseline-calibration-0f0b40ac",
+    "prepared": "/Users/developer/acme/code_editor/target/performance-runs/2026-10-12T19-27-10-289Z-baseline-calibration-0f0b40ac/prepared-baseline.json",
+    "budgets": "/Users/developer/acme/code_editor/target/performance-runs/2026-10-12T19-27-10-289Z-baseline-calibration-0f0b40ac/budgets.json",
+    "prefix": "/Users/developer/acme/code_editor/target/performance-runs/2026-10-12T19-27-10-289Z-baseline-calibration-0f0b40ac/calibration",
+    "status": "rejected-unstable-reference-cohort",
+    "candidateNativeCaptured": false,
+    "firstReferenceReport": "target/performance-runs/2026-10-12T19-27-10-289Z-baseline-calibration-0f0b40ac/calibration-calibration-baseline-1.json",
+    "firstReferenceComplete": true,
+    "secondReferenceRunning": false,
+    "observedEarlyIdleSpread": {
+      "firstMiB": 111.508,
+      "secondMiB": 90.03,
+      "note": "Observed rejected cohort; no numeric budget or widened allowance."
+    },
+    "failureReport": "tests/native-performance-calibration-rejected-2026-10-12T19-27-10-289Z.json",
+    "secondReferenceComplete": true,
+    "allOwnedExited": true
+  },
+  "preflightHistory": [
+    {
+      "checkedAt": "2026-10-12T17:16:02.395Z",
+      "status": "rejected-before-native-launch",
+      "reason": "Explicit CGSSessionScreenIsLocked = Yes observed again; native submitted-frame samples require the visible unlocked session"
+    },
+    {
+      "status": "pass",
+      "checkedAt": "2026-10-12T19:35:00.297Z",
+      "sessionLockFlag": "absent",
+      "explicitSessionLockDetected": false,
+      "activeCompilerCount": 0,
+      "nativeVisibility": "The actual native trial additionally requires its visible-window double-frame barrier; an absent lock flag alone does not prove frame visibility."
+    }
+  ],
+  "temporaryKeepAwake": {
+    "authorized": true,
+    "utility": "/usr/bin/caffeinate",
+    "flags": [
+      "-d",
+      "-i"
+    ],
+    "localManualVerified": true,
+    "lifetime": "Only the invoked gate utility lifetime; verify exact owned wrapper exit",
+    "systemSettingsChanged": false,
+    "lockBypass": false,
+    "benchmarkSourceChanged": false
+  }
+}

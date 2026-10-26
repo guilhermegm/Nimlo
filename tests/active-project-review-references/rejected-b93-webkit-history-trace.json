@@ -1,0 +1,44 @@
+{
+  "candidateSha256": "b93ce45810c22a7f3bc868a65ce920eae2cb93fce141178e3ea7b874b40d0d8d",
+  "engine": "webkit",
+  "status": "reject",
+  "acceptedTasks": 18,
+  "fixture": {
+    "assets": "Unmodified embedded release",
+    "delayedOneBootstrapMs": 300,
+    "freshOutputBeforeSelectionMs": 330,
+    "note": "Runs captured before fixture wait was shortened to250ms; native500ms history callback falls inside held bootstrap in both sequences."
+  },
+  "finding": "Application-issued old-project terminal_history during project selection; host correctly fences with stale_project. No stale terminal_resize after selection.",
+  "wire": {
+    "name": "delayed-selection-wire",
+    "sent": [
+      {
+        "type": "select_project",
+        "requestId": "52",
+        "project": "B",
+        "generation": 26
+      },
+      {
+        "type": "terminal_history",
+        "requestId": "53",
+        "project": "B"
+      },
+      {
+        "type": "terminal_resize",
+        "requestId": "54",
+        "project": "A",
+        "generation": 27
+      }
+    ],
+    "errors": [
+      {
+        "code": "stale_project",
+        "requestId": "53",
+        "commandType": "terminal_history",
+        "actor": "app",
+        "project": "B"
+      }
+    ]
+  }
+}

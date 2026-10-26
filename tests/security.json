@@ -1,0 +1,291 @@
+{
+  "startedAt": "2026-10-16T07:53:18.735Z",
+  "finishedAt": "2026-10-16T07:53:20.292Z",
+  "status": "pass",
+  "platform": "darwin/arm64",
+  "node": "v20.17.0",
+  "binary": "target/release/nimlo-editor",
+  "binarySha256": "cddbb20a14bffe2dc5688c84958723f41740701ff4d69a5847a92bc59eb3622f",
+  "isolatedTemporaryWorkspace": true,
+  "randomLoopbackPorts": true,
+  "aiInferenceRequests": 0,
+  "credentialsRedacted": true,
+  "checks": [
+    {
+      "name": "unauthenticated bootstrap returns 401",
+      "status": "pass",
+      "milliseconds": 48,
+      "evidence": {
+        "httpStatus": 401
+      }
+    },
+    {
+      "name": "cross-origin authenticated bootstrap returns 403",
+      "status": "pass",
+      "milliseconds": 5,
+      "evidence": {
+        "httpStatus": 403
+      }
+    },
+    {
+      "name": "unauthenticated WebSocket upgrade returns 401",
+      "status": "pass",
+      "milliseconds": 7,
+      "evidence": {
+        "httpStatus": 401,
+        "transport": "real WebSocket upgrade"
+      }
+    },
+    {
+      "name": "cross-origin WebSocket upgrade returns 403",
+      "status": "pass",
+      "milliseconds": 2,
+      "evidence": {
+        "httpStatus": 403
+      }
+    },
+    {
+      "name": "file traversal is refused",
+      "status": "pass",
+      "milliseconds": 2,
+      "evidence": {
+        "errorCode": "path"
+      }
+    },
+    {
+      "name": "absolute file path is refused",
+      "status": "pass",
+      "milliseconds": 1,
+      "evidence": {
+        "errorCode": "path"
+      }
+    },
+    {
+      "name": "file symlink is refused",
+      "status": "pass",
+      "milliseconds": 1,
+      "evidence": {
+        "errorCode": "path"
+      }
+    },
+    {
+      "name": "directory symlink is refused",
+      "status": "pass",
+      "milliseconds": 2,
+      "evidence": {
+        "errorCode": "path"
+      }
+    },
+    {
+      "name": "binary file is refused",
+      "status": "pass",
+      "milliseconds": 1,
+      "evidence": {
+        "errorCode": "encoding"
+      }
+    },
+    {
+      "name": "file creation cannot traverse or follow a directory symlink",
+      "status": "pass",
+      "milliseconds": 4,
+      "evidence": {
+        "errorCode": "path",
+        "outsideWrites": false
+      }
+    },
+    {
+      "name": "pairing code is single use",
+      "status": "pass",
+      "milliseconds": 3,
+      "evidence": {
+        "httpStatusAfterReuse": 401
+      }
+    },
+    {
+      "name": "paired phone cannot copy another device ID in a WebSocket upgrade",
+      "status": "pass",
+      "milliseconds": 2,
+      "evidence": {
+        "httpStatus": 403,
+        "transport": "real WebSocket upgrade",
+        "controllerStillConnected": true
+      }
+    },
+    {
+      "name": "paired phone immediately creates, edits and saves without taking control",
+      "status": "pass",
+      "milliseconds": 144,
+      "evidence": {
+        "create": true,
+        "edit": true,
+        "save": true,
+        "controlRequested": false
+      }
+    },
+    {
+      "name": "simultaneous paired edits reject the stale revision instead of overwriting",
+      "status": "pass",
+      "milliseconds": 118,
+      "evidence": {
+        "acceptedEdits": 1,
+        "rejectedEdits": 1,
+        "staleSaveRejected": true,
+        "staleDiscardRejected": true,
+        "unversionedDiscardRejected": true,
+        "errorCode": "stale_revision"
+      }
+    },
+    {
+      "name": "terminal viewport ownership does not change generation or revoke desktop editing",
+      "status": "pass",
+      "milliseconds": 102,
+      "evidence": {
+        "generationUnchanged": true,
+        "desktopEditAndSave": true
+      }
+    },
+    {
+      "name": "closing and reopening a shared file does not reuse its earlier revision",
+      "status": "pass",
+      "milliseconds": 198,
+      "evidence": {
+        "revisionIncreased": true,
+        "preCloseEditRejected": true,
+        "bufferUnchanged": true
+      }
+    },
+    {
+      "name": "file broadcasts arrive before create, edit, save, close and reopen acknowledgements",
+      "status": "pass",
+      "milliseconds": 224,
+      "evidence": {
+        "operations": [
+          "create",
+          "edit",
+          "save",
+          "close",
+          "reopen"
+        ],
+        "broadcastsBeforeAcknowledgements": true,
+        "reopenedClean": true
+      }
+    },
+    {
+      "name": "paired phone reads shared AI settings while only the host can change them",
+      "status": "pass",
+      "milliseconds": 14,
+      "evidence": {
+        "settingsShared": true,
+        "invalidProviderRejected": true,
+        "aiInferenceRequests": 0
+      }
+    },
+    {
+      "name": "only the host attaches a new project and invalidates earlier workspace commands",
+      "status": "pass",
+      "milliseconds": 55,
+      "evidence": {
+        "pairedProjectSwitchDenied": true,
+        "desktopProjectSwitch": true,
+        "errorCode": "stale_generation",
+        "staleWritePrevented": true
+      }
+    },
+    {
+      "name": "same-device reconnect replaces its previous connection without changing access generation",
+      "status": "pass",
+      "milliseconds": 83,
+      "evidence": {
+        "previousConnectionClosed": true,
+        "replacementWritable": true,
+        "generationUnchanged": true
+      }
+    },
+    {
+      "name": "acknowledged edit is unsaved and does not alter the project file",
+      "status": "pass",
+      "milliseconds": 28,
+      "evidence": {
+        "dirty": true,
+        "projectFileUnchanged": true
+      }
+    },
+    {
+      "name": "paired phone starts the host terminal while desktop input remains enabled",
+      "status": "pass",
+      "milliseconds": 33,
+      "evidence": {
+        "shell": "/bin/sh",
+        "running": true,
+        "pairedInput": true,
+        "desktopInput": true
+      }
+    },
+    {
+      "name": "browser disconnect leaves terminal and acknowledged drafts in the host",
+      "status": "pass",
+      "milliseconds": 2,
+      "evidence": {
+        "terminalRunning": true,
+        "draftRetained": true
+      }
+    },
+    {
+      "name": "paired phone cannot copy another disconnected device ID",
+      "status": "pass",
+      "milliseconds": 2,
+      "evidence": {
+        "httpStatus": 403,
+        "controllerDisconnected": true
+      }
+    },
+    {
+      "name": "host shutdown stops its terminal process",
+      "status": "pass",
+      "milliseconds": 26,
+      "evidence": {
+        "hostSignal": "SIGINT",
+        "terminalStopped": true
+      }
+    },
+    {
+      "name": "host restart revokes prior launch and paired sessions",
+      "status": "pass",
+      "milliseconds": 7,
+      "evidence": {
+        "oldCookiesHttpStatus": 401,
+        "oldCookieWebSocketStatus": 401
+      }
+    },
+    {
+      "name": "host restart recovers the durable unsaved buffer without restarting the terminal",
+      "status": "pass",
+      "milliseconds": 4,
+      "evidence": {
+        "draftRecovered": true,
+        "dirty": true,
+        "projectFileUnchanged": true,
+        "terminalRunning": false
+      }
+    },
+    {
+      "name": "an acknowledged draft survives immediate forced host termination",
+      "status": "pass",
+      "milliseconds": 4,
+      "evidence": {
+        "hostSignal": "SIGKILL",
+        "draftRecovered": true,
+        "projectFileUnchanged": true,
+        "terminalRunning": false
+      }
+    },
+    {
+      "name": "outside fixtures remain unchanged",
+      "status": "pass",
+      "milliseconds": 0,
+      "evidence": {
+        "outsideFilesUnchanged": true
+      }
+    }
+  ]
+}

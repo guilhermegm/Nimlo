@@ -1,0 +1,835 @@
+{
+  "status": "diagnostic comparison; no accepted final contender",
+  "benchmarkSha256": "08ba070fe374c5049ae30b0ba8223a912bcd20ed7f16f3614cba3af07d1d99ed",
+  "schedule": [
+    "baseline-1",
+    "candidate-1",
+    "attribution-1"
+  ],
+  "method": "Natural normal-frame paired native keys; explicit shared-state and passive native setter revision+frame barrier; complete raw per-key/CDP/heap/RSS data inindividual artifacts",
+  "runs": [
+    {
+      "tag": "baseline-1",
+      "binarySha256": "e089dc02d8dbc02b8d6252bb980a84a3459ec6cba013bda85dd8a01bfd605c62",
+      "durationSeconds": 201.951,
+      "hostRssPeakMiB": 46.25,
+      "hostTaskFootprintPeakMiB": 46.1,
+      "probe": {
+        "attemptedKeys": 8,
+        "inputEvents": 7,
+        "readonly": true,
+        "conflict": true,
+        "length": 1047559,
+        "pass": false
+      },
+      "trials": [
+        {
+          "label": "ordinary1000-line paired trial 1",
+          "wall": 3143.5115000000005,
+          "inputMedian": 0.5,
+          "phoneWrites": 16,
+          "metrics": {
+            "desktop": {
+              "TaskDuration": 0.17002099999999998,
+              "ScriptDuration": 0.044038,
+              "LayoutDuration": 0.019269,
+              "RecalcStyleDuration": 0.006533,
+              "LayoutCount": 128,
+              "RecalcStyleCount": 113
+            },
+            "phone": {
+              "TaskDuration": 0.21259199999999998,
+              "ScriptDuration": 0.031495,
+              "LayoutDuration": 0.080921,
+              "RecalcStyleDuration": 0.015276,
+              "LayoutCount": 64,
+              "RecalcStyleCount": 64
+            }
+          }
+        },
+        {
+          "label": "ordinary1000-line paired trial 2",
+          "wall": 3225.5730000000003,
+          "inputMedian": 0.5,
+          "phoneWrites": 16,
+          "metrics": {
+            "desktop": {
+              "TaskDuration": 0.16230899999999998,
+              "ScriptDuration": 0.039152,
+              "LayoutDuration": 0.018045,
+              "RecalcStyleDuration": 0.006142,
+              "LayoutCount": 128,
+              "RecalcStyleCount": 112
+            },
+            "phone": {
+              "TaskDuration": 0.209249,
+              "ScriptDuration": 0.029051,
+              "LayoutDuration": 0.07882,
+              "RecalcStyleDuration": 0.015309,
+              "LayoutCount": 64,
+              "RecalcStyleCount": 64
+            }
+          }
+        },
+        {
+          "label": "varied209k-line paired trial 1",
+          "wall": 28353.532459000002,
+          "inputMedian": 7.799999713897705,
+          "phoneWrites": 16,
+          "metrics": {
+            "desktop": {
+              "TaskDuration": 9.327570000000001,
+              "ScriptDuration": 0.967726,
+              "LayoutDuration": 1.157338,
+              "RecalcStyleDuration": 0.019696,
+              "LayoutCount": 129,
+              "RecalcStyleCount": 115
+            },
+            "phone": {
+              "TaskDuration": 22.936348,
+              "ScriptDuration": 3.313203,
+              "LayoutDuration": 9.768902,
+              "RecalcStyleDuration": 2.716291,
+              "LayoutCount": 64,
+              "RecalcStyleCount": 64
+            }
+          }
+        },
+        {
+          "label": "varied209k-line paired trial 2",
+          "wall": 27810.328875000007,
+          "inputMedian": 7.900000095367432,
+          "phoneWrites": 16,
+          "metrics": {
+            "desktop": {
+              "TaskDuration": 8.009522,
+              "ScriptDuration": 0.768929,
+              "LayoutDuration": 1.041403,
+              "RecalcStyleDuration": 0.005205,
+              "LayoutCount": 127,
+              "RecalcStyleCount": 111
+            },
+            "phone": {
+              "TaskDuration": 22.71002,
+              "ScriptDuration": 3.429525,
+              "LayoutDuration": 9.952898,
+              "RecalcStyleDuration": 2.796625,
+              "LayoutCount": 64,
+              "RecalcStyleCount": 64
+            }
+          }
+        },
+        {
+          "label": "varied209k-line phone AI tab trial 1",
+          "wall": 9965.699083999993,
+          "inputMedian": 6.400000095367432,
+          "phoneWrites": 16,
+          "metrics": {
+            "desktop": {
+              "TaskDuration": 6.757675,
+              "ScriptDuration": 0.703161,
+              "LayoutDuration": 0.981558,
+              "RecalcStyleDuration": 0.025874,
+              "LayoutCount": 128,
+              "RecalcStyleCount": 113
+            },
+            "phone": {
+              "TaskDuration": 1.870173,
+              "ScriptDuration": 1.602322,
+              "LayoutDuration": 0.002598,
+              "RecalcStyleDuration": 0.001738,
+              "LayoutCount": 16,
+              "RecalcStyleCount": 48
+            }
+          }
+        },
+        {
+          "label": "varied209k-line phone AI tab trial 2",
+          "wall": 8817.44654199999,
+          "inputMedian": 6.400000095367432,
+          "phoneWrites": 16,
+          "metrics": {
+            "desktop": {
+              "TaskDuration": 6.462184,
+              "ScriptDuration": 0.656296,
+              "LayoutDuration": 0.975058,
+              "RecalcStyleDuration": 0.004668,
+              "LayoutCount": 128,
+              "RecalcStyleCount": 112
+            },
+            "phone": {
+              "TaskDuration": 1.7531780000000001,
+              "ScriptDuration": 1.505938,
+              "LayoutDuration": 0.002584,
+              "RecalcStyleDuration": 0.001645,
+              "LayoutCount": 16,
+              "RecalcStyleCount": 48
+            }
+          }
+        },
+        {
+          "label": "near-limit single-line paired trial",
+          "wall": 4969.186875000014,
+          "inputMedian": 3.9000000953674316,
+          "phoneWrites": 16,
+          "metrics": {
+            "desktop": {
+              "TaskDuration": 0.714279,
+              "ScriptDuration": 0.263617,
+              "LayoutDuration": 0.007496,
+              "RecalcStyleDuration": 0.003476,
+              "LayoutCount": 96,
+              "RecalcStyleCount": 81
+            },
+            "phone": {
+              "TaskDuration": 0.6935169999999999,
+              "ScriptDuration": 0.044823,
+              "LayoutDuration": 0.539286,
+              "RecalcStyleDuration": 0.003006,
+              "LayoutCount": 48,
+              "RecalcStyleCount": 64
+            }
+          }
+        }
+      ],
+      "phaseRSS": [
+        {
+          "name": "idle host, no browsers or shell",
+          "hostTaskFootprintMiB": 1.938
+        },
+        {
+          "name": "desktop, no files",
+          "rendererRSSMiB": 719.75,
+          "hostTaskFootprintMiB": 2.657,
+          "desktopRetainedJS": 1.438
+        },
+        {
+          "name": "paired desktop and phone, no files",
+          "rendererRSSMiB": 775.594,
+          "hostTaskFootprintMiB": 3.204,
+          "desktopRetainedJS": 1.467,
+          "phoneRetainedJS": 2.257,
+          "phoneNativeDomNatural": 1533,
+          "phoneNativeDomRetained": 1017
+        },
+        {
+          "name": "ordinary paired source,32keys and12remote replacements",
+          "rendererRSSMiB": 759.016,
+          "hostTaskFootprintMiB": 11.4,
+          "desktopRetainedJS": 2.511,
+          "phoneRetainedJS": 2.504,
+          "phoneNativeDomNatural": 12776,
+          "phoneNativeDomRetained": 3332
+        },
+        {
+          "name": "eight near-limit sources, varied209k-line native display",
+          "rendererRSSMiB": 2224.484,
+          "hostTaskFootprintMiB": 29,
+          "desktopRetainedJS": 16.581,
+          "phoneRetainedJS": 16.571,
+          "phoneNativeDomNatural": 420850,
+          "phoneNativeDomRetained": 420138
+        },
+        {
+          "name": "varied209k-line paired source after32native keys",
+          "rendererRSSMiB": 2021.891,
+          "hostTaskFootprintMiB": 28.3,
+          "desktopRetainedJS": 16.657,
+          "phoneRetainedJS": 16.6,
+          "phoneNativeDomNatural": 839316,
+          "phoneNativeDomRetained": 420140
+        },
+        {
+          "name": "varied209k-line paired source after12remote replacements",
+          "rendererRSSMiB": 3887.203,
+          "hostTaskFootprintMiB": 25.1,
+          "desktopRetainedJS": 16.658,
+          "phoneRetainedJS": 16.601,
+          "phoneNativeDomNatural": 1258339,
+          "phoneNativeDomRetained": 420143
+        },
+        {
+          "name": "varied209k-line typing with phone native pane hidden",
+          "rendererRSSMiB": 1317.734,
+          "hostTaskFootprintMiB": 36.3,
+          "desktopRetainedJS": 16.705,
+          "phoneRetainedJS": 16.634,
+          "phoneNativeDomNatural": 839429,
+          "phoneNativeDomRetained": 420142
+        },
+        {
+          "name": "near-limit single-line paired source after16native keys",
+          "rendererRSSMiB": 1879.281,
+          "hostTaskFootprintMiB": 35.4,
+          "desktopRetainedJS": 16.708,
+          "phoneRetainedJS": 16.649,
+          "phoneNativeDomNatural": 424652,
+          "phoneNativeDomRetained": 1240
+        },
+        {
+          "name": "focused sources closed, no PTY",
+          "rendererRSSMiB": 2214.797,
+          "hostTaskFootprintMiB": 25,
+          "desktopRetainedJS": 2.591,
+          "phoneRetainedJS": 2.543,
+          "phoneNativeDomNatural": 421070,
+          "phoneNativeDomRetained": 1047
+        }
+      ]
+    },
+    {
+      "tag": "candidate-1",
+      "binarySha256": "821426c89c350e4d864e7be12a1db00c5fdf543d51e1ac08e47d3aab063bbb35",
+      "durationSeconds": 161.53,
+      "hostRssPeakMiB": 52.922,
+      "hostTaskFootprintPeakMiB": 45.2,
+      "probe": {
+        "attemptedKeys": 16,
+        "inputEvents": 16,
+        "readonly": false,
+        "conflict": false,
+        "length": 1047568,
+        "pass": true
+      },
+      "trials": [
+        {
+          "label": "ordinary1000-line paired trial 1",
+          "wall": 3195.291874999999,
+          "inputMedian": 0.40000009536743164,
+          "phoneWrites": 16,
+          "metrics": {
+            "desktop": {
+              "TaskDuration": 0.13530399999999998,
+              "ScriptDuration": 0.035015,
+              "LayoutDuration": 0.011705,
+              "RecalcStyleDuration": 0.003844,
+              "LayoutCount": 80,
+              "RecalcStyleCount": 65
+            },
+            "phone": {
+              "TaskDuration": 0.19985,
+              "ScriptDuration": 0.027039,
+              "LayoutDuration": 0.077834,
+              "RecalcStyleDuration": 0.015913,
+              "LayoutCount": 48,
+              "RecalcStyleCount": 64
+            }
+          }
+        },
+        {
+          "label": "ordinary1000-line paired trial 2",
+          "wall": 3238.41,
+          "inputMedian": 0.39999961853027344,
+          "phoneWrites": 16,
+          "metrics": {
+            "desktop": {
+              "TaskDuration": 0.13516999999999998,
+              "ScriptDuration": 0.033105,
+              "LayoutDuration": 0.011667,
+              "RecalcStyleDuration": 0.003853,
+              "LayoutCount": 80,
+              "RecalcStyleCount": 64
+            },
+            "phone": {
+              "TaskDuration": 0.19804,
+              "ScriptDuration": 0.024813,
+              "LayoutDuration": 0.077146,
+              "RecalcStyleDuration": 0.014939,
+              "LayoutCount": 48,
+              "RecalcStyleCount": 64
+            }
+          }
+        },
+        {
+          "label": "varied209k-line paired trial 1",
+          "wall": 23863.921708,
+          "inputMedian": 6.699999809265137,
+          "phoneWrites": 16,
+          "metrics": {
+            "desktop": {
+              "TaskDuration": 6.198770000000001,
+              "ScriptDuration": 0.5939,
+              "LayoutDuration": 1.021925,
+              "RecalcStyleDuration": 0.019614,
+              "LayoutCount": 80,
+              "RecalcStyleCount": 65
+            },
+            "phone": {
+              "TaskDuration": 18.920099999999998,
+              "ScriptDuration": 2.658058,
+              "LayoutDuration": 8.289396,
+              "RecalcStyleDuration": 2.562932,
+              "LayoutCount": 48,
+              "RecalcStyleCount": 64
+            }
+          }
+        },
+        {
+          "label": "varied209k-line paired trial 2",
+          "wall": 23223.293416999993,
+          "inputMedian": 6.5,
+          "phoneWrites": 16,
+          "metrics": {
+            "desktop": {
+              "TaskDuration": 5.72076,
+              "ScriptDuration": 0.6016699999999999,
+              "LayoutDuration": 1.004922,
+              "RecalcStyleDuration": 0.003823,
+              "LayoutCount": 80,
+              "RecalcStyleCount": 64
+            },
+            "phone": {
+              "TaskDuration": 18.488789999999998,
+              "ScriptDuration": 2.619994,
+              "LayoutDuration": 8.186032,
+              "RecalcStyleDuration": 2.531291,
+              "LayoutCount": 48,
+              "RecalcStyleCount": 64
+            }
+          }
+        },
+        {
+          "label": "varied209k-line phone AI tab trial 1",
+          "wall": 6882.12054199999,
+          "inputMedian": 6.299999713897705,
+          "phoneWrites": 16,
+          "metrics": {
+            "desktop": {
+              "TaskDuration": 5.179568000000001,
+              "ScriptDuration": 0.587047,
+              "LayoutDuration": 0.946384,
+              "RecalcStyleDuration": 0.016695,
+              "LayoutCount": 80,
+              "RecalcStyleCount": 65
+            },
+            "phone": {
+              "TaskDuration": 1.771754,
+              "ScriptDuration": 1.534497,
+              "LayoutDuration": 0.00245,
+              "RecalcStyleDuration": 0.001529,
+              "LayoutCount": 16,
+              "RecalcStyleCount": 48
+            }
+          }
+        },
+        {
+          "label": "varied209k-line phone AI tab trial 2",
+          "wall": 6703.422917000018,
+          "inputMedian": 6.099999904632568,
+          "phoneWrites": 16,
+          "metrics": {
+            "desktop": {
+              "TaskDuration": 5.1444589999999994,
+              "ScriptDuration": 0.5807300000000001,
+              "LayoutDuration": 0.932298,
+              "RecalcStyleDuration": 0.003431,
+              "LayoutCount": 80,
+              "RecalcStyleCount": 64
+            },
+            "phone": {
+              "TaskDuration": 1.652017,
+              "ScriptDuration": 1.483779,
+              "LayoutDuration": 0.00239,
+              "RecalcStyleDuration": 0.001513,
+              "LayoutCount": 16,
+              "RecalcStyleCount": 48
+            }
+          }
+        },
+        {
+          "label": "near-limit single-line paired trial",
+          "wall": 4327.727374999988,
+          "inputMedian": 3.5,
+          "phoneWrites": 16,
+          "metrics": {
+            "desktop": {
+              "TaskDuration": 0.673304,
+              "ScriptDuration": 0.254293,
+              "LayoutDuration": 0.006061,
+              "RecalcStyleDuration": 0.003096,
+              "LayoutCount": 64,
+              "RecalcStyleCount": 49
+            },
+            "phone": {
+              "TaskDuration": 0.664303,
+              "ScriptDuration": 0.040336,
+              "LayoutDuration": 0.522378,
+              "RecalcStyleDuration": 0.00268,
+              "LayoutCount": 32,
+              "RecalcStyleCount": 48
+            }
+          }
+        }
+      ],
+      "phaseRSS": [
+        {
+          "name": "idle host, no browsers or shell",
+          "hostTaskFootprintMiB": 1.907
+        },
+        {
+          "name": "desktop, no files",
+          "rendererRSSMiB": 723.359,
+          "hostTaskFootprintMiB": 2.704,
+          "desktopRetainedJS": 1.441
+        },
+        {
+          "name": "paired desktop and phone, no files",
+          "rendererRSSMiB": 775.422,
+          "hostTaskFootprintMiB": 3.173,
+          "desktopRetainedJS": 1.47,
+          "phoneRetainedJS": 2.26,
+          "phoneNativeDomNatural": 1532,
+          "phoneNativeDomRetained": 1017
+        },
+        {
+          "name": "ordinary paired source,32keys and12remote replacements",
+          "rendererRSSMiB": 699.281,
+          "hostTaskFootprintMiB": 7.282,
+          "desktopRetainedJS": 2.514,
+          "phoneRetainedJS": 2.505,
+          "phoneNativeDomNatural": 11447,
+          "phoneNativeDomRetained": 3332
+        },
+        {
+          "name": "eight near-limit sources, varied209k-line native display",
+          "rendererRSSMiB": 2175.172,
+          "hostTaskFootprintMiB": 26.2,
+          "desktopRetainedJS": 10.492,
+          "phoneRetainedJS": 10.48,
+          "phoneNativeDomNatural": 420814,
+          "phoneNativeDomRetained": 420138
+        },
+        {
+          "name": "varied209k-line paired source after32native keys",
+          "rendererRSSMiB": 4099.484,
+          "hostTaskFootprintMiB": 26.3,
+          "desktopRetainedJS": 10.524,
+          "phoneRetainedJS": 10.493,
+          "phoneNativeDomNatural": 1677486,
+          "phoneNativeDomRetained": 420140
+        },
+        {
+          "name": "varied209k-line paired source after12remote replacements",
+          "rendererRSSMiB": 6091.766,
+          "hostTaskFootprintMiB": 33.2,
+          "desktopRetainedJS": 10.524,
+          "phoneRetainedJS": 10.492,
+          "phoneNativeDomNatural": 1258280,
+          "phoneNativeDomRetained": 420143
+        },
+        {
+          "name": "varied209k-line typing with phone native pane hidden",
+          "rendererRSSMiB": 1721.547,
+          "hostTaskFootprintMiB": 36.1,
+          "desktopRetainedJS": 10.57,
+          "phoneRetainedJS": 10.523,
+          "phoneNativeDomNatural": 1677735,
+          "phoneNativeDomRetained": 420142
+        },
+        {
+          "name": "near-limit single-line paired source after16native keys",
+          "rendererRSSMiB": 2595.5,
+          "hostTaskFootprintMiB": 25.5,
+          "desktopRetainedJS": 10.572,
+          "phoneRetainedJS": 10.537,
+          "phoneNativeDomNatural": 424252,
+          "phoneNativeDomRetained": 1240
+        },
+        {
+          "name": "focused sources closed, no PTY",
+          "rendererRSSMiB": 2363.656,
+          "hostTaskFootprintMiB": 23.1,
+          "desktopRetainedJS": 2.567,
+          "phoneRetainedJS": 2.545,
+          "phoneNativeDomNatural": 420511,
+          "phoneNativeDomRetained": 1047
+        }
+      ]
+    },
+    {
+      "tag": "attribution-1",
+      "binarySha256": "01b08ca4e5d5dd98667b469618902c8c9541ea3ea6ff5486e20bf066d1809d67",
+      "durationSeconds": 169.056,
+      "hostRssPeakMiB": 48.828,
+      "hostTaskFootprintPeakMiB": 39.8,
+      "probe": {
+        "attemptedKeys": 16,
+        "inputEvents": 16,
+        "readonly": false,
+        "conflict": false,
+        "length": 1047568,
+        "pass": true
+      },
+      "trials": [
+        {
+          "label": "ordinary1000-line paired trial 1",
+          "wall": 3177.260791999999,
+          "inputMedian": 0.5,
+          "phoneWrites": 16,
+          "metrics": {
+            "desktop": {
+              "TaskDuration": 0.161827,
+              "ScriptDuration": 0.043325,
+              "LayoutDuration": 0.018814,
+              "RecalcStyleDuration": 0.006383,
+              "LayoutCount": 128,
+              "RecalcStyleCount": 113
+            },
+            "phone": {
+              "TaskDuration": 0.20646799999999998,
+              "ScriptDuration": 0.031012,
+              "LayoutDuration": 0.079466,
+              "RecalcStyleDuration": 0.015002,
+              "LayoutCount": 64,
+              "RecalcStyleCount": 64
+            }
+          }
+        },
+        {
+          "label": "ordinary1000-line paired trial 2",
+          "wall": 3088.2428750000017,
+          "inputMedian": 0.5,
+          "phoneWrites": 16,
+          "metrics": {
+            "desktop": {
+              "TaskDuration": 0.149593,
+              "ScriptDuration": 0.036785,
+              "LayoutDuration": 0.017204,
+              "RecalcStyleDuration": 0.00593,
+              "LayoutCount": 128,
+              "RecalcStyleCount": 112
+            },
+            "phone": {
+              "TaskDuration": 0.195687,
+              "ScriptDuration": 0.0285,
+              "LayoutDuration": 0.076894,
+              "RecalcStyleDuration": 0.01536,
+              "LayoutCount": 64,
+              "RecalcStyleCount": 64
+            }
+          }
+        },
+        {
+          "label": "varied209k-line paired trial 1",
+          "wall": 23991.014375,
+          "inputMedian": 6.700000286102295,
+          "phoneWrites": 16,
+          "metrics": {
+            "desktop": {
+              "TaskDuration": 6.040846999999999,
+              "ScriptDuration": 0.707171,
+              "LayoutDuration": 1.008513,
+              "RecalcStyleDuration": 0.023468,
+              "LayoutCount": 128,
+              "RecalcStyleCount": 113
+            },
+            "phone": {
+              "TaskDuration": 19.199463,
+              "ScriptDuration": 3.010214,
+              "LayoutDuration": 8.323115,
+              "RecalcStyleDuration": 2.556467,
+              "LayoutCount": 64,
+              "RecalcStyleCount": 64
+            }
+          }
+        },
+        {
+          "label": "varied209k-line paired trial 2",
+          "wall": 24525.124333999993,
+          "inputMedian": 6.299999713897705,
+          "phoneWrites": 16,
+          "metrics": {
+            "desktop": {
+              "TaskDuration": 6.050654,
+              "ScriptDuration": 0.673566,
+              "LayoutDuration": 0.995262,
+              "RecalcStyleDuration": 0.004403,
+              "LayoutCount": 128,
+              "RecalcStyleCount": 112
+            },
+            "phone": {
+              "TaskDuration": 20.0284,
+              "ScriptDuration": 3.081334,
+              "LayoutDuration": 8.781137,
+              "RecalcStyleDuration": 2.608488,
+              "LayoutCount": 64,
+              "RecalcStyleCount": 64
+            }
+          }
+        },
+        {
+          "label": "varied209k-line phone AI tab trial 1",
+          "wall": 7538.37275000001,
+          "inputMedian": 6.200000286102295,
+          "phoneWrites": 16,
+          "metrics": {
+            "desktop": {
+              "TaskDuration": 5.057652,
+              "ScriptDuration": 0.666239,
+              "LayoutDuration": 0.955636,
+              "RecalcStyleDuration": 0.017311,
+              "LayoutCount": 128,
+              "RecalcStyleCount": 113
+            },
+            "phone": {
+              "TaskDuration": 1.783519,
+              "ScriptDuration": 1.526512,
+              "LayoutDuration": 0.00237,
+              "RecalcStyleDuration": 0.001641,
+              "LayoutCount": 16,
+              "RecalcStyleCount": 48
+            }
+          }
+        },
+        {
+          "label": "varied209k-line phone AI tab trial 2",
+          "wall": 6872.410749999981,
+          "inputMedian": 6.199999809265137,
+          "phoneWrites": 16,
+          "metrics": {
+            "desktop": {
+              "TaskDuration": 4.896416,
+              "ScriptDuration": 0.633197,
+              "LayoutDuration": 0.949038,
+              "RecalcStyleDuration": 0.004355,
+              "LayoutCount": 128,
+              "RecalcStyleCount": 112
+            },
+            "phone": {
+              "TaskDuration": 1.718566,
+              "ScriptDuration": 1.476783,
+              "LayoutDuration": 0.002432,
+              "RecalcStyleDuration": 0.001579,
+              "LayoutCount": 16,
+              "RecalcStyleCount": 48
+            }
+          }
+        },
+        {
+          "label": "near-limit single-line paired trial",
+          "wall": 4728.135375000013,
+          "inputMedian": 3.8000001907348633,
+          "phoneWrites": 16,
+          "metrics": {
+            "desktop": {
+              "TaskDuration": 0.68021,
+              "ScriptDuration": 0.251922,
+              "LayoutDuration": 0.007503,
+              "RecalcStyleDuration": 0.003397,
+              "LayoutCount": 96,
+              "RecalcStyleCount": 81
+            },
+            "phone": {
+              "TaskDuration": 0.673247,
+              "ScriptDuration": 0.041543,
+              "LayoutDuration": 0.526238,
+              "RecalcStyleDuration": 0.002758,
+              "LayoutCount": 48,
+              "RecalcStyleCount": 64
+            }
+          }
+        }
+      ],
+      "phaseRSS": [
+        {
+          "name": "idle host, no browsers or shell",
+          "hostTaskFootprintMiB": 1.907
+        },
+        {
+          "name": "desktop, no files",
+          "rendererRSSMiB": 724.828,
+          "hostTaskFootprintMiB": 2.657,
+          "desktopRetainedJS": 1.438
+        },
+        {
+          "name": "paired desktop and phone, no files",
+          "rendererRSSMiB": 776.375,
+          "hostTaskFootprintMiB": 3.11,
+          "desktopRetainedJS": 1.467,
+          "phoneRetainedJS": 2.257,
+          "phoneNativeDomNatural": 1530,
+          "phoneNativeDomRetained": 1017
+        },
+        {
+          "name": "ordinary paired source,32keys and12remote replacements",
+          "rendererRSSMiB": 870.141,
+          "hostTaskFootprintMiB": 7.048,
+          "desktopRetainedJS": 2.511,
+          "phoneRetainedJS": 2.504,
+          "phoneNativeDomNatural": 12775,
+          "phoneNativeDomRetained": 3332
+        },
+        {
+          "name": "eight near-limit sources, varied209k-line native display",
+          "rendererRSSMiB": 2402.531,
+          "hostTaskFootprintMiB": 29.9,
+          "desktopRetainedJS": 16.581,
+          "phoneRetainedJS": 16.571,
+          "phoneNativeDomNatural": 420853,
+          "phoneNativeDomRetained": 420138
+        },
+        {
+          "name": "varied209k-line paired source after32native keys",
+          "rendererRSSMiB": 3155.25,
+          "hostTaskFootprintMiB": 26.2,
+          "desktopRetainedJS": 16.618,
+          "phoneRetainedJS": 16.601,
+          "phoneNativeDomNatural": 839309,
+          "phoneNativeDomRetained": 420140
+        },
+        {
+          "name": "varied209k-line paired source after12remote replacements",
+          "rendererRSSMiB": 4475.391,
+          "hostTaskFootprintMiB": 36.9,
+          "desktopRetainedJS": 16.62,
+          "phoneRetainedJS": 16.601,
+          "phoneNativeDomNatural": 1258491,
+          "phoneNativeDomRetained": 420143
+        },
+        {
+          "name": "varied209k-line typing with phone native pane hidden",
+          "rendererRSSMiB": 1785.453,
+          "hostTaskFootprintMiB": 29.6,
+          "desktopRetainedJS": 16.668,
+          "phoneRetainedJS": 16.635,
+          "phoneNativeDomNatural": 839429,
+          "phoneNativeDomRetained": 420142
+        },
+        {
+          "name": "near-limit single-line paired source after16native keys",
+          "rendererRSSMiB": 2303.203,
+          "hostTaskFootprintMiB": 36.7,
+          "desktopRetainedJS": 16.672,
+          "phoneRetainedJS": 16.649,
+          "phoneNativeDomNatural": 424652,
+          "phoneNativeDomRetained": 1240
+        },
+        {
+          "name": "focused sources closed, no PTY",
+          "rendererRSSMiB": 2206.641,
+          "hostTaskFootprintMiB": 28.4,
+          "desktopRetainedJS": 2.555,
+          "phoneRetainedJS": 2.544,
+          "phoneNativeDomNatural": 421070,
+          "phoneNativeDomRetained": 1047
+        }
+      ]
+    }
+  ],
+  "findings": [
+    "All steady typing trials perform16phone native source assignments, so no coalescing count benefit shown",
+    "Passive visible209kline renderer dominates task/layout cost; hiding pane retains16assignments but cutsphoneTask~23s to~1.8s",
+    "Both hostArc variants overlap natural timing; frontend-specific wall improvement unproven withoutreverse repetition",
+    "8214 coalescer definitively fails actual native shrink/regrow selection+scroll gate; seeperformance-gauntlet-selection-proof.json",
+    "8214 lowers retainedJS but haslarger natural detached native subtrees andcombinedrendererRSS; GCcoupling isplausible inference, notproven cause",
+    "Retained native DOM collapses to~420k foractive209kline file and~1k whenclosed; no retainednativeleak established",
+    "Original50a workload wallregression not erased byaddingphoneframebarrier; final contender mustrepeat sameoriginal gate"
+  ],
+  "limits": [
+    "Onefocused natural run pervariant sofar; systempressure andnativeGC warm/cadence vary",
+    "Combined rendererRSS includes sharedpages andnot exactphysicalRAM",
+    "PhaseforcedGC changes subsequent native/JS allocation cadence equally inA/B",
+    "Controlled delayed-frame mechanism proof is separate fromnatural performance",
+    "No assetoverrides, realinference, userproject edits or realPTY in focused workload"
+  ]
+}

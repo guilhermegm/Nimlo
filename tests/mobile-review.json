@@ -1,0 +1,33 @@
+{
+  "status": "accept",
+  "binary": "/Users/developer/acme/code_editor/target/release/relay-editor",
+  "binarySha256": "60a1b800b1740315c84cf669bff458d29e849b59283bad2948096550beb09d13",
+  "sourceOverrides": false,
+  "fakeProvider": true,
+  "checks": [
+    "Phone source has original line geometry and aligned 16px overlays",
+    "Source selection, pan, scroll and unsaved buffer survive Code AI Terminal",
+    "Real shell process, environment and command draft persist across views",
+    "Fake provider approval, long transcript and replacement review are usable",
+    "Files is focused and nested directory/new-file actions remain usable",
+    "320 through 430px widths and constrained height keep routes and controls reachable",
+    "Ended shell exposes an obvious visible restart at 320px",
+    "Long dirty title, save and status never overflow at 320px",
+    "All host/session setup, pairing and AI settings reachable on phone",
+    "Phone revocation keeps desktop editor and real shell usable",
+    "No browser exceptions"
+  ],
+  "findings": [],
+  "screenshots": [
+    "mobile-review-short-terminal.png",
+    "mobile-review-keys.png",
+    "mobile-review-restart.png"
+  ],
+  "errors": [],
+  "physicalUntested": [
+    "Physical iOS/Android keyboard and selection handles",
+    "Real internet tunnel",
+    "Live paid AI provider",
+    "Working Copy native app interaction"
+  ]
+}

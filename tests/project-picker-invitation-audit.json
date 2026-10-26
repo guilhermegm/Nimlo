@@ -1,0 +1,606 @@
+{
+  "status": "pass",
+  "binarySha256": "cc0efe354f3f28015bc3e96b090caaf1645a0fd8da2810ac5e0dc0b9e598ebcd",
+  "browserEngine": "webkit",
+  "sourceOverrides": false,
+  "rounds": [
+    {
+      "settled": true,
+      "providedPinLength": 6,
+      "pinLengthBeforeClick": 6,
+      "pinLengthAfterClick": 0,
+      "complete": true,
+      "events": [
+        {
+          "type": "response",
+          "route": "/api/bootstrap",
+          "status": 401
+        },
+        {
+          "type": "pair-request"
+        },
+        {
+          "type": "response",
+          "route": "/api/pair",
+          "status": 200
+        },
+        {
+          "type": "response",
+          "route": "/api/bootstrap",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "settled": false,
+      "providedPinLength": 6,
+      "pinLengthBeforeClick": 6,
+      "pinLengthAfterClick": 0,
+      "complete": true,
+      "events": [
+        {
+          "type": "response",
+          "route": "/api/bootstrap",
+          "status": 401
+        },
+        {
+          "type": "pair-request"
+        },
+        {
+          "type": "response",
+          "route": "/api/pair",
+          "status": 200
+        },
+        {
+          "type": "response",
+          "route": "/api/bootstrap",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "settled": false,
+      "providedPinLength": 6,
+      "pinLengthBeforeClick": 6,
+      "pinLengthAfterClick": 6,
+      "complete": true,
+      "events": [
+        {
+          "type": "response",
+          "route": "/api/bootstrap",
+          "status": 401
+        },
+        {
+          "type": "response",
+          "route": "/api/bootstrap",
+          "status": 401
+        },
+        {
+          "type": "pair-request"
+        },
+        {
+          "type": "response",
+          "route": "/api/pair",
+          "status": 200
+        },
+        {
+          "type": "response",
+          "route": "/api/bootstrap",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "settled": false,
+      "providedPinLength": 6,
+      "pinLengthBeforeClick": 6,
+      "pinLengthAfterClick": 0,
+      "complete": false,
+      "events": [
+        {
+          "type": "response",
+          "route": "/api/bootstrap",
+          "status": 401
+        },
+        {
+          "type": "response",
+          "route": "/api/bootstrap",
+          "status": 401
+        },
+        {
+          "type": "pair-request"
+        },
+        {
+          "type": "response",
+          "route": "/api/pair",
+          "status": 200
+        },
+        {
+          "type": "response",
+          "route": "/api/bootstrap",
+          "status": 200
+        }
+      ],
+      "classification": "Same-document automation filled before invitation initialization finished; initialization cleared the PIN and native required-field validation prevented POST.",
+      "recovered": true
+    },
+    {
+      "settled": false,
+      "providedPinLength": 6,
+      "pinLengthBeforeClick": 6,
+      "pinLengthAfterClick": 0,
+      "complete": true,
+      "events": [
+        {
+          "type": "response",
+          "route": "/api/bootstrap",
+          "status": 401
+        },
+        {
+          "type": "response",
+          "route": "/api/bootstrap",
+          "status": 401
+        },
+        {
+          "type": "pair-request"
+        },
+        {
+          "type": "response",
+          "route": "/api/pair",
+          "status": 200
+        },
+        {
+          "type": "response",
+          "route": "/api/bootstrap",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "settled": false,
+      "providedPinLength": 6,
+      "pinLengthBeforeClick": 6,
+      "pinLengthAfterClick": 0,
+      "complete": false,
+      "events": [
+        {
+          "type": "response",
+          "route": "/api/bootstrap",
+          "status": 401
+        },
+        {
+          "type": "response",
+          "route": "/api/bootstrap",
+          "status": 401
+        },
+        {
+          "type": "pair-request"
+        },
+        {
+          "type": "response",
+          "route": "/api/pair",
+          "status": 200
+        },
+        {
+          "type": "response",
+          "route": "/api/bootstrap",
+          "status": 200
+        }
+      ],
+      "classification": "Same-document automation filled before invitation initialization finished; initialization cleared the PIN and native required-field validation prevented POST.",
+      "recovered": true
+    },
+    {
+      "settled": false,
+      "providedPinLength": 6,
+      "pinLengthBeforeClick": 6,
+      "pinLengthAfterClick": 0,
+      "complete": true,
+      "events": [
+        {
+          "type": "response",
+          "route": "/api/bootstrap",
+          "status": 401
+        },
+        {
+          "type": "pair-request"
+        },
+        {
+          "type": "response",
+          "route": "/api/pair",
+          "status": 200
+        },
+        {
+          "type": "response",
+          "route": "/api/bootstrap",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "settled": true,
+      "providedPinLength": 6,
+      "pinLengthBeforeClick": 6,
+      "pinLengthAfterClick": 6,
+      "complete": true,
+      "events": [
+        {
+          "type": "response",
+          "route": "/api/bootstrap",
+          "status": 401
+        },
+        {
+          "type": "response",
+          "route": "/api/bootstrap",
+          "status": 401
+        },
+        {
+          "type": "pair-request"
+        },
+        {
+          "type": "response",
+          "route": "/api/pair",
+          "status": 200
+        },
+        {
+          "type": "response",
+          "route": "/api/bootstrap",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "settled": true,
+      "providedPinLength": 6,
+      "pinLengthBeforeClick": 6,
+      "pinLengthAfterClick": 0,
+      "complete": true,
+      "events": [
+        {
+          "type": "response",
+          "route": "/api/bootstrap",
+          "status": 401
+        },
+        {
+          "type": "response",
+          "route": "/api/bootstrap",
+          "status": 401
+        },
+        {
+          "type": "pair-request"
+        },
+        {
+          "type": "response",
+          "route": "/api/pair",
+          "status": 200
+        },
+        {
+          "type": "response",
+          "route": "/api/bootstrap",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "settled": true,
+      "providedPinLength": 6,
+      "pinLengthBeforeClick": 6,
+      "pinLengthAfterClick": 0,
+      "complete": true,
+      "events": [
+        {
+          "type": "response",
+          "route": "/api/bootstrap",
+          "status": 401
+        },
+        {
+          "type": "pair-request"
+        },
+        {
+          "type": "response",
+          "route": "/api/pair",
+          "status": 200
+        },
+        {
+          "type": "response",
+          "route": "/api/bootstrap",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "settled": true,
+      "providedPinLength": 6,
+      "pinLengthBeforeClick": 6,
+      "pinLengthAfterClick": 6,
+      "complete": true,
+      "events": [
+        {
+          "type": "response",
+          "route": "/api/bootstrap",
+          "status": 401
+        },
+        {
+          "type": "response",
+          "route": "/api/bootstrap",
+          "status": 401
+        },
+        {
+          "type": "pair-request"
+        },
+        {
+          "type": "response",
+          "route": "/api/pair",
+          "status": 200
+        },
+        {
+          "type": "response",
+          "route": "/api/bootstrap",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "settled": true,
+      "providedPinLength": 6,
+      "pinLengthBeforeClick": 6,
+      "pinLengthAfterClick": 6,
+      "complete": true,
+      "events": [
+        {
+          "type": "response",
+          "route": "/api/bootstrap",
+          "status": 401
+        },
+        {
+          "type": "pair-request"
+        },
+        {
+          "type": "response",
+          "route": "/api/pair",
+          "status": 200
+        },
+        {
+          "type": "response",
+          "route": "/api/bootstrap",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "settled": true,
+      "providedPinLength": 6,
+      "pinLengthBeforeClick": 6,
+      "pinLengthAfterClick": 0,
+      "complete": true,
+      "events": [
+        {
+          "type": "response",
+          "route": "/api/bootstrap",
+          "status": 401
+        },
+        {
+          "type": "response",
+          "route": "/api/bootstrap",
+          "status": 401
+        },
+        {
+          "type": "pair-request"
+        },
+        {
+          "type": "response",
+          "route": "/api/pair",
+          "status": 200
+        },
+        {
+          "type": "response",
+          "route": "/api/bootstrap",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "settled": true,
+      "providedPinLength": 6,
+      "pinLengthBeforeClick": 6,
+      "pinLengthAfterClick": 6,
+      "complete": true,
+      "events": [
+        {
+          "type": "response",
+          "route": "/api/bootstrap",
+          "status": 401
+        },
+        {
+          "type": "response",
+          "route": "/api/bootstrap",
+          "status": 401
+        },
+        {
+          "type": "pair-request"
+        },
+        {
+          "type": "response",
+          "route": "/api/pair",
+          "status": 200
+        },
+        {
+          "type": "response",
+          "route": "/api/bootstrap",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "settled": true,
+      "providedPinLength": 6,
+      "pinLengthBeforeClick": 6,
+      "pinLengthAfterClick": 6,
+      "complete": true,
+      "events": [
+        {
+          "type": "response",
+          "route": "/api/bootstrap",
+          "status": 401
+        },
+        {
+          "type": "response",
+          "route": "/api/bootstrap",
+          "status": 401
+        },
+        {
+          "type": "pair-request"
+        },
+        {
+          "type": "response",
+          "route": "/api/pair",
+          "status": 200
+        },
+        {
+          "type": "response",
+          "route": "/api/bootstrap",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "settled": true,
+      "providedPinLength": 6,
+      "pinLengthBeforeClick": 6,
+      "pinLengthAfterClick": 6,
+      "complete": true,
+      "events": [
+        {
+          "type": "response",
+          "route": "/api/bootstrap",
+          "status": 401
+        },
+        {
+          "type": "response",
+          "route": "/api/bootstrap",
+          "status": 401
+        },
+        {
+          "type": "pair-request"
+        },
+        {
+          "type": "response",
+          "route": "/api/pair",
+          "status": 200
+        },
+        {
+          "type": "response",
+          "route": "/api/bootstrap",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "settled": true,
+      "providedPinLength": 6,
+      "pinLengthBeforeClick": 6,
+      "pinLengthAfterClick": 0,
+      "complete": false,
+      "events": [
+        {
+          "type": "response",
+          "route": "/api/bootstrap",
+          "status": 401
+        },
+        {
+          "type": "response",
+          "route": "/api/bootstrap",
+          "status": 401
+        },
+        {
+          "type": "pair-request"
+        },
+        {
+          "type": "response",
+          "route": "/api/pair",
+          "status": 200
+        },
+        {
+          "type": "response",
+          "route": "/api/bootstrap",
+          "status": 200
+        }
+      ],
+      "classification": "Same-document automation filled before invitation initialization finished; initialization cleared the PIN and native required-field validation prevented POST.",
+      "recovered": true
+    },
+    {
+      "settled": true,
+      "providedPinLength": 6,
+      "pinLengthBeforeClick": 6,
+      "pinLengthAfterClick": 6,
+      "complete": true,
+      "events": [
+        {
+          "type": "response",
+          "route": "/api/bootstrap",
+          "status": 401
+        },
+        {
+          "type": "response",
+          "route": "/api/bootstrap",
+          "status": 401
+        },
+        {
+          "type": "pair-request"
+        },
+        {
+          "type": "response",
+          "route": "/api/pair",
+          "status": 200
+        },
+        {
+          "type": "response",
+          "route": "/api/bootstrap",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "settled": true,
+      "providedPinLength": 6,
+      "pinLengthBeforeClick": 6,
+      "pinLengthAfterClick": 6,
+      "complete": true,
+      "events": [
+        {
+          "type": "response",
+          "route": "/api/bootstrap",
+          "status": 401
+        },
+        {
+          "type": "response",
+          "route": "/api/bootstrap",
+          "status": 401
+        },
+        {
+          "type": "pair-request"
+        },
+        {
+          "type": "response",
+          "route": "/api/pair",
+          "status": 200
+        },
+        {
+          "type": "response",
+          "route": "/api/bootstrap",
+          "status": 200
+        }
+      ]
+    }
+  ],
+  "method": "Disposable fixture; final embedded cc0efe35 assets match source, no overrides. Each join captures invitation/PIN atomically. Initial and final12 joins register a bootstrap401response before goto, then await open invitation form, enabledPIN and scrubbed fragment before native filling/submitting. First6repeat the fast navigation without a response fence;3clear the six-character field before submission and issue no pairPOST. Retry after initialization succeeds. Every successfuljoin requires POST200, connected editable phone and exactfixturecontent; each repeat uses realPCrevoke.",
+  "errors": [],
+  "summary": {
+    "settledJoinsPassed": 13,
+    "fastJoins": 6,
+    "fastPreSubmitFailures": 3,
+    "fastFailuresRecovered": 3,
+    "pairPosts200": 19
+  }
+}

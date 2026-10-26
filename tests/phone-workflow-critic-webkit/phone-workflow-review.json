@@ -1,0 +1,766 @@
+{
+  "status": "accept",
+  "functionalStatus": "accept",
+  "date": "2026-10-11T01:56:35.108Z",
+  "binarySha256": "7f7f558c0c1ef9ff738185eb9ccfee0892ec5c09cd1b33c2252d6161c4302df7",
+  "browserEngine": "webkit",
+  "assetMatches": {
+    "index.html": {
+      "exactMatch": true,
+      "sha256": "d04e5b8b083e42537d01cfcac210b4cb570afe030d5cbda9827e601dd0a790af"
+    },
+    "app.js": {
+      "exactMatch": true,
+      "sha256": "55575e09e7cc7b4474e59e198e7053f9bf9b290d27a5e2e6d633f61094905328"
+    },
+    "style.css": {
+      "exactMatch": true,
+      "sha256": "9a794f429684b9267a7d8c903a0ebb0dfbc423987e36671a1a38117cbfa8ef34"
+    }
+  },
+  "sourceOverrides": false,
+  "realHost": true,
+  "disposableWorkspace": true,
+  "uiOnlyCommands": true,
+  "fakeProvider": true,
+  "checks": [
+    "Actual host serves embedded assets equal to final source",
+    "Explicit Files entry and current-folder filtering make a 120-file directory reachable",
+    "Nested files expose their folder and ancestor jumps recover from empty filter results",
+    "Same-session reconnect clears a nested-folder filter when returning to project root",
+    "Focused filter-320-keyboard keeps a matched file visibly touchable",
+    "Focused filter-390-native-keyboard keeps a matched file visibly touchable",
+    "Phone touch indentation undo redo and save preserve focus and update desktop",
+    "AI provider settings and selected-file versus conversation context stay clear across files",
+    "Terminal host workspace direct-input semantics partial command and real shell survive route changes",
+    "320 by 300 editing preserves readable source and touch controls across every task view",
+    "Native visualViewport resize and pan keep editing inside the visible keyboard area",
+    "No browser exceptions during actual embedded phone tasks"
+  ],
+  "findings": [],
+  "layouts": [
+    {
+      "name": "filter-320-keyboard",
+      "filteredResult": {
+        "top": 173,
+        "bottom": 219,
+        "menuTop": 66,
+        "menuBottom": 227,
+        "visibleHeight": 46,
+        "receivesTouch": true
+      }
+    },
+    {
+      "name": "filter-390-native-keyboard",
+      "filteredResult": {
+        "top": 197,
+        "bottom": 243,
+        "menuTop": 90,
+        "menuBottom": 251,
+        "visibleHeight": 46,
+        "receivesTouch": true
+      }
+    },
+    {
+      "width": 320,
+      "height": 300,
+      "app": {
+        "top": 0,
+        "bottom": 300,
+        "height": 300
+      },
+      "visual": {
+        "height": 300,
+        "top": 0
+      },
+      "documentWidth": 320,
+      "input": {
+        "top": 66,
+        "bottom": 180,
+        "height": 114
+      },
+      "view": "code",
+      "controls": [
+        {
+          "id": "files-toggle",
+          "left": 10,
+          "right": 296,
+          "top": 8,
+          "bottom": 56,
+          "width": 286,
+          "height": 48
+        },
+        {
+          "id": "Tab",
+          "left": 14,
+          "right": 70.796875,
+          "top": 184,
+          "bottom": 228,
+          "width": 56.796875,
+          "height": 44
+        },
+        {
+          "id": "Outdent",
+          "left": 72.796875,
+          "right": 129.59375,
+          "top": 184,
+          "bottom": 228,
+          "width": 56.796875,
+          "height": 44
+        },
+        {
+          "id": "Undo",
+          "left": 131.59375,
+          "right": 188.390625,
+          "top": 184,
+          "bottom": 228,
+          "width": 56.796875,
+          "height": 44
+        },
+        {
+          "id": "Redo",
+          "left": 190.390625,
+          "right": 247.1875,
+          "top": 184,
+          "bottom": 228,
+          "width": 56.796875,
+          "height": 44
+        },
+        {
+          "id": "Done",
+          "left": 249.1875,
+          "right": 305.984375,
+          "top": 184,
+          "bottom": 228,
+          "width": 56.796875,
+          "height": 44
+        },
+        {
+          "id": "mobile-code",
+          "left": 16,
+          "right": 109.328125,
+          "top": 244,
+          "bottom": 288,
+          "width": 93.328125,
+          "height": 44
+        },
+        {
+          "id": "mobile-ai",
+          "left": 113.328125,
+          "right": 206.65625,
+          "top": 244,
+          "bottom": 288,
+          "width": 93.328125,
+          "height": 44
+        },
+        {
+          "id": "mobile-terminal",
+          "left": 210.65625,
+          "right": 303.984375,
+          "top": 244,
+          "bottom": 288,
+          "width": 93.328125,
+          "height": 44
+        }
+      ],
+      "name": "320x300-editing"
+    },
+    {
+      "width": 320,
+      "height": 300,
+      "app": {
+        "top": 0,
+        "bottom": 300,
+        "height": 300
+      },
+      "visual": {
+        "height": 300,
+        "top": 0
+      },
+      "documentWidth": 320,
+      "input": {
+        "top": 0,
+        "bottom": 0,
+        "height": 0
+      },
+      "view": "ai",
+      "controls": [
+        {
+          "id": "files-toggle",
+          "left": 10,
+          "right": 296,
+          "top": 8,
+          "bottom": 56,
+          "width": 286,
+          "height": 48
+        },
+        {
+          "id": "provider",
+          "left": 177,
+          "right": 260,
+          "top": 60,
+          "bottom": 104,
+          "width": 83,
+          "height": 44
+        },
+        {
+          "id": "ai-settings",
+          "left": 266,
+          "right": 310,
+          "top": 60,
+          "bottom": 104,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "id": "prompt",
+          "left": 22,
+          "right": 256,
+          "top": 186,
+          "bottom": 230,
+          "width": 234,
+          "height": 44
+        },
+        {
+          "id": "ai-send",
+          "left": 262,
+          "right": 306,
+          "top": 186,
+          "bottom": 230,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "id": "mobile-code",
+          "left": 16,
+          "right": 109.328125,
+          "top": 244,
+          "bottom": 288,
+          "width": 93.328125,
+          "height": 44
+        },
+        {
+          "id": "mobile-ai",
+          "left": 113.328125,
+          "right": 206.65625,
+          "top": 244,
+          "bottom": 288,
+          "width": 93.328125,
+          "height": 44
+        },
+        {
+          "id": "mobile-terminal",
+          "left": 210.65625,
+          "right": 303.984375,
+          "top": 244,
+          "bottom": 288,
+          "width": 93.328125,
+          "height": 44
+        }
+      ],
+      "name": "320x300-ai"
+    },
+    {
+      "name": "320x300-ai-readable",
+      "height": 48,
+      "paddingTop": 0,
+      "paddingBottom": 0,
+      "lineHeight": 20,
+      "readable": 48
+    },
+    {
+      "width": 320,
+      "height": 300,
+      "app": {
+        "top": 0,
+        "bottom": 300,
+        "height": 300
+      },
+      "visual": {
+        "height": 300,
+        "top": 0
+      },
+      "documentWidth": 320,
+      "input": {
+        "top": 0,
+        "bottom": 0,
+        "height": 0
+      },
+      "view": "terminal",
+      "controls": [
+        {
+          "id": "files-toggle",
+          "left": 10,
+          "right": 296,
+          "top": 8,
+          "bottom": 56,
+          "width": 286,
+          "height": 48
+        },
+        {
+          "id": "terminal-end",
+          "left": 242.515625,
+          "right": 308,
+          "top": 66,
+          "bottom": 110,
+          "width": 65.484375,
+          "height": 44
+        },
+        {
+          "id": "terminal-command",
+          "left": 38.65625,
+          "right": 189.34375,
+          "top": 178,
+          "bottom": 222,
+          "width": 150.6875,
+          "height": 44
+        },
+        {
+          "id": "terminal-keys-toggle",
+          "left": 197.34375,
+          "right": 242.140625,
+          "top": 178,
+          "bottom": 222,
+          "width": 44.796875,
+          "height": 44
+        },
+        {
+          "id": "terminal-run",
+          "left": 250.140625,
+          "right": 298,
+          "top": 178,
+          "bottom": 222,
+          "width": 47.859375,
+          "height": 44
+        },
+        {
+          "id": "mobile-code",
+          "left": 16,
+          "right": 109.328125,
+          "top": 244,
+          "bottom": 288,
+          "width": 93.328125,
+          "height": 44
+        },
+        {
+          "id": "mobile-ai",
+          "left": 113.328125,
+          "right": 206.65625,
+          "top": 244,
+          "bottom": 288,
+          "width": 93.328125,
+          "height": 44
+        },
+        {
+          "id": "mobile-terminal",
+          "left": 210.65625,
+          "right": 303.984375,
+          "top": 244,
+          "bottom": 288,
+          "width": 93.328125,
+          "height": 44
+        }
+      ],
+      "name": "320x300-terminal"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "app": {
+        "top": 36,
+        "bottom": 336,
+        "height": 300
+      },
+      "visual": {
+        "height": 300,
+        "top": 36
+      },
+      "documentWidth": 390,
+      "input": {
+        "top": 102,
+        "bottom": 216,
+        "height": 114
+      },
+      "view": "code",
+      "controls": [
+        {
+          "id": "files-toggle",
+          "left": 10,
+          "right": 366,
+          "top": 44,
+          "bottom": 92,
+          "width": 356,
+          "height": 48
+        },
+        {
+          "id": "Tab",
+          "left": 29,
+          "right": 93.796875,
+          "top": 220,
+          "bottom": 264,
+          "width": 64.796875,
+          "height": 44
+        },
+        {
+          "id": "Outdent",
+          "left": 95.796875,
+          "right": 160.59375,
+          "top": 220,
+          "bottom": 264,
+          "width": 64.796875,
+          "height": 44
+        },
+        {
+          "id": "Undo",
+          "left": 162.59375,
+          "right": 227.390625,
+          "top": 220,
+          "bottom": 264,
+          "width": 64.796875,
+          "height": 44
+        },
+        {
+          "id": "Redo",
+          "left": 229.390625,
+          "right": 294.1875,
+          "top": 220,
+          "bottom": 264,
+          "width": 64.796875,
+          "height": 44
+        },
+        {
+          "id": "Done",
+          "left": 296.1875,
+          "right": 360.984375,
+          "top": 220,
+          "bottom": 264,
+          "width": 64.796875,
+          "height": 44
+        },
+        {
+          "id": "mobile-code",
+          "left": 49,
+          "right": 143.671875,
+          "top": 280,
+          "bottom": 324,
+          "width": 94.671875,
+          "height": 44
+        },
+        {
+          "id": "mobile-ai",
+          "left": 147.671875,
+          "right": 242.34375,
+          "top": 280,
+          "bottom": 324,
+          "width": 94.671875,
+          "height": 44
+        },
+        {
+          "id": "mobile-terminal",
+          "left": 246.34375,
+          "right": 341.015625,
+          "top": 280,
+          "bottom": 324,
+          "width": 94.671875,
+          "height": 44
+        }
+      ],
+      "name": "native-viewport-300"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "app": {
+        "top": 36,
+        "bottom": 336,
+        "height": 300
+      },
+      "visual": {
+        "height": 300,
+        "top": 36
+      },
+      "documentWidth": 390,
+      "input": {
+        "top": 0,
+        "bottom": 0,
+        "height": 0
+      },
+      "view": "ai",
+      "controls": [
+        {
+          "id": "files-toggle",
+          "left": 10,
+          "right": 302.875,
+          "top": 44,
+          "bottom": 92,
+          "width": 292.875,
+          "height": 48
+        },
+        {
+          "id": "save-button",
+          "left": 324.875,
+          "right": 380,
+          "top": 44,
+          "bottom": 92,
+          "width": 55.125,
+          "height": 48
+        },
+        {
+          "id": "provider",
+          "left": 247,
+          "right": 330,
+          "top": 96,
+          "bottom": 140,
+          "width": 83,
+          "height": 44
+        },
+        {
+          "id": "ai-settings",
+          "left": 336,
+          "right": 380,
+          "top": 96,
+          "bottom": 140,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "id": "prompt",
+          "left": 22,
+          "right": 326,
+          "top": 222,
+          "bottom": 266,
+          "width": 304,
+          "height": 44
+        },
+        {
+          "id": "ai-send",
+          "left": 332,
+          "right": 376,
+          "top": 222,
+          "bottom": 266,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "id": "mobile-code",
+          "left": 49,
+          "right": 143.671875,
+          "top": 280,
+          "bottom": 324,
+          "width": 94.671875,
+          "height": 44
+        },
+        {
+          "id": "mobile-ai",
+          "left": 147.671875,
+          "right": 242.34375,
+          "top": 280,
+          "bottom": 324,
+          "width": 94.671875,
+          "height": 44
+        },
+        {
+          "id": "mobile-terminal",
+          "left": 246.34375,
+          "right": 341.015625,
+          "top": 280,
+          "bottom": 324,
+          "width": 94.671875,
+          "height": 44
+        }
+      ],
+      "name": "native-viewport-ai"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "app": {
+        "top": 36,
+        "bottom": 336,
+        "height": 300
+      },
+      "visual": {
+        "height": 300,
+        "top": 36
+      },
+      "documentWidth": 390,
+      "input": {
+        "top": 0,
+        "bottom": 0,
+        "height": 0
+      },
+      "view": "terminal",
+      "controls": [
+        {
+          "id": "files-toggle",
+          "left": 10,
+          "right": 302.875,
+          "top": 44,
+          "bottom": 92,
+          "width": 292.875,
+          "height": 48
+        },
+        {
+          "id": "save-button",
+          "left": 324.875,
+          "right": 380,
+          "top": 44,
+          "bottom": 92,
+          "width": 55.125,
+          "height": 48
+        },
+        {
+          "id": "terminal-end",
+          "left": 312.515625,
+          "right": 378,
+          "top": 102,
+          "bottom": 146,
+          "width": 65.484375,
+          "height": 44
+        },
+        {
+          "id": "terminal-command",
+          "left": 38.65625,
+          "right": 259.34375,
+          "top": 214,
+          "bottom": 258,
+          "width": 220.6875,
+          "height": 44
+        },
+        {
+          "id": "terminal-keys-toggle",
+          "left": 267.34375,
+          "right": 312.140625,
+          "top": 214,
+          "bottom": 258,
+          "width": 44.796875,
+          "height": 44
+        },
+        {
+          "id": "terminal-run",
+          "left": 320.140625,
+          "right": 368,
+          "top": 214,
+          "bottom": 258,
+          "width": 47.859375,
+          "height": 44
+        },
+        {
+          "id": "mobile-code",
+          "left": 49,
+          "right": 143.671875,
+          "top": 280,
+          "bottom": 324,
+          "width": 94.671875,
+          "height": 44
+        },
+        {
+          "id": "mobile-ai",
+          "left": 147.671875,
+          "right": 242.34375,
+          "top": 280,
+          "bottom": 324,
+          "width": 94.671875,
+          "height": 44
+        },
+        {
+          "id": "mobile-terminal",
+          "left": 246.34375,
+          "right": 341.015625,
+          "top": 280,
+          "bottom": 324,
+          "width": 94.671875,
+          "height": 44
+        }
+      ],
+      "name": "native-viewport-terminal"
+    }
+  ],
+  "screenshots": [
+    "phone-workflow-large-directory.png",
+    "phone-workflow-filtered-directory.png",
+    "phone-workflow-open-files.png",
+    "phone-workflow-nested-directory.png",
+    "phone-workflow-two-nested-open-files.png",
+    "phone-workflow-reconnect-filter.png",
+    "phone-workflow-filter-320-keyboard.png",
+    "phone-workflow-filter-390-native-keyboard.png",
+    "phone-workflow-editing-controls.png",
+    "phone-workflow-reading-code.png",
+    "phone-workflow-ai-settings.png",
+    "phone-workflow-ai-current-file.png",
+    "phone-workflow-ai-different-file.png",
+    "phone-workflow-terminal-partial.png",
+    "phone-workflow-terminal-complete.png",
+    "phone-workflow-320-keyboard-code.png",
+    "phone-workflow-320-keyboard-ai.png",
+    "phone-workflow-320-keyboard-terminal.png",
+    "phone-workflow-320-keyboard-open-files.png",
+    "phone-workflow-native-viewport-code.png",
+    "phone-workflow-native-viewport-ai.png",
+    "phone-workflow-native-viewport-terminal.png"
+  ],
+  "errors": [],
+  "physicalUntested": [
+    "Physical iOS/Android software keyboard, IME/composition, selection handles, and native keyboard open/dismiss timing",
+    "Native Working Copy app interaction",
+    "Real paid AI provider",
+    "Internet tunnel"
+  ],
+  "overallStatus": "accept",
+  "visualStatus": "accept",
+  "visualReview": {
+    "status": "accept",
+    "blind": false,
+    "reasonNotBlind": "Product identity is visible and inferred from the file names and controls.",
+    "beforeAfterVerdict": "Choose the final Relay revision for the tested phone tasks: explicit Files entry, current-folder filtering, direct ancestor navigation and separate Open switching; conversation versus next-request file context; visible PC/workspace terminal context; focused touch editing controls.",
+    "referenceVerdict": "The final clear folder/file icons and visible ancestor path meet the published hierarchy reference. Compact floating source controls preserve the reading canvas while adding intentional touch editing actions.",
+    "referenceLimits": "Working Copy references are published screenshots, including an older iPhone folder browser. Native Working Copy was not run and reference viewports are not matched; this is a hierarchy/readability comparison, not current native-app parity.",
+    "references": [
+      "mockup/review/working-copy-folders.png",
+      "mockup/review/working-copy-content.webp"
+    ],
+    "baseline": [
+      "tests/phone-workflow-before/floating-phone-code.png",
+      "tests/phone-workflow-before/floating-phone-menu.png",
+      "tests/phone-workflow-before/floating-phone-ai.png",
+      "tests/phone-workflow-before/floating-phone-terminal.png"
+    ],
+    "inspectedFinalScreens": [
+      "phone-workflow-large-directory.png",
+      "phone-workflow-nested-directory.png",
+      "phone-workflow-two-nested-open-files.png",
+      "phone-workflow-editing-controls.png",
+      "phone-workflow-ai-different-file.png",
+      "phone-workflow-320-keyboard-ai.png",
+      "phone-workflow-filter-320-keyboard.png",
+      "phone-workflow-reconnect-filter.png",
+      "phone-workflow-terminal-partial.png",
+      "phone-workflow-terminal-complete.png"
+    ],
+    "retainedBaselineReinspected": true,
+    "retainedBaselineVerdict": "Accept unchanged after inspecting the retained actual before screenshots: the final revision improves Files/Open navigation, AI file-context clarity, terminal workspace/input clarity, and focused touch editing while preserving the compact reading layout."
+  },
+  "crossEngineReview": {
+    "status": "accept",
+    "engines": [
+      "chromium",
+      "webkit"
+    ],
+    "checksPerEngine": 12,
+    "reports": [
+      "tests/phone-workflow-critic/phone-workflow-review.json",
+      "tests/phone-workflow-critic-webkit/phone-workflow-review.json"
+    ],
+    "sameBinarySha256": "7f7f558c0c1ef9ff738185eb9ccfee0892ec5c09cd1b33c2252d6161c4302df7"
+  },
+  "biggestRemainingValidationGap": "Physical iOS/Android keyboard and IME/composition behavior, native keyboard open/dismiss timing, and selection handles remain untested.",
+  "executionLimits": {
+    "sourceOverrides": false,
+    "paidAI": false,
+    "liveHostChanges": false,
+    "workspace": "Disposable fixture only",
+    "selectionPrecondition": "DOM selection ranges simulate source selection; native selection handles were not exercised.",
+    "viewport": "Reduced viewport and native visualViewport resize/pan mocks; no OS keyboard was displayed."
+  }
+}

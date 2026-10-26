@@ -1,0 +1,77 @@
+{
+  "checks": [
+    "Terminal hidden and not initialized on load",
+    "Default toolbar retains two actions",
+    "Workspace menu exposes Terminal on PC host",
+    "Desktop terminal docks below code",
+    "Terminal identifies host and simulation",
+    "Commands produce multiline simulated output",
+    "Keyboard reopening preserves transcript",
+    "Running demo exposes Stop and blocks new commands",
+    "Running demo survives hiding panel",
+    "Ctrl+C interrupts demo process",
+    "ArrowUp recalls command",
+    "Handoff fences terminal input",
+    "Taking control preserves pending terminal input",
+    "Command output is rendered as text",
+    "Terminal transcript stays bounded",
+    "Clear removes visible history",
+    "Phone terminal is the only workspace surface",
+    "Phone terminal input uses 16px font",
+    "Phone terminal buttons have 44px targets",
+    "Phone AI hides terminal",
+    "Returning from AI preserves terminal view",
+    "Phone close restores code",
+    "Phone file selection returns to code without losing terminal history",
+    "Open terminal never causes page-wide overflow",
+    "No terminal script errors"
+  ],
+  "errors": [],
+  "bounded": {
+    "length": 16116,
+    "rows": 33,
+    "tail": "xxxxx"
+  },
+  "touch": [
+    {
+      "id": "close-terminal",
+      "w": 44,
+      "h": 44
+    },
+    {
+      "id": "terminal-run",
+      "w": 44,
+      "h": 44
+    }
+  ],
+  "widths": [
+    {
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "width": 760,
+      "scrollWidth": 760
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "width": 1024,
+      "scrollWidth": 1024
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "width": 1920,
+      "scrollWidth": 1920
+    }
+  ]
+}

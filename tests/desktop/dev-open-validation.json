@@ -1,0 +1,12 @@
+{
+  "status": "pass",
+  "launcherReturnsImmediately": true,
+  "actualNativeWKWebView": true,
+  "authenticatedAfterCallerReturns": true,
+  "cssHotReload": true,
+  "privateLogPermissions": "0600",
+  "ownedHostCleanup": true,
+  "isolatedBundleIdentifier": true,
+  "disposableWorkspace": true,
+  "realInferenceRequests": 0
+}

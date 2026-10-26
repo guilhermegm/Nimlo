@@ -1,0 +1,52 @@
+{
+  "status": "pass",
+  "date": "2026-10-16T16:53:26.041Z",
+  "binarySha256": "bbba137ab8db88a8983165d775765056ce57d47dc26997180a95358c8cf61a9d",
+  "harnessSha256": "06e92fb76e726282e7250928b6e0ce25b1c1024c4133d2d202d184b93fcf71b0",
+  "browserEngine": "webkit",
+  "checks": [
+    "Exact embedded assets start with no shell or inference",
+    "Project search stays idle until a user requests it",
+    "Files menu exposes New file and a platform-specific Find file shortcut",
+    "New file rejects empty, traversal and existing paths without changing disk",
+    "New file creates a nested project file and opens it ready to edit",
+    "File picker bounds results and browses folders using only keys",
+    "Find file button searches nested basenames and disambiguates duplicate paths",
+    "Cmd/Ctrl P opens a nested basename without expanding its folders",
+    "Enter after a fast query change opens the latest requested match",
+    "Fast typing and Enter open nested paths and cited lines",
+    "Escape returns native focus and selection without opening work",
+    "A queued native close event preserves a newer code selection and reopened palette",
+    "Parent navigation and filenames with spaces work without mouse input",
+    "Project command switches files, AI and terminal context together",
+    "Colon still types normally when Vim navigation is off",
+    "Opt-in Vim navigation never inserts command keys and handles Unicode",
+    "Insert and Escape preserve text; :q protects dirty buffers; :w saves",
+    "Vim choice persists per browser and closing a saved file uses :q",
+    "File commands reject traversal, outside roots and symlinks with a recoverable error",
+    "Hostile filenames remain text and unknown commands never execute shell text",
+    "AI, code and an existing terminal are reachable entirely through commands",
+    "Finding a file from AI or terminal returns to the code editor",
+    "Composition and native dialogs fence global keyboard shortcuts",
+    "Picker is scrollable and fits desktop and short phone viewports",
+    "New and Find file actions stay visible and touch-sized on short phone viewports",
+    "Read-only paired devices can find files while both New file actions stay disabled",
+    "No AI request, rendering errors or background file scan"
+  ],
+  "errors": [],
+  "screenshots": [
+    "files-actions.png",
+    "picker-1280x800.png",
+    "picker-390x844.png",
+    "picker-320x300.png",
+    "files-actions-390x844.png",
+    "files-actions-320x300.png"
+  ],
+  "sourceOverrides": false,
+  "isolatedTemporaryWorkspace": true,
+  "realInferenceRequests": 0,
+  "limits": [
+    "Physical phones and native mobile keyboards were not exercised.",
+    "Vim navigation is a documented subset, not full Vim compatibility."
+  ]
+}

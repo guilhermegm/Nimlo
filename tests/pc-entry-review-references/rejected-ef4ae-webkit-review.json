@@ -1,0 +1,312 @@
+{
+  "status": "reject",
+  "date": "2026-10-11T04:56:24.868Z",
+  "binarySha256": "ef4ae972366f0e4bc310e59f25224b82e945b48f3bbf5db160f56da578482e5d",
+  "browserEngine": "webkit",
+  "realHost": true,
+  "sourceOverrides": false,
+  "disposableWorkspaces": true,
+  "fakeOsOpener": true,
+  "fakeProviders": true,
+  "checks": [
+    {
+      "name": "Embedded release assets match the candidate source, without CSS or JS overrides",
+      "status": "pass",
+      "milliseconds": 41
+    },
+    {
+      "name": "Local bootstrap exposes only a canonical PC address and static roots preserve fragments",
+      "status": "pass",
+      "milliseconds": 55
+    },
+    {
+      "name": "Missing, foreign or duplicate origins and form/navigation requests never open a browser",
+      "status": "pass",
+      "milliseconds": 26
+    },
+    {
+      "name": "Proxy, foreign host and Fetch Metadata variants cannot spend the opener budget",
+      "status": "pass",
+      "milliseconds": 44
+    },
+    {
+      "name": "Allowed opening uses only the generated private link and never signs in its caller",
+      "status": "pass",
+      "milliseconds": 295
+    },
+    {
+      "name": "A hung OS opener is killed within its deadline and concurrent requests stay bounded",
+      "status": "pass",
+      "milliseconds": 5034
+    },
+    {
+      "name": "A new plain localhost tab reaches a compact welcome with one usable Open editor action",
+      "status": "pass",
+      "milliseconds": 700
+    },
+    {
+      "name": "Opener success cannot claim authentication; a different profile exposes bounded fallback",
+      "status": "pass",
+      "milliseconds": 10753
+    },
+    {
+      "name": "Another tab using the opened private link makes the original tab usable without copied secrets",
+      "status": "pass",
+      "milliseconds": 1094
+    },
+    {
+      "name": "An authenticated localhost alias remains on its original origin and reuses its host cookie",
+      "status": "pass",
+      "milliseconds": 595
+    },
+    {
+      "name": "A stored pending draft prevents fresh-entry normalization from abandoning its localhost origin",
+      "status": "pass",
+      "milliseconds": 1696
+    },
+    {
+      "name": "Loaded unacknowledged source survives lost cookies and local browser reopening without an origin hop",
+      "status": "pass",
+      "milliseconds": 3314
+    },
+    {
+      "name": "An older real unauthenticated bootstrap cannot repaint welcome after private-link authentication",
+      "status": "pass",
+      "milliseconds": 995
+    },
+    {
+      "name": "A foreign local web page cannot trigger the opener through fetch, forms or preflight",
+      "status": "pass",
+      "milliseconds": 605
+    }
+  ],
+  "screenshots": [
+    "plain-localhost-welcome.png",
+    "different-browser-fallback.png",
+    "original-tab-recovered.png",
+    "authenticated-alias-preserved.png",
+    "stored-draft-alias-welcome.png",
+    "loaded-draft-alias-recovered.png",
+    "stale-bootstrap-ignored.png",
+    "failed-opener-phone.png",
+    "failed-opener-narrow.png"
+  ],
+  "network": [
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 401
+    },
+    {
+      "method": "POST",
+      "path": "/api/pc/open",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 401
+    },
+    {
+      "method": "POST",
+      "path": "/api/pc/open",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 401
+    },
+    {
+      "method": "POST",
+      "path": "/api/pc/open",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 401
+    },
+    {
+      "method": "POST",
+      "path": "/api/pc/open",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 401
+    },
+    {
+      "method": "POST",
+      "path": "/api/pc/open",
+      "status": 403
+    },
+    {
+      "method": "GET",
+      "path": "/api/bootstrap",
+      "status": 401
+    },
+    {
+      "method": "POST",
+      "path": "/api/pc/open",
+      "status": 503
+    }
+  ],
+  "findings": [
+    {
+      "stage": "A failed OS opener gives a visible recovery path without granting access",
+      "message": "AssertionError [ERR_ASSERTION]: Recovery page exceeds the locked viewport instead of providing a scrollable fallback: {\"height\":638.328125,\"client\":638,\"content\":638,\"overflow\":\"auto\",\"viewport\":300}\n    at /Users/developer/acme/code_editor/scripts/pc-entry-review.cjs:158:3\n    at runNextTicks (node:internal/process/task_queues:60:5)\n    at process.processImmediate (node:internal/timers:454:9)\n    at process.callbackTrampoline (node:internal/async_hooks:130:17)\n    at async check (/Users/developer/acme/code_editor/scripts/pc-entry-review.cjs:24:65)\n    at async /Users/developer/acme/code_editor/scripts/pc-entry-review.cjs:152:2"
+    }
+  ],
+  "browserErrors": [
+    "/127.0.0.1:52843/api/pc/open due to access control checks.",
+    "/127.0.0.1:52843/api/pc/open due to access control checks."
+  ],
+  "references": "tests/pc-entry-review-references/provenance.json",
+  "limits": [
+    "OS default-browser integration is emulated with an actual fake opener executable and real browser private-link navigation.",
+    "Physical devices and real platform browser handlers remain untested.",
+    "Existing browser profiles, credentials, user projects and live Relay hosts are never accessed."
+  ]
+}

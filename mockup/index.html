@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="dark"><meta name="description" content="A compact, local interface mock for a shared-session AI code editor.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2320272e'/%3E%3Cpath d='m13 9-7 7 7 7m6-14 7 7-7 7' stroke='%23acd6c2' fill='none' stroke-width='2'/%3E%3C/svg%3E">
+<title>Nimlo — editor interface mock</title>
+<link rel="icon" type="image/png" href="../web/favicon.png">
+<style>
+:root{color-scheme:dark;--bg:#202329;--panel:#25282e;--hover:#30343c;--line:#363a42;--text:#d5d8de;--muted:#9aa0aa;--accent:#b3d1c0;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font:12px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text)}
+*{box-sizing:border-box}body{margin:0}button,input,textarea,select{font:inherit;color:inherit}button,select{cursor:pointer}button{background:none;border:0;border-radius:4px;padding:6px 8px;white-space:nowrap}button:hover,button[aria-expanded=true]{background:var(--hover)}button:disabled{opacity:.45;cursor:default}button:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;vertical-align:middle;flex:none}.icon{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;padding:0}.muted{color:var(--muted)}.spacer{flex:1}.app{height:100dvh;display:grid;grid-template-rows:36px minmax(0,1fr)}
+.top{min-width:0;display:flex;align-items:center;gap:6px;padding:0 10px;border-bottom:1px solid var(--line);background:var(--panel)}.file-trigger,.ask-ai{display:flex;align-items:center;gap:7px;min-height:28px;font-size:12px}.file-trigger{min-width:0}.file-trigger svg,.chevron{color:var(--muted)}.chevron{font-size:11px}.dirty{font-size:8px;color:var(--accent)}.dirty:empty{display:none}.ask-ai,.save,.view-only{flex-shrink:0}.ask-ai svg{color:var(--muted)}.save{color:var(--accent)}.view-only{font-size:11px;color:#d8bd96}.workspace{min-height:0;display:grid;grid-template-columns:minmax(0,1fr)}.editor{min-width:0;min-height:0;display:flex;flex-direction:column}.codebox{min-height:0;position:relative;flex:1;overflow:hidden;font:13px/22px var(--mono);tab-size:4}.gutter{position:absolute;inset:0 auto 0 0;width:48px;overflow:hidden;color:#727983;text-align:right;padding-right:14px;user-select:none}.gutter pre{margin:0;padding-top:16px;font:inherit}.code-surface{position:absolute;inset:0 0 0 48px;overflow:hidden}.highlight,.code-input{position:absolute;margin:0;border:0;inset:0;width:100%;height:100%;padding:16px 20px 32px 0;font:inherit;letter-spacing:0;tab-size:4;white-space:pre;overflow-wrap:normal;overflow:auto}.highlight{pointer-events:none;overflow:visible}.code-input{resize:none;color:transparent;caret-color:var(--text);background:transparent;-webkit-text-fill-color:transparent;outline:none}.code-input::selection{background:#657a9666}.code-input:read-only{caret-color:transparent}.keyword{color:#b6aed1}.type{color:#a4c3c9}.string{color:#c2c99d}.comment{color:#87929e}.number{color:#cfb799}
+.ai{display:none;min-height:0;min-width:0;border-left:1px solid var(--line);background:var(--panel);flex-direction:column}.app[data-view=ai] .workspace{grid-template-columns:minmax(0,1fr) 296px}.app[data-view=ai] .ai{display:flex}.panel-heading{height:36px;padding:0 12px;display:flex;align-items:center;border-bottom:1px solid var(--line);font-size:12px}.provider{margin-left:auto;background:transparent;border:0;border-radius:4px;font-size:12px;padding:5px;max-width:100px}.messages{padding:16px 12px;overflow:auto;flex:1;min-height:0;font-size:12px;line-height:1.7}.message{margin-bottom:20px}.byline{font-size:11px;color:var(--muted);margin-bottom:6px}.message p{margin:0}.proposal{border-top:1px solid var(--line);padding-top:8px;margin-top:12px;display:flex;gap:6px;align-items:center;font-size:11px}.proposal span{color:var(--muted);font-family:var(--mono);font-size:10px}.proposal button{margin-left:auto;color:var(--accent);font-size:11px}.compose{border-top:1px solid var(--line);padding:10px 12px}.composer{display:flex;align-items:flex-end;gap:6px;border:1px solid var(--line);background:var(--bg);border-radius:4px;padding:6px 6px 6px 9px}.composer:focus-within{border-color:var(--accent)}.composer textarea{display:block;flex:1;min-width:0;resize:none;background:none;border:0;outline:0;font-size:12px;line-height:24px;min-height:28px;max-height:110px;padding:2px 0}.composer textarea::placeholder{color:var(--muted)}.send{width:28px;height:28px;display:grid;place-items:center;color:var(--accent);padding:0}.simulation{font-size:10px;color:var(--muted);text-align:center;margin:7px 0 0}
+.popover{position:fixed;left:10px;top:40px;width:270px;max-width:calc(100vw - 20px);max-height:calc(100dvh - 56px);overflow:auto;background:var(--panel);border:1px solid var(--line);border-radius:5px;z-index:20;box-shadow:0 8px 24px #0004;padding:6px}.menu-heading{height:28px;padding:0 8px;display:flex;align-items:center;font-size:11px;color:var(--muted)}.menu-heading span{margin-left:auto;font-size:10px}.tree button{width:100%;display:flex;align-items:center;text-align:left;height:32px;padding:0 8px;gap:8px;font-size:12px}.tree button.active{background:var(--hover)}.file-kind{color:var(--muted);font:10px var(--mono);width:18px}.session{border-top:1px solid var(--line);margin-top:6px;padding-top:6px}.device{display:flex;align-items:center;gap:8px;padding:8px;font-size:12px}.device small{font-size:10px;color:var(--muted);display:block;margin-top:3px}.device svg{color:var(--muted)}.device button{margin-left:auto;color:var(--accent);font-size:11px}.pill{margin-left:auto;color:var(--accent);font-size:10px}.control-note{font-size:10px;color:var(--muted);line-height:1.5;margin:5px 8px 7px}[hidden],dialog:not([open]){display:none!important}.notice{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:30;background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:8px 12px;color:var(--text);font-size:11px;max-width:calc(100vw - 24px);text-align:center;pointer-events:none}
+dialog{background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:5px;padding:0;width:min(650px,calc(100vw - 24px));max-height:85dvh}dialog::backdrop{background:#090b10b8}dialog header{height:40px;border-bottom:1px solid var(--line);padding:0 12px;display:flex;align-items:center;font-size:12px}dialog header strong{font-weight:500}.review-description{padding:12px;margin:0;color:var(--muted);font-size:11px;line-height:1.6}.diff{font:12px/22px var(--mono);overflow:auto;margin:0;padding:12px;background:var(--bg);white-space:pre}.diff .add{color:var(--accent);background:#30443b55;display:block}.review-actions{padding:10px 12px;display:flex;gap:8px;border-top:1px solid var(--line)}.primary{background:var(--accent);color:#24362b}.primary:hover{background:#c5dfcf}.review-error{color:#e0bba8;padding:0 12px 12px;font-size:12px;line-height:1.5;margin:0}
+@media(max-width:760px){.app{grid-template-rows:44px minmax(0,1fr)}.top{padding:0 8px;gap:4px}.file-trigger,.ask-ai,.save{height:44px;min-width:44px}.file-trigger{max-width:58%;gap:6px}.file-trigger #file-label{overflow:hidden;text-overflow:ellipsis}.file-trigger>svg{display:none}.ask-ai{padding:0 8px}.app[data-view=ai] .workspace{display:block}.app[data-view=ai] .editor{display:none}.ai{height:100%;border-left:0}.editor{height:100%}.codebox{font-size:16px;line-height:25px}.gutter{display:none}.code-surface{left:0}.highlight,.code-input{padding:14px 16px 32px;white-space:pre-wrap;overflow-wrap:anywhere}.panel-heading{height:44px}.provider{height:44px}.messages{font-size:13px;padding:16px}.composer textarea{font-size:16px;line-height:24px;padding:8px 0}.send{height:44px;width:44px}.compose{padding-bottom:calc(10px + env(safe-area-inset-bottom))}.proposal button{height:44px}.popover{top:48px;left:8px;max-width:calc(100vw - 16px);max-height:calc(100dvh - 64px)}.tree button,.device button,.review-actions button{min-height:44px}.diff{white-space:pre-wrap;overflow-wrap:anywhere}dialog header .icon{width:44px;height:44px}.view-only{font-size:10px}}
+
+.terminal{display:flex;flex-direction:column;flex:0 0 clamp(160px,25vh,240px);min-height:0;min-width:0;border-top:1px solid var(--line);background:var(--bg)}.terminal-heading{height:32px;flex:none;display:flex;align-items:center;gap:10px;padding:0 12px;background:var(--panel);font-size:12px}.terminal-host{font-size:10px;color:var(--muted)}.terminal-output{flex:1;min-height:0;min-width:0;overflow:auto;margin:0;padding:10px 12px;font:12px/20px var(--mono);white-space:pre;tab-size:4}.terminal-form{display:flex;align-items:center;gap:8px;flex:none;border-top:1px solid var(--line);padding:5px 12px;padding-bottom:calc(5px + env(safe-area-inset-bottom))}.terminal-prefix{color:var(--accent);font:12px var(--mono)}.terminal-command{flex:1;min-width:0;border:0;outline:none;background:transparent;font:12px/28px var(--mono);padding:0}.terminal-command::placeholder{color:var(--muted)}.terminal-command:focus-visible{outline:1px solid var(--accent);outline-offset:2px;border-radius:2px}.terminal-form button{font-size:11px;color:var(--accent);min-height:28px}.terminal-command:read-only{color:var(--muted)}.workspace-tool{display:flex;align-items:center;gap:8px;width:100%;text-align:left;min-height:32px;padding:0 8px}.workspace-tool svg{color:var(--muted)}.workspace-tool small{margin-left:auto;color:var(--muted);font-size:10px}.tools{border-top:1px solid var(--line);margin-top:6px;padding-top:6px}
+@media(max-width:760px){.app[data-terminal=open] .codebox{display:none}.terminal{flex:1;border-top:0}.terminal-heading{height:44px}.terminal-heading .icon{width:44px;height:44px}.terminal-output{font-size:13px;line-height:22px;padding:12px 16px}.terminal-command{font-size:16px;line-height:44px}.terminal-form{padding:4px 12px;padding-bottom:calc(4px + env(safe-area-inset-bottom))}.terminal-form button,.workspace-tool{min-width:44px;min-height:44px}}
+</style>
+</head>
+<body>
+<svg style="display:none" aria-hidden="true"><defs>
+<symbol id="i-ai" viewBox="0 0 20 20"><path d="m10 2 2.5 5.5L18 10l-5.5 2.5L10 18l-2.5-5.5L2 10l5.5-2.5Z"/></symbol>
+<symbol id="i-pc" viewBox="0 0 20 20"><rect x="2" y="3" width="16" height="11" rx="2"/><path d="M7 18h6m-3-4v4"/></symbol>
+<symbol id="i-phone" viewBox="0 0 20 20"><rect x="5" y="1.5" width="10" height="17" rx="2"/><path d="M9 15.5h2"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 20 20"><path d="M10 16V4m-5 5 5-5 5 5"/></symbol>
+<symbol id="i-close" viewBox="0 0 20 20"><path d="m5 5 10 10M15 5 5 15"/></symbol>
+<symbol id="i-terminal" viewBox="0 0 20 20"><path d="m4 5 5 5-5 5m7 0h5"/></symbol>
+<symbol id="i-file" viewBox="0 0 20 20"><path d="M11 2H4v16h12V7Zm0 0v5h5"/></symbol>
+</defs></svg>
+<div class="app" id="app" data-view="code">
+<header class="top">
+ <button class="file-trigger" id="files-toggle" aria-label="Workspace: files, terminal and devices" title="Workspace: files, terminal and devices" aria-expanded="false" aria-controls="files-menu"><svg><use href="#i-file"/></svg><span id="file-label">session.rs</span><small class="dirty" id="dirty-dot"></small><span class="chevron">⌄</span></button><span class="view-only" id="view-only" hidden>View only</span>
+ <span class="spacer"></span><button class="save" id="save-button" title="Save in this browser (⌘/Ctrl S)" hidden>Save</button><button class="ask-ai" id="ai-toggle" title="Open or close the AI assistant" aria-expanded="false" aria-controls="ai-panel"><svg><use href="#i-ai"/></svg><span id="ai-toggle-label">Ask AI</span></button>
+</header>
+<main class="workspace">
+<section class="editor" aria-label="Code editor">
+ <div class="codebox"><div class="gutter" aria-hidden="true"><pre id="line-numbers"></pre></div><div class="code-surface"><pre class="highlight" id="highlight" aria-hidden="true"></pre><textarea id="code-input" class="code-input" aria-label="Edit session.rs" spellcheck="false" autocomplete="off" autocapitalize="off" wrap="off"></textarea></div></div>
+
+ <section class="terminal" id="terminal-panel" aria-label="PC host terminal demo" hidden><header class="terminal-heading"><span>Terminal</span><span class="terminal-host" id="terminal-host">PC host · Demo</span><span class="spacer"></span><button class="icon" id="close-terminal" aria-label="Hide terminal" title="Hide terminal"><svg><use href="#i-close"/></svg></button></header><pre class="terminal-output" id="terminal-output" aria-label="Simulated terminal output" tabindex="0"></pre><form class="terminal-form" id="terminal-form"><span class="terminal-prefix" aria-hidden="true">$</span><input class="terminal-command" id="terminal-command" aria-label="Demo terminal command" placeholder="Type help…" maxlength="512" spellcheck="false" autocomplete="off" autocapitalize="off"><button type="button" id="terminal-stop" title="Interrupt demo command (Ctrl+C)" hidden>Stop</button><button type="submit" id="terminal-run">Run</button></form></section>
+</section>
+<aside class="ai" id="ai-panel" aria-label="AI assistant">
+ <div class="panel-heading"><span>AI</span><select id="provider" class="provider" aria-label="AI provider"><option>Codex</option><option>Claude</option></select></div>
+ <div class="messages" id="messages" aria-live="polite"><div class="message"><div class="byline">You</div><p>Keep my edits when I reconnect.</p></div><div class="message"><div class="byline" id="agent-name">Codex</div><p>Add a revision check before accepting changes.</p><div class="proposal"><span>session.rs · +4</span><button id="review-button">Review change →</button></div></div></div>
+ <form class="compose" id="prompt-form"><div class="composer"><textarea id="prompt" aria-label="Message the AI assistant" placeholder="Ask about your code…" rows="1" maxlength="1200"></textarea><button class="send" type="submit" aria-label="Send demo prompt"><svg><use href="#i-arrow"/></svg></button></div><p class="simulation">Simulated AI</p></form>
+</aside>
+</main>
+</div>
+<aside class="files popover" id="files-menu" aria-label="Workspace" hidden><div class="menu-heading">Files</div><div class="tree"><button class="active" data-file="session.rs"><span class="file-kind">rs</span>session.rs</button><button data-file="main.rs"><span class="file-kind">rs</span>main.rs</button><button data-file="README.md"><span class="file-kind">md</span>README.md</button></div><div class="tools"><button class="workspace-tool" id="terminal-toggle" aria-controls="terminal-panel" aria-expanded="false" aria-keyshortcuts="Control+`"><svg><use href="#i-terminal"/></svg><span>Terminal</span><small>PC host · Ctrl `</small></button></div><section class="session" id="session-popover" aria-label="Demo session devices"><div class="menu-heading">Session <span>Demo · 2 devices</span></div><div class="device"><svg><use href="#i-pc"/></svg><div>This device<small id="edit-state">Editing on this device</small></div><span class="pill" id="pc-state">Editing</span></div><div class="device"><svg><use href="#i-phone"/></svg><div>Phone<small id="phone-state">Watching this session</small></div><button id="handoff">Hand off</button></div><p class="control-note" id="handoff-note">Unsaved work stays in this demo.</p></section></aside>
+<div class="notice" id="notice" role="status" hidden></div>
+<dialog id="review-dialog" aria-labelledby="review-title"><header><strong id="review-title">Review change</strong><span class="spacer"></span><button class="icon" id="close-review" aria-label="Close review"><svg><use href="#i-close"/></svg></button></header><p class="review-description">session.rs · +4 lines</p><pre class="diff"><span> pub fn apply(&amp;mut self, edit: Edit) -&gt; Result&lt;()&gt; {</span>
+<span class="add">+    if edit.revision != self.revision {</span><span class="add">+        return Err(Error::StaleRevision);</span><span class="add">+    }</span><span class="add">+</span><span>     self.buffer.apply(edit.changes)?;</span>
+<span>     self.revision += 1;</span>
+<span>     Ok(())</span>
+<span> }</span></pre><div class="review-actions"><button id="cancel-review">Keep original</button><span class="spacer"></span><button class="primary" id="apply-change">Apply change</button></div><p class="review-error" id="review-error" hidden></p></dialog>
+<script>
+'use strict';
+const $=id=>document.getElementById(id), app=$('app'), input=$('code-input');
+const original=`use crate::{Buffer, Edit, Error, Result};
+
+/// A workspace that stays with you.
+pub struct Session {
+    id: SessionId,
+    buffer: Buffer,
+    revision: u64,
+}
+
+impl Session {
+    pub fn new(id: SessionId) -> Self {
+        Self {
+            id,
+            buffer: Buffer::new(),
+            revision: 0,
+        }
+    }
+
+    pub fn apply(&mut self, edit: Edit) -> Result<()> {
+        self.buffer.apply(edit.changes)?;
+        self.revision += 1;
+        Ok(())
+    }
+
+    pub fn snapshot(&self) -> Snapshot {
+        Snapshot {
+            session_id: self.id,
+            revision: self.revision,
+            text: self.buffer.text(),
+        }
+    }
+}
+`;
+const defaults={'session.rs':original,'main.rs':`mod session;
+
+use nimlo::{Config, Host, Result};
+
+fn main() -> Result<()> {
+    let config = Config::local();
+    let host = Host::new(config)?;
+
+    // The workspace outlives its screens.
+    host.serve("127.0.0.1:8080")
+}
+`,'README.md':`# Nimlo
+
+One workspace. Every screen.
+
+This is an interface mock for a lightweight editor.
+
+- Your PC hosts files and AI work.
+- Your phone continues the same session.
+- Your edits are preserved before control transfers.
+
+In this prototype, AI replies and devices are simulated.
+Save stores sample text in this browser only.
+
+The custom editor engine and real host are planned work.
+`};
+let docs={...defaults}, saved={...defaults}, current='session.rs', controlled=true, applied=false;
+try{const s=JSON.parse(localStorage.getItem('relay-mock-files')||'null');if(s)for(const k of Object.keys(docs))if(typeof s[k]==='string'&&s[k].length<100000)docs[k]=saved[k]=s[k]}catch{}
+const escape=s=>s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+function colorize(s){if(current==='README.md')return escape(s);const re=/(\/\/[^\n]*|"(?:\\.|[^"\\])*"|\b(?:use|pub|struct|impl|fn|let|mut|self|Self|return|if|mod)\b|\b(?:Session|SessionId|Buffer|Edit|Error|Result|Snapshot|Host|Config)\b|\b\d+\b)/g;let out='',last=0;for(const m of s.matchAll(re)){out+=escape(s.slice(last,m.index));const v=m[0],cls=v.startsWith('//')?'comment':v.startsWith('"')?'string':/^\d/.test(v)?'number':/^[A-Z]/.test(v)&&v!=='Self'?'type':'keyword';out+='<span class="'+cls+'">'+escape(v)+'</span>';last=m.index+v.length}return out+escape(s.slice(last))}
+let noticeTimer;function setNotice(s){clearTimeout(noticeTimer);$('notice').textContent=s;$('notice').hidden=false;noticeTimer=setTimeout(()=>{$('notice').hidden=true},2600)}
+function paint(){const text=input.value;$('highlight').innerHTML=colorize(text)+'\n';$('line-numbers').textContent=Array.from({length:text.split('\n').length},(_,i)=>i+1).join('\n');const dirty=docs[current]!==saved[current];$('dirty-dot').textContent=dirty?'●':'';$('save-button').hidden=!dirty;syncScroll()}
+function syncScroll(){$('highlight').style.width=input.clientWidth+'px';$('highlight').style.transform=`translate(${-input.scrollLeft}px,${-input.scrollTop}px)`;$('line-numbers').style.transform=`translateY(${-input.scrollTop}px)`}
+function updateLayout(){input.wrap=window.matchMedia('(max-width:760px)').matches?'soft':'off';syncScroll()}
+window.addEventListener('resize',updateLayout);
+function showView(v){app.dataset.view=v;$('ai-toggle').setAttribute('aria-expanded',String(v==='ai'));$('ai-toggle-label').textContent=v==='ai'?'Close AI':'Ask AI';updateLayout()}
+function closeFiles(){$('files-menu').hidden=true;$('files-toggle').setAttribute('aria-expanded','false')}
+function openFile(name){current=name;input.value=docs[name];input.setAttribute('aria-label','Edit '+name);$('file-label').textContent=name;document.querySelectorAll('[data-file]').forEach(b=>b.classList.toggle('active',b.dataset.file===name));input.scrollTop=input.scrollLeft=0;if(window.matchMedia('(max-width:760px)').matches)setTerminal(false,false);closeFiles();showView('code');paint()}
+function save(){if(!controlled){setNotice('Take control before saving');return}try{localStorage.setItem('relay-mock-files',JSON.stringify(docs));saved={...docs};paint();setNotice('Saved in this browser')}catch{setNotice('Browser storage unavailable; text remains open')}}
+input.addEventListener('input',()=>{if(input.value.length>100000){input.value=docs[current];setNotice('Mock file limit reached');return}docs[current]=input.value;paint()});input.addEventListener('scroll',syncScroll);document.querySelectorAll('[data-file]').forEach(b=>b.addEventListener('click',()=>openFile(b.dataset.file)));$('save-button').addEventListener('click',save);
+$('files-toggle').addEventListener('click',()=>{const open=$('files-menu').hidden;$('files-menu').hidden=!open;$('files-toggle').setAttribute('aria-expanded',String(open))});
+$('ai-toggle').addEventListener('click',()=>{closeFiles();showView(app.dataset.view==='ai'?'code':'ai')});
+$('prompt').addEventListener('input',()=>{$('prompt').style.height='auto';$('prompt').style.height=Math.min(110,$('prompt').scrollHeight)+'px'});
+document.addEventListener('click',e=>{if(!$('files-menu').contains(e.target)&&!$('files-toggle').contains(e.target))closeFiles()});
+$('handoff').addEventListener('click',()=>{controlled=!controlled;input.readOnly=!controlled;$('view-only').hidden=controlled;$('pc-state').textContent=controlled?'Editing':'Watching';$('phone-state').textContent=controlled?'Watching this session':'Editing · simulated';$('handoff').textContent=controlled?'Hand off':'Take control';$('edit-state').textContent=controlled?'Editing on this device':'Phone has control · view only';$('handoff-note').textContent=controlled?'Control returned. Your text is intact.':'Demo handoff complete. Your text is intact.';terminalControl();setNotice(controlled?'Control returned to this device':'Demo: phone has control')});
+$('provider').addEventListener('change',()=>{$('agent-name').textContent=$('provider').value;setNotice($('provider').value+' selected · simulated provider')});
+$('prompt-form').addEventListener('submit',e=>{e.preventDefault();const text=$('prompt').value.trim();if(!text)return;const wrapper=document.createElement('div');wrapper.className='message';const who=document.createElement('div');who.className='byline';who.textContent='You';const question=document.createElement('p');question.textContent=text;const response=document.createElement('p');response.style.marginTop='10px';response.style.color='var(--muted)';response.textContent=`${$('provider').value} · Demo response: I would use ${current} as context. Connect the host to run this request.`;wrapper.append(who,question,response);wrapper.dataset.demo='true';$('messages').append(wrapper);while($('messages').querySelectorAll('[data-demo]').length>6)$('messages').querySelector('[data-demo]').remove();$('prompt').value='';$('prompt').style.height='auto';$('messages').scrollTop=$('messages').scrollHeight;setNotice('Demo reply · no AI request sent')});
+$('review-button').addEventListener('click',()=>{$('review-error').hidden=true;$('apply-change').disabled=applied;$('review-dialog').showModal()});for(const id of ['close-review','cancel-review'])$(id).addEventListener('click',()=>$('review-dialog').close());$('review-dialog').addEventListener('click',e=>{if(e.target===$('review-dialog')){const r=e.target.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)e.target.close()}});
+$('apply-change').addEventListener('click',()=>{let error='';if(!controlled)error='This device is viewing. Take control before applying a change.';else if(docs['session.rs']!==original)error='Your file has changed since this proposal. Your edits are preserved; this demo cannot merge the change.';if(error){$('review-error').textContent=error;$('review-error').hidden=false;return}docs['session.rs']=original.replace('        self.buffer.apply(edit.changes)?;','        if edit.revision != self.revision {\n            return Err(Error::StaleRevision);\n        }\n\n        self.buffer.apply(edit.changes)?;');applied=true;$('review-button').textContent='Change applied ✓';$('apply-change').disabled=true;$('review-dialog').close();openFile('session.rs');setNotice('Change applied · unsaved')});
+
+let terminalOpen=false,terminalStarted=false,terminalRunning=false,terminalRows=[],terminalCharacters=0,terminalHistory=[],terminalHistoryIndex=0,terminalDraft='';
+function appendTerminal(text){for(const line of text.split('\n')){const row=line.slice(0,1024);terminalRows.push(row);terminalCharacters+=row.length+1;while(terminalRows.length>100||terminalCharacters>16384)terminalCharacters-=terminalRows.shift().length+1;}$('terminal-output').textContent=terminalRows.join('\n');$('terminal-output').scrollTop=$('terminal-output').scrollHeight}
+function terminalControl(){const blocked=!controlled||terminalRunning;$('terminal-command').readOnly=blocked;$('terminal-run').disabled=blocked;$('terminal-stop').hidden=!terminalRunning;$('terminal-stop').disabled=!controlled;$('terminal-host').textContent='PC host · Demo'+(!controlled?' · View only':'');$('terminal-command').placeholder=!controlled?'View only':terminalRunning?'Command running…':'Type help…'}
+function setTerminal(open,focus=true){terminalOpen=open;app.dataset.terminal=open?'open':'closed';$('terminal-panel').hidden=!open;$('terminal-toggle').setAttribute('aria-expanded',String(open));closeFiles();if(open){if(window.matchMedia('(max-width:760px)').matches)showView('code');if(!terminalStarted){terminalStarted=true;appendTerminal('Demo shell. Type help for sample commands.')}terminalControl();if(focus)$('terminal-command').focus({preventScroll:true})}else if(focus)input.focus({preventScroll:true});updateLayout()}
+function interruptTerminal(){if(!controlled)return;if(terminalRunning){terminalRunning=false;appendTerminal('^C\nDemo process stopped.')}else{appendTerminal('^C');$('terminal-command').value=''}terminalControl();$('terminal-command').focus({preventScroll:true})}
+$('terminal-toggle').addEventListener('click',()=>setTerminal(!terminalOpen));$('close-terminal').addEventListener('click',()=>setTerminal(false));$('terminal-stop').addEventListener('click',interruptTerminal);
+$('terminal-form').addEventListener('submit',e=>{e.preventDefault();if(!controlled||terminalRunning)return;const command=$('terminal-command').value.trim();if(!command)return;terminalHistory.push(command);if(terminalHistory.length>20)terminalHistory.shift();terminalHistoryIndex=terminalHistory.length;terminalDraft='';$('terminal-command').value='';appendTerminal('$ '+command);switch(command){case 'help':appendTerminal('pwd · ls · git status\ncargo check · cargo run\necho <text> · clear');break;case 'pwd':appendTerminal('/workspace/nimlo (demo)');break;case 'ls':appendTerminal('session.rs  main.rs  README.md');break;case 'git status':appendTerminal('On branch main\nWorking tree clean (simulated)');break;case 'cargo check':appendTerminal('Checking nimlo…\nFinished (simulated).');break;case 'cargo run':appendTerminal('Demo server running.\nStop or Ctrl+C to interrupt.');terminalRunning=true;break;case 'clear':terminalRows=[];terminalCharacters=0;$('terminal-output').textContent='';break;default:appendTerminal(command.startsWith('echo ')?command.slice(5):'Unsupported demo command. Type help.')}terminalControl();$('terminal-command').focus({preventScroll:true})});
+$('terminal-command').addEventListener('keydown',e=>{if(e.isComposing)return;if(e.ctrlKey&&e.key.toLowerCase()==='c'&&e.target.selectionStart===e.target.selectionEnd){e.preventDefault();interruptTerminal()}else if(!terminalRunning&&controlled&&(e.key==='ArrowUp'||e.key==='ArrowDown')){e.preventDefault();if(terminalHistoryIndex===terminalHistory.length)terminalDraft=e.target.value;terminalHistoryIndex=Math.max(0,Math.min(terminalHistory.length,terminalHistoryIndex+(e.key==='ArrowUp'?-1:1)));e.target.value=terminalHistoryIndex===terminalHistory.length?terminalDraft:terminalHistory[terminalHistoryIndex];e.target.setSelectionRange(e.target.value.length,e.target.value.length)}});
+
+document.addEventListener('keydown',e=>{if(e.ctrlKey&&!e.altKey&&e.code==='Backquote'&&!e.isComposing&&!$('review-dialog').open){e.preventDefault();setTerminal(!terminalOpen);return}if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='s'){e.preventDefault();save()}if(e.key==='Escape'){closeFiles()}});
+openFile(current);
+</script>
+</body>
+</html>

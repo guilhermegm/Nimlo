@@ -1,0 +1,21 @@
+{
+  "decision": "accept",
+  "date": "2026-10-11T07:35:22.041Z",
+  "binarySha256": "e089dc02d8dbc02b8d6252bb980a84a3459ec6cba013bda85dd8a01bfd605c62",
+  "qualityBar": "User-selected Zed quiet compact hierarchy, scoped to Relay workspace composition; exact user-rejected screenshot is decisive negative evidence.",
+  "findings": [
+    "At 2012 × 1248 empty AI Tab, the invitation, three useful starter actions, context and composer form one aligned central entry. The 760-pixel reading container has 712 pixels of inner width; the neutral canvas supplies space without a giant rounded card. Provider/settings follow the composer rather than occupying a detached panel header.",
+    "Desktop has one 36-pixel control row with project named once, one named file control, AI, one close action and Split/Tab. Separate Files and file-view affordances stay discoverable and native keyboard activation works. Removing the repeated strip moves the work surface from 92 to 62 pixels below the viewport top.",
+    "Split uses a restrained 1-pixel lane boundary and consistent neutral surfaces. Larger 14-pixel source and chat text are readable without extra enclosing boxes. Computed normal messages/prompt/provider contrast is approximately 15.6/14.3/9.2 to 1 against their actual solid backgrounds.",
+    "Active Tab uses the same bounded reading column, aligned composer and footer. Files remains a compact floating menu; phone rows, filters and dock stay usable. The real disposable terminal remains visually separated while sharing the existing PTY.",
+    "Phone Tab remains the default and gives a full-width reading surface. Voluntary Split is truly editable at 390 × 844, 320 × 300 and 844 × 390. At 320 × 300, busy messages retain 64 pixels and Stop, settings, composer and layout controls retain 44 pixels with positive hit tests.",
+    "Unsaved source, backward selection, both source scroll axes, prompt, conversation and project scope survive native mode changes. A trusted wheel 110 → 24 becomes the restored position in both engines. Native menu/tab keys, settings-modal shortcut fencing and injected composing Enter pass.",
+    "Both engines retain the original editor/chat/terminal DOM nodes. Fifteen cycles retain 481 → 481 nodes in Chromium and 586 → 586 in WebKit; no browser errors or unintended shell/provider/file/project work occur during layout toggles. No RAM performance-parity claim is made."
+  ],
+  "limits": [
+    "Product identities are recognizable. This is an independent visual and task judgment, not a blind study or live native Zed comparison.",
+    "Capture matrices use the same generated file, question, deterministic reply, unsent draft and viewports. Native scroll states carry between captures, while the redesigned type size changes visible line counts and positions; these are style comparisons, not pixel-diff or exact scroll-offset baselines. Separate deep checks verify exact selection and both scroll axes.",
+    "Headless phone geometry and injected IME events are validated; physical phone keyboards remain untested.",
+    "No user projects, credentials, real inference, tunnels or live 8767/8765 hosts were accessed. Both installed provider names were shadowed with disposable fake CLIs and the fixture PTY uses /bin/sh."
+  ]
+}

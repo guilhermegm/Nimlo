@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-11 09:45:59 UTC",
+  "status": "pass",
+  "binarySha256": "d9fab71400da1e3a60e826887d81af69c7035b771367a4b123ac61b5baca95ac",
+  "binaryBytes": 2923712,
+  "assets": {
+    "index.html": {
+      "bytes": 21457,
+      "gzipBytes": 5502,
+      "sha256": "ab1486b74c992454a1ef14b9115991b046efca27409cde4e06e4848ae9e0e60b"
+    },
+    "app.js": {
+      "bytes": 118157,
+      "gzipBytes": 28496,
+      "sha256": "cc1c5134753e7e21b1808971c87068958f74ef7a98921e893fdfad6f2d2a898f"
+    },
+    "style.css": {
+      "bytes": 45236,
+      "gzipBytes": 8485,
+      "sha256": "1bbb3abeee7d614da7e5f2aad88381ab831aa247d9760410f9eeceb98496e239"
+    }
+  },
+  "sourceBytes": 184850,
+  "gzipEstimateBytes": 42483,
+  "embeddedChecks": 142,
+  "checksBySuite": {
+    "pairing-entry-chromium": 14,
+    "pairing-entry-webkit": 14,
+    "ui-chromium": 33,
+    "ui-webkit": 33,
+    "pairing": 19,
+    "security": 29
+  },
+  "sourceOverrides": false,
+  "hostProtocolChanged": false,
+  "inferenceRequests": 0,
+  "sourceEditSerializationRegression": true,
+  "limitations": [
+    "Browser checks use disposable hosts and generated files; no user project or real provider inference.",
+    "Phone layouts run on desktop Chromium/WebKit, not a physical iPhone or Android device.",
+    "Public entry uses exact embedded assets through local browser routing, not a new public tunnel benchmark.",
+    "Clipboard success/denial cases use controlled browser clipboard implementations.",
+    "Host Rust/protocol source is unchanged; no new Rust unit-test or memory-measurement claim."
+  ]
+}

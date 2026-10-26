@@ -1,0 +1,11 @@
+{
+  "status": "pass",
+  "checks": [
+    "Development rejects non-loopback and configured internet origins",
+    "Live dev files retain auth, CSP, no-store and Host restrictions",
+    "Dev routes cannot expose other files, symlinks or oversized assets",
+    "Authenticated dev sessions cannot start the managed public tunnel",
+    "Desktop host emits one private ready event and exits cleanly on parent EOF"
+  ],
+  "realInferenceRequests": 0
+}

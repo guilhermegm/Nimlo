@@ -1,0 +1,56 @@
+{
+  "checks": [
+    "Default view shows code with workspace and AI closed",
+    "Clean file has no save action",
+    "File picker loads main and closes",
+    "Editing reveals Save",
+    "Saved text survives reload",
+    "Ask AI reveals assistant",
+    "Provider-aware demo reply",
+    "Review applies proposed change",
+    "Handoff exposes view-only state",
+    "Take control restores editing",
+    "Escape closes workspace menu",
+    "Conflict preserves manual edits",
+    "Phone code wraps without horizontal clipping",
+    "Phone has no bottom scroll-control strip",
+    "Phone AI uses one surface",
+    "Phone diff wraps",
+    "Phone file picker returns to code",
+    "No page-wide overflow",
+    "Dirty phone toolbar fits at 320px",
+    "Phone input keeps 16px font",
+    "No script errors"
+  ],
+  "errors": [],
+  "widths": [
+    {
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "width": 760,
+      "scrollWidth": 760
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "width": 1024,
+      "scrollWidth": 1024
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "width": 1920,
+      "scrollWidth": 1920
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "status": "accept",
+  "binarySha256": "d42464ec1dab8f447a850ec77cfc31c8e89ae80ea238e6bdd7e728b440cab851",
+  "reviewer": "Independent ai_chat_critic agent; no product source edits",
+  "gate": "The three user-supplied failure screenshots plus frozen b3567e1 matching task scenes; complete valid approvals remain available, unreviewable grants fail closed, real Ask/Full access for both providers, safe readable Markdown and local links, quiet consistent chat and usable 390px/320\u00d7300 controls.",
+  "engines": [
+    {
+      "engine": "chromium",
+      "browserVersion": "155.0.8059.39",
+      "checksPassed": 19,
+      "report": "tests/ai-chat-review/final-d42464ec-chromium/review.json",
+      "reportSha256": "40ffb95368be7982747aff1945db53ba4d01641b1a5ba5c9e3f482449cffd2e6",
+      "screenshotsReviewed": [
+        "desktop-markdown-matched.png",
+        "desktop-command-matched.png",
+        "phone-command-matched.png",
+        "phone-approval-320x300.png",
+        "desktop-approval-streaming.png",
+        "desktop-permission-settings-fullAccess.png",
+        "phone-settings-320x300.png"
+      ],
+      "horizontalOverflow": false,
+      "mobileTapTargetsAtLeast44px": true
+    },
+    {
+      "engine": "webkit",
+      "browserVersion": "26.6",
+      "checksPassed": 19,
+      "report": "tests/ai-chat-review/final-d42464ec-webkit/review.json",
+      "reportSha256": "3e5e05f1eb05a92ea4f186c8b3bf382621c492a8fb996f227d01c4a61955373a",
+      "screenshotsReviewed": [
+        "desktop-markdown-matched.png",
+        "desktop-command-matched.png",
+        "phone-command-matched.png",
+        "phone-approval-320x300.png",
+        "desktop-approval-streaming.png",
+        "desktop-permission-settings-fullAccess.png",
+        "phone-settings-320x300.png"
+      ],
+      "horizontalOverflow": false,
+      "mobileTapTargetsAtLeast44px": true
+    }
+  ],
+  "visualVerdict": {
+    "markdown": "Candidate wins: real bold, indented bullets and ordered lists, inline/fenced code and concise clickable file labels replace literal syntax and long absolute-path clutter. Broken-newline citations open the intended line.",
+    "commandApproval": "Candidate wins: exact command and working directory are separated from cached output and protocol bookkeeping. Approve once remains visible for the oversized metadata case, with broader choices explicitly scoped under More approval options.",
+    "blockedApprovals": "Unsupported/missing/oversized previews and all eight malformed permission boundaries show an explanation and retain denial/stop routes without positive choices.",
+    "mobile": "Candidate keeps the same compact chat structure. Measured controls are at least 44px, there is no horizontal document overflow, and the reduced 320\u00d7300 conversation allows scrolling each actual decision into view.",
+    "permissions": "Ask is the initial value. Full access is plainly named with its consequence; both provider launch/protocol settings follow the chosen value and host persistence survives reload/restart. Busy state explains why the active policy cannot change.",
+    "streaming": "Expanded approval options and focused native choice survive an actual provider warning; keyboard Space sends the exact structured provider decision.",
+    "remainingMaterialGaps": []
+  },
+  "safetyProof": [
+    "Hostile raw HTML and javascript/data/file schemes remain inert; large Markdown is bounded.",
+    "Local resolution rejects outside projects, traversal and escape symlinks; attached-root click affects only the clicking device and preserves conversation origin.",
+    "Codex one-time/session/command-rule/network-rule decisions preserve exact native wire values; Claude approval preserves exact tool input without persisting tool permission.",
+    "Dirty shared buffers block both structured command and network grants.",
+    "No source overrides, live 8765/8767 access, real inference, credentials, unrelated projects, tunnels or external messages."
+  ],
+  "references": "tests/ai-chat-review/references/provenance.json",
+  "baselineReports": [
+    "tests/ai-chat-review/baseline-chromium/review.json",
+    "tests/ai-chat-review/baseline-webkit/review.json"
+  ],
+  "rejectedCandidates": [
+    {
+      "shaPrefix": "0a10042f",
+      "materialGap": "Provider updates collapsed expanded approval choices and lost keyboard focus.",
+      "evidence": "tests/ai-chat-review/rejected-0a10042f-verified-webkit/review.json"
+    },
+    {
+      "shaPrefix": "31d948bb",
+      "materialGap": "Missing permission scope still offered Approve once.",
+      "evidence": "tests/ai-chat-review/candidate-31d948bb-chromium/review.json"
+    }
+  ],
+  "limitations": [
+    "Visual changes are recognizable; this is a direct independent screenshot comparison, not a true blinded human preference study.",
+    "Browsers use disposable fake provider processes; native real-provider inference, physical phones and native mobile keyboards were not exercised.",
+    "320\u00d7300 simulates a reduced visual viewport. Complete approval details may require scrolling at short heights.",
+    "Initial rejected-run reports retain harness timing/lifecycle findings; these were corrected and are not asserted as product defects."
+  ]
+}
