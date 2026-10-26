@@ -7,6 +7,7 @@ final class NativeDiagnostics {
   weak var app: NativeApp?
   let directory: URL
   var timer: Timer?, seen = Set<String>(), errors: [String] = [], lastText = "", reading = false
+  var lastUpdateURL = ""
   init?(app: NativeApp, directory: String) {
     let url = URL(fileURLWithPath: directory)
     guard let a = try? FileManager.default.attributesOfItem(atPath: url.path),
@@ -16,6 +17,12 @@ final class NativeDiagnostics {
     else { return nil }
     self.app = app
     self.directory = url
+    // Explicit private fixtures never contact GitHub or open a real browser.
+    app.updateMonitor?.manualInterval = 0
+    app.updateMonitor?.fetch = { callback in
+      DispatchQueue.main.async { callback(.failure(.network)) }; return {}
+    }
+    app.updatePageOpener = { [weak self] page in self?.lastUpdateURL = page.absoluteString; return true }
     try? FileManager.default.createDirectory(
       at: url.appendingPathComponent("responses"), withIntermediateDirectories: true,
       attributes: [.posixPermissions: 0o700])
@@ -79,6 +86,15 @@ final class NativeDiagnostics {
       "selectAllTarget": NSApp.target(forAction: NSSelectorFromString("selectAll:")).map {
         String(describing: type(of: $0))
       } ?? "",
+      "updateVisible": !app.updateNotice.isHidden,
+      "updateVersion": app.updateMonitor?.available?.version.text ?? "",
+      "updateMessage": app.updateNotice.message.stringValue,
+      "updateChecking": app.updateMonitor?.checking ?? false,
+      "updateHeight": app.updateNotice.frame.height,
+      "updateButtonFits": app.window.contentView.map {
+        $0.bounds.contains(app.updateNotice.button.convert(app.updateNotice.button.bounds, to: $0))
+      } ?? false,
+      "openedUpdateURL": lastUpdateURL,
     ]
     write(value, to: directory.appendingPathComponent("status.json"))
   }
@@ -125,6 +141,18 @@ final class NativeDiagnostics {
       }
     }
     switch kind {
+    case "updateFixture":
+      guard let monitor = app.updateMonitor else { done(["ok": false]); return }
+      let response: Result<Data, NimloUpdateFailure>
+      if command["offline"] as? Bool == true { response = .failure(.network) }
+      else if let release = command["release"] as? [String: Any],
+        let data = try? JSONSerialization.data(withJSONObject: release) { response = .success(data) }
+      else { done(["ok": false]); return }
+      monitor.fetch = { callback in DispatchQueue.main.async { callback(response) }; return {} }
+      done(["ok": true])
+    case "clickUpdate":
+      guard !app.updateNotice.isHidden else { done(["ok": false]); return }
+      app.updateNotice.button.performClick(nil); done(["ok": true])
     case "input":
       app.markChanged()
       app.engine.keys(command["keys"] as? String ?? "")

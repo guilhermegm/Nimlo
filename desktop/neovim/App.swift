@@ -48,6 +48,10 @@ final class NativeApp: NSObject, NSApplicationDelegate, NSWindowDelegate, NSMenu
   var toolbarButtons: [ToolbarButton] = []
   var aiButton: ToolbarButton?, terminalButton: ToolbarButton?
   var recentMenu: NSMenu!
+  var updateMonitor: NimloUpdateMonitor?
+  let updateNotice = UpdateNotice()
+  var updateNoticeHeight: NSLayoutConstraint?
+  var updatePageOpener: (URL) -> Bool = { NSWorkspace.shared.open($0) }
   var currentSnapshot: [String: Any] = [:]
   var draftURL: URL { URL(fileURLWithPath: state).appendingPathComponent("native-pending.json") }
   var resources: URL { Bundle.main.resourceURL! }
@@ -68,6 +72,7 @@ final class NativeApp: NSObject, NSApplicationDelegate, NSWindowDelegate, NSMenu
       showFailure(error.localizedDescription)
       return
     }
+    configureUpdates()
     setupWindow()
     setupMenus()
     if let directory = testDirectory {
@@ -79,6 +84,61 @@ final class NativeApp: NSObject, NSApplicationDelegate, NSWindowDelegate, NSMenu
     } else {
       welcome()
     }
+    if testDirectory == nil { updateMonitor?.startAutomaticChecks() }
+  }
+  func configureUpdates() {
+    updateMonitor = NimloUpdateMonitor(
+      current: Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "",
+      cache: NimloUpdateCache(url: URL(fileURLWithPath: state).appendingPathComponent("update-state.json")))
+    updateMonitor?.onChange = { [weak self] offer in self?.displayUpdate(offer) }
+    updateMonitor?.onManualResult = { [weak self] result in
+      guard let self else { return }
+      switch result {
+      case .available: self.displayUpdate(self.updateMonitor?.available)
+      case .current: self.updateMessage("You're up to date", "This Mac is running the latest available Nimlo release.")
+      case .unavailable: self.updateMessage("No update available for this Mac", "The latest release does not have a compatible download yet. Please check again later.")
+      case .failed: self.updateMessage("Could not check for updates", "Check your internet connection and try again later. You can also visit Nimlo's GitHub Releases page.")
+      case .throttled: self.updateMessage("Check again shortly", "Please wait a moment before checking for updates again.")
+      }
+    }
+    updateNotice.onOpen = { [weak self] in
+      guard let self, let offer = self.updateMonitor?.available else { return }
+      if !self.updatePageOpener(offer.page) { self.updateMessage("Could not open the release page", "Open github.com/guilhermegm/Nimlo/releases in your browser to download the update.") }
+    }
+  }
+  func mountContent(_ content: NSView) {
+    updateNoticeHeight?.isActive = false
+    updateNotice.removeFromSuperview()
+    let root = NSView()
+    content.translatesAutoresizingMaskIntoConstraints = false
+    updateNotice.translatesAutoresizingMaskIntoConstraints = false
+    root.addSubview(updateNotice); root.addSubview(content)
+    updateNotice.display(updateMonitor?.available)
+    updateNoticeHeight = updateNotice.heightAnchor.constraint(equalToConstant: updateNotice.isHidden ? 0 : 44)
+    NSLayoutConstraint.activate([
+      updateNotice.topAnchor.constraint(equalTo: root.topAnchor),
+      updateNotice.leadingAnchor.constraint(equalTo: root.leadingAnchor),
+      updateNotice.trailingAnchor.constraint(equalTo: root.trailingAnchor), updateNoticeHeight!,
+      content.topAnchor.constraint(equalTo: updateNotice.bottomAnchor),
+      content.leadingAnchor.constraint(equalTo: root.leadingAnchor),
+      content.trailingAnchor.constraint(equalTo: root.trailingAnchor),
+      content.bottomAnchor.constraint(equalTo: root.bottomAnchor),
+    ])
+    window.contentView = root
+  }
+  func displayUpdate(_ offer: NimloUpdateOffer?) {
+    updateNotice.display(offer)
+    updateNoticeHeight?.constant = offer == nil ? 0 : 44
+    window?.contentView?.layoutSubtreeIfNeeded()
+  }
+  func updateMessage(_ title: String, _ message: String) {
+    guard !quitting, window?.attachedSheet == nil, companion?.modal != true else { return }
+    let alert = NSAlert(); alert.messageText = title; alert.informativeText = message
+    alert.addButton(withTitle: "OK"); alert.beginSheetModal(for: window) { _ in }
+  }
+  @objc func checkForUpdates(_ sender: Any?) { updateMonitor?.check(manual: true) }
+  func applicationDidBecomeActive(_ notification: Notification) {
+    if testDirectory == nil { updateMonitor?.check() }
   }
   func configure() throws {
     let args = Array(CommandLine.arguments.dropFirst())
@@ -114,7 +174,7 @@ final class NativeApp: NSObject, NSApplicationDelegate, NSWindowDelegate, NSMenu
   }
   func welcome() {
     let view = NSView()
-    window.contentView = view
+    mountContent(view)
     let stack = NSStackView()
     stack.orientation = .vertical
     stack.alignment = .centerX
@@ -146,7 +206,7 @@ final class NativeApp: NSObject, NSApplicationDelegate, NSWindowDelegate, NSMenu
     let view = NSView()
     view.wantsLayer = true
     view.layer?.backgroundColor = NSColor(rgb: 0x15191f).cgColor
-    window.contentView = view
+    mountContent(view)
     let header = NSView()
     let footer = NSView()
     for v in [header, footer, split] {
@@ -1435,6 +1495,7 @@ final class NativeApp: NSObject, NSApplicationDelegate, NSWindowDelegate, NSMenu
     NSApp.terminate(nil)
   }
   func applicationWillTerminate(_ notification: Notification) {
+    updateMonitor?.stop()
     testController?.stop()
     client.stop()
     engine.stop()
@@ -1467,6 +1528,7 @@ final class NativeApp: NSObject, NSApplicationDelegate, NSWindowDelegate, NSMenu
       withTitle: "About Nimlo",
       action: #selector(NSApplication.orderFrontStandardAboutPanel(_:)), keyEquivalent: "")
     about.target = NSApp
+    add(app, "Check for Updates…", #selector(checkForUpdates))
     app.addItem(.separator())
     let hide = app.addItem(
       withTitle: "Hide Nimlo", action: #selector(NSApplication.hide(_:)), keyEquivalent: "h")
@@ -1512,6 +1574,9 @@ final class NativeApp: NSObject, NSApplicationDelegate, NSWindowDelegate, NSMenu
     add(workspace, "Open Browser Workspace", #selector(openBrowser))
   }
   func validateMenuItem(_ item: NSMenuItem) -> Bool {
+    if item.action == #selector(checkForUpdates) {
+      return !quitting && updateMonitor != nil && updateMonitor?.checking == false && window?.attachedSheet == nil && companion?.modal != true
+    }
     if companion?.modal == true {
       return [#selector(undo), #selector(redo)].contains(item.action)
         && companion?.ownsResponder() == true

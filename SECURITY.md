@@ -81,4 +81,12 @@ Acknowledged drafts are held by the workspace host. Native edits awaiting acknow
 
 The `--test-control` fixture driver is available only when explicitly requested with an existing, owner-only local directory. It is not a browser endpoint and is not enabled during normal app launches. `make test-native` uses this driver with disposable projects, a real Neovim process, a paired browser, and fake AI providers. Physical input methods, accessibility, and long-running behavior require additional validation.
 
-The current app is ad-hoc signed and not Apple-notarized. Updates are installed manually; there is no configured automatic update feed. Native builds currently support Apple silicon Macs running macOS 13.3 or later. The browser client remains available to paired phones and tablets.
+The current app is ad-hoc signed and not Apple-notarized. Updates are installed manually after an in-app release notice. Native builds currently support Apple silicon Macs running macOS 13.3 or later. The browser client remains available to paired phones and tablets.
+
+## Update notifications
+
+The native app checks only `https://api.github.com/repos/guilhermegm/Nimlo/releases/latest`, using an ephemeral HTTPS session without cookies or account credentials. Requests send no project paths, file contents, pairing credentials, or provider account data. Responses are limited to 1 MiB and 15 seconds; redirects are refused. Automatic checks are throttled, failures retry later, and GitHub rate-limit delays also apply to manual checks and survive restarts.
+
+Only stable numeric versions with a completed download matching this Mac's platform are offered. Release pages and asset URLs must match the fixed Nimlo GitHub repository. The banner button opens a reconstructed official release URL; arbitrary URLs from release metadata or local state are never opened. The checker does not download or execute installers, replace the app, or restart a workspace.
+
+The last known offer and check schedule are stored in a bounded, owner-only `update-state.json` under the native state directory. Unsafe cache files are ignored. Offline or malformed responses preserve an already-known notice; installing that version or receiving a valid withdrawn-release result clears it. The private test-control driver replaces network checks and browser opening with fixtures for UI validation. `make test-updates` covers version comparison, metadata and transport validation, private persistence, request scheduling, and the actual native banner.

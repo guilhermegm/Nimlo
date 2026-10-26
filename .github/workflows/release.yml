@@ -1,18 +1,20 @@
 name: Release Nimlo
 
 on:
+  push:
+    tags: ['v*']
   workflow_dispatch:
     inputs:
       tag:
         description: Version tag matching the app and workspace host
         required: true
-        default: v0.3.0
+        default: v0.3.1
 
 permissions:
   contents: read
 
 concurrency:
-  group: release-${{ inputs.tag }}
+  group: release-${{ inputs.tag || github.ref_name }}
   cancel-in-progress: false
 
 jobs:
@@ -20,7 +22,7 @@ jobs:
     runs-on: macos-15
     timeout-minutes: 35
     env:
-      RELEASE_TAG: ${{ inputs.tag }}
+      RELEASE_TAG: ${{ inputs.tag || github.ref_name }}
       RUSTUP_TOOLCHAIN: 1.99.0-aarch64-apple-darwin
       MACOSX_DEPLOYMENT_TARGET: '13.3'
     steps:
@@ -48,6 +50,10 @@ jobs:
         run: cargo test --release --locked -- --test-threads=1
       - name: Build the native Neovim app
         run: make build
+      - name: Test release checks and persistent update notices
+        run: |
+          make test-update-core
+          node scripts/update-notice-check.cjs
       - name: Verify the bundled engine and package
         run: |
           python3 - <<'PY'
@@ -79,7 +85,7 @@ jobs:
     permissions:
       contents: write
     env:
-      RELEASE_TAG: ${{ inputs.tag }}
+      RELEASE_TAG: ${{ inputs.tag || github.ref_name }}
       GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1

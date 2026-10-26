@@ -7,8 +7,8 @@
 <key>CFBundleExecutable</key><string>Nimlo</string>
 <key>CFBundleIconFile</key><string>Nimlo</string>
 <key>CFBundlePackageType</key><string>APPL</string>
-<key>CFBundleShortVersionString</key><string>0.3.0</string>
-<key>CFBundleVersion</key><string>5</string>
+<key>CFBundleShortVersionString</key><string>0.3.1</string>
+<key>CFBundleVersion</key><string>6</string>
 <key>NSHumanReadableCopyright</key><string>Nimlo — Small footprint. Full workspace.</string>
 <key>LSMinimumSystemVersion</key><string>13.3</string>
 <key>NSHighResolutionCapable</key><true/>

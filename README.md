@@ -12,12 +12,20 @@ Nimlo brings a native file tree, fast file search, a real Neovim editor, persist
 
 The current native release supports **Apple silicon Macs running macOS 13.3 or later**. Neovim 0.12.6 and its runtime are included; a separate Neovim installation is not needed.
 
-1. Download `Nimlo-0.3.0-macos-arm64.zip` from [GitHub Releases](https://github.com/guilhermegm/Nimlo/releases/latest) and extract it.
+1. Download `Nimlo-0.3.1-macos-arm64.zip` from [GitHub Releases](https://github.com/guilhermegm/Nimlo/releases/latest) and extract it.
 2. Drag **Nimlo.app** into **Applications** and open it.
 3. Choose **Open folder…** and select your project.
 4. Choose a file in the native sidebar, or press **⌘P** to find one.
 
 The app is ad-hoc signed and not Apple-notarized. If macOS blocks the first launch, see [Apple's instructions for opening an app you trust](https://support.apple.com/en-us/102445). Updates are installed manually by quitting Nimlo and replacing its app bundle.
+
+### Update notifications
+
+Starting with **0.3.1**, Nimlo checks the public GitHub release metadata automatically, about once an hour while the app is running. Choose **Nimlo → Check for Updates…** to check manually.
+
+A newer stable release with a compatible Mac download shows a persistent banner above the workspace or welcome screen. The notice survives app restarts and offline checks. **Download update…** opens that version's official GitHub release page. Keep working while it downloads; quit Nimlo before replacing its app bundle. Installing the offered version clears the notice. A release withdrawn by its author also stops being offered after a successful check.
+
+**Already using 0.3.0?** Install 0.3.1 manually once to enable future in-app notices. A code push by itself does not publish an update; see [publishing updates](#publishing-updates).
 
 ### Edit or use Vim
 
@@ -97,6 +105,7 @@ make test          # Workspace/service tests
 make test-native   # Real AppKit editor, Neovim, paired browser and fake AI
 make test-web      # Browser/workspace regression checks
 make check         # Formatting, strict Clippy and script syntax
+make test-updates  # Release checks, offline persistence and native banner UI
 ```
 
 Set `PLAYWRIGHT_PATH` and `NIMLO_WS_MODULE` to installed development modules when needed. Integration checks use disposable projects and fake AI providers, with no paid inference requests. Reports are written under `target/neovim-review` and `tests/` and are excluded from publication.
@@ -108,3 +117,14 @@ Workspace state is stored under `~/.nimlo-neovim`, including a private journal f
 ## Neovim
 
 Nimlo bundles the official pinned [Neovim](https://github.com/neovim/neovim) release. Its license is included in [licenses/Neovim-LICENSE.txt](licenses/Neovim-LICENSE.txt), and the runtime includes Vim's license and documentation in `doc/uganda.txt`.
+
+## Publishing updates
+
+For every release, increase the version in `Cargo.toml` and its `Cargo.lock` package entry, match `CFBundleShortVersionString` in `desktop/neovim/Info.plist`, increase `CFBundleVersion`, and add `releases/<version>.md`. Commit and push the changes to `main`, then push the matching version tag. For example, after preparing version 0.3.2:
+
+```sh
+git tag v0.3.2
+git push origin v0.3.2
+```
+
+The release workflow builds and tests the app, packages the compatible ZIP, generates its checksum, and publishes a stable GitHub Release. Update-enabled installations discover the release on their next check. The workflow can also be started manually from GitHub Actions with the same tag. Drafts, prereleases, and releases without a completed compatible download are not offered to installed apps.
