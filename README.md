@@ -4,13 +4,78 @@
 
 **Small footprint. Full workspace.**
 
-The colored launcher artwork lives in `assets/nimlo-icon.png`; the transparent welcome logo lives in `assets/nimlo-logo.png`. Run `make icons` to generate the macOS icon at standard sizes up to 1024 px, the 32 px browser favicon, the 180 px phone home-screen icon, and separate transparent welcome logos (256 px native, 128 px web). The originals stay in the source assets; the app bundles the resized versions directly, with no icon service or extra runtime process.
+[Quick start](#quick-start) · [Screenshots](#screenshots) · [Downloads](https://github.com/guilhermegm/Nimlo/releases/latest)
 
-A working Rust host and custom code editor for projects shared between a PC and other devices. One authenticated session holds the attached project folders, unsaved buffers, recovery, persistent terminals, and on-demand Codex/Claude jobs. The client uses plain HTML, CSS, and JavaScript, without Monaco or CodeMirror. The first desktop app uses macOS AppKit and the system WKWebView rather than bundling Electron, Chromium or a Node runtime.
+Nimlo is a lightweight code editor for working on the same project from your computer and phone. Open files, keep a terminal running on your PC, and use your installed AI tools in one shared workspace.
 
 [Download Nimlo from GitHub Releases](https://github.com/guilhermegm/Nimlo/releases/latest). Choose your operating system and x64 or ARM64 processor. macOS downloads contain the native app; Linux and Windows downloads run the workspace host in your existing browser. Windows hosts are experimental; see [SECURITY.md](SECURITY.md) for platform limitations. Phones and tablets connect through their browser by pairing with a running host.
 
-Mac downloads require macOS 13.3 or later. They are ad-hoc signed and are not Apple-notarized; macOS may require explicit approval. Quit Nimlo before replacing the app manually. Projects and recovery data live outside the bundle. The [signed update feed](https://nimlo-editor-updates.web.app/stable/latest.json) is managed separately.
+## Quick start
+
+Download the archive for your system from [the latest release](https://github.com/guilhermegm/Nimlo/releases/latest). Choose **ARM64** for Apple silicon or an ARM PC; choose **x64** for Intel/AMD computers. Extract the download before opening it.
+
+### macOS
+
+1. Drag **Nimlo.app** into **Applications** and open it. Requires macOS 13.3 or later.
+2. Click **Open folder…** and choose your project.
+3. Open **Files** to choose a file, then start editing.
+
+These Mac builds are not Apple-notarized. If macOS blocks the first launch, follow [Apple's instructions for opening an app you trust](https://support.apple.com/en-us/102445). Quit Nimlo before replacing its app bundle with a newer download.
+
+### Windows
+
+Open PowerShell in the extracted `Nimlo-…-windows-…` folder and run:
+
+```powershell
+& ".\Start Nimlo.cmd" --workspace "C:\Projects\my-app"
+```
+
+Replace the path with your project folder. Your browser opens the editor. Keep the host terminal running; **Ctrl+C** stops it. Windows hosts are experimental.
+
+### Linux
+
+Open a terminal in the extracted `Nimlo-…-linux-…` folder and run:
+
+```sh
+./nimlo-editor --workspace "$HOME/projects/my-app" --open-browser
+```
+
+Replace the path with your project folder. Your browser opens the editor. Keep the host terminal running; **Ctrl+C** stops it. Linux downloads require glibc 2.35 or later.
+
+### Your first session
+
+- **Open a file:** choose **Files → Find file…**, or press **⌘P / Ctrl+P**.
+- **Save:** press **⌘S / Ctrl+S**, or use **Save** when the file has changes.
+- **Run a command:** choose **Terminal**. Commands run in the current project on the host PC.
+- **Use AI:** open **AI → AI settings** and select an installed, signed-in provider. Leave **Ask before changes** enabled to review proposed actions. See [AI setup](#use-your-existing-ai-accounts).
+
+### Continue on your phone
+
+1. Install the official [cloudflared connector](https://developers.cloudflare.com/tunnel/downloads/) on the PC for internet pairing.
+2. In Nimlo on the PC, choose **Session → Pair a device → Create internet link**.
+3. Choose **Copy invitation link**, send the complete link to your phone, and open it in the phone's browser.
+4. Enter the six-digit code shown on the PC, plus the pairing password if you set one.
+
+Keep the PC awake and Nimlo running. Invitations expire after two minutes and work once; create a new invitation for each device. See [phone access](#continue-on-a-phone-anywhere) for details and same-Wi-Fi setup.
+
+## Screenshots
+
+The released **v0.2.2** interface with a sample project. The phone views show a paired browser using the same workspace and host terminal.
+
+![Nimlo desktop workspace showing JavaScript code and a running host terminal](docs/screenshots/desktop-workspace.png)
+
+<table>
+  <tr>
+    <th>Edit on your phone</th>
+    <th>Browse project files</th>
+    <th>Use the host terminal</th>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/phone-editor.png" alt="Nimlo phone editor with syntax highlighting and Code, AI and Terminal tabs" width="240"></td>
+    <td><img src="docs/screenshots/phone-files.png" alt="Nimlo phone file browser with folders, file search and the active document" width="240"></td>
+    <td><img src="docs/screenshots/phone-terminal.png" alt="Nimlo phone terminal showing output from the project running on the PC" width="240"></td>
+  </tr>
+</table>
 
 ## Everyday commands
 
@@ -38,6 +103,10 @@ The native updater offers **Nimlo → Check for Updates…** and checks the sign
 Focused targets include `test-ui`, `test-keyboard`, `test-ai`, `test-security`, `test-pairing`, `test-internet`, and `test-performance`. `make test-performance-core` runs draft, patch, editor and gate correctness checks. `make performance-plan` previews the native comparison without launching or changing anything. `make test-performance` builds the release app, freezes its reference, calibrates budgets before measuring the candidate, and runs the serial native comparison; it needs an unlocked, awake macOS desktop and a quiet machine. `make test-performance-browser` retains the earlier browser workload. Browser-aware targets accept `BROWSER=webkit` or `BROWSER=chromium`; `test-web` also includes the shared-session smoke test, which currently uses Chromium. These suites require the Node/Playwright/ws development tools documented below and build the release host automatically. Rust tests default to `TEST_THREADS=1` to keep process fixtures' memory and scheduling pressure low; override it explicitly for parallel tests. Workflows remain serial even with `make -j` because they share build and report artifacts. `test-internet-live` explicitly creates and then stops a real temporary public tunnel for a disposable fixture. `make fmt` applies Rust formatting. `make clean` removes the generated `target` directory, including app bundles and ZIPs there. Default session recovery lives separately under `~/.nimlo`.
 
 ## Desktop app and hot reload (macOS)
+
+A working Rust host and custom code editor for projects shared between a PC and other devices. One authenticated session holds the attached project folders, unsaved buffers, recovery, persistent terminals, and on-demand Codex/Claude jobs. The client uses plain HTML, CSS, and JavaScript, without Monaco or CodeMirror. The first desktop app uses macOS AppKit and the system WKWebView rather than bundling Electron, Chromium or a Node runtime.
+
+The colored launcher artwork lives in `assets/nimlo-icon.png`; the transparent welcome logo lives in `assets/nimlo-logo.png`. Run `make icons` to generate the macOS icon at standard sizes up to 1024 px, the 32 px browser favicon, the 180 px phone home-screen icon, and separate transparent welcome logos (256 px native, 128 px web). The originals stay in the source assets; the app bundles the resized versions directly, with no icon service or extra runtime process.
 
 Install Rust and Apple's Command Line Tools (`xcode-select --install`), then run:
 
