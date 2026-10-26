@@ -8,8 +8,8 @@
 <key>CFBundleIconFile</key><string>Nimlo</string>
 <key>NSHumanReadableCopyright</key><string>Nimlo — Small footprint. Full workspace.</string>
 <key>CFBundlePackageType</key><string>APPL</string>
-<key>CFBundleShortVersionString</key><string>0.2.1</string>
-<key>CFBundleVersion</key><string>3</string>
+<key>CFBundleShortVersionString</key><string>0.2.2</string>
+<key>CFBundleVersion</key><string>4</string>
 <key>NimloUpdateFeedURL</key><string>https://nimlo-editor-updates.web.app/stable/latest.json</string>
 <key>NimloUpdatePublicKey</key><string></string>
 <key>LSMinimumSystemVersion</key><string>13.3</string>

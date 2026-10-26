@@ -8,3 +8,6 @@ node_modules/
 !.env.example
 *.pem
 *.key
+
+# Python release tooling cache
+__pycache__/

@@ -1,6 +1,6 @@
 [package]
 name = "nimlo-editor"
-version = "0.2.0"
+version = "0.2.2"
 edition = "2024"
 description = "Nimlo: a lightweight code editor with a shared workspace, terminal and AI"
 license = "MIT"
