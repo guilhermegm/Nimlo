@@ -1,8 +1,6 @@
 # Memory and performance work
 
-The app is now named **Nimlo**. Historical entries below retain their original names, measurements and artifact hashes.
-
-The reference is Relay `a811aaf`: its frozen release app, existing editing and
+The reference is Nimlo `a811aaf`: its frozen release app, existing editing and
 shared-session checks, and the original high-line-count stress workload.
 The candidate must reduce measured costs without slower ordinary editing,
 lost selections, broken input, draft loss, weaker pairing, or extra idle services.

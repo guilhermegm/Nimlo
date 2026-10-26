@@ -4,8 +4,6 @@
 
 **Small footprint. Full workspace.**
 
-Nimlo was previously named Relay. New installations use `~/.nimlo`; if `~/.relay-editor` already exists and `~/.nimlo` does not, Nimlo continues using the existing directory for projects, drafts, recovery and AI settings. Existing browser storage keys are retained to preserve pending edits and preferences.
-
 The colored launcher artwork lives in `assets/nimlo-icon.png`; the transparent welcome logo lives in `assets/nimlo-logo.png`. Run `make icons` to generate the macOS icon at standard sizes up to 1024 px, the 32 px browser favicon, the 180 px phone home-screen icon, and separate transparent welcome logos (256 px native, 128 px web). The originals stay in the source assets; the app bundles the resized versions directly, with no icon service or extra runtime process.
 
 A working Rust host and custom code editor for projects shared between a PC and other devices. One authenticated session holds the attached project folders, unsaved buffers, recovery, persistent terminals, and on-demand Codex/Claude jobs. The client uses plain HTML, CSS, and JavaScript, without Monaco or CodeMirror. The first desktop app uses macOS AppKit and the system WKWebView rather than bundling Electron, Chromium or a Node runtime.

@@ -1,6 +1,6 @@
 # Release measurements
 
-The app is now named **Nimlo**. Measurements and recorded harness hashes below refer to their historical revisions; current commands use `NIMLO_BINARY`.
+Measurements and recorded harness hashes below refer to their recorded revisions; current commands use `NIMLO_BINARY`.
 
 The October 12 native baseline, bounded-editor work and release-gate status are
 documented in [NATIVE_PERFORMANCE.md](NATIVE_PERFORMANCE.md). Figures below belong
