@@ -8,7 +8,9 @@ The colored launcher artwork lives in `assets/nimlo-icon.png`; the transparent w
 
 A working Rust host and custom code editor for projects shared between a PC and other devices. One authenticated session holds the attached project folders, unsaved buffers, recovery, persistent terminals, and on-demand Codex/Claude jobs. The client uses plain HTML, CSS, and JavaScript, without Monaco or CodeMirror. The first desktop app uses macOS AppKit and the system WKWebView rather than bundling Electron, Chromium or a Node runtime.
 
-[Download Nimlo 0.2.1 preview for Apple silicon Macs](https://nimlo-editor-updates.web.app/stable/Nimlo-0.2.1-3-macos-arm64.zip). This preview uses manual installation and is not Apple-notarized; macOS may require explicit approval. Quit Nimlo when ready to replace its app bundle. Projects and recovery data live outside the bundle. The [signed update feed](https://nimlo-editor-updates.web.app/stable/latest.json) is live.
+[Download Nimlo from GitHub Releases](https://github.com/guilhermegm/Nimlo/releases/latest). Choose your operating system and x64 or ARM64 processor. macOS downloads contain the native app; Linux and Windows downloads run the workspace host in your existing browser. Windows hosts are experimental; see [SECURITY.md](SECURITY.md) for platform limitations. Phones and tablets connect through their browser by pairing with a running host.
+
+Mac downloads require macOS 13.3 or later. They are ad-hoc signed and are not Apple-notarized; macOS may require explicit approval. Quit Nimlo before replacing the app manually. Projects and recovery data live outside the bundle. The [signed update feed](https://nimlo-editor-updates.web.app/stable/latest.json) is managed separately.
 
 ## Everyday commands
 
