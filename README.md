@@ -17,7 +17,18 @@ The current native release supports **Apple silicon Macs running macOS 13.3 or l
 3. Choose **Open folder…** and select your project.
 4. Choose a file in the native sidebar, or press **⌘P** to find one.
 
-The app is ad-hoc signed and not Apple-notarized. If macOS blocks the first launch, see [Apple's instructions for opening an app you trust](https://support.apple.com/en-us/102445). Updates are installed manually by quitting Nimlo and replacing its app bundle.
+Updates are installed manually by quitting Nimlo and replacing its app bundle.
+
+### First launch on macOS
+
+This build is ad-hoc signed and has not been notarized by Apple. macOS may show **“Nimlo” Not Opened** and say Apple could not verify it is free of malware. If you downloaded Nimlo from this repository's [official releases](https://github.com/guilhermegm/Nimlo/releases), use Apple's per-app approval:
+
+1. Click **Done** in the warning.
+2. Open **System Settings → Privacy & Security** and scroll to the **Security** section.
+3. Find the message about Nimlo and click **Open Anyway**.
+4. Authenticate if prompted, then click **Open** in the confirmation.
+
+macOS remembers this exception for subsequent launches. If the Nimlo message is missing, try opening Nimlo again, then return to **Privacy & Security**. See [Apple's first-launch instructions](https://support.apple.com/en-us/102445) for details.
 
 ### Update notifications
 
